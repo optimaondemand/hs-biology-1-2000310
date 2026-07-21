@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 19.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q3 &middot; Module 7</div>
+        <div style="font-size: 12px; color: #666;">Classification and Diversity of Life</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 19.02</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Binomial Nomenclature</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Courtesy &mdash; the ordered naming of the household of life</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 19.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Binomial Nomenclature: The Two-Name System</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; A Common Tongue for Every Species</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">If a &ldquo;robin&rdquo; means different birds in different countries, how can biologists everywhere name the exact same species without confusion?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Yesterday you learned the ladder of ranks. Today you meet its most practical product: <strong>binomial nomenclature</strong>, the two-part Latin naming system that gives every species one universal name built from its <strong>genus</strong> and <strong>specific epithet</strong>. You will learn the strict rules for writing a scientific name &mdash; and why those rules make the name a courtesy that common names can never match.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> write a scientific name with correct capitalization and italics (genus capitalized, species lowercase, both italicized).</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain why universal scientific names are more reliable than common names for communicating about a species.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 19.02, <em>Binomial Nomenclature: The Two-Name System</em> &mdash; your anchor text for this lesson. Read it first, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128038; PART 1 &middot; THE TROUBLE WITH COMMON NAMES</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">The same animal is called cougar, puma, mountain lion, panther, and catamount &mdash; and a &ldquo;robin&rdquo; is one bird in America and a different one in Europe. Is that just a harmless quirk of language? (No wrong answer &mdash; just check in.)</div>
+            <div class="widget-options">
+                <button data-response="Right to be uneasy. For everyday talk it&rsquo;s harmless; for science it&rsquo;s a real problem. If one name means several animals &mdash; or several names mean one animal &mdash; researchers can&rsquo;t be sure they&rsquo;re discussing the same species. A single universal scientific name removes the guesswork.">It&rsquo;s a problem for science &mdash; names must be unambiguous</button>
+                <button data-response="It feels harmless, and in conversation it is. But in science, ambiguity is costly: a study of &lsquo;robins&rsquo; could mean two unrelated birds. That&rsquo;s exactly why every species also gets one precise, universal scientific name that never drifts by region or language.">Harmless &mdash; people know what they mean</button>
+                <button data-response="Good honest answer. Watch what happens as we go: common names vary by place and language and can even point to different creatures, which is why science leans on a single, stable, universal name for each species.">I&rsquo;m not sure it matters</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Why common names fail science</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Common names fail in two directions. <strong>One creature can have many names</strong> (cougar, puma, mountain lion, panther, catamount &mdash; all one cat), and <strong>one name can mean different creatures</strong> (the American &ldquo;robin&rdquo; is a large thrush; the European &ldquo;robin&rdquo; is a small, unrelated bird). Common names also change from language to language. For precise, worldwide communication, biologists need something better.</p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9997;&#65039; PART 2 &middot; TWO NAMES, WRITTEN JUST SO</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Genus + specific epithet, with strict rules</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Every species gets a two-part Latin name: a capitalized <strong>genus</strong> plus a lowercase <strong>specific epithet</strong>, with the whole name <em>italicized</em> (or underlined when handwritten). So <em>Homo sapiens</em>, <em>Canis lupus</em> (gray wolf), <em>Panthera leo</em> (lion), and <em>Acer rubrum</em> (red maple) are all correct. A shared genus name signals close kinship &mdash; the domestic dog, <em>Canis familiaris</em>, sits in the same genus <em>Canis</em> as the wolf.</p>
+        <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 6px; padding: 14px 20px; margin: 10px 0;">
+            <div style="font-size: 16px; color: #0e1c42; line-height: 1.7; text-align: center;"><strong>Genus capitalized &nbsp;&middot;&nbsp; species lowercase &nbsp;&middot;&nbsp; both italicized</strong></div>
+            <div style="font-size: 14px; color: #666; line-height: 1.6; text-align: center; margin-top: 6px;">Remember it as: <em>genus up, species down, both leaning.</em></div>
+        </div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 10px 0 4px 0;">The most common slip is capitalizing the second word. Test the formatting below.</p>
+
+        <!-- ow-select self-check -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9989; WHICH IS WRITTEN CORRECTLY?</div>
+
+            <div class="widget-row" data-correct="a">
+                <div class="widget-row-prompt">Which is the correct way to write the scientific name of the human species?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. Genus capitalized (Homo), species lowercase (sapiens), whole name italicized. That is the rule.">&nbsp;<em>Homo sapiens</em>&nbsp;</button>
+                    <button data-choice="b" data-hint="No &mdash; the specific epithet is never capitalized. &lsquo;Sapiens&rsquo; should be lowercase.">&nbsp;<em>Homo Sapiens</em>&nbsp;</button>
+                    <button data-choice="c" data-hint="No &mdash; the genus must be capitalized. &lsquo;homo&rsquo; should start with a capital H.">&nbsp;<em>homo sapiens</em>&nbsp;</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="b">
+                <div class="widget-row-prompt">A handwritten lab notebook cannot italicize. Which is the correct way to write the gray wolf&rsquo;s name by hand?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-hint="Not by hand &mdash; you can&rsquo;t italicize with a pen. When handwriting, you underline instead. Also, casing still matters.">Canis lupus (no marks)</button>
+                    <button data-choice="b" data-fb="Correct. Handwriting can&rsquo;t italicize, so you underline the whole name &mdash; and the genus is still capitalized, the species still lowercase.">&nbsp;<u>Canis lupus</u>&nbsp;</button>
+                    <button data-choice="c" data-hint="No &mdash; the species epithet &lsquo;lupus&rsquo; stays lowercase, and the whole name should be underlined when handwritten.">&nbsp;<u>Canis Lupus</u>&nbsp;</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="c">
+                <div class="widget-row-prompt">Which statement about the two parts of a scientific name is true?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-hint="Reversed &mdash; the genus comes first and is capitalized; the species comes second and is lowercase.">The species comes first and is capitalized</button>
+                    <button data-choice="b" data-hint="Not quite &mdash; both parts are always italicized (or both underlined), not just one.">Only the genus is italicized</button>
+                    <button data-choice="c" data-fb="Correct. The genus is first and capitalized; the specific epithet is second and lowercase; both are italicized.">Genus first and capitalized; species second and lowercase; both italic</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127760; PART 3 &middot; A COURTEOUS COMMON TONGUE</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Universal, precise, stable</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">A scientific name is <strong>universal</strong> (the same in every country and language), <strong>precise</strong> (it points to exactly one species), and <strong>stable</strong> (it does not drift with local habit). Write <em>Puma concolor</em> and every biologist on Earth knows the exact animal &mdash; no translation, no confusion. That is the deep courtesy of the system: like a shared table manner or a common greeting, an agreed name is a small act of consideration that lets strangers understand one another. The naming of the household of life is, quite literally, courtesy made into a tool.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Notice the cross-unit thread, too: because a shared genus signals close relationship, these names quietly carry the <strong>evolutionary kinship</strong> you studied in Module 6. The way we name life reflects how life is related.</p>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build a Linnaean Classification Ladder</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Build a labeled ladder of the eight ranks (Domain &rarr; Species) for the gray wolf, <em>Canis lupus</em>, and record a short walkthrough naming each rung &mdash; ending with its correctly written two-part name.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Explore the Specimen Room</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Use a provided dichotomous key to identify five unknown organisms in a specimen room, capturing a named snapshot of each identification.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 19.02 &middot; Naming Names</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Correct several mis-formatted scientific names, write one correctly yourself, and explain in a sentence or two why universal names beat common names. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Every species has a two-part name &mdash; <strong>genus capitalized, species lowercase, both italic</strong> &mdash; that is universal, precise, and stable where common names are not. It is a courtesy that lets the world speak of one creature with one word. Next, we put names to work: given an unknown organism and its observable traits, how do you actually find its name? Enter the <strong>dichotomous key</strong>.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 3 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 19.02 &middot; Binomial Nomenclature: The Two-Name System</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

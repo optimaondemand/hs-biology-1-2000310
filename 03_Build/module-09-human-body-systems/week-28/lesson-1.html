@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 28.01</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q4 &middot; Module 9</div>
+        <div style="font-size: 12px; color: #666;">Human Body Systems</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 28.01</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">The Kidney &amp; Nephron</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Self-government &mdash; homeostasis, the body's quiet discipline</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 28.01</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">The Kidney &amp; Nephron</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; Filtering the Blood and Balancing the Body</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Your cells make waste every second, and too much water or too little would kill you. What organ cleans the blood and keeps that balance &mdash; all without your noticing?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">This is the first lesson of Week 28, and it opens the body's regulation systems with the organ that quietly guards your inner balance: the <strong>kidney</strong>. You will learn what the excretory system removes, trace a drop of fluid through the <strong>nephron</strong> &mdash; filtration, reabsorption, secretion, excretion &mdash; and see the kidney as a <strong>homeostasis organ</strong>, tuned by a hormone, echoing the feedback loops of Lesson 26.02.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> describe the job of the excretory system and identify the nephron as the functional unit of the kidney.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> put the nephron's steps in order &mdash; filtration, reabsorption, secretion, excretion &mdash; and say what each one does.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain how the kidney maintains homeostasis, including how ADH adjusts water reabsorption.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 28.01, <em>The Kidney and the Nephron: Cleaning the Blood, Balancing the Body</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128167; PART 1 &middot; WHY THE BODY MUST FILTER ITSELF</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Before today's lesson: when you drink a big glass of water, what do you think decides whether your body keeps it or gets rid of it? (No wrong answer &mdash; just check in.)</div>
+            <div class="widget-options">
+                <button data-response="A sensible guess &mdash; and close. The kidney is the organ that decides, and it does so by adjusting how much water it reabsorbs from the filtrate. A hormone called ADH turns that dial up or down depending on how hydrated you are.">Something in the kidneys, probably</button>
+                <button data-response="Good instinct that the body is regulating itself. The decision is made in the kidney's nephrons, where a hormone (ADH) sets how much water is reabsorbed back into the blood. Drink plenty and less is kept; get dehydrated and more is kept.">The body just balances it automatically somehow</button>
+                <button data-response="Fair &mdash; it's genuinely hidden work. Today you'll see it's the kidney: its nephrons filter fluid out of the blood, then reabsorb what's needed, and a hormone (ADH) fine-tunes exactly how much water comes back.">I've honestly never thought about it</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Waste, water, and salt</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">When your cells break down <strong>protein</strong> for energy, they leave behind <strong>nitrogen</strong>, which the body turns into the waste molecule <strong>urea</strong>. The <strong>excretory system</strong> removes this <strong>nitrogenous waste</strong> from the blood in the form of <strong>urine</strong>. But the same organ that removes waste also decides how much <strong>water</strong> and <strong>salt</strong> to keep &mdash; which is what makes the kidney a <strong>homeostasis organ</strong>, not just a garbage chute.</p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129513; PART 2 &middot; TRACE A DROP THROUGH THE NEPHRON</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Four steps, in order</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 4px 0;">The nephron does its job in four steps. Match each description to the correct step, and watch for the one most people forget &mdash; that the kidney <em>reabsorbs</em> the good molecules it filtered out.</p>
+
+        <!-- ow-select -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129513; MATCH IT &middot; STEP &rarr; WHAT HAPPENS</div>
+            <div class="widget-row" data-correct="b" data-hint="The very first step, where blood pressure forces fluid out of a knot of leaky capillaries.">
+                <div class="widget-row-prompt">Blood enters the glomerulus and pressure forces water, urea, glucose, and ions out of the blood into the nephron's tube. This step is:</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; reabsorption is the LATER step where useful materials return to the blood. Forcing fluid out of the glomerulus at the start is filtration.">Reabsorption</button>
+                    <button data-choice="b" data-fb="Correct. Filtration is the first step: blood pressure in the glomerulus pushes water and small molecules out of the blood into the tubule, forming filtrate.">Filtration</button>
+                    <button data-choice="c" data-fb="No &mdash; excretion is the final step, when leftover urine leaves. The first push of fluid out of the glomerulus is filtration.">Excretion</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="c" data-hint="This is the step where water, glucose, and useful ions are RESCUED and returned to the blood.">
+                <div class="widget-row-prompt">As the filtrate moves down the tubule, nearly all the water, all the glucose, and most useful ions pass back into the blood. This step is:</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; filtration is the initial push of fluid OUT of the blood. Returning useful materials TO the blood is reabsorption.">Filtration</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; secretion moves a few extra wastes INTO the tubule. Returning water and glucose to the blood is reabsorption.">Secretion</button>
+                    <button data-choice="c" data-fb="Correct. Reabsorption returns the useful molecules &mdash; water, glucose, ions &mdash; to the blood. This is the step people forget: the kidney rescues, not just removes.">Reabsorption</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="a" data-hint="What is left in the tubule &mdash; water plus urea and unneeded salts &mdash; and where does it go?">
+                <div class="widget-row-prompt">Water carrying urea and leftover salts drains from the nephrons and travels to the bladder. This final step, and this fluid, are:</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. Excretion is the final step, and the leftover fluid &mdash; water with urea and unreclaimed salts &mdash; is urine, which drains to the bladder to leave the body.">Excretion &mdash; the fluid is urine</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; filtration is the first step, not the last. The leftover fluid leaving as urine is excretion.">Filtration &mdash; the fluid is filtrate</button>
+                    <button data-choice="c" data-fb="No &mdash; reabsorption returns materials to the blood; it is not the leftover leaving. The final removal of urine is excretion.">Reabsorption &mdash; the fluid is plasma</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128260; PART 3 &middot; THE KIDNEY AS A HOMEOSTASIS DIAL</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">ADH turns the water dial</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">How much water the nephron reabsorbs is not fixed &mdash; it is adjusted by the hormone <strong>ADH</strong>. When you are dehydrated, ADH rises and the kidney reabsorbs <em>more</em> water (little, concentrated urine); when you are well-hydrated, ADH falls and the kidney reabsorbs <em>less</em> (more, dilute urine). This is the negative-feedback logic from Lesson 26.02. Reason through the case below.</p>
+
+        <!-- ow-select single-row prediction -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129504; PREDICT IT &middot; FEEDBACK IN ACTION</div>
+            <div class="widget-row" data-correct="c" data-hint="If the blood is too concentrated (dehydration), does the body want to keep water or lose it?">
+                <div class="widget-row-prompt">A hiker runs low on water on a hot day and becomes dehydrated. What should the kidney do, and how?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; making lots of dilute urine would waste the little water the hiker has. Dehydration calls for the opposite: keep water in.">Make lots of dilute urine to flush the blood</button>
+                    <button data-choice="b" data-fb="No &mdash; the kidney doesn't shut off; that would let wastes build up. Instead ADH rises so the nephron reabsorbs MORE water, producing a small amount of concentrated urine.">Stop filtering the blood entirely until the hiker drinks</button>
+                    <button data-choice="c" data-fb="Correct. Dehydration raises ADH, so the nephron reabsorbs more water back into the blood. The result is a small amount of concentrated urine &mdash; water conserved, exactly as negative feedback predicts.">ADH rises, so the nephron reabsorbs more water &mdash; little, concentrated urine</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 10px 0 0 0;">Notice the cross-unit threads: the reabsorption of ions across the tubule uses the <strong>active transport</strong> you met in <strong>Module 3</strong>, and ADH is a <strong>hormone</strong> &mdash; a preview of the endocrine system you'll study in Lesson 28.04. The kidney is quietly governed by the very signaling system this week builds toward.</p>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build a Neuron &amp; Fire an Action Potential to a Synapse</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Construct a neuron &mdash; dendrites, cell body, axon, myelin, terminals &mdash; then trace a signal from dendrite down the axon to a synapse where a neurotransmitter is released. Pairs with Lessons 28.02 and 28.03.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Observe a Drug Acting at a Synapse</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Enter a synapse scene and observe how a drug (agonist, antagonist, or reuptake blocker) changes signaling and its downstream effect. This VR pairs with Lesson 28.03 and feeds your Module 9 CER.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 28.01 &middot; Trace the Nephron</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Order the nephron's steps, match each to what it does, and explain in a sentence how ADH helps the kidney keep homeostasis. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">The kidney is homeostasis made physical: filter everything, reabsorb what you need, fine-tune with a hormone. Hold onto that idea of a <strong>controlled, self-correcting system</strong> &mdash; in the next lesson we meet the fastest control system the body has, the <strong>neuron</strong>, and the electrical signal it fires down its length.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 4 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 28.01 &middot; The Kidney &amp; Nephron</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

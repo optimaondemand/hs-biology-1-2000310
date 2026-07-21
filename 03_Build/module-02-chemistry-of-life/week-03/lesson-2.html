@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 3.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 2</div>
+        <div style="font-size: 12px; color: #666;">Chemistry of Life</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 3.02</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Hydrogen Bonds: Cohesion, Adhesion &amp; Surface Tension</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Wonder &mdash; the same atoms as the stars</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 3.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Hydrogen Bonds: Cohesion, Adhesion &amp; Surface Tension</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">If a single hydrogen bond is so weak, how can it let an insect walk on water and lift a column of water to the top of a tree?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Yesterday you learned that water is polar. Today you will see what that polarity <em>does</em>. Polar water molecules reach out and grip one another with <strong>hydrogen bonds</strong> &mdash; each one feeble, but billions together are mighty. From those bonds come <strong>cohesion</strong>, <strong>adhesion</strong>, and <strong>surface tension</strong>: the reasons water beads, climbs, and holds a skin strong enough to carry a water strider.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> describe a hydrogen bond and explain why many weak bonds together are strong.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> tell cohesion from adhesion and give a real example of each.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain surface tension and capillary action in terms of hydrogen bonding.</div>
+        </div>
+    </div>
+
+    <!-- Materials -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; WHAT YOU NEED FOR THIS LESSON</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 3.02, <em>Hydrogen Bonds: Cohesion, Adhesion &amp; Surface Tension</em> (read it before this lesson)</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Your scientific notebook (a dedicated notebook or a Word document in your OneDrive)</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; THE WEAK BOND THAT RUNS THE WORLD</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Picture an insect standing on the surface of a pond without sinking. What do you think holds it up? (No wrong answer &mdash; just check in with yourself.)</div>
+            <div class="widget-options">
+                <button data-response="A common guess &mdash; but the insect is denser than the air it stands on. What holds it is the water&rsquo;s surface itself, knit together by hydrogen bonds into a kind of skin.">&#129418; It&rsquo;s very light</button>
+                <button data-response="Closer. The surface really does act like a stretched film. That film is surface tension &mdash; water molecules at the top gripping one another with hydrogen bonds.">&#129666; The water has a skin</button>
+                <button data-response="You&rsquo;re right at the mechanism. The molecules at the surface pull on each other &mdash; cohesion &mdash; and that pulling forms a tension strong enough to bear a small insect&rsquo;s weight.">&#129505; The molecules pull together</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">A weak grip, repeated a billion times</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Because water is polar, the &delta;+ hydrogen of one molecule is attracted to the &delta;&minus; oxygen of a neighbor. That attraction is a <strong>hydrogen bond</strong>. Any single hydrogen bond is weak &mdash; far weaker than the covalent bonds <em>inside</em> the molecule &mdash; and it is constantly breaking and reforming as molecules jostle. But there are so many of them, all at once, that <em>collectively</em> they are remarkably strong. This is the secret behind everything in today&rsquo;s lesson: not one mighty bond, but countless gentle ones, holding water together.</p>
+
+        <!-- Web-interactive callout -->
+        <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128421;&#65039; EXPLORE IT &middot; WATCH HYDROGEN BONDS HOLD MOLECULES TOGETHER</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Open the free <strong>States of Matter</strong> simulation and choose water. Cool it down and watch the molecules slow, line up, and cling to one another &mdash; that clinging is hydrogen bonding made visible. Heat it back up and watch the bonds break as the molecules fly apart into vapor. Notice how the same weak attractions that hold a solid together are the ones that give liquid water its stubborn, sticky behavior.<br /><br /><a href="https://phet.colorado.edu/en/simulations/states-of-matter" style="color: #1B6A94;">phet.colorado.edu/en/simulations/states-of-matter</a></div>
+        </div>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128167; PART 2 &middot; COHESION, ADHESION, AND A SKIN OF WATER</div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Sticking to itself, sticking to others</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>Cohesion</strong> is water sticking to <em>water</em> &mdash; molecules holding one another by hydrogen bonds. At the surface, where molecules can only bond inward and sideways, this cohesion pulls the surface tight into a film: <strong>surface tension</strong>, the &ldquo;skin&rdquo; a water strider stands on. Cohesion also lets water travel as an unbroken column &mdash; the same property that helps a tree lift water from its roots all the way to its highest leaf, a story you will follow in detail in <strong>Module 8</strong>.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>Adhesion</strong> is water sticking to <em>other</em> polar surfaces. It is why water climbs the wall of a thin tube or creeps up a paper towel &mdash; <strong>capillary action</strong>. In a tree, adhesion to the walls of narrow vessels works alongside cohesion to keep that water column from slipping back down. Cohesion and adhesion are partners: one binds water to itself, the other anchors it to its surroundings.</p>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Try it: flip to check yourself</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 4px 0;">Read each term, predict its meaning, then tap the card to flip it and check.</p>
+
+        <!-- Flip cards -->
+        <div class="optima-widget ow-flip">
+            <div class="ow-flip-front">
+                <div class="widget-kicker">&#128260; TAP TO FLIP</div>
+                <div style="font-size: 19px; color: #0E1C42;"><strong>Cohesion</strong></div>
+            </div>
+            <div class="ow-flip-back">
+                <div style="font-size: 16px; line-height: 1.6;">Water sticking to water through hydrogen bonds. <em>Example:</em> raindrops pull themselves into round beads on a windshield.</div>
+            </div>
+        </div>
+
+        <div class="optima-widget ow-flip">
+            <div class="ow-flip-front">
+                <div class="widget-kicker">&#128260; TAP TO FLIP</div>
+                <div style="font-size: 19px; color: #0E1C42;"><strong>Adhesion</strong></div>
+            </div>
+            <div class="ow-flip-back">
+                <div style="font-size: 16px; line-height: 1.6;">Water sticking to other polar surfaces. <em>Example:</em> water creeping upward into a dry paper towel dipped at its edge.</div>
+            </div>
+        </div>
+
+        <div class="optima-widget ow-flip">
+            <div class="ow-flip-front">
+                <div class="widget-kicker">&#128260; TAP TO FLIP</div>
+                <div style="font-size: 19px; color: #0E1C42;"><strong>Surface tension</strong></div>
+            </div>
+            <div class="ow-flip-back">
+                <div style="font-size: 16px; line-height: 1.6;">Cohesion at the air&ndash;water boundary, pulling the surface into a tight film. <em>Example:</em> a water strider walking across a pond without breaking through.</div>
+            </div>
+        </div>
+
+        <div class="optima-widget ow-flip">
+            <div class="ow-flip-front">
+                <div class="widget-kicker">&#128260; TAP TO FLIP</div>
+                <div style="font-size: 19px; color: #0E1C42;"><strong>Capillary action</strong></div>
+            </div>
+            <div class="ow-flip-back">
+                <div style="font-size: 16px; line-height: 1.6;">Water climbing a narrow space because adhesion (to the walls) and cohesion (to itself) work together. <em>Example:</em> water rising in a thin glass tube against gravity.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build a Water Molecule &amp; Hydrogen-Bond Network</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Connect several molecules&rsquo; &delta;+ hydrogens to their neighbors&rsquo; &delta;&minus; oxygens &mdash; the very network behind today&rsquo;s cohesion and surface tension.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Walk the Properties of Water</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Visit the cohesion / surface-tension pond station and watch a water strider stand on the film you studied today.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 3.02 &middot; Cohesion &amp; Adhesion in the Kitchen</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">A short home investigation: pile water drops on a coin (cohesion and surface tension), then watch water climb a paper-towel strip (adhesion and capillary action). Record your observations and explain each using hydrogen bonding. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">The same hydrogen bond you met today returns again and again this year. It pulls water up a redwood in <strong>Module 8</strong>, and in <strong>Lesson 3.04</strong> and again in <strong>Module 5</strong> it is the gentle clasp that holds the two strands of DNA together, base to base. One weak bond, repeated, turns out to be among the most important forces in all of biology.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 3.02 &middot; Hydrogen Bonds: Cohesion, Adhesion &amp; Surface Tension</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

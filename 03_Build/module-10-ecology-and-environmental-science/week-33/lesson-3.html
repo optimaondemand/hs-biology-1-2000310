@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 33.03</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q4 &middot; Module 10</div>
+        <div style="font-size: 12px; color: #666;">Ecology and Environmental Science</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 33.03</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Ecological Succession</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Responsibility &mdash; stewardship and the common good</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 33.03</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Ecological Succession</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; Primary and Secondary Succession, and the One Word That Separates Them</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">A volcano makes a new island of bare rock. A forest fire clears an old woodland to ash. Both will one day be green again &mdash; but one takes centuries and the other takes decades. Why?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today you learn how a whole <strong>community</strong> rebuilds itself in a predictable order &mdash; <strong>ecological succession</strong>. You will tell apart <strong>primary succession</strong> (on bare rock, with <em>no soil</em>) and <strong>secondary succession</strong> (after a disturbance that <em>leaves the soil</em>), and see why the single word <strong>soil</strong> is the whole difference in speed.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish primary succession (begins on bare rock with no soil) from secondary succession (follows a disturbance where soil remains).</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain the role of pioneer species and why secondary succession is faster, and describe a climax community.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 33.03, <em>How a Community Rebuilds: Ecological Succession</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127755; PART 1 &middot; PRIMARY SUCCESSION</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">A brand-new island of cooled lava rises from the sea &mdash; nothing but bare rock. What do you think could possibly grow there <em>first</em>? (No wrong answer &mdash; just picture it.)</div>
+            <div class="widget-options">
+                <button data-response="Not quite yet &mdash; a tree needs deep soil, and there is none. Trees come much later. The very first colonizers are tiny, tough pioneers like lichens, which can live directly on rock and slowly help make soil.">A tree, once a seed lands</button>
+                <button data-response="Exactly right. Lichens and mosses are the classic pioneer species: they can live on bare rock, and by breaking it down and adding organic matter they slowly build the first thin soil that everything else needs.">Something small and tough, like lichen or moss</button>
+                <button data-response="Good honesty &mdash; and it's a real puzzle, because there's no soil. The answer is pioneer species: lichens first, then mosses, which can grip bare rock and begin making soil over many years.">Nothing &mdash; how could anything grow on rock?</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Building soil from bare rock</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>Primary succession</strong> begins where there is <strong>no soil at all</strong> &mdash; bare rock, fresh lava, or new sand. The first arrivals are the <strong>pioneer species</strong>, above all <strong>lichens</strong> (a fungus-and-alga partnership) and then <strong>mosses</strong>. Their great job is to <strong>build soil</strong>: acids and dead remains crumble rock into grains and add organic matter, grain by grain. Only once soil exists can grasses, then shrubs, then trees follow. Because primary succession must make its own soil first, it is extremely slow &mdash; often <strong>centuries</strong>.</p>
+        <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 6px; padding: 14px 20px; margin: 8px 0 0 0;">
+            <div style="font-size: 15px; color: #1a2340; line-height: 1.6;"><strong>A real one, happening now:</strong> in <strong>1963</strong> an undersea eruption raised the new island of <strong>Surtsey</strong> off Iceland &mdash; sterile black rock with no soil, no seeds, no life. Protected and watched ever since, it has been colonized in just this order: microbes and molds, then mosses and lichens weathering the rock, then hardy plants and nesting birds as wind and sea carried in seeds. Surtsey is one of science's clearest live windows into primary succession.</div>
+        </div>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127786;&#65039; PART 2 &middot; SECONDARY SUCCESSION</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Rebuilding where the soil survived</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>Secondary succession</strong> follows a <strong>disturbance</strong> that clears a community but <strong>leaves the soil</strong> &mdash; a fire, a flood, or an abandoned field. Because the soil is already there, full of nutrients, roots, and buried seeds, recovery is <strong>much faster</strong> &mdash; years to decades, not centuries. After a fire, fast grasses and wildflowers return first, then shrubs and sun-loving young trees, and eventually a mature forest much like the one that burned. Same direction as primary succession &mdash; small fast pioneers toward large slow trees &mdash; but starting far ahead, on ready-made ground.</p>
+
+        <!-- ow-select: primary vs secondary -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129513; CHECK IT &middot; PRIMARY OR SECONDARY?</div>
+            <div class="widget-row" data-correct="b" data-hint="After a fire, is there still soil on the ground? What does that tell you?">
+                <div class="widget-row-prompt">A wildfire burns through a forest. A few years later, grasses and young trees are already returning. What kind of succession is this, and why so fast?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; primary succession starts on bare rock with NO soil and takes centuries. A burned forest still has its soil, so this is secondary succession.">Primary &mdash; the fire left bare rock</button>
+                    <button data-choice="b" data-fb="Correct. The fire left the SOIL behind &mdash; full of nutrients, roots, and seeds &mdash; so this is secondary succession, and having ready-made soil is exactly why it is so much faster.">Secondary &mdash; the soil remained, so recovery is fast</button>
+                    <button data-choice="c" data-fb="No &mdash; the presence of soil matters a great deal. Soil is the single feature that separates slow primary succession from fast secondary succession.">Neither &mdash; whether soil remains makes no difference</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="c" data-hint="Bare rock, no soil, lichens first &mdash; which type, and how long?">
+                <div class="widget-row-prompt">On a newly cooled lava flow, lichens appear first and slowly build soil over many years. What kind of succession is this?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; secondary succession begins where soil already remains. Fresh lava has no soil at all, so this is primary succession.">Secondary succession</button>
+                    <button data-choice="b" data-fb="No &mdash; lichens and mosses are pioneer species that build soil; they are not the final stable stage. The endpoint is the climax community, much later.">A climax community</button>
+                    <button data-choice="c" data-fb="Correct. Bare rock with no soil, colonized first by lichens that slowly build soil, is the definition of primary succession &mdash; the slow kind that must make its own soil.">Primary succession</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127794; PART 3 &middot; THE CLIMAX COMMUNITY</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Where succession is heading</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Both kinds of succession trend toward a relatively stable, mature stage called the <strong>climax community</strong> &mdash; one that renews itself and changes little until the next disturbance resets the clock. "Stable" is a rough, ongoing balance, not a permanent freeze: a mature forest holds until the next fire or storm, and then succession begins again.</p>
+        <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 6px; padding: 14px 20px; margin: 8px 0 0 0;">
+            <div style="font-size: 15px; color: #1a2340; line-height: 1.6;"><strong>The one word to remember:</strong> <strong>soil</strong>. If a place starts with bare rock and no soil, it is primary succession &mdash; slow, because it must build soil first. If soil remains after the disturbance, it is secondary succession &mdash; fast, because the ground is ready. Notice, too, the link to <strong>Module 8</strong>: the pioneer lichens and mosses that build soil are relatives of the plants you studied &mdash; the living things that literally create the ground the rest of the community stands on.</div>
+        </div>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Model Exponential vs. Logistic Growth Curves</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Build a J-curve and an S-curve and mark carrying capacity &mdash; the population tools from earlier this week.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Explore Primary vs. Secondary Succession Over Time</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Walk a time-lapse scene &mdash; bare rock &rarr; lichens &rarr; soil &rarr; shrubs &rarr; forest, and a post-fire recovery &mdash; capturing snapshots and noting why secondary succession is faster. This VR pairs directly with today's lesson.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 33.03 &middot; Ecological Succession</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Sort scenarios into primary vs. secondary, order a succession sequence, and explain in a sentence why soil makes secondary succession faster. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Communities are processes, not still pictures. Life rebuilds after rock or ruin in a predictable march from pioneer species toward a climax community &mdash; slowly when it must first make soil, quickly when soil remains. Hold on to the one-word test: <strong>soil</strong>. Tomorrow we ask the module's largest question &mdash; what happens when human activity and a changing climate reset these communities faster than they can recover &mdash; and there you will build your <strong>Module 10 CER</strong>.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 4 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 33.03 &middot; Ecological Succession</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

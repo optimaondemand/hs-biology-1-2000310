@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 35.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q4 &middot; Module 10</div>
+        <div style="font-size: 12px; color: #666;">Ecology and Environmental Science</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 35.02</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Sustainability &amp; Ecosystem Services</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Responsibility &mdash; stewardship and the common good</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 35.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">What Nature Does For Us: Services &amp; Sustainability</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; Four Kinds of Ecosystem Service, and Living Within Our Means</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">A wetland cleans your water, a bee pollinates your food, a forest pulls carbon from the air &mdash; and no one sends a bill. How do we count what nature does for free?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Yesterday we saw what happens when we ignore an ecosystem's limits. Today we turn the question around: what does a healthy ecosystem <em>give</em> us? You will learn the four categories of <strong>ecosystem services</strong> &mdash; provisioning, regulating, supporting, and cultural &mdash; and a clear definition of <strong>sustainability</strong>: meeting today's needs without robbing tomorrow's.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> name and give examples of the four categories of ecosystem services: provisioning, regulating, supporting, and cultural.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> define sustainability and explain why it is really a statement about future generations.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 35.02, <em>What Nature Does For Us: Ecosystem Services &amp; Sustainability</em> &mdash; your anchor text for this lesson. Read it first, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127757; PART 1 &middot; THE BENEFITS WE RARELY COUNT</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Think of one thing a natural ecosystem near you provides that you have never paid for directly. Which of these comes closest to your example?</div>
+            <div class="widget-options">
+                <button data-response="A great example of a regulating service &mdash; the ecosystem quietly keeps a process (clean air, clean water, a stable climate) working without any invoice. Watch for these; they are the easiest to overlook.">Clean air or water, or a stable climate</button>
+                <button data-response="That is a cultural service &mdash; recreation, beauty, and meaning. A classical education takes these seriously: the beautiful is not a luxury added on top of survival.">A beautiful place to walk, fish, or simply wonder at</button>
+                <button data-response="That is a provisioning service &mdash; the physical goods we harvest. It is the easiest kind to notice, because we carry it home. Today you'll meet three more categories that work invisibly.">Food, fresh water, or wood I use</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Four categories of ecosystem service</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>Ecosystem services</strong> are the benefits ecosystems provide to people. Scientists sort them into four kinds. <strong>Provisioning</strong> services are the goods we harvest &mdash; food, fresh water, timber, medicines. <strong>Regulating</strong> services keep natural processes steady &mdash; climate regulation, water purification, pollination, flood control. <strong>Supporting</strong> services are the slow foundations that make the rest possible &mdash; nutrient cycling, soil formation, primary production. <strong>Cultural</strong> services are the non-material gifts &mdash; recreation, beauty, and meaning.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Notice how many of these are processes you already studied: pollination reaches back to plant reproduction (Module 8), nutrient cycling to the carbon and nitrogen cycles (earlier this module), and every provisioning service to photosynthesis (Module 4). Ecosystem services are ecology's way of naming what the whole living system does for us.</p>
+    </div>
+
+    <!-- PART 2 - SELECT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129513; PART 2 &middot; SORT THE SERVICE</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Which category is it?</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 4px 0;">For each real-world benefit, choose the category it belongs to.</p>
+
+        <!-- ow-select -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129513; CHECK IT &middot; NAME THE SERVICE</div>
+            <div class="widget-row" data-correct="b" data-hint="Is a wetland giving you a physical good to carry home, or keeping a process (clean water) working?">
+                <div class="widget-row-prompt">A coastal marsh filters pollutants out of the water flowing through it before that water reaches the bay. Which category of service is this?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; you aren't harvesting a good here. The marsh is keeping a process (clean water) running, which is a regulating service.">Provisioning</button>
+                    <button data-choice="b" data-fb="Correct. Water purification is a regulating service &mdash; the ecosystem keeps a natural process steady and safe.">Regulating</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; cultural services are the non-material gifts like beauty and recreation. Cleaning water is a regulating service.">Cultural</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="c" data-hint="Is this a good, a steadied process, a slow foundation, or a non-material gift?">
+                <div class="widget-row-prompt">A family drives to a state park to hike, take photographs, and enjoy the view. Which category of service is this?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; they aren't harvesting food or timber. Recreation and beauty are cultural services.">Provisioning</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; nothing is being regulated here. Enjoyment, beauty, and recreation are cultural services.">Regulating</button>
+                    <button data-choice="c" data-fb="Correct. Recreation, beauty, and meaning are cultural services &mdash; the non-material benefits people draw from nature.">Cultural</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="a" data-hint="Which category is the slow underlying process that must happen before crops can grow or water can be cleaned?">
+                <div class="widget-row-prompt">Decomposers break down dead matter and return nitrogen and carbon to the soil and air, making them available again. Which category is this?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. Nutrient cycling is a supporting service &mdash; a slow foundation that makes provisioning and regulating services possible.">Supporting</button>
+                    <button data-choice="b" data-fb="Close, but not the best fit. Regulating services steady a process; nutrient cycling is a deeper foundation beneath everything &mdash; a supporting service.">Regulating</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; this is not a non-material gift like beauty. Nutrient cycling is a supporting service.">Cultural</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 - SUSTAINABILITY -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9851;&#65039; PART 3 &middot; SUSTAINABILITY</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Using without using up</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">If ecosystems give us all this, the practical question is how to keep drawing on them without exhausting them. <strong>Sustainability</strong> is <em>meeting the needs of the present without compromising the ability of future generations to meet their own needs</em>. A fishery is sustainable if we catch no faster than the fish reproduce; a forest is sustainable if we harvest no faster than it regrows.</p>
+
+        <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 6px; padding: 14px 20px; margin: 8px 0 0 0;">
+            <div style="font-size: 15px; color: #1a2340; line-height: 1.6;"><strong>The idea in one line:</strong> sustainability is really about <strong>time</strong>. An unsustainable practice can look like a bargain today because its true costs are paid by people not yet born. To act sustainably is to put those future people into the accounting &mdash; which is exactly the <strong>responsibility</strong> this module is built around.</div>
+        </div>
+    </div>
+
+    <!-- CONTEMPORARY callout (GOLD) -->
+    <div style="background: #FDF3E3; border-left: 5px solid #C7922C; border-top: 3px solid #C7922C; border-radius: 6px; padding: 14px 20px; margin: 0 0 20px 0;">
+        <div style="font-size: 11px; color: #8a6a1d; margin-bottom: 8px;">&#127807; CONTEMPORARY RESEARCH &middot; CAN WE PUT AN ECOSYSTEM BACK TOGETHER?</div>
+        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Protecting healthy ecosystems is one thing; <strong>rebuilding damaged ones</strong> is a newer and harder question, and it is the frontier of <strong>restoration ecology</strong>. Recent efforts suggest we can sometimes restore lost services if we work with an ecosystem's own processes. In Florida, the large-scale <strong>Everglades restoration</strong> is attempting to return a more natural flow of water to a system that was drained and channelized. Along many coasts, scientists are rebuilding <strong>oyster reefs</strong> and replanting <strong>seagrass beds</strong> to bring back water filtering, fish habitat, and storm protection, while &ldquo;<strong>rewilding</strong>&rdquo; projects test whether returning key species can restore whole food webs. The results are genuinely promising but far from guaranteed &mdash; a restored ecosystem rarely comes back exactly as it was, and scientists are actively testing how fully these services can be rebuilt. It is a hopeful reminder that the same power that let us harm ecosystems may, used with care, help heal them.</div>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build a Year-Spine &ldquo;Atoms &rarr; Ecosystems&rdquo; Walk</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Assemble a walkable gallery with a station for each stage of the course and narrate how each stage depends on the one before &mdash; a capstone synthesis build for the whole year.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Tour the Bioaccumulation of DDT up a Food Web</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Walk a food web where a persistent toxin concentrates at each higher level, capturing the rising concentration up to the top-predator raptor &mdash; a direct partner to Lesson 35.01.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 35.02 &middot; Ecosystem Services &amp; Sustainability</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Sort real benefits into the four service categories, define sustainability, and explain a practice in terms of future generations. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Ecosystem services turn a vague sense that &ldquo;nature is good&rdquo; into a clear, four-part ledger of what we receive; sustainability turns that ledger into a rule for how to live within it. Tomorrow we pull the whole year together &mdash; the <strong>one long argument</strong> from atoms to ecosystems &mdash; and get ready for the Final.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 4 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 35.02 &middot; What Nature Does For Us: Services &amp; Sustainability</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

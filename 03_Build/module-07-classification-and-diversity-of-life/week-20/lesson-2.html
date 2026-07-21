@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 20.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q3 &middot; Module 7</div>
+        <div style="font-size: 12px; color: #666;">Classification and Diversity of Life</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 20.02</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Reading Cladograms</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Courtesy &mdash; the ordered naming of the household of life</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 20.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Reading and Building Cladograms: Monophyletic Groups</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; Clades, Nodes vs. Tips, and Nesting Shared Traits</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Two species drawn side by side &mdash; are they automatically the closest relatives? (Careful: this is the trap.)</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Yesterday you learned the parts of a tree. Today you learn to read one <em>without being fooled</em>. You will meet the <strong>monophyletic group</strong> (a <strong>clade</strong>) &mdash; an ancestor and all its descendants &mdash; and master the single most important reading rule: relatedness comes from <strong>shared nodes</strong>, not from how close two tips happen to sit on the page.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> identify a monophyletic group (clade) as an ancestor together with all of its descendants.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> determine relatedness from shared nodes, not from the left-to-right adjacency of the tips.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain how ranking taxa by shared derived characters builds a cladogram.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 20.02, <em>Reading and Building Cladograms: Monophyletic Groups</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129704; PART 1 &middot; ONE ANCESTOR, ALL ITS DESCENDANTS</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">On a tree, a Crocodile is drawn right next to a Lizard, while a Bird sits off to one side. Your first instinct: which is the crocodile&rsquo;s closer relative? (No wrong answer &mdash; just notice your instinct.)</div>
+            <div class="widget-options">
+                <button data-response="That&rsquo;s the natural first guess &mdash; and it&rsquo;s exactly the trap this lesson defuses. Physical nearness on the page means nothing. Surprisingly, on the real tree crocodiles share a more recent common ancestor with birds than with lizards. Relatedness lives in the nodes, not the neighbors.">The Lizard &mdash; it&rsquo;s drawn closest</button>
+                <button data-response="Interesting &mdash; and closer to the truth than most people guess! Crocodiles actually share a more recent common ancestor with birds than with lizards. The lesson: don&rsquo;t decide by who is drawn nearby; trace the nodes.">The Bird &mdash; nearness on the page shouldn&rsquo;t decide it</button>
+                <button data-response="Good honesty. The answer depends entirely on the nodes, not on the drawing. Trace back until two lineages meet: crocodiles and birds actually meet at a more recent node than crocodiles and lizards do. That&rsquo;s the whole skill today.">I can&rsquo;t tell yet &mdash; I need to see the nodes</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">The clade: the natural unit of classification</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">A <strong>monophyletic group</strong>, or <strong>clade</strong>, is a common ancestor together with <strong>all</strong> of its descendants and nothing else. The test is a finger and a sweep: put your finger on a node, sweep upward, and if you have captured every tip descended from that ancestor &mdash; and no outsiders &mdash; you have a clade. Mammals are a clade; birds are a clade. Because a clade groups organisms strictly by ancestry, it is the honest, natural unit for ordering the household of life.</p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128064; PART 2 &middot; READ THE NODES, NOT THE NEIGHBORS</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">The rule that stops the most common mistake</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Relatedness is measured by the <strong>most recent common ancestor</strong> &mdash; the lowest node two tips share &mdash; not by their left-to-right position. A branch can be swiveled at any node like a hanging mobile: rotating it reorders the tips along the bottom but changes <em>nothing</em> about who is related to whom. So two tips drawn next to each other are <em>not</em> automatically the closest relatives.</p>
+        <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 6px; padding: 14px 20px; margin: 10px 0;">
+            <div style="font-size: 16px; color: #0e1c42; line-height: 1.7; text-align: center;"><strong>Read the nodes, not the neighbors.</strong></div>
+            <div style="font-size: 14px; color: #666; line-height: 1.6; text-align: center; margin-top: 6px;">Closest relatives = the pair sharing the most recent (highest) node &mdash; regardless of drawing order.</div>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 14px 0 4px 0;">Use this tree for the self-check below.</p>
+
+        <div style="background: #FBFCFE; border: 1px dashed #C5DCE5; border-radius: 6px; padding: 14px 18px; margin: 6px 0 10px 0;">
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.65;">Reading up from the base, the first branch off is <strong>Lizard</strong>. Higher up, the lineage splits into <strong>Crocodile</strong> and <strong>Bird</strong>, which share the most recent node. On the page they are drawn in the order: Lizard, Crocodile, Bird &mdash; so the <em>Crocodile</em> is drawn physically between the Lizard and the Bird.</div>
+        </div>
+
+        <!-- Select widget -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9989; SELF-CHECK &middot; NODES, NOT NEIGHBORS</div>
+
+            <div class="widget-row" data-correct="bird">
+                <div class="widget-row-prompt">Which taxon is the Crocodile&rsquo;s <em>closest</em> relative?</div>
+                <div class="widget-options">
+                    <button data-choice="bird" data-fb="Correct. Crocodile and Bird meet at the highest, most recent node &mdash; that shared ancestor makes them the closest relatives, even though the Lizard is not far away on the page.">Bird</button>
+                    <button data-choice="lizard" data-hint="This is the trap. The Lizard is drawn right beside the Crocodile, but it branches off at a LOWER, older node. Trace the nodes: Crocodile and Bird share the most recent one.">Lizard (it&rsquo;s drawn right next to it)</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="no">
+                <div class="widget-row-prompt">A classmate says: &ldquo;If I rotate the branches so the Bird is drawn on the far left, then the Lizard and Crocodile become the closest relatives.&rdquo; Is that true?</div>
+                <div class="widget-options">
+                    <button data-choice="no" data-fb="Correct. Rotating a branch only reorders the tips on the page &mdash; the nodes are unchanged, so the relationships are unchanged. Crocodile and Bird still share the most recent common ancestor.">No &mdash; rotating branches doesn&rsquo;t change the nodes</button>
+                    <button data-choice="yes" data-hint="Not quite &mdash; this is the core misconception. Swiveling a branch is like turning a mobile: the drawing order changes, but the shared nodes (and so the relationships) do not.">Yes &mdash; whoever is drawn together is most related</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129513; PART 3 &middot; BUILDING BY NESTING TRAITS</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Ranking taxa by shared derived characters</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>What does building a tree do?</strong> It turns a table of traits into a branching order. Start from a <strong>character matrix</strong> and an outgroup, then rank taxa by <em>how many</em> shared derived characters each has with the group. A taxon sharing only the oldest trait branches off <strong>early</strong> (low); one sharing that trait <em>plus</em> newer ones branches off <strong>later</strong> (higher, closer in). Each new shared derived character marks a new node. For a lamprey, shark, lizard, and mouse: a backbone groups them but does not rank them; jaws exclude the lamprey (it branches first); four limbs exclude the shark (it branches next); hair is unique to the mouse. The nested pattern of shared traits <em>is</em> the tree.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">You will do exactly this in VR-A this week &mdash; placing taxa on branches from a matrix &mdash; and again from a molecular table in Assignment 20.03.</p>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build a Cladogram from a Character Matrix</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Use a given table of taxa and shared derived characters to place taxa on branches, mark the outgroup and the nodes, and record a walkthrough explaining each placement.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Tour a Molecular-Clock Tree of Life</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Walk from the root through the three domains, observe how branch lengths represent sequence divergence and time, and capture named snapshots.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 20.02 &middot; Read the Cladogram</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Use a described cladogram to name the closest relatives from the nodes (not the tip order), identify a monophyletic group, and explain the &ldquo;rotating branches&rdquo; rule. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">A clade is one ancestor and all its descendants; relatedness is read from the nodes, never from the drawing order; and nesting shared derived characters builds the tree. With these habits, no rearranged diagram can trick you. Next lesson we change the characters themselves &mdash; from bones to the letters of DNA.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 3 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 20.02 &middot; Reading and Building Cladograms: Monophyletic Groups</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

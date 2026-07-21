@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 25.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q3 &middot; Module 8</div>
+        <div style="font-size: 12px; color: #666;">Plant Biology</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 25.02</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Fertilization &amp; Seeds</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Wonder &mdash; plants that sense and respond without nerves</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 25.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Double Fertilization, Seed and Fruit, and Germination</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; From Pollen Tube to Sprouting Seedling</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Pollen has landed on the stigma &mdash; but the egg is buried deep in the ovary. How does the pollen reach it, and what does that meeting create?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today you follow the pollen the rest of the way: a <strong>pollen tube</strong> grows down to an ovule and delivers <strong>two sperm</strong>. In the flowering plants&rsquo; signature <strong>double fertilization</strong>, one sperm makes the <strong>embryo</strong> and the other makes the <strong>endosperm</strong>. Then the ovule becomes a <strong>seed</strong>, the ovary becomes a <strong>fruit</strong>, and &mdash; when conditions are right &mdash; the seed <strong>germinates</strong>.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> describe double fertilization and state what each of its two products becomes.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> trace how a seed and a fruit form and describe what germination requires.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 25.02, <em>From Pollen to Fruit: Double Fertilization, Seeds, and Sprouting</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127793; PART 1 &middot; THE POLLEN TUBE AND TWO SPERM</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">You have eaten an apple, a peach, or a tomato. Where do you think the seeds inside came from? (No wrong answer &mdash; just check in.)</div>
+            <div class="widget-options">
+                <button data-response="Good honest starting point. By the end of today you'll be able to say it precisely: each seed grew from an ovule after fertilization, and the fleshy fruit around it grew from the ovary. The 'meeting' you're picturing is double fertilization.">I know a flower was involved, but not the details</button>
+                <button data-response="Exactly the right instinct &mdash; those seeds started as ovules inside the flower's ovary, and the fruit is the ripened ovary. Today you'll trace the whole path from pollen to seed to fruit.">From the flower's ovary, after fertilization</button>
+                <button data-response="That's the fun of today &mdash; every fruit you eat is a ripened ovary, and every seed in it began as a fertilized ovule. Let's trace exactly how that happens.">I've honestly never thought about it</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">A tube to the egg</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">After pollination, the pollen grain on the stigma grows a <strong>pollen tube</strong> down through the <strong>style</strong> to reach an <strong>ovule</strong> in the ovary. The tube is the plant&rsquo;s way of crossing that distance on dry land without needing water. Down it travel <strong>two sperm cells</strong> &mdash; and, unusually, both will be used.</p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129513; PART 2 &middot; DOUBLE FERTILIZATION: TWO SPERM, TWO PRODUCTS</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">What each sperm makes</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 4px 0;">In <strong>double fertilization</strong>, the first sperm + egg &rarr; <strong>zygote &rarr; embryo</strong> (the future plant); the second sperm + two polar nuclei &rarr; <strong>endosperm</strong> (nutrient-rich food for the embryo). Test the distinction below.</p>
+
+        <!-- ow-select -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129513; MATCH IT &middot; EVENT &rarr; PRODUCT</div>
+            <div class="widget-row" data-correct="b" data-hint="This sperm fertilizes the egg &mdash; what grows from a fertilized egg?">
+                <div class="widget-row-prompt">The first sperm fertilizes the egg cell. What forms, and what does it become?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; the endosperm forms from the OTHER sperm joining two polar nuclei. The sperm that fertilizes the egg makes the zygote.">The endosperm, which stores food</button>
+                    <button data-choice="b" data-fb="Correct. Sperm + egg makes a zygote, which grows into the embryo &mdash; the tiny future plant inside the seed.">A zygote, which becomes the embryo</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; the seed coat develops from the ovule's outer layers, not directly from this fertilization. Sperm + egg makes the zygote (the embryo).">The seed coat</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="c" data-hint="This sperm does NOT fertilize the egg &mdash; it joins two polar nuclei. What food tissue results?">
+                <div class="widget-row-prompt">The second sperm joins with two polar nuclei. What forms, and what is its job?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; the embryo comes from the egg being fertilized by the first sperm. The second sperm makes the food tissue instead.">The embryo, the future plant</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; the fruit forms later from the whole ovary. The second sperm + two polar nuclei makes the endosperm.">The fruit that surrounds the seed</button>
+                    <button data-choice="c" data-fb="Correct. Second sperm + two polar nuclei makes the endosperm, a nutrient-rich tissue that nourishes the embryo as it develops and sprouts.">The endosperm, which nourishes the embryo</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="a" data-hint="Count the sperm and count the products.">
+                <div class="widget-row-prompt">Why is the process called <em>double</em> fertilization?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. Two sperm are used and two products result &mdash; the embryo and the endosperm. That double use of sperm is unique to flowering plants.">Two sperm are used and two products (embryo and endosperm) result</button>
+                    <button data-choice="b" data-fb="No &mdash; the flower is not pollinated twice. 'Double' refers to the two sperm each doing a separate job in one event.">The flower must be pollinated two separate times</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; there is one egg. 'Double' refers to two sperm producing two products (embryo and endosperm).">Two eggs are fertilized at once</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127808; PART 3 &middot; SEED, FRUIT, AND GERMINATION</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Ovule &rarr; seed, ovary &rarr; fruit, then sprout</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The <strong>ovule</strong> becomes the <strong>seed</strong> (embryo + stored food + protective <strong>seed coat</strong>). The <strong>ovary</strong> becomes the <strong>fruit</strong>, which protects and <strong>disperses</strong> the seeds &mdash; animals eat it, or wind and water carry it. When a seed has enough <strong>water</strong>, <strong>oxygen</strong>, and a <strong>suitable temperature</strong>, it <strong>germinates</strong>: the embryo lives on its stored food until its leaves reach the light and it can photosynthesize on its own. This is where the <strong>seed</strong> land-adaptation from Module 7 finally shows <em>how</em> it is built.</p>
+
+        <!-- ow-select: seed/fruit/germination -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129504; CHECK YOUR THINKING</div>
+            <div class="widget-row" data-correct="c" data-hint="Trace it: which flower part held the ovules that became seeds?">
+                <div class="widget-row-prompt">A juicy peach with a pit inside grew from part of the flower. Which part became the fleshy fruit?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; the stigma is the sticky top that caught the pollen; it does not become the fruit.">The stigma</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; a single ovule becomes one seed (the pit), not the whole fleshy fruit. Look one level up.">A single ovule</button>
+                    <button data-choice="c" data-fb="Correct. The whole ovary ripens into the fruit; the ovule inside it becomes the seed (the peach pit). Ovary &rarr; fruit, ovule &rarr; seed.">The ovary</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="b" data-hint="What three conditions does a seed need to break dormancy and sprout?">
+                <div class="widget-row-prompt">A dry seed sits in a packet for a year, then sprouts a week after being planted and watered. What triggered germination?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; a seed does not need sunlight to germinate (many sprout underground in the dark). It needs water, oxygen, and a suitable temperature.">Direct sunlight reaching the buried seed</button>
+                    <button data-choice="b" data-fb="Correct. Germination needs water, oxygen, and a suitable temperature. In the packet those were missing; planting and watering supplied them, and the seed sprouted.">Water, oxygen, and a suitable temperature</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; the seed already contained a complete embryo. It was waiting for the right conditions (water, oxygen, warmth), not for a new embryo to form.">A new embryo forming inside the seed</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build a Flower; Show Double Fertilization &amp; Seed</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Animate the sequence you learned today: pollen lands on the stigma, a pollen tube grows down, double fertilization makes the zygote/embryo and the endosperm, and the ovule becomes a seed while the ovary becomes a fruit. This VR pairs directly with today&rsquo;s lesson.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Explore Phototropism &amp; Auxin</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Later this week, observe a seedling bend toward light and auxin gather on its shaded side &mdash; evidence for the tropisms lesson (25.04).</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 25.02 &middot; Sequence Pollen to Fruit</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Put the events in order from pollination through double fertilization to seed and fruit, and name the two products of double fertilization. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Double fertilization is the efficient heart of flowering-plant reproduction: one sperm builds the next generation (embryo), the other builds its food supply (endosperm), and the flower&rsquo;s ovule and ovary become the seed and fruit that carry and feed it. With reproduction understood, <strong>Lesson 25.03</strong> turns to a different question &mdash; how a plant <em>coordinates</em> its growth and timing, with no brain and no nerves, using chemical signals called hormones.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 3 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 25.02 &middot; Double Fertilization, Seed and Fruit, and Germination</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

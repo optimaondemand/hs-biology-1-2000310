@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 5.01</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 3</div>
+        <div style="font-size: 12px; color: #666;">Cell Structure, Function, and Transport</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 5.01</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Cell Theory: Two Centuries of Seeing</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Perseverance &mdash; seeing what others could not</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 5.01</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Cell Theory: Two Centuries of Seeing</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">How did we come to know that everything alive is made of cells &mdash; and who had to be brave enough to say so?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today you meet one of biology&rsquo;s great unifying ideas: <strong>cell theory</strong>, three plain statements that hold for every living thing. But cell theory is also a <em>story</em> &mdash; two hundred years of patient observers, each seeing a little farther through a slightly better lens. You will learn the three tenets and the people who earned them, one careful look at a time.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> state the three tenets of cell theory in my own words.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> identify the contributions of Hooke, Leeuwenhoek, Schleiden &amp; Schwann, and Virchow to cell theory.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain why cell theory is a well-supported theory and not a guess.</div>
+        </div>
+    </div>
+
+    <!-- Materials -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; WHAT YOU NEED FOR THIS LESSON</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 5.01, <em>Cell Theory: Two Centuries of Seeing</em> (read it before this lesson)</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Your scientific notebook (a dedicated notebook or a Word document in your OneDrive)</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129516; PART 1 &middot; THREE PLAIN STATEMENTS</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">A friend asks, &ldquo;What is the smallest thing that is actually <em>alive</em>?&rdquo; Before you read on, what would you say? (No wrong answer &mdash; just check in with yourself.)</div>
+            <div class="widget-options">
+                <button data-response="Reasonable thought &mdash; but an atom or molecule, on its own, can&rsquo;t take in energy, grow, respond, or reproduce. The smallest unit that does all of that is the cell, the second tenet of cell theory.">&#9883;&#65039; An atom or molecule</button>
+                <button data-response="That&rsquo;s exactly the idea you&rsquo;ll confirm today. The cell is the smallest thing that is fully alive &mdash; it is the basic unit of life, the second tenet of cell theory.">&#129440; A single cell</button>
+                <button data-response="Close in spirit &mdash; a virus is tiny and tricky, but most biologists don&rsquo;t count it as fully alive because it can&rsquo;t do life&rsquo;s jobs on its own. The smallest fully living unit is the cell.">&#129440; Something smaller than a cell</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">The three tenets of cell theory</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">A scientific <strong>theory</strong> is a large, well-tested explanation backed by mountains of evidence &mdash; not a hunch. Cell theory is exactly that, and it rests on three statements: <strong>(1)</strong> all living things are made of one or more <strong>cells</strong>; <strong>(2)</strong> the cell is the basic <strong>unit of life</strong> &mdash; the smallest thing that is fully alive; and <strong>(3)</strong> all cells come from <strong>pre-existing cells</strong>. From a single bacterium to a whale, biology has never found an exception. The third tenet was the hardest fought, because for centuries people believed life could simply appear from non-living matter &mdash; an idea you will see finally defeated in Module 6.</p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128300; PART 2 &middot; TWO HUNDRED YEARS, FOUR OBSERVERS</div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Built one careful look at a time</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">No one person discovered the cell. In <strong>1665</strong>, <strong>Robert Hooke</strong> looked at thin cork through an early microscope, saw rows of tiny boxes, and named them <strong>cells</strong> &mdash; though he was seeing only the dead walls. In the <strong>1670s</strong>, the Dutch draper <strong>Antonie van Leeuwenhoek</strong> ground lenses fine enough to see the first <em>living</em> microorganisms &mdash; his &ldquo;animalcules,&rdquo; including bacteria. Over a century later, in <strong>1838&ndash;1839</strong>, <strong>Schleiden</strong> (plants) and <strong>Schwann</strong> (animals) concluded that all living things are cellular &mdash; tenets one and two. Finally, in <strong>1855</strong>, <strong>Rudolf Virchow</strong> gave tenet three: <em>omnis cellula e cellula</em>, &ldquo;every cell from a cell.&rdquo;</p>
+
+        <!-- HISTORY callout (TEAL) -->
+        <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#127963;&#65039; A HUMAN STORY &middot; THE DRAPER WHO WOULD NOT QUIT</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Leeuwenhoek was no professor &mdash; he was a <strong>cloth merchant</strong> in Delft with no university training and no Latin. Yet he taught himself to grind lenses better than anyone alive, and through them he became the first human to see a teeming world of living microbes. When he reported &ldquo;animalcules&rdquo; in a drop of water, the learned <strong>Royal Society</strong> in London doubted that an untrained draper could see what their own scholars could not. Rather than back down, Leeuwenhoek kept observing, kept writing careful letters, and persuaded skeptics to repeat his work until they confirmed it &mdash; and elected him a Fellow. His story opens this module&rsquo;s thread of <strong>perseverance</strong>: truth doesn&rsquo;t always come from the credentialed, and a patient observer who refuses to quit can reveal a world no one knew was there.</div>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 8px 0 4px 0;">Try it: match each scientist to what they actually contributed.</p>
+
+        <!-- Evaluative single-select -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; WHO DID WHAT?</div>
+            <div class="widget-question">Tap the answer that fits each clue. You&rsquo;ll get instant feedback.</div>
+
+            <div class="widget-row" data-correct="1" data-fb="Right &mdash; Hooke named &lsquo;cells&rsquo; in 1665 after the empty boxes he saw in cork." data-hint="Think about who first coined the word &lsquo;cell&rsquo; from looking at cork.">
+                <div class="widget-row-prompt">1. Coined the word &ldquo;cell&rdquo; after looking at cork &hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="0">Virchow</button>
+                    <button data-choice="1">Hooke</button>
+                    <button data-choice="2">Schwann</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Right &mdash; Leeuwenhoek, the Dutch draper, was first to see living microorganisms (&lsquo;animalcules&rsquo;)." data-hint="Which untrained cloth merchant ground lenses to see living microbes?">
+                <div class="widget-row-prompt">2. First to see living microorganisms &hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="0">Schleiden</button>
+                    <button data-choice="1">Hooke</button>
+                    <button data-choice="2">Leeuwenhoek</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Right &mdash; Virchow established that all cells arise from pre-existing cells (1855)." data-hint="Who gave us &lsquo;every cell from a cell&rsquo; &mdash; the third tenet?">
+                <div class="widget-row-prompt">3. Showed that all cells come from pre-existing cells &hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="0">Virchow</button>
+                    <button data-choice="1">Leeuwenhoek</button>
+                    <button data-choice="2">Hooke</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Right &mdash; together Schleiden (plants) and Schwann (animals) gave us the claim that all living things are cellular." data-hint="Which pair concluded that both plants and animals are made of cells?">
+                <div class="widget-row-prompt">4. Concluded that both plants and animals are made of cells &hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="0">Hooke &amp; Virchow</button>
+                    <button data-choice="1">Schleiden &amp; Schwann</button>
+                    <button data-choice="2">Leeuwenhoek &amp; Hooke</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128279; PART 3 &middot; FROM MOLECULES TO THE CELL</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">The next floor of the same building</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">This module is not a fresh start &mdash; it builds directly on <strong>Module 2</strong>. The <strong>phospholipid bilayer</strong> you walked through in VR becomes the membrane wrapping every cell. The <strong>proteins</strong> whose shapes you traced become the cell&rsquo;s machines and gatekeepers. And the <strong>DNA</strong> you assembled from nucleotides becomes the cell&rsquo;s instruction manual, housed (in eukaryotes) inside the nucleus. The cell is simply the address where the chemistry of life lives and works.</p>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build a Prokaryote and a Eukaryote Side by Side</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Construct both cell types and label the key differences &mdash; the very cells whose discovery you traced today.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Tour an Endosymbiosis Scene</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Watch a free-living prokaryote become an organelle &mdash; a preview of Lesson 5.03.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 5.01 &middot; The Three Tenets and Their Builders</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Match each scientist to their contribution and explain in your own words why cell theory counts as a well-supported theory. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Cell theory is the foundation of everything ahead: the two cell types in Lesson 5.02, the ancient organelles of Lesson 5.03, and the energy chemistry of <strong>Module 4</strong> all assume the cell is the unit of life. And it began with people who kept looking when others had stopped &mdash; the <strong>perseverance</strong> that runs through this whole module.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 5.01 &middot; Cell Theory: Two Centuries of Seeing</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

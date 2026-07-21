@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 21.03</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q3 &middot; Module 7</div>
+        <div style="font-size: 12px; color: #666;">Classification and Diversity of Life</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 21.03</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Protists</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Courtesy &mdash; the ordered naming of the household of life</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 21.03</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Protists: The Eukaryotic Grab-Bag</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; A Diverse Catch-All &mdash; and the Ocean's Hidden Producers</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">What do you call a group defined only by what it is <em>not</em> &mdash; and why does one of its smallest members matter to every breath you take?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today we meet the <strong>protists</strong>: eukaryotes that are not plants, animals, or fungi. They are a true <strong>catch-all</strong>, mostly single cells, sorted loosely into <strong>animal-like</strong>, <strong>plant-like</strong>, and <strong>fungus-like</strong> ways of living. You will see why they are so hard to define &mdash; and why the plant-like <strong>phytoplankton</strong> are among the most important organisms on Earth.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> describe the diversity of protists and the three informal lifestyles (animal-like, plant-like, fungus-like).</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain the ecological importance of phytoplankton as producers of oxygen and the base of aquatic food webs.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 21.03, <em>Protists: The Eukaryotic Grab-Bag</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129440; PART 1 &middot; A GROUP DEFINED BY EXCLUSION</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Imagine a drawer in your kitchen labeled &ldquo;everything that isn't a spoon, fork, or knife.&rdquo; Would you expect the things inside to have much in common? (No wrong answer &mdash; just check in.)</div>
+            <div class="widget-options">
+                <button data-response="Exactly the right intuition. A group defined by what it is NOT will be a jumble &mdash; and that's precisely the protists. They are all the eukaryotes left over once you set aside plants, animals, and fungi, so they don't form one tidy family. Keep that image; it explains why 'protist' is a convenient label, not a clean branch.">No &mdash; a &ldquo;leftovers&rdquo; drawer holds all sorts of unrelated things</button>
+                <button data-response="It's worth a second look. When you sort things by 'everything that isn't X,' you tend to sweep together items with little in common. That is the protists: a leftover category, held together by convenience rather than close kinship. Molecular data confirm they are many distant relatives, not one group.">Maybe &mdash; they might share something</button>
+                <button data-response="Good honesty. Here's the payoff: a 'leftovers' category rarely forms a real family. The protists are exactly that &mdash; the eukaryotes that aren't plants, animals, or fungi &mdash; so the group is genuinely diverse, and DNA shows its members are only distantly related.">I'm not sure &mdash; let's find out</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Why &ldquo;protist&rdquo; is a convenient label</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">A <strong>protist</strong> is a eukaryote &mdash; a cell with a true nucleus &mdash; that is not a plant, animal, or fungus. Defining a group by exclusion is a warning sign, and here it is accurate: the protists are a <strong>catch-all</strong>, many only-distantly-related lineages, mostly <strong>unicellular</strong>, that share a level of organization rather than a close common ancestor. Molecular data (the same tool from Lesson 21.01) show the group is far more varied than its single name suggests. Biologists keep the word for convenience while knowing it does not name one clean branch of the tree.</p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128034; PART 2 &middot; THREE WAYS OF LIVING</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Animal-like, plant-like, fungus-like</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Because the group is so mixed, biologists sort protists loosely by <em>how they live</em>. <strong>Animal-like</strong> protists (protozoa) ingest food and often move &mdash; the shape-shifting <em>Amoeba</em> engulfs prey; the slipper-shaped <em>Paramecium</em> beats tiny hairs to swim. <strong>Plant-like</strong> protists (algae) photosynthesize; among them are the <strong>phytoplankton</strong>. <strong>Fungus-like</strong> protists (slime molds) absorb nutrients from decaying matter. These labels name function, not family: an &ldquo;animal-like&rdquo; protist is not a relative of animals.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 14px 0 4px 0;">Match each protist to its lifestyle and example.</p>
+
+        <!-- Evaluative single-select -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; WHICH LIFESTYLE?</div>
+            <div class="widget-question">Sort each protist into its informal lifestyle group. You'll get instant feedback.</div>
+
+            <div class="widget-row" data-correct="0" data-fb="Right &mdash; Amoeba and Paramecium ingest food and move, so they are animal-like protists (protozoa). (They are not actually related to animals.)" data-hint="Which lifestyle ingests food and moves around?">
+                <div class="widget-row-prompt">1. <em>Amoeba</em> engulfs its prey and <em>Paramecium</em> swims after food.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Animal-like (protozoa)</button>
+                    <button data-choice="1">Plant-like (algae)</button>
+                    <button data-choice="2">Fungus-like (slime molds)</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Right &mdash; phytoplankton photosynthesize, so they are plant-like protists (algae). They are the ocean's main producers." data-hint="Which lifestyle makes food by photosynthesis?">
+                <div class="widget-row-prompt">2. Drifting phytoplankton capture sunlight and make their own food.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Animal-like (protozoa)</button>
+                    <button data-choice="1">Plant-like (algae)</button>
+                    <button data-choice="2">Fungus-like (slime molds)</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Right &mdash; a slime mold absorbs nutrients from decaying matter, a fungus-like way of living (though slime molds are not true fungi)." data-hint="Which lifestyle absorbs nutrients from decaying matter?">
+                <div class="widget-row-prompt">3. A slime mold creeps over a rotting log, absorbing nutrients.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Animal-like (protozoa)</button>
+                    <button data-choice="1">Plant-like (algae)</button>
+                    <button data-choice="2">Fungus-like (slime molds)</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127754; PART 3 &middot; THE MIGHTIEST OF THE SMALL</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Why phytoplankton matter</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Drifting in every sunlit sea are countless <strong>phytoplankton</strong> &mdash; photosynthetic protists too small to see. Because they photosynthesize across the enormous area of the oceans, they are a <strong>major source of Earth's atmospheric oxygen</strong>: a great share of every breath traces back to them. And because they turn sunlight into food, they are the <strong>base of nearly every aquatic food web</strong> &mdash; the producers that feed the tiny grazers, which feed the fish, seabirds, and whales.</p>
+        <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 6px; padding: 14px 20px; margin: 10px 0 0 0;">
+            <div style="font-size: 16px; color: #0e1c42; line-height: 1.7; text-align: center;"><strong>Phytoplankton = producers &rarr; oxygen for the air &amp; the base of ocean food webs</strong></div>
+            <div style="font-size: 14px; color: #666; line-height: 1.6; text-align: center; margin-top: 6px;">This looks forward to Module 10, where you'll trace energy flowing from producers up through an ecosystem.</div>
+        </div>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build the Three Domains Side by Side</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Build a Bacterium, an Archaeon, and a Eukaryotic cell &mdash; a protist is a fine choice for your eukaryote &mdash; and label the differences.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Explore Habitats of the Microbial World</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">In the pond scene, look for <em>Amoeba</em>, <em>Paramecium</em>, and drifting algae &mdash; the protists of today's lesson &mdash; and capture named snapshots.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 21.03 &middot; Classifying Protists</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Classify described protists by lifestyle (animal-like, plant-like, fungus-like) and explain in a sentence or two why phytoplankton are so important. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">The protists remind us that a familiar name can hide great diversity &mdash; and that some of the most important life on Earth is invisible. The phytoplankton, mere specks, help fill the air with oxygen and feed the seas. Next we meet the last of this week's four groups, the fungi, and correct one of biology's most common misunderstandings: that they are plants.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 3 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 21.03 &middot; Protists: The Eukaryotic Grab-Bag</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

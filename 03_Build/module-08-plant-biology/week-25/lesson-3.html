@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 25.03</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q3 &middot; Module 8</div>
+        <div style="font-size: 12px; color: #666;">Plant Biology</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 25.03</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Plant Hormones</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Wonder &mdash; plants that sense and respond without nerves</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 25.03</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Plant Hormones: Coordinating a Body Without Nerves</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; Auxin, Gibberellins, Ethylene, and Abscisic Acid</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">A plant has no brain and no nerves. So how does it &ldquo;know&rdquo; when to grow, when to ripen its fruit, when to drop its leaves, and when to shut its pores in a drought?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">The answer is <strong>hormones</strong> &mdash; chemical signals that travel through the plant. Today you meet four: <strong>auxin</strong> (elongation, bending toward light), <strong>gibberellins</strong> (stem growth, germination), <strong>ethylene</strong> (a gas &mdash; fruit ripening, leaf drop), and <strong>abscisic acid / ABA</strong> (the stress hormone &mdash; closes stomata, keeps seeds dormant).</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> name the major plant hormones and describe one effect of each.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain how hormones let a plant coordinate its growth and responses without a nervous system.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 25.03, <em>Chemical Messengers: How a Plant Runs Itself Without Nerves</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129514; PART 1 &middot; FOUR CHEMICAL SIGNALS</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Have you ever noticed bananas ripening faster in a closed bag, or a fruit bowl all going soft at once? What do you think is going on?</div>
+            <div class="widget-options">
+                <button data-response="You've seen ethylene in action. Ripening fruit releases ethylene gas, which drifts to nearby fruit and speeds their ripening too &mdash; the science behind 'one ripe apple spoils the barrel.' A closed bag traps the gas and speeds things up.">Something the ripe fruit gives off spreads to the others</button>
+                <button data-response="Close &mdash; it's not really about warmth. The key is a gas: ripening fruit releases ethylene, which reaches nearby fruit and triggers them to ripen too. A closed bag concentrates that gas.">It's just warmer / less air in the bag</button>
+                <button data-response="Great, you'll find out today. Ripening fruit releases a hormone that is a GAS &mdash; ethylene &mdash; and it spreads to nearby fruit and ripens them too. That's why fruit in a bowl or bag turns together.">I've noticed it but never knew why</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">The four hormones at a glance</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>Auxin</strong> promotes cell <strong>elongation</strong>; made at the shoot tip, it drives phototropism (bending toward light) and apical dominance. <strong>Gibberellins</strong> promote <strong>stem elongation</strong> and <strong>seed germination</strong>, breaking dormancy. <strong>Ethylene</strong> is a <strong>gas</strong> that triggers fruit <strong>ripening</strong> and the drop of leaves and flowers. <strong>Abscisic acid (ABA)</strong> is the <strong>stress</strong> hormone: it <strong>closes stomata</strong> in drought and keeps seeds dormant, generally opposing the growth-promoting hormones.</p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129513; PART 2 &middot; HORMONE &rarr; EFFECT</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Match each hormone to what it does</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 4px 0;">Read each scenario and pick the hormone responsible.</p>
+
+        <!-- ow-select -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129513; MATCH IT &middot; SCENARIO &rarr; HORMONE</div>
+            <div class="widget-row" data-correct="c" data-hint="A gas that spreads from fruit to fruit and triggers ripening.">
+                <div class="widget-row-prompt">A grocer puts a ripe banana in a box of hard green tomatoes; days later the tomatoes are ripe too. Which hormone did this?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; auxin drives elongation and bending toward light, not ripening. The gas that ripens fruit and spreads between fruits is ethylene.">Auxin</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; ABA is the stress hormone that closes stomata and keeps seeds dormant. Ripening is triggered by ethylene, a gas.">Abscisic acid (ABA)</button>
+                    <button data-choice="c" data-fb="Correct. Ethylene is a gas that triggers ripening and spreads through the air from fruit to fruit &mdash; exactly why one ripe banana ripens a whole box.">Ethylene</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="a" data-hint="This 'stress' hormone conserves water when the plant is dry.">
+                <div class="widget-row-prompt">During a drought, a plant shuts its stomata to lose less water. Which hormone signals the closing?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. Abscisic acid (ABA) is the stress hormone: in drought it signals the guard cells to close the stomata, conserving water. It also keeps seeds dormant.">Abscisic acid (ABA)</button>
+                    <button data-choice="b" data-fb="No &mdash; gibberellins promote stem growth and seed germination. Closing stomata under drought stress is the job of ABA.">Gibberellins</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; ethylene is the ripening gas. The hormone that closes stomata in a drought is ABA.">Ethylene</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="b" data-hint="Made at the shoot tip; makes cells stretch longer and drives bending toward light.">
+                <div class="widget-row-prompt">A shoot bends toward a sunny window because cells on one side elongate more than the other. Which hormone is responsible?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; ethylene is the ripening gas, not the elongation hormone. Bending toward light is driven by auxin.">Ethylene</button>
+                    <button data-choice="b" data-fb="Correct. Auxin promotes cell elongation and is central to phototropism &mdash; it gathers on the shaded side, those cells stretch more, and the shoot bends toward the light.">Auxin</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; ABA restrains growth and conserves water. The growth-and-bending hormone here is auxin.">Abscisic acid (ABA)</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="c" data-hint="This hormone helps break dormancy and get a seed to sprout, and lengthens stems.">
+                <div class="widget-row-prompt">A dormant seed receives a signal to break dormancy and germinate. Which hormone promotes this (and also stem elongation)?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; ABA does the opposite: it keeps seeds dormant. The hormone that promotes germination is gibberellin.">Abscisic acid (ABA)</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; ethylene ripens fruit and drops leaves. Breaking seed dormancy and lengthening stems is the work of gibberellins.">Ethylene</button>
+                    <button data-choice="c" data-fb="Correct. Gibberellins promote seed germination (breaking dormancy) and stem elongation &mdash; the growth-and-sprout hormone.">Gibberellins</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; COORDINATION WITHOUT A BRAIN</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Why hormones are the plant&rsquo;s control system</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Notice that these hormones do not all push the same way. Auxin and gibberellins say &ldquo;grow&rdquo;; ABA often says &ldquo;wait and conserve.&rdquo; A plant&rsquo;s behavior is the <strong>balance</strong> of these competing chemical signals. With no brain and no nerves, a plant still acts as one coordinated body &mdash; growing, timing, and protecting itself entirely through chemistry. This sets up <strong>Lesson 25.04</strong> (tropisms) and a striking forward link to <strong>Module 9</strong>, where you will meet the human <strong>endocrine system</strong> &mdash; hormones coordinating <em>your</em> body the same way.</p>
+
+        <!-- ow-select: coordination -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129504; CHECK YOUR THINKING</div>
+            <div class="widget-row" data-correct="b" data-hint="How does a rooted, brainless plant get its parts to act together?">
+                <div class="widget-row-prompt">A plant has no nervous system, yet its roots, stems, leaves, and fruit all act in a coordinated way. How is this possible?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; plants have no brain or nerves. Coordination comes from chemical signals (hormones), not from a nervous system.">A simple plant brain directs the parts</button>
+                    <button data-choice="b" data-fb="Correct. Hormones &mdash; chemical signals made in one part and acting in another &mdash; coordinate the whole plant without any nerves. Chemistry is the plant's control system.">Hormones carry chemical signals that coordinate the whole plant</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; each part is not really independent; they are coordinated. The coordination is done by hormones, chemical messengers.">Each part acts completely on its own, with no coordination</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="a" data-hint="Think about which human system uses chemical messengers rather than nerves.">
+                <div class="widget-row-prompt">Plant hormones are a close parallel to which human body system you will study in Module 9?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. The endocrine system uses hormones &mdash; chemical messengers &mdash; to coordinate the human body, just as plant hormones coordinate the plant. Same solution to the same problem.">The endocrine system (chemical messengers)</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; the skeletal system provides support and structure. Plant hormones parallel the chemical-signaling endocrine system.">The skeletal system</button>
+                    <button data-choice="c" data-fb="Close in spirit, but the nervous system uses fast electrical signals. Plant hormones match the slower chemical signaling of the endocrine system.">The nervous system (electrical signals)</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build a Flower; Show Double Fertilization &amp; Seed</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Build and label a flower, then animate pollination through double fertilization to seed and fruit (pairs with Lessons 25.01 &amp; 25.02).</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Explore Phototropism &amp; Auxin</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Watch a seedling bend toward light and see <strong>auxin</strong> &mdash; today&rsquo;s hormone &mdash; gather on the shaded side and elongate those cells. This VR brings this lesson&rsquo;s auxin to life and feeds the tropisms lesson (25.04).</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 25.03 &middot; Match Hormone to Effect</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Match each of the four hormones to one of its effects, and name the one that is a gas. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Hormones are how a plant runs itself &mdash; four chemical signals that grow it, ripen it, protect it, and time its life, with no brain in charge. Auxin especially is about to take center stage: in <strong>Lesson 25.04</strong> you will watch it steer a shoot toward the light and use that evidence to argue that plants genuinely <em>sense and respond</em> to their world.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 3 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 25.03 &middot; Plant Hormones: Coordinating a Body Without Nerves</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

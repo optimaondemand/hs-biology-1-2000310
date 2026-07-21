@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 5.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 3</div>
+        <div style="font-size: 12px; color: #666;">Cell Structure, Function, and Transport</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 5.02</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Two Kinds of Cell, and Why Cells Stay Small</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Perseverance &mdash; seeing what others could not</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 5.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Two Kinds of Cell, and Why Cells Stay Small</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">If everything is made of cells, why are cells so <em>small</em> &mdash; and why do they come in two very different kinds?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today you sort the living world&rsquo;s cells into two great groups &mdash; <strong>prokaryotic</strong> and <strong>eukaryotic</strong> &mdash; and learn a rule that limits the size of all of them. As a cell grows, its <strong>volume</strong> outruns its <strong>surface area</strong>, and the membrane can no longer keep up. That single geometric fact explains why cells stay small.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> compare prokaryotic and eukaryotic cells, using the presence of a membrane-bound nucleus.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain why a high surface-area-to-volume ratio limits cell size.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish the cell wall from the cell membrane and say which cells have each.</div>
+        </div>
+    </div>
+
+    <!-- Materials -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; WHAT YOU NEED FOR THIS LESSON</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 5.02, <em>Two Kinds of Cell, and Why Cells Stay Small</em> (read it before this lesson)</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Your scientific notebook (a dedicated notebook or a Word document in your OneDrive)</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129440; PART 1 &middot; PROKARYOTES AND EUKARYOTES</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">A bacterium and one of your skin cells are both alive. What do you think is the single biggest difference between them? (No wrong answer &mdash; just check in.)</div>
+            <div class="widget-options">
+                <button data-response="Size is part of it &mdash; your cell is bigger. But the defining difference is deeper: your cell keeps its DNA inside a membrane-bound nucleus (eukaryotic); the bacterium does not (prokaryotic).">&#128207; One is bigger</button>
+                <button data-response="Exactly the right instinct. The defining line is the nucleus: a eukaryotic cell (yours) wraps its DNA in a membrane-bound nucleus; a prokaryotic cell (the bacterium) keeps its DNA loose in the nucleoid.">&#129440; One has a nucleus</button>
+                <button data-response="A reasonable guess &mdash; but both are fully alive and both can reproduce. The defining structural difference is the nucleus: yours has one, the bacterium does not.">&#10067; One isn&rsquo;t really alive</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">One feature draws the line</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Every cell on Earth is either <strong>prokaryotic</strong> or <strong>eukaryotic</strong>, and the dividing line is the <strong>nucleus</strong>. A <strong>prokaryote</strong> has <em>no</em> membrane-bound nucleus and no membrane-bound organelles; its DNA sits loose in a region called the <strong>nucleoid</strong>. Prokaryotes are generally small and simple and make up the domains <strong>Bacteria</strong> and <strong>Archaea</strong> &mdash; almost certainly the first cells on Earth. A <strong>eukaryote</strong> has a true <strong>nucleus</strong> wrapping its DNA, plus membrane-bound <strong>organelles</strong> that each do a specialized job. Eukaryotic cells are larger and more complex, and they build animals, plants, fungi, and protists.</p>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 14px 0 8px 0;">The wall is not the membrane</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Watch a common trap. The <strong>cell membrane</strong> (a phospholipid bilayer) surrounds <em>every</em> cell and controls what crosses. The <strong>cell wall</strong> is a stiff outer layer <em>outside</em> the membrane that adds support. The key fact: <strong>every cell has a membrane, but not every cell has a wall.</strong> Plants, fungi, and most bacteria have walls; <em>animal cells do not.</em> So a wall never tells you prokaryote from eukaryote &mdash; only the membrane is universal.</p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128208; PART 2 &middot; WHY CELLS STAY SMALL</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">When the inside outruns the outside</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">A cell trades materials with its surroundings through its <strong>membrane</strong> &mdash; food and oxygen in, waste out. So its survival depends on having enough <strong>surface area</strong> to feed its <strong>volume</strong>. Here is the problem: as a cell grows, volume rises <em>much</em> faster than surface area. Double a cube&rsquo;s width and surface area rises four times, but volume rises <strong>eight</strong> times. When the <strong>surface-area-to-volume (SA:V) ratio</strong> drops too low, the membrane can no longer supply the interior fast enough, and the center starves. This is why cells stay small &mdash; and why a cell that grows too large instead <em>divides</em>, restoring a high SA:V in each daughter cell. Form follows function: the surface must keep pace with the volume it serves.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 8px 0 4px 0;">Try it: check your grip on SA:V, the two cell types, and the wall-versus-membrane trap.</p>
+
+        <!-- WI inline self-check (ow-select) -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; CELL TYPES &amp; SURFACE-AREA-TO-VOLUME</div>
+            <div class="widget-question">Tap the answer that fits each clue. You&rsquo;ll get instant feedback.</div>
+
+            <div class="widget-row" data-correct="1" data-fb="Right &mdash; a cell with no membrane-bound nucleus, DNA loose in the nucleoid, is prokaryotic." data-hint="No nucleus, DNA in a nucleoid &mdash; which type is that?">
+                <div class="widget-row-prompt">1. A small cell with no nucleus and DNA loose in the nucleoid is &hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="0">Eukaryotic</button>
+                    <button data-choice="1">Prokaryotic</button>
+                    <button data-choice="2">Not a real cell</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Right &mdash; as a cell grows, the SA:V ratio falls, because volume rises faster than surface area." data-hint="When a cell gets bigger, does its surface-area-to-volume ratio rise or fall?">
+                <div class="widget-row-prompt">2. As a cell grows larger, its surface-area-to-volume ratio &hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="0">Decreases</button>
+                    <button data-choice="1">Increases</button>
+                    <button data-choice="2">Stays exactly the same</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Right &mdash; the cell membrane surrounds every cell; a cell wall does not. Animal cells have a membrane but no wall." data-hint="Which structure does EVERY cell have, while only some have the other?">
+                <div class="widget-row-prompt">3. Which statement is correct about the wall and the membrane?</div>
+                <div class="widget-options">
+                    <button data-choice="0">Every cell has a wall but only some have a membrane</button>
+                    <button data-choice="1">Wall and membrane are two names for the same thing</button>
+                    <button data-choice="2">Every cell has a membrane; only some cells have a wall</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Right &mdash; a cell growing too large divides into two, which restores a high SA:V ratio in each new cell." data-hint="What does a cell do when it would otherwise grow too big to feed itself?">
+                <div class="widget-row-prompt">4. To avoid an SA:V ratio that is too low, a growing cell usually &hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="0">Grows a thicker wall</button>
+                    <button data-choice="1">Divides into two smaller cells</button>
+                    <button data-choice="2">Loses its membrane</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128279; PART 3 &middot; A RULE THAT FOLLOWS YOU ALL YEAR</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Surface area, everywhere you look</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The SA:V rule is one of biology&rsquo;s master ideas, and it returns at every scale. It is why a leaf is thin and flat to soak up light and gas (<strong>Module 8</strong>), why your lungs branch into millions of tiny sacs, and why your small intestine is folded into a vast absorbing surface (<strong>Module 9</strong>). Whenever life must exchange materials across a surface, it maximizes that surface. The smallness of a single cell and the design of a whole organ are the same idea wearing different clothes.</p>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build a Prokaryote and a Eukaryote Side by Side</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Construct both cell types and label the nucleus, organelles, and wall &mdash; making today&rsquo;s comparison something you build with your hands.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Tour an Endosymbiosis Scene</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Watch a free-living prokaryote become an organelle &mdash; a preview of Lesson 5.03.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 5.02 &middot; Sorting Cells and Sizing Them Up</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Sort features into prokaryote vs. eukaryote, then reason from an SA:V calculation about why a cell that grows too large must divide. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Two cell types and one size rule set up everything ahead. The eukaryotic organelles you just met are explained by the endosymbiosis of Lesson 5.03; the membrane you named here is the gatekeeper you&rsquo;ll study in Weeks 6&ndash;7; and the SA:V rule returns in plants and the human body. Like the observers of Lesson 5.01, you are learning to read structure for its function &mdash; patiently, and with care.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 5.02 &middot; Two Kinds of Cell, and Why Cells Stay Small</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

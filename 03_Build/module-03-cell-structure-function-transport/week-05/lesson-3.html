@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 5.03</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 3</div>
+        <div style="font-size: 12px; color: #666;">Cell Structure, Function, and Transport</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 5.03</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">The Cell That Swallowed a Cell</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Perseverance &mdash; seeing what others could not</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 5.03</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">The Cell That Swallowed a Cell</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Could two of your cell&rsquo;s organelles have once been free-living bacteria &mdash; and how would we ever know?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today you meet a startling claim: the <strong>mitochondrion</strong> and the <strong>chloroplast</strong> began as independent prokaryotes that were engulfed and never digested. This is <strong>endosymbiotic theory</strong>. You will learn its four lines of evidence, meet the scientist who fought for it, and practice the move at the heart of this course &mdash; reasoning from evidence to a claim.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain what endosymbiotic theory claims about mitochondria and chloroplasts.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> describe the four lines of evidence that support endosymbiotic theory.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> use claim, evidence, and reasoning to argue why that evidence supports the theory.</div>
+        </div>
+    </div>
+
+    <!-- Materials -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; WHAT YOU NEED FOR THIS LESSON</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 5.03, <em>The Cell That Swallowed a Cell</em> (read it before this lesson)</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Your scientific notebook (a dedicated notebook or a Word document in your OneDrive)</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129440; PART 1 &middot; AN ANCIENT PARTNERSHIP</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Imagine someone told you that part of your own cells used to be free-living bacteria. What&rsquo;s your honest first reaction? (No wrong answer.)</div>
+            <div class="widget-options">
+                <button data-response="That&rsquo;s a healthy scientific reaction &mdash; extraordinary claims need strong evidence. Today you&rsquo;ll see the four independent clues that turned this surprising idea into accepted theory.">&#129300; That sounds far-fetched</button>
+                <button data-response="It really is remarkable &mdash; and that&rsquo;s exactly why it took strong evidence to convince biologists. Today you&rsquo;ll weigh that evidence for yourself.">&#10024; That&rsquo;s amazing</button>
+                <button data-response="Good question to hold onto &mdash; &lsquo;how would we know?&rsquo; is the scientist&rsquo;s instinct. The answer is four independent lines of evidence, which you&rsquo;ll evaluate in today&rsquo;s CER practice.">&#10067; How could anyone know that?</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Endo- (inside) + symbiosis (living together)</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The <strong>endosymbiotic theory</strong> proposes that the <strong>mitochondrion</strong> (the site of respiration) and the <strong>chloroplast</strong> (the site of photosynthesis) began as free-living <strong>prokaryotes</strong>. Long ago, a larger host cell engulfed a smaller bacterium but did not digest it; the two began to live together, and over time the inner cell became a permanent <strong>organelle</strong>. Mitochondria descend from an engulfed respiring bacterium; chloroplasts, in plants and algae, from an engulfed photosynthetic bacterium. If the theory is true, then ancient bacteria still live, transformed, inside every plant and animal cell &mdash; doing the same jobs they did billions of years ago.</p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128300; PART 2 &middot; FOUR LINES OF EVIDENCE</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Four independent clues, one conclusion</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">A bold claim needs strong support. Endosymbiotic theory rests on four observations, each pointing the same way: these organelles have their own <strong>circular DNA</strong> (separate from the nucleus and bacterium-shaped); their own <strong>ribosomes</strong> (more bacterial than the cell&rsquo;s own); a <strong>double membrane</strong> (just what you&rsquo;d expect if the host&rsquo;s membrane wrapped around an already-membraned cell); and the ability to divide by <strong>binary fission</strong>, the way bacteria do. No single clue is decisive &mdash; but four independent clues converging on the same answer make any other explanation very hard to defend.</p>
+
+        <!-- HISTORY callout (TEAL) -->
+        <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128300; A HUMAN STORY &middot; REJECTED FIFTEEN TIMES, THEN VINDICATED</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">When the American biologist <strong>Lynn Margulis</strong> proposed the modern endosymbiotic theory in <strong>1967</strong>, most of her field thought it was too strange to be true, and her landmark paper was reportedly rejected by about <strong>fifteen journals</strong> before one accepted it. For years the idea lingered at the margins of biology. But Margulis kept gathering evidence and kept making the case. Then the tools caught up: when scientists were finally able to <em>sequence</em> the DNA inside mitochondria and chloroplasts, it turned out to be unmistakably bacterial &mdash; exactly as she had predicted. The theory she defended against the consensus is now in every textbook. Hers is this module&rsquo;s clearest lesson in <strong>perseverance</strong>: an idea is not wrong merely because it is unwelcome, and a scientist who follows the evidence may simply have to wait for everyone else to catch up.</div>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 8px 0 4px 0;">Try it: connect each piece of evidence to what it shows.</p>
+
+        <!-- Evaluative single-select -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; WHAT DOES EACH CLUE SHOW?</div>
+            <div class="widget-question">Tap the answer that fits each clue. You&rsquo;ll get instant feedback.</div>
+
+            <div class="widget-row" data-correct="1" data-fb="Right &mdash; a double membrane is what you&rsquo;d expect if a host membrane wrapped around a cell that already had its own membrane." data-hint="Why would an engulfed cell end up with TWO membranes?">
+                <div class="widget-row-prompt">1. The double membrane around a mitochondrion is best explained by &hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="0">The cell wall thickening over time</button>
+                    <button data-choice="1">A host membrane wrapping an already-membraned cell</button>
+                    <button data-choice="2">Two nuclei fusing together</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Right &mdash; their own circular, bacterium-like DNA strongly suggests these organelles were once independent bacteria." data-hint="What kind of molecule, found inside the organelle, looks bacterial?">
+                <div class="widget-row-prompt">2. Mitochondria and chloroplasts carry their own &hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="0">Circular DNA, separate from the nucleus</button>
+                    <button data-choice="1">Cell wall made of cellulose</button>
+                    <button data-choice="2">Copy of the entire nucleus</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Right &mdash; they reproduce by binary fission, splitting in two the way bacteria do, rather than being built fresh by the cell." data-hint="How do these organelles make more of themselves &mdash; the same way bacteria do?">
+                <div class="widget-row-prompt">3. These organelles make more of themselves by &hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="0">Being assembled from scratch by the nucleus</button>
+                    <button data-choice="1">Absorbing nearby organelles</button>
+                    <button data-choice="2">Binary fission, like bacteria</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Right &mdash; no single clue proves it, but four independent clues all pointing the same way make the theory very strong." data-hint="What makes the overall argument convincing &mdash; one clue, or several pointing the same way?">
+                <div class="widget-row-prompt">4. The theory is convincing mainly because &hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="0">One clue proves it beyond all doubt</button>
+                    <button data-choice="1">Several independent clues converge on the same answer</button>
+                    <button data-choice="2">A famous scientist said so</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 — CER PRACTICE -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9999;&#65039; PART 3 &middot; CER PRACTICE (IN-LESSON, NOT GRADED)</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Build the argument yourself</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Scientists do not just collect facts &mdash; they build <strong>arguments</strong> from them. The pattern you will use all year is <strong>Claim &rarr; Evidence &rarr; Reasoning</strong>: state what you think is true, give the observations that support it, and explain <em>why</em> those observations lead to that claim. Practice it now on endosymbiosis. Write your answer in your notebook; this is rehearsal, not a graded essay.</p>
+
+        <!-- CER practice prompt box (gold) -->
+        <div style="background: #FDF3E3; border-left: 5px solid #C7922C; border-top: 3px solid #E0A93B; border-radius: 6px; padding: 16px 22px; margin: 8px 0 14px 0;">
+            <div style="font-size: 11px; color: #8a6a1d; margin-bottom: 10px;">&#129513; CER PRACTICE PROMPT</div>
+            <div style="font-size: 18px; color: #0e1c42; font-style: italic; line-height: 1.6; margin-bottom: 12px;">&ldquo;Mitochondria and chloroplasts were once free-living prokaryotes.&rdquo; Does the evidence support this claim? Write a short CER paragraph (4&ndash;6 sentences).</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">
+                <strong>Claim:</strong> State whether the evidence supports endosymbiotic theory.<br />
+                <strong>Evidence:</strong> Name at least <strong>two</strong> of the four lines of evidence (circular DNA, own ribosomes, double membrane, binary fission).<br />
+                <strong>Reasoning:</strong> Explain <em>why</em> each piece you chose points to an ancient free-living cell &mdash; what would a bacterium have that a normal organelle would not?
+            </div>
+        </div>
+
+        <!-- Reflective scale on confidence -->
+        <div class="optima-widget ow-scale">
+            <div class="widget-kicker">&#9889; SELF-CHECK &middot; HOW STRONG IS YOUR REASONING?</div>
+            <div class="widget-question">After writing, rate how clearly your paragraph explains <em>why</em> the evidence supports the claim (not just lists it).</div>
+            <div class="widget-options">
+                <button data-response="That&rsquo;s honest &mdash; reasoning is the hardest part of CER. Go back and add, for each piece of evidence, one sentence beginning &lsquo;This suggests a free-living cell because&hellip;&rsquo;">1 &mdash; Just listed</button>
+                <button data-response="Good progress. Make sure every piece of evidence is tied to the claim with a clear &lsquo;because&hellip;&rsquo; &mdash; that link is the reasoning.">2 &mdash; Getting there</button>
+                <button data-response="Strong work. If a classmate could follow your &lsquo;because&hellip;&rsquo; for each clue, your reasoning is doing its job. This is exactly the skill your graded module CER will need.">3 &mdash; Clearly explained</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- FORWARD BRIDGE -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128279; LOOKING AHEAD &middot; INTO MODULE 4</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Keep these two organelles in mind &mdash; you are about to spend three weeks inside them. In <strong>Module 4 (Cell Energy)</strong>, the <strong>chloroplast</strong> captures sunlight into sugar through photosynthesis, and the <strong>mitochondrion</strong> releases that energy through respiration. Endosymbiosis explains <em>why</em> the cell&rsquo;s two power plants look and act like ancient bacteria. The history you learned today is the root of the chemistry you study next.</p>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build a Prokaryote and a Eukaryote Side by Side</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Construct both cell types and label the nucleus, organelles, and wall.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Tour an Endosymbiosis Scene</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Walk through a scene showing a free-living prokaryote becoming a mitochondrion or chloroplast, and snapshot the evidence &mdash; the perfect companion to today&rsquo;s lesson.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 5.03 &middot; Weighing the Evidence for Endosymbiosis</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Match each line of evidence to what it shows, then write a short structured response explaining why the double membrane and circular DNA support the theory. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Endosymbiosis is a model of how science really works: a startling claim, met with doubt, slowly winning out as independent evidence converges. The reasoning you practiced today &mdash; claim, evidence, why &mdash; is the same skill your graded module essay will demand, and the same patience that carried Margulis from rejection to vindication. That is the <strong>perseverance</strong> at this module&rsquo;s heart.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 5.03 &middot; The Cell That Swallowed a Cell</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button, .ow-scale .widget-options button');
+    if (rBtn && !rBtn.closest('.widget-row')) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 18.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 6</div>
+        <div style="font-size: 12px; color: #666;">Evolution and Natural Selection</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 18.02</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">When Nothing Changes</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Courage &mdash; Darwin following evidence into 20 years of controversy</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 18.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">When Nothing Changes: Hardy&ndash;Weinberg Equilibrium</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; The Null Model of Evolution</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">How can you prove a population is evolving? Strangely, you start by describing a population that is <em>not</em>.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today you meet a powerful thinking tool: <strong>Hardy&ndash;Weinberg equilibrium</strong>. It describes an imaginary population in which allele frequencies never change &mdash; the snapshot of a population standing perfectly still. Real populations never quite meet its five conditions, and that is exactly the point: by showing what <em>no</em> evolution would look like, Hardy&ndash;Weinberg gives us a baseline to measure real change against. When a population departs from it, we know evolution is at work.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain why Hardy&ndash;Weinberg equilibrium is a null model &mdash; a description of a population that is not evolving.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> list the five conditions that must hold for equilibrium and identify which one is violated in a given scenario.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> use the equations p&nbsp;+&nbsp;q&nbsp;=&nbsp;1 and p&sup2;&nbsp;+&nbsp;2pq&nbsp;+&nbsp;q&sup2;&nbsp;=&nbsp;1 to find a simple allele or genotype frequency.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 18.02, <em>When Nothing Changes: Hardy&ndash;Weinberg Equilibrium</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129516; PART 1 &middot; A POPULATION HOLDING PERFECTLY STILL</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">The idea of a null model</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Recall from Week 17 that <strong>evolution is a change in allele frequencies</strong> in a population over time &mdash; a shift in how common each version of a gene is. In 1908 two thinkers, working independently, asked a clever question: what would have to be true for those frequencies to <em>never</em> change at all? The answer is the <strong>Hardy&ndash;Weinberg principle</strong>. It says that allele frequencies will stay constant from one generation to the next &mdash; the population is in <strong>equilibrium</strong> &mdash; as long as five conditions all hold.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">This is what scientists call a <strong>null model</strong>: a description of &ldquo;nothing happening,&rdquo; written down on purpose so we have something to compare reality against. Because real populations almost never meet all five conditions, Hardy&ndash;Weinberg rarely describes the real world &mdash; and that is its power. <strong>When a real population departs from equilibrium, that departure is the signature of evolution.</strong> The model tells us what the absence of evolution would look like, so we can recognize its presence.</p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129521; PART 2 &middot; THE FIVE CONDITIONS</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Break any one, and the population evolves</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">For allele frequencies to stay frozen, all five must be true at once:</p>
+        <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 6px; padding: 14px 22px; margin: 6px 0 12px 0;">
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.8;"><strong>1. No mutation</strong> &mdash; no new alleles are created.<br /><strong>2. No gene flow</strong> &mdash; no individuals migrate in or out.<br /><strong>3. No natural selection</strong> &mdash; every genotype survives and reproduces equally.<br /><strong>4. Random mating</strong> &mdash; mates are chosen without regard to genotype.<br /><strong>5. Very large population</strong> &mdash; so chance (genetic drift) has no effect.</div>
+        </div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Notice that conditions 1, 2, 3, and 5 are simply the four mechanisms of evolution you met last week (mutation, gene flow, selection, and drift) turned off &mdash; plus random mating. Break any single one, and the frequencies shift: the population is evolving.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 14px 0 4px 0;">For each scenario, name the broken condition. Tap an answer for instant feedback.</p>
+
+        <!-- Evaluative single-select -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; WHICH CONDITION IS BROKEN?</div>
+            <div class="widget-question">In each population something has disturbed equilibrium. Which Hardy&ndash;Weinberg condition was violated?</div>
+
+            <div class="widget-row" data-correct="2" data-hint="Did some genotypes leave more offspring than others?">
+                <div class="widget-row-prompt">1. Dark moths survive better than light moths on soot-darkened bark, so they leave more offspring each generation.</div>
+                <div class="widget-options">
+                    <button data-choice="0" data-fb="Not quite &mdash; nothing here is migrating in or out. The unequal survival of genotypes is natural selection.">No gene flow</button>
+                    <button data-choice="1" data-fb="Not quite &mdash; no new alleles are appearing. Unequal survival of existing genotypes is natural selection.">No mutation</button>
+                    <button data-choice="2" data-fb="Right &mdash; some genotypes survive and reproduce better than others. That is natural selection at work.">No natural selection</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-hint="Are individuals moving between populations?">
+                <div class="widget-row-prompt">2. A storm blows a flock of birds from a mainland onto an island population, where they breed with the locals.</div>
+                <div class="widget-options">
+                    <button data-choice="0" data-fb="Right &mdash; migrants arriving and breeding carry alleles in. That is gene flow, breaking the &lsquo;no gene flow&rsquo; condition.">No gene flow</button>
+                    <button data-choice="1" data-fb="Not quite &mdash; no new mutations are described. Individuals arriving and breeding is gene flow.">No mutation</button>
+                    <button data-choice="2" data-fb="Not quite &mdash; the story is about birds arriving, not unequal survival. That is gene flow.">No natural selection</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-hint="Did a brand-new version of a gene appear?">
+                <div class="widget-row-prompt">3. A rare error during DNA copying creates a brand-new allele that did not exist in the population before.</div>
+                <div class="widget-options">
+                    <button data-choice="0" data-fb="Not quite &mdash; nobody migrated. A brand-new allele appearing is mutation.">No gene flow</button>
+                    <button data-choice="1" data-fb="Right &mdash; a new allele formed by a DNA-copying error. That is mutation, the ultimate source of new variation.">No mutation</button>
+                    <button data-choice="2" data-fb="Not quite &mdash; no unequal survival is described. A new allele appearing is mutation.">No natural selection</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128202; PART 3 &middot; THE EQUATIONS, KEPT SIMPLE</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">p, q, and the genotype frequencies</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Imagine a gene with just two alleles. We call the frequency of one allele <strong>p</strong> and the other <strong>q</strong>. Because every allele in the pool is one or the other, the two must add to the whole:</p>
+        <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 6px; padding: 14px 20px; margin: 6px 0;">
+            <div style="font-size: 18px; color: #0e1c42; line-height: 1.7; text-align: center;"><strong>p&nbsp;+&nbsp;q&nbsp;=&nbsp;1</strong> &nbsp;&nbsp;(allele frequencies)<br /><strong>p&sup2;&nbsp;+&nbsp;2pq&nbsp;+&nbsp;q&sup2;&nbsp;=&nbsp;1</strong> &nbsp;&nbsp;(genotype frequencies)</div>
+            <div style="font-size: 14px; color: #666; line-height: 1.6; text-align: center; margin-top: 6px;">p&sup2; = homozygous dominant &middot; 2pq = heterozygous (carriers) &middot; q&sup2; = homozygous recessive</div>
+        </div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 10px 0 0 0;"><strong>A worked example.</strong> Suppose a recessive trait shows up in 1 of every 100 individuals, so q&sup2; = 0.01. Then q = &radic;0.01 = 0.1, and p = 1 &minus; 0.1 = 0.9. The carrier frequency (heterozygotes) is 2pq = 2 &times; 0.9 &times; 0.1 = 0.18 &mdash; about 18 of every 100 individuals carry the allele without showing the trait. From one observed number, the model lets you estimate the hidden rest.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 14px 0 4px 0;">Flip the card to test the worked example yourself.</p>
+
+        <!-- Flip card -->
+        <div class="optima-widget ow-flip">
+            <div class="ow-flip-front">
+                <div class="widget-kicker">&#128260; FLIP CARD &middot; TAP TO REVEAL</div>
+                <div style="font-size: 18px; color: #0E1C42; line-height: 1.6;">In a population, q&sup2; = 0.04 for a recessive trait.<br />What is q? What is p? What fraction are carriers (2pq)?<br /><span style="font-size: 14px; color: #1B6A94;">(Work it out, then tap to flip.)</span></div>
+            </div>
+            <div class="ow-flip-back">
+                <div class="widget-kicker">&#9989; THE ANSWER</div>
+                <div style="font-size: 18px; color: #0E1C42; line-height: 1.6;">q = &radic;0.04 = <strong>0.2</strong>; p = 1 &minus; 0.2 = <strong>0.8</strong>; carriers 2pq = 2 &times; 0.8 &times; 0.2 = <strong>0.32</strong>.<br /><span style="font-size: 15px; color: #1a2340;">So about 32% of the population carries one copy of the allele without showing the trait. Take the square root of q&sup2; to get q, subtract from 1 to get p, then 2pq gives the carriers.</span></div>
+            </div>
+        </div>
+
+        <!-- WEB-INTERACTIVE link-out -->
+        <div style="background: #FDF3E3; border-left: 5px solid #C7922C; border-radius: 6px; padding: 16px 22px; margin: 12px 0;">
+            <div style="font-size: 11px; color: #8a6a1d; margin-bottom: 10px;">&#128279; EXPLORE &middot; AN ALLELE-FREQUENCY SIMULATOR</div>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.65; margin-bottom: 8px;">Open the <strong>Hardy&ndash;Weinberg / population-genetics simulator</strong> linked at the top of this Canvas page (your teacher will post a vetted simulator, such as the PhET <em>Natural Selection</em> simulation or an allele-frequency population-genetics tool). Start with selection, migration, and mutation all turned <strong>off</strong> and a large population, and watch the allele frequencies hold steady &mdash; equilibrium. Then switch on selection or migration, or shrink the population, and watch the frequencies start to drift. You are watching the null model break.</div>
+            <div style="font-size: 14px; color: #8a6a1d; font-style: italic;">Note: the live link sits at the top of this lesson item in Canvas. If you cannot reach it, ask your teacher to repost the simulator URL.</div>
+        </div>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build a Simple Cladogram of Speciation Events</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Arrange organisms on a branching tree by shared characters, place a speciation event at each branch point, and record a walkthrough explaining how each branch is one population splitting into two.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Walk the Miller&ndash;Urey Apparatus &amp; Early-Earth Scene</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Walk through a model of the Miller&ndash;Urey apparatus and an early-Earth environment, observe where amino acids collect, and capture named snapshots.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 18.02 &middot; When Nothing Changes</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Name which Hardy&ndash;Weinberg condition is violated in given scenarios, and complete one simple p/q or q&sup2; calculation with your reasoning shown. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Hardy&ndash;Weinberg equilibrium is the careful description of a population that is <em>not</em> evolving &mdash; held still by five conditions that real life almost never satisfies. Its value is as a measuring stick: when a real population departs from the equilibrium the equations predict, we have evidence that one of the evolutionary mechanisms is at work. To detect change, first describe stillness honestly. That is good science.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 18.02 &middot; When Nothing Changes: Hardy&ndash;Weinberg Equilibrium</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

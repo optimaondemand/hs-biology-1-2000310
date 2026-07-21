@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 8.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 4</div>
+        <div style="font-size: 12px; color: #666;">Cell Energy</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 8.02</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Catching the Light</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Service &mdash; the leaf that feeds all life</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 8.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Catching the Light</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; Photosynthesis and the Chloroplast</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">A tree grows into tons of solid wood. Where does all that mass actually come from?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today you meet <strong>photosynthesis</strong> &mdash; Greek for &ldquo;putting together with light.&rdquo; You will write and read its overall equation, tour the <strong>chloroplast</strong> where it happens, and locate the two stages we will study this week. Along the way, two patient experimenters will show you how this idea was pried loose from a centuries-old mistake.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> write and interpret the overall equation for photosynthesis.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> label the chloroplast and locate where its two stages happen.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain why producers feed the living world.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 8.02, <em>Catching the Light</em> &mdash; your anchor text for this lesson. Read it before working through the parts below.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127807; PART 1 &middot; PUTTING MATTER TOGETHER WITH LIGHT</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">A 200-pound tree grew from a tiny seed. If you weighed the soil in its pot before and after, you&rsquo;d find the soil barely changed. So where did most of the tree&rsquo;s mass come from? (No wrong answer &mdash; just predict.)</div>
+            <div class="widget-options">
+                <button data-response="That&rsquo;s the surprising truth. Most of a tree&rsquo;s mass is built from carbon pulled out of CO&#8322; in the AIR, using the energy of sunlight. The soil supplies water and minerals, but the bulk of the wood is, astonishingly, captured air.">Mostly from carbon dioxide in the air</button>
+                <button data-response="A very natural guess &mdash; and the one people held for centuries. But the soil barely changes in mass. Most of a tree is built from CO&#8322; in the AIR, captured by photosynthesis. That&rsquo;s exactly the mistake van Helmont&rsquo;s willow experiment helped expose.">Mostly from the soil it grew in</button>
+                <button data-response="Water matters &mdash; but it&rsquo;s not the main source of the SOLID mass. Most of a tree&rsquo;s dry weight is carbon captured from CO&#8322; in the air by photosynthesis. Van Helmont guessed water; he was half right and half wrong.">Mostly from the water it was given</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">The equation, read as a sentence</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Photosynthesis takes low-energy raw materials and, powered by light, builds a high-energy sugar. Organisms that do this are <strong>autotrophs</strong> (&ldquo;self-feeders&rdquo;), or <strong>producers</strong>. Here is the whole process in one balanced summary:</p>
+        <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 6px; padding: 16px 20px; margin: 0;">
+            <div style="font-size: 18px; color: #0e1c42; line-height: 1.7; text-align: center;"><strong>6CO&#8322; + 6H&#8322;O + light energy &rarr; C&#8326;H&#8321;&#8322;O&#8326; + 6O&#8322;</strong></div>
+            <div style="font-size: 14px; color: #666; line-height: 1.6; text-align: center; margin-top: 8px;">carbon dioxide + water + light &rarr; glucose + oxygen</div>
+        </div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 12px 0 0 0;">Notice the bookkeeping: the carbon in the sugar came from <strong>CO&#8322;</strong>, the energy came from <strong>light</strong>, and <strong>O&#8322;</strong> is released as a by-product. Same atoms as Module 2 &mdash; just rearranged into a form that holds energy.</p>
+    </div>
+
+    <!-- HISTORY CALLOUT (TEAL) -->
+    <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 16px 22px; margin: 0 0 20px 0;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#127963;&#65039; A HUMAN STORY &middot; THE WILLOW, THE CANDLE, AND THE MOUSE</div>
+        <div style="font-size: 17px; color: #0E1C42; line-height: 1.65;">Around 1648, the physician <strong>Jan Baptista van Helmont</strong> planted a young willow in a weighed pot of dried soil and, for about five years, added nothing but water. The tree gained roughly 164 pounds; the soil lost only about two ounces. He concluded the mass came from water. His <em>conclusion</em> was wrong &mdash; he had no notion that air carried anything useful &mdash; but his <em>method</em> of careful weighing was a genuine revolution. Then in 1771 the minister <strong>Joseph Priestley</strong> found that a candle in a sealed jar soon went out and a mouse faltered &mdash; yet a sprig of mint somehow <em>restored</em> the &ldquo;spoiled&rdquo; air. A plant, he saw, releases the very thing that flame and breath use up. He could not yet name it oxygen, but he had caught photosynthesis from the outside. Two patient experimenters, each holding one true piece of a puzzle neither could finish alone.</div>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128300; PART 2 &middot; INSIDE THE CHLOROPLAST</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Two addresses, two stages</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Photosynthesis happens in the <strong>chloroplast</strong>. Its structure explains its function. A <strong>double membrane</strong> wraps the organelle (a fossil of its endosymbiotic origin &mdash; Module 3). Inside are flattened sacs called <strong>thylakoids</strong>, stacked into piles called <strong>grana</strong>; this is where the <strong>light-dependent reactions</strong> happen. Around the thylakoids is a fluid, the <strong>stroma</strong>, where the <strong>Calvin cycle</strong> happens. Keep these two addresses straight &mdash; the rest of the week lives in them.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 14px 0 4px 0;">Match each part of the chloroplast to its job.</p>
+
+        <!-- Evaluative single-select -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; CHLOROPLAST PART &rarr; FUNCTION</div>
+            <div class="widget-question">For each structure, tap the job that happens there. You&rsquo;ll get instant feedback.</div>
+
+            <div class="widget-row" data-correct="0" data-fb="Right &mdash; the thylakoid membranes (stacked into grana) hold the pigments and carry out the light-dependent reactions." data-hint="Which stage needs the light-catching pigments embedded in a membrane?">
+                <div class="widget-row-prompt">1. The thylakoid membrane is the site of&hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="0">The light-dependent reactions</button>
+                    <button data-choice="1">The Calvin cycle</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Right &mdash; the stroma, the fluid around the thylakoids, is where the Calvin cycle builds sugar." data-hint="Which stage happens in the fluid, building sugar from CO&#8322;?">
+                <div class="widget-row-prompt">2. The stroma is the site of&hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="0">The light-dependent reactions</button>
+                    <button data-choice="1">The Calvin cycle</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Right &mdash; the green pigment chlorophyll absorbs red and blue light and reflects green, which is why leaves look green." data-hint="What molecule absorbs the light and gives leaves their color?">
+                <div class="widget-row-prompt">3. The molecule that absorbs light (and makes leaves green) is&hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="0">Chlorophyll</button>
+                    <button data-choice="1">Glucose</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127757; PART 3 &middot; WHY PRODUCERS FEED THE WORLD</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">The base of every food web</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Only producers can build food from sunlight and air. Everything else &mdash; you, a deer, a mushroom &mdash; is a <strong>heterotroph</strong> that must eat. So nearly every meal traces back to a green cell catching light, and the O&#8322; in your next breath was released by a leaf. You will follow this all the way to <strong>Module 10</strong>, where producers anchor every food web and feed the carbon cycle.</p>
+
+        <!-- Contemporary research callout (GOLD, hedged) -->
+        <div style="background: #FDF3E3; border-left: 5px solid #C7922C; border-top: 3px solid #E0A93B; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #8a6a1d; margin-bottom: 8px;">&#10024; FROM TODAY&rsquo;S RESEARCH &middot; CAN WE IMPROVE PHOTOSYNTHESIS?</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Photosynthesis feeds the world, but it is not perfectly efficient &mdash; the enzyme RuBisCO, which you&rsquo;ll meet in Lesson 8.04, sometimes grabs oxygen by mistake instead of carbon dioxide, wasting energy. Recent research suggests it may be possible to make crop photosynthesis more efficient: scientists are currently exploring engineered tweaks to these reactions in plants such as tobacco and rice, hoping to raise yields for a growing population. The results so far are promising in some field trials but not yet settled, and many years of testing remain. It is a striking thought &mdash; that humans might one day fine-tune the very process that has fed life for billions of years.</div>
+        </div>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build a Chloroplast &amp; Trace the Light Reactions</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Construct the very organelle you toured today &mdash; double membrane, grana, stroma &mdash; and mark where each stage happens.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Explore a Leaf, Down to the Thylakoid</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Zoom from a leaf&rsquo;s surface inward to a chloroplast and a single thylakoid, seeing the structure behind today&rsquo;s equation.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 8.02 &middot; Inside the Chloroplast</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Label the chloroplast&rsquo;s parts, write the photosynthesis equation with reactants and products identified, and place the two stages in their locations. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Photosynthesis is one equation with two addresses: light captured in the thylakoid, sugar built in the stroma. Hold the equation and the chloroplast map, and the next two lessons simply fill in each stage. And remember what the equation quietly accomplishes: a leaf turns air and light into food and breath for the rest of us &mdash; the plainest possible picture of this module&rsquo;s thread of <strong>service</strong>.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 8.02 &middot; Catching the Light</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

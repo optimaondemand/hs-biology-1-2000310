@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 14.04</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 5</div>
+        <div style="font-size: 12px; color: #666;">DNA, Cell Division, and Genetics</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 14.04</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Editing the Code</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Responsibility &mdash; faithful copying; what we inherit and pass on</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 14.04</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Editing the Code</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; CRISPR-Cas9, Ethics, and Recombinant Insulin</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">We can read and copy DNA. Now: can we rewrite it &mdash; and should we?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today closes Module 5. You will see how <strong>recombinant insulin</strong> already transformed medicine, learn how <strong>CRISPR-Cas9</strong> finds and cuts a chosen DNA sequence to edit a gene, and weigh the genuine <strong>ethical questions</strong> &mdash; especially the contested debate over editing the germline &mdash; that come with holding the pen that writes what we inherit.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> describe how a guide RNA and the Cas9 protein work together to find and cut a target DNA sequence.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain why recombinant insulin is a landmark application of recombinant DNA.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish somatic from germline editing and explain why the germline debate is ethically contested.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 14.04, <em>Editing the Code</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128138; PART 1 &middot; A TRIUMPH OF CUTTING AND PASTING</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Recombinant human insulin</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">For decades, insulin for people with diabetes was extracted from the pancreases of pigs and cattle &mdash; slightly different from human insulin and limited in supply. Using exactly the cut-combine-paste-transform process from Lesson 14.02, scientists inserted the <strong>human insulin gene</strong> into bacteria, which then read the universal code and manufactured genuine human insulin. The first such product reached patients in the <strong>early 1980s</strong>. Today the hormone is brewed in vats of engineered cells. It is the clearest proof that recombinant DNA is not a curiosity but a medicine. (Note: the original <em>discovery</em> of insulin in the 1920s is a separate story you will meet in Module 9 &mdash; here we mean only the bacterial <em>production</em> of human insulin.)</p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9986;&#65039; PART 2 &middot; CRISPR-CAS9, A PROGRAMMABLE EDITOR</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Guide, find, cut, repair</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Unlike a restriction enzyme that cuts only at one fixed sequence, <strong>CRISPR-Cas9</strong> can be aimed. A short <strong>guide RNA</strong> is written to match the exact DNA sequence you want to target (by base-pairing). The <strong>Cas9 protein</strong> carries the guide along the genome until it finds the matching sequence, and there Cas9 <strong>cuts</strong> the DNA. The cell&rsquo;s repair machinery then either <strong>disables</strong> the gene or, with a supplied template, <strong>rewrites</strong> it. Change the guide RNA and you change the target. Match each part of the system to its job.</p>
+
+        <!-- ow-select -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; WHO DOES WHAT IN CRISPR?</div>
+            <div class="widget-question">For each role, tap the correct part of the CRISPR-Cas9 system. You&rsquo;ll get instant feedback.</div>
+
+            <div class="widget-row" data-correct="0" data-fb="Right &mdash; the guide RNA is written to match the target sequence and finds it by base-pairing." data-hint="Which part is written to MATCH the target by base-pairing?">
+                <div class="widget-row-prompt">1. Finds the exact DNA sequence to be edited.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Guide RNA</button>
+                    <button data-choice="1">Cas9 protein</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Right &mdash; Cas9 is the protein that makes the cut once the guide RNA has located the target." data-hint="Which part is the protein that does the CUTTING?">
+                <div class="widget-row-prompt">2. Cuts the DNA at the targeted spot.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Guide RNA</button>
+                    <button data-choice="1">Cas9 protein</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Right &mdash; after the cut, the cell&rsquo;s own repair machinery either disables the gene or rewrites it from a template." data-hint="After the cut, what finishes the edit &mdash; the scissors, or the cell?">
+                <div class="widget-row-prompt">3. Disables or rewrites the gene after the cut.</div>
+                <div class="widget-options">
+                    <button data-choice="0">The guide RNA, by re-cutting</button>
+                    <button data-choice="1">The cell&rsquo;s own repair machinery</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <!-- History-of-science callout (TEAL) -->
+        <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 14px 0 0 0;">
+            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#127963;&#65039; A HUMAN STORY &middot; BORROWED FROM BACTERIA</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">CRISPR was not invented in a vacuum &mdash; it was <strong>borrowed from bacteria</strong>, which use a CRISPR system as a kind of immune memory, recognizing and cutting the DNA of viruses that attacked them before. In <strong>2012</strong>, <strong>Jennifer Doudna</strong> and <strong>Emmanuelle Charpentier</strong> published how this natural defense could be turned into a programmable tool for editing any genome &mdash; aim the guide RNA, and Cas9 cuts where you choose. For that work they shared the <strong>2020 Nobel Prize in Chemistry</strong>. It is a striking case of the connection this course keeps making: a trick that life evolved for one purpose (a bacterium&rsquo;s defense, Module 9&rsquo;s territory) becomes, in human hands, a tool for another.</div>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9878;&#65039; PART 3 &middot; JUST BECAUSE WE CAN &mdash; SHOULD WE?</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Editing the <strong>body (somatic) cells</strong> of one patient affects only that person. Editing the <strong>germline</strong> &mdash; eggs, sperm, or embryos &mdash; changes every cell of a future person and is passed to their descendants. The germline-editing debate is genuinely unsettled, and it is one we all share.</p>
+
+        <!-- Reflective -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; WEIGH IT &middot; A CONTESTED QUESTION</div>
+            <div class="widget-question">Which concern about <em>germline</em> editing weighs most heavily for you? (No wrong answer &mdash; this is genuinely contested. Be ready to defend your choice in the discussion.)</div>
+            <div class="widget-options">
+                <button data-response="A serious objection. A future person cannot consent to a heritable change made before they exist &mdash; and they will pass it to their own descendants. Many ethicists treat this lack of consent as a central reason for extreme caution with germline editing.">No one can consent for a future person</button>
+                <button data-response="A real worry. The line between curing a clear disease and &lsquo;enhancing&rsquo; ordinary traits is blurry, and once the tool exists, deciding where to stop is a value judgment, not a scientific one. This is why many call for limits beyond what is technically possible.">The blurry line between curing and enhancing</button>
+                <button data-response="An important equity concern. If gene editing is expensive, it could deepen the gap between those who can afford it and those who cannot &mdash; turning a medical tool into a source of new inequality. Justice questions like this belong at the center of the debate.">Who gets access &mdash; fairness and cost</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <!-- AI-awareness callout (RED / RISKY) -->
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-radius: 6px; padding: 14px 20px; margin: 14px 0 0 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px; letter-spacing: 0.4px;">&#129302; AI AWARENESS &middot; MACHINE LEARNING IN GENE EDITING</div>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Designing a CRISPR edit means choosing a guide RNA that hits the right target and <em>not</em> the wrong ones. Scientists are increasingly using <strong>machine-learning models</strong> to predict which guide RNAs will work well and to flag likely <strong>off-target</strong> cut sites &mdash; places the guide might accidentally match. <strong>The opportunity</strong> is real: such tools can speed up design and help researchers avoid dangerous edits. <strong>But here is the pitfall</strong>, and it matters: these models can be <em>confidently wrong</em>. They are trained on limited data and can carry its biases, so a prediction that looks certain may simply be mistaken. An AI&rsquo;s suggested guide is a <strong>hypothesis to test in the lab</strong>, never an authority to trust on its own &mdash; every prediction still needs wet-lab confirmation. Treat an AI output the way this whole course teaches you to treat any claim: ask what the evidence is, and check it.</div>
+        </div>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Model a Gel-Electrophoresis Run</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Load DNA samples into wells, run the current, and watch smaller fragments migrate farther toward the + electrode &mdash; then read the band pattern.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Explore a CRISPR-Cas9 Scene Editing a Target Gene</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Follow a guide RNA to its matching DNA sequence, watch Cas9 cut, and see the gene edited &mdash; and note that CRISPR began as a bacterial defense.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 14.04 &middot; CRISPR and the Ethics of Editing</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Label the CRISPR steps, then write a short, reasoned response taking a position on one germline-editing question. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS &middot; AND A REMINDER</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">From restriction enzymes to recombinant insulin to CRISPR, every tool this week rests on the same foundation from Weeks 11 and 12: DNA is a universal code we can read, copy, and now edit. That power is exactly why this module&rsquo;s thread is <strong>responsibility</strong> &mdash; we now hold the pen that writes what we inherit and pass on, and the question of what we <em>should</em> do is as real as what we <em>can</em>.</p>
+        <p style="font-size: 18px; color: #0e1c42; line-height: 1.65; margin: 0;"><strong>This is the final lesson of Module 5. Your Module 5 CER &mdash; tracing a sickle-cell mutation from base substitution to phenotype &mdash; is due at the end of this week. Make sure it is submitted before the module closes.</strong></p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 14.04 &middot; Editing the Code</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

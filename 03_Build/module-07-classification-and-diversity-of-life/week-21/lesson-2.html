@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 21.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q3 &middot; Module 7</div>
+        <div style="font-size: 12px; color: #666;">Classification and Diversity of Life</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 21.02</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Bacteria &amp; Archaea</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Courtesy &mdash; the ordered naming of the household of life</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 21.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Bacteria and Archaea: Life Without a Nucleus</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; Prokaryotic Structure and the Roles That Run the World</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">The smallest, simplest cells on Earth run some of its largest chemical cycles. How does so much depend on so little?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today we meet the two prokaryotic domains up close. You will describe how a <strong>prokaryotic</strong> cell is built &mdash; a nucleoid, ribosomes, a cell wall, sometimes a flagellum &mdash; and how it copies itself by <strong>binary fission</strong>. Then you will survey the astonishing <strong>metabolic diversity</strong> and the ecological jobs these microbes do: decomposing, fixing nitrogen, living in your gut, and thriving as <strong>extremophiles</strong> where nothing else can.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> describe the structure of a prokaryotic cell, including the nucleoid, cell wall, and how it reproduces.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> give important ecological roles of Bacteria and Archaea, including decomposers, nitrogen fixers, and extremophiles.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 21.02, <em>Bacteria and Archaea: Life Without a Nucleus</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129440; PART 1 &middot; A CELL STRIPPED TO ESSENTIALS</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">There are more bacterial cells in and on your body than there are stars you can see, and most never harm you at all. Does thinking of bacteria as mostly helpful (not mostly &ldquo;germs&rdquo;) change how you picture them? (No wrong answer &mdash; just check in.)</div>
+            <div class="widget-options">
+                <button data-response="Good &mdash; that shift is worth making. A few bacteria cause disease, and those get the headlines, but the vast majority are harmless or essential: they recycle the dead, feed plants, and help you digest food. This lesson is about that unseen, indispensable work.">Yes &mdash; I usually think &ldquo;germs,&rdquo; but most must be harmless</button>
+                <button data-response="Fair &mdash; you already knew bacteria do more than cause illness. Hold onto that. Today we make it concrete: decomposition, nitrogen fixation, the gut microbiome, and the extremophile archaea that live where nothing else can.">Not really &mdash; I already knew most are helpful</button>
+                <button data-response="Worth thinking through. It's easy to meet bacteria only as the cause of a sore throat. But only a minority are pathogens; the rest quietly run cycles the whole living world depends on. Let's look at what they actually do.">I'm not sure &mdash; I hadn't thought about it</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">The prokaryotic body plan</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">A <strong>prokaryote</strong> (recall Module 3) has no membrane-bound nucleus and no organelles. Its loop of DNA sits loose in a region called the <strong>nucleoid</strong>. It still has <strong>ribosomes</strong> for building proteins, a <strong>cell membrane</strong>, and almost always a <strong>cell wall</strong>; many have a whip-like <strong>flagellum</strong> for swimming. To reproduce, it copies its DNA and splits &mdash; fast, asexual <strong>binary fission</strong>. That speed is why one cell can become a visible colony overnight.</p>
+        <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 6px; padding: 14px 20px; margin: 10px 0 0 0;">
+            <div style="font-size: 16px; color: #0e1c42; line-height: 1.7; text-align: center;"><strong>Bacterial wall = peptidoglycan &nbsp;&middot;&nbsp; Archaeal wall = different chemistry (no peptidoglycan)</strong></div>
+            <div style="font-size: 14px; color: #666; line-height: 1.6; text-align: center; margin-top: 6px;">Same simple body plan, different molecules &mdash; part of why they are two domains, not one.</div>
+        </div>
+    </div>
+
+    <!-- History callout TEAL -->
+    <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 0 0 20px 0;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#127963;&#65039; A HUMAN STORY &middot; THE DRAPER WHO SAW A NEW WORLD</div>
+        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">In the 1670s a Dutch cloth merchant named <strong>Antonie van Leeuwenhoek</strong> &mdash; not a trained scholar, but a maker of astonishingly good hand lenses &mdash; turned one on a drop of pond water and rainwater scraped from between his teeth. Wriggling in the droplet were countless tiny living things he called <em>animalcules</em>. He was the first human being to see bacteria. Many doubted him at first; the claim seemed impossible. But careful observers repeated his work, and an entire invisible living world &mdash; the one this whole lesson is about &mdash; slowly came into view. It is a fitting reminder that a patient, honest eye at the edge of the known can open a door no one suspected was there.</div>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9881;&#65039; PART 2 &middot; MANY WAYS TO MAKE A LIVING</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Metabolic diversity and ecological roles</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">What prokaryotes lack in size they make up in <strong>metabolic diversity</strong>: some are <strong>autotrophs</strong> (making food by photosynthesis or from chemicals), others <strong>heterotrophs</strong>; some need oxygen (<strong>aerobic</strong>), others are poisoned by it (<strong>anaerobic</strong>). That range lets them do essential jobs: as <strong>decomposers</strong> returning nutrients to soil, as <strong>nitrogen fixers</strong> converting air nitrogen into a form plants can use (a key step in Module 10's nitrogen cycle), and as the <strong>gut microbiome</strong> that helps you digest food. Only a minority are disease-causing <strong>pathogens</strong>. The <strong>Archaea</strong>, meanwhile, include famous <strong>extremophiles</strong> &mdash; heat-lovers in hot springs, salt-lovers in brine, and <strong>methanogens</strong> making methane in marshes and animal guts.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 14px 0 4px 0;">Sort each item into the category it best fits.</p>
+
+        <!-- Evaluative single-select -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; WHO DOES WHAT?</div>
+            <div class="widget-question">Match each description to the correct feature or role. You'll get instant feedback.</div>
+
+            <div class="widget-row" data-correct="1" data-fb="Right &mdash; nitrogen-fixing bacteria convert nitrogen gas from the air into a usable form, feeding plants and driving the nitrogen cycle you'll study in Module 10." data-hint="Which role turns air nitrogen into food for plants?">
+                <div class="widget-row-prompt">1. &ldquo;Pulls nitrogen gas from the air so plants can use it.&rdquo;</div>
+                <div class="widget-options">
+                    <button data-choice="0">Pathogen</button>
+                    <button data-choice="1">Nitrogen fixer</button>
+                    <button data-choice="2">Extremophile</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Right &mdash; heat-loving and salt-loving microbes in hot springs and brine are extremophiles, and many are Archaea." data-hint="Which role names life in near-boiling or super-salty water?">
+                <div class="widget-row-prompt">2. &ldquo;Thrives in a near-boiling hot spring where little else can live.&rdquo;</div>
+                <div class="widget-options">
+                    <button data-choice="0">Decomposer</button>
+                    <button data-choice="1">Nitrogen fixer</button>
+                    <button data-choice="2">Extremophile</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Right &mdash; breaking down dead matter and returning nutrients to the soil is the work of decomposers, done by many bacteria (and by fungi)." data-hint="Which role recycles dead material back into the soil?">
+                <div class="widget-row-prompt">3. &ldquo;Breaks down a fallen log and returns its nutrients to the soil.&rdquo;</div>
+                <div class="widget-options">
+                    <button data-choice="0">Decomposer</button>
+                    <button data-choice="1">Gut microbiome</button>
+                    <button data-choice="2">Pathogen</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">A prokaryote is a cell stripped to essentials &mdash; and that simplicity, paired with vast metabolic range, lets these microbes run the cycles the whole living world depends on. Their quiet, faithful, mostly unseen work is a form of <strong>service</strong> the household of life could not do without. Next we cross the great divide into Eukarya and meet its most varied members: the protists.</p>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build the Three Domains Side by Side</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Build a Bacterium, an Archaeon, and a Eukaryotic cell next to one another and label the key differences &mdash; a chance to show the prokaryotic body plan you learned today.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Explore Habitats of the Microbial World</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Visit a hot spring, a pond, and forest soil to observe representative Bacteria and Archaea in the places they actually live, and capture named snapshots.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 21.02 &middot; Prokaryotes: Structure and Roles</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Label the parts of a prokaryotic cell and match ecological roles (decomposer, nitrogen fixer, extremophile) to their descriptions. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 3 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 21.02 &middot; Bacteria and Archaea: Life Without a Nucleus</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

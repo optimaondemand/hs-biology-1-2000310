@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 4.01</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 2</div>
+        <div style="font-size: 12px; color: #666;">Chemistry of Life</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 4.01</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Carbon&rsquo;s Genius &amp; Carbohydrates</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Wonder &mdash; the same atoms as the stars</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 4.01</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Carbon&rsquo;s Genius &amp; Carbohydrates</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">How can a single, ordinary atom build everything from a sugar crystal to a tree trunk?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Last week you watched one bent water molecule shape the whole chemistry of life. This week we meet the molecules that <em>float</em> in that water &mdash; the four great families built around <strong>carbon</strong>. Today you will learn why carbon is the master builder, how small <strong>monomers</strong> snap together into long <strong>polymers</strong> by losing water, and how the first family &mdash; the <strong>carbohydrates</strong> &mdash; both fuel you and frame the living world.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain why carbon&rsquo;s four bonds make it the backbone of every organic molecule.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> describe how dehydration synthesis builds polymers and how hydrolysis breaks them.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> classify carbohydrates as monosaccharides, disaccharides, or polysaccharides and name what each does.</div>
+        </div>
+    </div>
+
+    <!-- Materials -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; WHAT YOU NEED FOR THIS LESSON</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 4.01, <em>Carbon&rsquo;s Genius &amp; Carbohydrates</em> (read it before this lesson)</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Your scientific notebook (a dedicated notebook or a Word document in your OneDrive)</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9883;&#65039; PART 1 &middot; WHY CARBON IS THE MASTER BUILDER</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Almost everything in your body &mdash; sugars, fats, proteins, DNA &mdash; is built around one element. Which would you guess? (No wrong answer &mdash; just check in with yourself.)</div>
+            <div class="widget-options">
+                <button data-response="A great guess &mdash; oxygen is everywhere in life, especially inside water. But the element that forms the skeleton of organic molecules is carbon, because it bonds in four directions at once.">&#128167; Oxygen</button>
+                <button data-response="Exactly right. Carbon has four valence electrons, so it forms four stable covalent bonds &mdash; enough to build long chains, branches, and rings. It is the master builder of life.">&#9899; Carbon</button>
+                <button data-response="A reasonable thought &mdash; iron matters for blood. But it is a bit player. The element that frames every sugar, fat, protein, and strand of DNA is carbon, with its four bonds.">&#129704; Iron</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Four bonds, endless possibilities</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">A carbon atom carries <strong>four valence electrons</strong>, so it forms <strong>four stable covalent bonds</strong> at once. That single fact is the whole secret. Four bonds let carbon link into long <strong>chains</strong>, sprout <strong>branches</strong>, and close into <strong>rings</strong> &mdash; and bond not only to other carbons but to hydrogen, oxygen, nitrogen, and more. No other common atom is so versatile. Every <strong>organic molecule</strong> &mdash; carbohydrate, lipid, protein, nucleic acid &mdash; is built on a carbon skeleton. The four great families of life&rsquo;s molecules are simply four different things to build with the same gifted atom.</p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128295; PART 2 &middot; BUILDING AND BREAKING: MONOMERS TO POLYMERS</div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Add water to break, remove water to build</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Three of the four families are built the same way: small repeating units called <strong>monomers</strong> link into long chains called <strong>polymers</strong>. To <em>join</em> two monomers, the cell performs <strong>dehydration synthesis</strong> (also called condensation): it removes a single molecule of water and uses the freed bonds to stitch the two units together. To <em>break</em> a polymer apart, the cell runs the reaction in reverse &mdash; <strong>hydrolysis</strong> &mdash; <em>adding</em> a water molecule to split each bond. This is exactly what your digestion does: it hydrolyzes the starch and protein in your food back into monomers small enough to absorb. Notice the elegant bookkeeping &mdash; build by subtracting water, break by adding it back.</p>
+
+        <!-- Helpful (teal) callout -->
+        <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; HELPFUL TO KNOW &middot; A MEMORY HOOK FOR THE TWO REACTIONS</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">The two words wear their meaning on the outside. <strong>De-hydration</strong> means &ldquo;taking water away&rdquo; &mdash; so dehydration synthesis takes a water <em>out</em> to <em>build</em> a bond. <strong>Hydro-lysis</strong> joins <em>hydro</em> (&ldquo;water&rdquo;) to <em>lysis</em> (&ldquo;to loosen or split&rdquo;) &mdash; so hydrolysis uses water to <em>split</em> a bond apart. If you can remember that one direction removes water and the other adds it, you understand how nearly every large molecule in your body is assembled and taken apart. And it all happens dissolved in the water you studied last week.</div>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 4px 0;">Try it: for each description, decide which reaction is at work.</p>
+
+        <!-- Evaluative single-select -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; DEHYDRATION SYNTHESIS OR HYDROLYSIS?</div>
+            <div class="widget-question">Tap the reaction that fits each description. You&rsquo;ll get instant feedback.</div>
+
+            <div class="widget-row" data-correct="0" data-fb="Right &mdash; joining two monomers means building a new bond, and that costs one water molecule removed. That is dehydration synthesis." data-hint="Are the units being joined or split? Joining removes water.">
+                <div class="widget-row-prompt">1. Two glucose units join to form the disaccharide maltose.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Dehydration synthesis</button>
+                    <button data-choice="1">Hydrolysis</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Right &mdash; digestion breaks polymers into monomers by adding water to each bond. That is hydrolysis." data-hint="Breaking a polymer apart adds water back. What is that reaction called?">
+                <div class="widget-row-prompt">2. In your small intestine, a long starch chain is broken into single glucose units.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Dehydration synthesis</button>
+                    <button data-choice="1">Hydrolysis</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Right &mdash; assembling many glucose units into a storage polymer builds many bonds, each releasing a water molecule. That is dehydration synthesis." data-hint="A plant building a long storage chain is joining units, not splitting them.">
+                <div class="widget-row-prompt">3. A plant links thousands of glucose units into a long starch molecule for storage.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Dehydration synthesis</button>
+                    <button data-choice="1">Hydrolysis</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Right &mdash; splitting sucrose back into glucose and fructose adds a water molecule to cut the bond. That is hydrolysis." data-hint="Cutting one molecule into two smaller ones adds water. Which reaction is that?">
+                <div class="widget-row-prompt">4. Sucrose is split into one glucose and one fructose.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Dehydration synthesis</button>
+                    <button data-choice="1">Hydrolysis</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127857; PART 3 &middot; THE CARBOHYDRATES: FUEL AND FRAMEWORK</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">One, two, or many sugars</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>Carbohydrates</strong> are built from carbon, hydrogen, and oxygen in a roughly <strong>1:2:1</strong> ratio. They come in three sizes. A <strong>monosaccharide</strong> is a single sugar &mdash; <em>glucose</em> and <em>fructose</em> are the body&rsquo;s quick fuel. A <strong>disaccharide</strong> is two joined sugars &mdash; <em>sucrose</em> (glucose + fructose), <em>lactose</em>, and <em>maltose</em>. A <strong>polysaccharide</strong> is a long chain of many sugars, and here size brings new jobs: <strong>starch</strong> stores energy in plants, <strong>glycogen</strong> stores energy in your liver and muscles, <strong>cellulose</strong> stiffens plant cell walls (so tough that we cannot digest it), and <strong>chitin</strong> armors insects and fungi. Same building block, glucose &mdash; arranged one way it feeds you, arranged another it builds a tree. Carbohydrates are both <em>fuel</em> and <em>framework</em>.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 4px 0;">Try it: classify each carbohydrate by size.</p>
+
+        <!-- Evaluative single-select -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; MONO-, DI-, OR POLYSACCHARIDE?</div>
+            <div class="widget-question">Tap the size that fits each carbohydrate. You&rsquo;ll get instant feedback.</div>
+
+            <div class="widget-row" data-correct="0" data-fb="Right &mdash; glucose is a single sugar unit, the body&rsquo;s quick fuel. It is a monosaccharide." data-hint="Glucose is the basic building block other sugars are made from. How many units is that?">
+                <div class="widget-row-prompt">1. Glucose</div>
+                <div class="widget-options">
+                    <button data-choice="0">Monosaccharide</button>
+                    <button data-choice="1">Disaccharide</button>
+                    <button data-choice="2">Polysaccharide</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Right &mdash; sucrose is two sugars joined (glucose + fructose), so it is a disaccharide." data-hint="Table sugar is glucose joined to fructose. Two units means&hellip;?">
+                <div class="widget-row-prompt">2. Sucrose (table sugar)</div>
+                <div class="widget-options">
+                    <button data-choice="0">Monosaccharide</button>
+                    <button data-choice="1">Disaccharide</button>
+                    <button data-choice="2">Polysaccharide</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Right &mdash; glycogen is a long branched chain of many glucose units stored in liver and muscle. It is a polysaccharide." data-hint="Glycogen is the animal energy-storage chain. Many units long means&hellip;?">
+                <div class="widget-row-prompt">3. Glycogen (energy stored in your liver and muscles)</div>
+                <div class="widget-options">
+                    <button data-choice="0">Monosaccharide</button>
+                    <button data-choice="1">Disaccharide</button>
+                    <button data-choice="2">Polysaccharide</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Right &mdash; cellulose is a long chain of glucose that stiffens plant cell walls. It is a structural polysaccharide &mdash; and we cannot digest it." data-hint="Cellulose forms the tough wall of plant cells. A long structural chain is a&hellip;?">
+                <div class="widget-row-prompt">4. Cellulose (the fiber in plant cell walls)</div>
+                <div class="widget-options">
+                    <button data-choice="0">Monosaccharide</button>
+                    <button data-choice="1">Disaccharide</button>
+                    <button data-choice="2">Polysaccharide</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Assemble the Four Macromolecules</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">You will build a glucose chain from monomer pieces and show one dehydration-synthesis bond &mdash; exactly the reaction you practiced in Part 2 of today&rsquo;s lesson.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Walk Through a Phospholipid Bilayer</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">A preview of Lesson 4.02 &mdash; you will walk through the membrane the lipid family builds. Save it for after this week&rsquo;s second lesson if you like.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 4.01 &middot; Macromolecule Monomer/Polymer Builder</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Match monomers to their polymers, identify dehydration synthesis versus hydrolysis in diagrams, and classify a set of carbohydrates. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">One four-bonded atom, joined and broken by the addition or removal of a single water molecule, builds the sugars that fuel and frame life. The <strong>glucose</strong> you met today is the very fuel that respiration will burn in <strong>Module 4</strong>, and the <strong>cellulose</strong> it can also become is the framework you will study in plants in <strong>Module 8</strong>. Carbon and water, working together &mdash; the same atoms as the stars, arranged into something that lives.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 4.01 &middot; Carbon&rsquo;s Genius &amp; Carbohydrates</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

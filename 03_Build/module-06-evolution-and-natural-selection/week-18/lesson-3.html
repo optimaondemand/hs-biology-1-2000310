@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 18.03</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 6</div>
+        <div style="font-size: 12px; color: #666;">Evolution and Natural Selection</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 18.03</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">The Origin of Life</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Courage &mdash; Darwin following evidence into 20 years of controversy</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 18.03</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">The Hardest Question: The Origin of Life</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; Miller&ndash;Urey, the RNA World, and an Honestly Open Question</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Evolution explains how life <em>diversified</em> once it existed. But how did the very first life arise from non-living chemistry?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">This is one of the most honest lessons of the year, because the honest answer is: <strong>we do not yet know.</strong> The origin of the first cell is a small, still-open research area &mdash; distinct from the well-supported science of how life diversified afterward. Today you will see what real experiments <em>have</em> shown (organic building blocks can form from simple chemistry), what the <strong>RNA-world hypothesis</strong> proposes, and exactly where the open questions remain. Practicing intellectual honesty about the edge of what we know is itself a scientific skill.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> describe what the Miller&ndash;Urey experiment did show &mdash; and what it did not show.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain the RNA-world hypothesis and what a protocell is, in simple terms.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish &ldquo;spontaneous generation&rdquo; (disproved) from the open scientific question of how life first arose.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 18.03, <em>The Hardest Question: The Origin of Life</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129516; PART 1 &middot; A FAMOUS EXPERIMENT, READ CAREFULLY</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Suppose an experiment showed that the basic chemical building blocks of life could form on their own from simple gases and energy. Would that prove that life itself had been created in the flask? (No wrong answer &mdash; just check in.)</div>
+            <div class="widget-options">
+                <button data-response="Exactly the careful reading we want. Making building blocks is a long way from making a living, self-copying cell. The Miller&ndash;Urey experiment did the first; it did not do the second. Holding that distinction firmly is the whole point of today.">No &mdash; building blocks aren&rsquo;t a living cell</button>
+                <button data-response="It&rsquo;s tempting to say yes, but that overstates the result. Forming amino acids shows the raw materials can arise from simple chemistry &mdash; it does not assemble them into a living, reproducing cell. That gap is exactly what remains open.">Yes &mdash; the building blocks are life</button>
+                <button data-response="Good honesty &mdash; this is what today sorts out. The key distinction: forming building blocks is real and demonstrated; assembling them into a living cell is not. Keep those two claims separate.">I&rsquo;m not sure where the line is</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">The Miller&ndash;Urey experiment (1953)</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">In 1953, at the University of Chicago, Stanley Miller and Harold Urey built a sealed glass apparatus to test a bold idea: could the chemistry of the early Earth produce the building blocks of life on its own? They filled it with water vapor and a mixture of simple gases thought to resemble the early atmosphere &mdash; such as methane, ammonia, and hydrogen &mdash; and sent electric sparks through it to stand in for lightning. After days of running, the trap at the bottom held something remarkable: <strong>amino acids</strong>, the very building blocks of proteins.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Read the result precisely. The experiment <strong>did show</strong> that organic building blocks can form from simpler chemistry given energy &mdash; a genuine and surprising result. It <strong>did not show</strong> that life was created: there was no cell, no membrane, no self-copying molecule, nothing alive. The leap from a flask of amino acids to a living cell is enormous, and it is still unsolved.</p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129521; PART 2 &middot; FROM BUILDING BLOCKS TOWARD A CELL</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">The RNA world and protocells</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">A living cell needs two things that seem to require each other: a molecule that <em>stores</em> information (like DNA) and molecules that <em>do work</em> (like protein enzymes). Which came first? The <strong>RNA-world hypothesis</strong> offers a possible answer. RNA, a cousin of DNA, can do <em>both</em>: it can store genetic information <em>and</em> catalyze chemical reactions. So perhaps RNA came before the DNA-and-protein system we see today, serving as both the recipe and the cook. This is a hypothesis &mdash; a well-motivated proposal still being tested, not a settled fact.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">A cell also needs a boundary. Recall from Modules 2 and 3 that <strong>phospholipids</strong> spontaneously arrange themselves into a bilayer membrane in water &mdash; the same chemistry that builds your own cell membranes. In the lab, lipids will form tiny hollow vesicles on their own. Researchers call such a simple, membrane-bounded droplet a <strong>protocell</strong>: not alive, but a possible stepping-stone &mdash; a bag that could hold molecules together. How protocells and self-copying molecules came together into the first true cell is exactly the part that remains open.</p>
+
+        <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 6px; padding: 14px 20px; margin: 10px 0;">
+            <div style="font-size: 16px; color: #0e1c42; line-height: 1.7; text-align: center;"><strong>building blocks (demonstrated) &nbsp;&rarr;&nbsp; RNA world (hypothesis) &nbsp;+&nbsp; protocells (lab vesicles) &nbsp;&rarr;&nbsp; first living cell (unsolved)</strong></div>
+            <div style="font-size: 14px; color: #666; line-height: 1.6; text-align: center; margin-top: 6px;">Bridge to Modules 2 &amp; 3: protocells use the same self-assembling phospholipid membranes you already studied.</div>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 14px 0 4px 0;">Sort each statement by how strongly the science supports it. Tap an answer for instant feedback.</p>
+
+        <!-- Evaluative single-select -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; DEMONSTRATED, HYPOTHESIS, OR OPEN?</div>
+            <div class="widget-question">For each statement, choose how well current science supports it.</div>
+
+            <div class="widget-row" data-correct="0" data-hint="Miller and Urey actually produced these in a flask.">
+                <div class="widget-row-prompt">1. Amino acids can form from simple gases and an energy source.</div>
+                <div class="widget-options">
+                    <button data-choice="0" data-fb="Right &mdash; this was directly demonstrated by the Miller&ndash;Urey experiment in 1953.">Demonstrated by experiment</button>
+                    <button data-choice="1" data-fb="Not quite &mdash; this is stronger than a hypothesis; Miller and Urey actually produced amino acids in the flask.">Still an open question</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-hint="Did anyone build a living cell from chemistry in the lab?">
+                <div class="widget-row-prompt">2. We know exactly how the first self-copying living cell formed on the early Earth.</div>
+                <div class="widget-options">
+                    <button data-choice="0" data-fb="Not quite &mdash; no one has shown this. The path from chemistry to a living cell remains unsolved.">Demonstrated by experiment</button>
+                    <button data-choice="1" data-fb="Right &mdash; this is honestly still open. It is the central unsolved problem of origin-of-life research.">Still an open question</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-hint="This is observed routinely with lipids in water.">
+                <div class="widget-row-prompt">3. Phospholipids can self-assemble into membrane-bounded vesicles in water.</div>
+                <div class="widget-options">
+                    <button data-choice="0" data-fb="Right &mdash; this is well-established lab chemistry, the same self-assembly that forms your own cell membranes.">Demonstrated by experiment</button>
+                    <button data-choice="1" data-fb="Not quite &mdash; this is routinely observed in the lab, so it is demonstrated, not open.">Still an open question</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128279; PART 3 &middot; TWO DIFFERENT QUESTIONS</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Spontaneous generation is not the origin-of-life question</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">It is easy to confuse two questions that sound alike. <strong>Spontaneous generation</strong> was the old, everyday idea that living things spring readily from non-living matter all the time &mdash; that maggots appear from meat or mice from grain by themselves. That idea was <em>disproved</em>. The <strong>origin-of-life question</strong> is different and far narrower: how did life first arise <em>once</em>, under the very different conditions of the early Earth, billions of years ago? Disproving the first does not answer the second. Keep these two firmly apart.</p>
+
+        <!-- History-of-science callout (TEAL) -->
+        <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#127963;&#65039; A HUMAN STORY &middot; PASTEUR&rsquo;S SWAN-NECK FLASK, 1859</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">You met Louis Pasteur back in Module 1. In 1859 he settled a centuries-old debate with a beautifully simple experiment. He boiled nutrient broth in flasks with long, S-shaped &ldquo;swan necks&rdquo; that let air in but trapped dust and microbes in the bend. The broth stayed clear &mdash; nothing grew. But when he tipped a flask so the broth touched the dust caught in the neck, it quickly clouded with life. His conclusion: living things in everyday conditions come only from other living things, not from non-living matter by itself. That disproved <strong>spontaneous generation</strong>. Notice carefully what it did <em>not</em> do: it did not close the origin-of-life question, because that question asks something different &mdash; how life first arose once, long ago, under early-Earth conditions Pasteur never tested. Good scientists keep the two questions apart, which is itself a small act of intellectual honesty.</div>
+        </div>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build a Simple Cladogram of Speciation Events</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Arrange organisms on a branching tree by shared characters, place a speciation event at each branch point, and record a walkthrough explaining how each branch is one population splitting into two.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Walk the Miller&ndash;Urey Apparatus &amp; Early-Earth Scene</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Walk through a model of the Miller&ndash;Urey apparatus and an early-Earth environment, observe where amino acids collect, and capture named snapshots. This walk pairs directly with today&rsquo;s lesson.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 18.03 &middot; The Hardest Question</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Explain what Miller&ndash;Urey did and did not show, and distinguish disproved &ldquo;spontaneous generation&rdquo; from the open origin-of-life question. Reasoning-focused &mdash; there is no single neat answer. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Experiments show that the building blocks of life can form from simple chemistry; the RNA-world hypothesis and protocell research explore what might come next; and the leap to the first living cell remains genuinely unsolved. Pasteur disproved everyday spontaneous generation, but that is a different question from how life first began. Saying clearly &ldquo;here is what we know, and here is where we don&rsquo;t&rdquo; takes real <strong>courage</strong> &mdash; and it is exactly how science makes honest progress.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 18.03 &middot; The Hardest Question: The Origin of Life</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

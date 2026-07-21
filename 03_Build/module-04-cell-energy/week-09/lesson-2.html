@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 9.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 4</div>
+        <div style="font-size: 12px; color: #666;">Cell Energy</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 9.02</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Splitting Sugar: Glycolysis</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Service &mdash; the leaf that feeds all life</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 9.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Splitting Sugar: Glycolysis</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; The First Stage of Respiration</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">A whole sugar molecule goes in, the cell spends energy to begin &mdash; and pockets only two ATP. Where did the rest of the energy go?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today we take respiration&rsquo;s first step: <strong>glycolysis</strong>, the splitting of glucose. It happens in the <strong>cytoplasm</strong>, needs <strong>no oxygen</strong>, and is the most ancient step of all. You will follow one glucose becoming two pyruvate, balance the ATP ledger, and see why most of glucose&rsquo;s energy is still locked away afterward.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> locate glycolysis in the cytoplasm and state that it needs no oxygen.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> describe glucose being split into two pyruvate molecules.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> state the net yield of glycolysis (2 ATP + 2 NADH) and explain why glucose still holds most of its energy.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; YOUR ANCHOR READING</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Read <strong>Reading 9.02, <em>Splitting Sugar: Glycolysis</em></strong> before this lesson. It carries the etymology, the ledger, and the reason glycolysis is so ancient.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129682; PART 1 &middot; SUGAR-SPLITTING IN THE CYTOPLASM</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Yeast can turn sugar into energy even sealed in a jar with no air &mdash; it is how bread dough rises and how grape juice ferments. What does that tell you about the very first step of breaking down sugar? (No wrong answer &mdash; just check in.)</div>
+            <div class="widget-options">
+                <button data-response="Exactly. The first step &mdash; glycolysis &mdash; needs no oxygen at all. That is why yeast can begin breaking down sugar even sealed away from air. This oxygen-free first step is shared by nearly all life and is thought to be very ancient.">It must not need oxygen</button>
+                <button data-response="It actually works WITHOUT air &mdash; that is the surprise. The first step of breaking down sugar, glycolysis, needs no oxygen. Yeast in a sealed jar proves it. This ancient step is shared by nearly all living things.">It must need a lot of air</button>
+                <button data-response="Yeast are alive and busy in there &mdash; they are running glycolysis, the first step of sugar breakdown, which needs no oxygen. That is exactly why a sealed jar still ferments. The step is ancient and nearly universal.">The yeast must be dead</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">The word tells you the deed</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>Glycolysis</strong> is Greek for sugar-splitting: <em>glykys</em>, &ldquo;sweet,&rdquo; plus <em>lysis</em>, &ldquo;splitting&rdquo; (the same <em>lysis</em> from a bursting cell in Module 3). One molecule of <strong>glucose</strong> (six carbons) is split into two molecules of <strong>pyruvate</strong> (three carbons each). It happens in the <strong>cytoplasm</strong>, outside the mitochondrion, and needs no oxygen. Because it is so ancient &mdash; older than oxygen-rich air &mdash; nearly every living thing still uses it, from bacteria to you. When you sprint and run short of oxygen, your muscles fall back on this same first step.</p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128176; PART 2 &middot; THE LEDGER: SPEND TWO, EARN FOUR, KEEP TWO</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">Glycolysis must spend energy to make energy. The cell <strong>invests 2 ATP</strong> to start, then <strong>earns back 4 ATP</strong> &mdash; for a <strong>net of 2 ATP</strong>. It also produces <strong>2 NADH</strong>, electron carriers that matter later.</p>
+        <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; min-width: 520px; margin: 0 0 4px 0;">
+            <thead>
+                <tr style="background: #0E1C42;">
+                    <th style="padding: 10px 12px; font-size: 14px; color: #fff; text-align: left; border: 1px solid #334;">The glycolysis ledger (per glucose)</th>
+                    <th style="padding: 10px 12px; font-size: 14px; color: #fff; text-align: left; border: 1px solid #334;">Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background: #FFFFFF;"><td style="padding: 10px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8;">ATP invested to start</td><td style="padding: 10px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8;">&minus; 2 ATP</td></tr>
+                <tr style="background: #F4F6FA;"><td style="padding: 10px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8;">ATP produced</td><td style="padding: 10px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8;">+ 4 ATP</td></tr>
+                <tr style="background: #FFFFFF;"><td style="padding: 10px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8;"><strong>Net ATP gained</strong></td><td style="padding: 10px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8;"><strong>+ 2 ATP</strong></td></tr>
+                <tr style="background: #F4F6FA;"><td style="padding: 10px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8;">Electron carriers made</td><td style="padding: 10px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8;">2 NADH</td></tr>
+                <tr style="background: #FFFFFF;"><td style="padding: 10px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8;">Pyruvate produced</td><td style="padding: 10px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8;">2 (three carbons each)</td></tr>
+            </tbody>
+        </table>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 14px 0 4px 0;">Now test the bookkeeping for yourself.</p>
+
+        <!-- Evaluative single-select -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; THE GLYCOLYSIS FACTS</div>
+            <div class="widget-question">Answer each question about glycolysis. You&rsquo;ll get instant feedback.</div>
+
+            <div class="widget-row" data-correct="1" data-fb="Right &mdash; glycolysis happens in the cytoplasm and needs NO oxygen. It is the ancient step that even oxygen-free cells can run." data-hint="Yeast in a sealed jar can do it. So is oxygen required?">
+                <div class="widget-row-prompt">1. Does glycolysis require oxygen, and where does it happen?</div>
+                <div class="widget-options">
+                    <button data-choice="0">Yes, oxygen needed; in the matrix</button>
+                    <button data-choice="1">No oxygen needed; in the cytoplasm</button>
+                    <button data-choice="2">No oxygen needed; on the inner membrane</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Right &mdash; one 6-carbon glucose is split into TWO 3-carbon pyruvate molecules. Three plus three equals six; the carbons balance." data-hint="Six carbons in. Split into two equal pieces means how many carbons each?">
+                <div class="widget-row-prompt">2. Glucose (6 carbons) is split into &hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="0">One pyruvate with 6 carbons</button>
+                    <button data-choice="1">Three pyruvate with 2 carbons each</button>
+                    <button data-choice="2">Two pyruvate with 3 carbons each</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Right &mdash; the cell spends 2 ATP and makes 4, so the NET is 2 ATP, plus 2 NADH carriers." data-hint="Earn 4, spend 2. What is left over?">
+                <div class="widget-row-prompt">3. What is the NET ATP yield of glycolysis?</div>
+                <div class="widget-options">
+                    <button data-choice="0">2 ATP (plus 2 NADH)</button>
+                    <button data-choice="1">4 ATP</button>
+                    <button data-choice="2">About 30 ATP</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Right &mdash; most of glucose&rsquo;s energy is still locked in the two pyruvate and the 2 NADH. Glycolysis only cracked the sugar open; the big harvest is still ahead, inside the mitochondrion." data-hint="If only 2 ATP came out, where is the rest of the energy still stored?">
+                <div class="widget-row-prompt">4. After glycolysis, where is most of glucose&rsquo;s energy?</div>
+                <div class="widget-options">
+                    <button data-choice="0">Already released as the 2 ATP</button>
+                    <button data-choice="1">Still locked in the pyruvate and NADH</button>
+                    <button data-choice="2">Lost as heat and gone for good</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128274; PART 3 &middot; WHY THE PAYOFF IS STILL AHEAD</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Glycolysis only cracks the door</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Two ATP is a modest wage for breaking apart a whole sugar &mdash; and that is exactly the point. The great majority of glucose&rsquo;s energy is <em>not</em> released here. It is still held in the bonds of the two <strong>pyruvate</strong> and in the electrons riding on the two <strong>NADH</strong>. To collect it, the cell must send the pyruvate into the mitochondrion, where the Krebs cycle and the electron transport chain finish the job. If oxygen is present, the real harvest is still to come &mdash; and that is where tomorrow&rsquo;s lesson goes.</p>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build a Mitochondrion &amp; Map the Three Stages</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Build the organelle and place each stage &mdash; and be sure to mark glycolysis OUTSIDE, in the cytoplasm, where today&rsquo;s lesson lives.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Walk the Electron Transport Chain</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Walk the inner membrane and watch where the big ATP payoff &mdash; the one glycolysis sets up &mdash; actually happens.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 9.02 &middot; Glycolysis at a Glance</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Fill a short table (location, oxygen, inputs, outputs, net ATP) and explain why glucose&rsquo;s energy is not yet released. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Glycolysis is the door every cell uses to begin spending a meal &mdash; the same first step a bacterium took billions of years ago, freely shared across the whole living world. It earns a small wage now and readies the fuel for the great payoff ahead. Remember the address, the condition, and the net yield, and the harvest in the mitochondrion will fall into place.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 9.02 &middot; Splitting Sugar: Glycolysis</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

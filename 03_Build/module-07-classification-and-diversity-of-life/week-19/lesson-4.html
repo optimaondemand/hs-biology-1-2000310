@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 19.04</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q3 &middot; Module 7</div>
+        <div style="font-size: 12px; color: #666;">Classification and Diversity of Life</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 19.04</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Constructing a Dichotomous Key</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Courtesy &mdash; the ordered naming of the household of life</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 19.04</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Constructing a Dichotomous Key</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; Building an Orderly Path for Others</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">You can follow a key someone else made. Now: how do you build one a stranger can trust?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">This is the week&rsquo;s capstone skill. To <strong>construct</strong> a dichotomous key, you choose <strong>observable, binary, contrasting</strong> characteristics, start with a trait that splits the whole group roughly in half, and keep splitting until every organism stands alone. Building a key is ordering the world for others &mdash; the very heart of this module&rsquo;s virtue, <strong>courtesy</strong>.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> construct a simple dichotomous key from a small set of organisms.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain what makes a characteristic a good one to split on (observable, binary, and contrasting).</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 19.04, <em>Constructing a Dichotomous Key</em> &mdash; your anchor text for this lesson. Read it first, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129513; PART 1 &middot; CHOOSING THE RIGHT TRAITS</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Suppose your first key step asked, &ldquo;Is this animal beautiful?&rdquo; Would that make a good, reliable key? (No wrong answer &mdash; just check in.)</div>
+            <div class="widget-options">
+                <button data-response="Exactly right. &lsquo;Beautiful&rsquo; is an opinion &mdash; two people would answer differently, and the key would send them down different paths. Good key traits are observable and either/or, so everyone reaches the same name. That&rsquo;s what you&rsquo;ll practice today.">No &mdash; beauty is an opinion, so users would disagree</button>
+                <button data-response="Reconsider: if the trait is a matter of taste, two careful users could answer it differently and end up at different names &mdash; the key would stop being repeatable. Good traits are observable and binary, not judgments.">Sure &mdash; as long as most people agree</button>
+                <button data-response="Let&rsquo;s think it through together. A trait like &lsquo;beautiful&rsquo; is subjective, so different users would split the same organisms differently and the key would fail. The fix: choose observable, binary, contrasting traits &mdash; today&rsquo;s main idea.">I&rsquo;m not sure what makes a trait good</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">What makes a good characteristic</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">A key is only as good as the traits it splits on. Good characteristics are <strong>observable</strong> (you can see or measure them on the specimen), <strong>binary</strong> (exactly two clear answers, no in-between), and <strong>contrasting</strong> (true opposites, so every organism fits one side only). Lean on <strong>structural</strong> traits &mdash; parts and their arrangement &mdash; not opinions (&ldquo;is it pretty?&rdquo;) or outside facts a user can&rsquo;t check in front of the specimen (&ldquo;where does it live?&rdquo;). If two people could disagree on the answer, the trait is a poor choice.</p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128296; PART 2 &middot; SPLIT, THEN SPLIT AGAIN</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Building a key for four organisms</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Start with a trait that divides the whole group <strong>roughly in half</strong>, then split each half again, until every organism sits alone. Take four organisms &mdash; a <strong>housefly</strong>, a <strong>spider</strong>, an <strong>earthworm</strong>, and a <strong>snail</strong>. &ldquo;Has jointed legs?&rdquo; splits them neatly: fly and spider (yes) versus worm and snail (no). Then split each pair with a new contrasting trait:</p>
+        <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 6px; padding: 16px 22px; margin: 4px 0 14px 0;">
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.9;">
+            <strong>1a.</strong> Has jointed legs &rarr; go to <strong>2</strong><br />
+            <strong>1b.</strong> No jointed legs &rarr; go to <strong>3</strong><br />
+            <strong>2a.</strong> Has wings (six legs) &rarr; <em>Housefly</em><br />
+            <strong>2b.</strong> No wings (eight legs) &rarr; <em>Spider</em><br />
+            <strong>3a.</strong> Has a hard external shell &rarr; <em>Snail</em><br />
+            <strong>3b.</strong> No shell; long soft segmented body &rarr; <em>Earthworm</em>
+            </div>
+        </div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 10px 0 4px 0;">Which trait should you choose <em>first</em>? Test your instinct:</p>
+
+        <!-- ow-select: choosing the first split -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9989; PICK THE BEST FIRST-SPLIT TRAIT</div>
+
+            <div class="widget-row" data-correct="legs">
+                <div class="widget-row-prompt">For the housefly, spider, earthworm, and snail, which first question splits the group most evenly and uses an observable, binary trait?</div>
+                <div class="widget-options">
+                    <button data-choice="legs" data-fb="Correct. &lsquo;Has jointed legs?&rsquo; is observable and either/or, and it splits four organisms into two and two &mdash; a clean, balanced first cut.">Does it have jointed legs?</button>
+                    <button data-choice="shell" data-hint="Observable, but it splits 1 vs. 3 (only the snail has a shell) &mdash; less balanced. A trait that divides the group in half is a better first step.">Does it have a hard shell?</button>
+                    <button data-choice="pretty" data-hint="No &mdash; &lsquo;interesting&rsquo; is an opinion, not an observable trait. Different users would answer differently, breaking the key.">Is it an interesting animal?</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="good">
+                <div class="widget-row-prompt">Which of these is a GOOD key characteristic?</div>
+                <div class="widget-options">
+                    <button data-choice="bad1" data-hint="&lsquo;Usually found in gardens&rsquo; is an outside fact a user can&rsquo;t check on the specimen in front of them &mdash; not a good key trait.">Is it usually found in gardens?</button>
+                    <button data-choice="good" data-fb="Correct. &lsquo;Are the wings present or absent?&rsquo; is observable and strictly binary &mdash; exactly what a good key step needs.">Are wings present or absent?</button>
+                    <button data-choice="bad2" data-hint="&lsquo;How pretty are the markings?&rsquo; is subjective and not binary &mdash; users would disagree, so it makes a poor step.">How pretty are its markings?</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128260; PART 3 &middot; LOCK IN THE RULE</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">The test of a good characteristic</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Before you go on, fix the rule firmly in mind with the card below &mdash; you will use it to build your own key in the assignment.</p>
+
+        <!-- Flip card -->
+        <div class="optima-widget ow-flip">
+            <div class="ow-flip-front">
+                <div class="widget-kicker">&#128260; FLIP CARD &middot; TAP TO REVEAL</div>
+                <div style="font-size: 18px; color: #0E1C42; line-height: 1.6;">What three qualities make a characteristic a <strong>good</strong> one to split on when building a dichotomous key?<br /><span style="font-size: 14px; color: #1B6A94;">(Tap to flip.)</span></div>
+            </div>
+            <div class="ow-flip-back">
+                <div class="widget-kicker">&#9989; THE ANSWER</div>
+                <div style="font-size: 18px; color: #0E1C42; line-height: 1.6;">A good key characteristic is <strong>observable</strong>, <strong>binary</strong>, and <strong>contrasting</strong>.<br /><span style="font-size: 15px; color: #1a2340;">Observable &mdash; you can see or measure it on the specimen. Binary &mdash; exactly two clear answers. Contrasting &mdash; true opposites, so every organism fits one side and only one side. Avoid opinions (&ldquo;pretty?&rdquo;) and unknowable facts (&ldquo;where does it live?&rdquo;).</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build a Linnaean Classification Ladder</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Build a labeled ladder of the eight ranks (Domain &rarr; Species) for the gray wolf, <em>Canis lupus</em>, and record a short walkthrough naming each rung.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Explore the Specimen Room</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Use a provided dichotomous key to identify five unknown organisms, capturing a named snapshot of each identification &mdash; and notice which traits the key chose to split on.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 19.04 &middot; Build Your Own Key</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Construct a small dichotomous key that separates four given organisms, using observable, binary, contrasting traits. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">To build a key, choose <strong>observable, binary, contrasting</strong> traits, split the group in half, and keep splitting until each organism stands alone. This closes Week 19&rsquo;s arc &mdash; from <em>why</em> we classify, to <em>naming</em> species, to <em>using</em> and now <em>making</em> the tools of identification &mdash; all one act of <strong>courtesy</strong>, the ordered naming of the household of life. Next week the module widens out to the kingdoms and domains themselves: the great branches of that household.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 3 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 19.04 &middot; Constructing a Dichotomous Key</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

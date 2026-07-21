@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 18.04</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 6</div>
+        <div style="font-size: 12px; color: #666;">Evolution and Natural Selection</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 18.04</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Our Own Branch</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Courage &mdash; Darwin following evidence into 20 years of controversy</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 18.04</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Our Own Branch: Human Evolution</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; The Hominid Bush, Common Ancestry, and the Module Synthesis</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">If humans evolved, did we come from chimpanzees? And how does our own story fit the one argument we have built for three weeks?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today you turn the lens on our own species. You will trace the human lineage as a <strong>branching bush, not a ladder</strong>, meet a few well-known fossil species, and correct biology&rsquo;s most famous misconception head-on: <strong>humans did not evolve from chimpanzees</strong> &mdash; we share a common ancestor with them. Then, because this lesson closes Module 6, you will pull the whole argument together: evidence (Week 16), mechanisms (Week 17), and speciation (Week 18) form one case for common descent.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> describe the human lineage as a branching bush and name key trends &mdash; bipedalism, increasing brain size, and tool use.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> correct the claim that &ldquo;humans evolved from chimpanzees&rdquo; using the idea of a shared common ancestor.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> tie together evidence, mechanisms, and speciation into one argument for common descent.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 18.04, <em>Our Own Branch: Human Evolution</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129516; PART 1 &middot; A BUSH, NOT A LADDER</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">The hominid family tree</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The famous &ldquo;march of progress&rdquo; image &mdash; a crouching ape straightening into a modern human &mdash; is misleading. Human evolution was not a single ladder climbing toward us. It was a <strong>branching bush</strong>: many related species, several living at the same time, most of them now extinct. We are one surviving twig, not the top rung.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">A few well-known species, in rough order, mark the journey:</p>
+        <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 6px; padding: 14px 22px; margin: 6px 0 12px 0;">
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.8;"><strong><em>Australopithecus afarensis</em></strong> &mdash; &ldquo;Lucy,&rdquo; about 3.2 million years ago; walked upright (bipedal) but had a small, ape-sized brain.<br /><strong><em>Homo habilis</em></strong> &mdash; among the earliest stone-tool users.<br /><strong><em>Homo erectus</em></strong> &mdash; larger brain, use of fire, first to migrate out of Africa.<br /><strong><em>Homo neanderthalensis</em></strong> &mdash; the Neanderthals, a close relative of our own species.<br /><strong><em>Homo sapiens</em></strong> &mdash; us, arising about 300,000 years ago.</div>
+        </div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Across this bush, three <strong>trends</strong> stand out: walking upright on two legs (<strong>bipedalism</strong>) came early; <strong>brain size</strong> generally increased over time; and <strong>tool use</strong> grew more sophisticated. These are trends in a branching history &mdash; not steps on a ladder aimed at producing us.</p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129520; PART 2 &middot; THE MISCONCEPTION, CORRECTED</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">We did not evolve from chimpanzees</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Here is the single most common error in this whole subject: the idea that <em>humans evolved from chimpanzees</em>. We did not. Chimpanzees are not our ancestors &mdash; they are our <strong>cousins</strong>. Humans and chimpanzees both descend from a <strong>common ancestor</strong> that lived roughly <strong>6 to 7 million years ago</strong>. From that ancestor, the tree branched: one lineage led, over millions of years, to modern chimpanzees; another led to us. Both branches have been evolving the whole time. A chimpanzee is a fully modern, separately evolved species &mdash; not a &ldquo;halfway&rdquo; human and not a leftover earlier stage.</p>
+
+        <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 6px; padding: 14px 20px; margin: 10px 0;">
+            <div style="font-size: 16px; color: #0e1c42; line-height: 1.7; text-align: center;"><strong>common ancestor (~6&ndash;7 mya) &nbsp;&rarr;&nbsp; branches into &nbsp;&rarr;&nbsp; lineage to chimpanzees &nbsp;&amp;&nbsp; lineage to humans</strong></div>
+            <div style="font-size: 14px; color: #666; line-height: 1.6; text-align: center; margin-top: 6px;">Cousins share an ancestor; they do not descend one from the other.</div>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 14px 0 4px 0;">Test the misconception directly. Tap an answer for instant feedback.</p>
+
+        <!-- Evaluative single-select -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; GET THE RELATIONSHIP RIGHT</div>
+            <div class="widget-question">Choose the statement that correctly describes how humans and chimpanzees are related.</div>
+
+            <div class="widget-row" data-correct="2" data-hint="Did one species descend from the other, or do they share an ancestor?">
+                <div class="widget-row-prompt">1. Which statement is accurate?</div>
+                <div class="widget-options">
+                    <button data-choice="0" data-fb="Not quite &mdash; this is the classic misconception. Chimpanzees are not our ancestors; we share a common ancestor with them.">Humans evolved from chimpanzees</button>
+                    <button data-choice="1" data-fb="Not quite &mdash; modern chimpanzees are not our ancestors either. Both species descend from a shared ancestor.">Chimpanzees are slowly turning into humans</button>
+                    <button data-choice="2" data-fb="Right &mdash; humans and chimpanzees share a common ancestor that lived roughly 6&ndash;7 million years ago, then branched into two separate lineages.">Humans and chimpanzees share a common ancestor</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-hint="Both lineages have been evolving for millions of years.">
+                <div class="widget-row-prompt">2. A modern chimpanzee is best described as&hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="0" data-fb="Not quite &mdash; a chimp is not a &lsquo;half-finished&rsquo; human. It is a fully modern species on its own branch.">an earlier, unfinished stage of humans</button>
+                    <button data-choice="1" data-fb="Right &mdash; a chimpanzee is a fully modern, separately evolved species, our cousin on a different branch of the tree.">a fully modern species, our evolutionary cousin</button>
+                    <button data-choice="2" data-fb="Not quite &mdash; chimps are our close relatives, but they are not our direct ancestors. We share an ancestor with them.">our direct ancestor</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128279; PART 3 &middot; CLOSING THE MODULE: ONE ARGUMENT</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Evidence, mechanism, and speciation come together</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">This lesson closes Module 6, so step back and see the whole shape of it. In <strong>Week 16</strong> you weighed four independent lines of <em>evidence</em> &mdash; fossils, anatomy (homologous structures), embryology, and molecular sequences &mdash; that all point to shared ancestry. In <strong>Week 17</strong> you learned the <em>mechanisms</em> that drive change: variation, natural selection, and genetic drift. This week you saw how those mechanisms, acting on isolated populations, cause <em>speciation</em> &mdash; the branching that fills the tree of life. Put together, they make one coherent case: life shares <strong>common descent</strong>, the same tree on which our own branch sits beside the chimpanzee&rsquo;s.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 14px 0 4px 0;">Flip the card to check how the three weeks fit together.</p>
+
+        <!-- Flip card -->
+        <div class="optima-widget ow-flip">
+            <div class="ow-flip-front">
+                <div class="widget-kicker">&#128260; FLIP CARD &middot; TAP TO REVEAL</div>
+                <div style="font-size: 18px; color: #0E1C42; line-height: 1.6;">In one sentence each: what did Week 16, Week 17, and Week 18 contribute to the argument for common descent?<br /><span style="font-size: 14px; color: #1B6A94;">(Answer in your head, then tap to flip.)</span></div>
+            </div>
+            <div class="ow-flip-back">
+                <div class="widget-kicker">&#9989; THE ONE ARGUMENT</div>
+                <div style="font-size: 18px; color: #0E1C42; line-height: 1.6;"><strong>Week 16 (evidence):</strong> fossils, anatomy, embryology, and molecules independently point to shared ancestry. <strong>Week 17 (mechanism):</strong> variation, selection, and drift change populations over time. <strong>Week 18 (speciation):</strong> those mechanisms, acting on isolated populations, split one species into many &mdash; filling the branching tree of common descent.</div>
+            </div>
+        </div>
+
+        <div style="background: #FDF3E3; border-left: 5px solid #C7922C; border-radius: 6px; padding: 14px 20px; margin: 14px 0 0 0;">
+            <div style="font-size: 11px; color: #8a6a1d; margin-bottom: 8px;">&#128221; YOUR MODULE 6 WRITING</div>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.65;">This is the understanding your <strong>Module 6 CER essay</strong> asks you to put into writing: evaluate the independent lines of evidence and build the argument for common descent. Open the CER assignment for this module and bring everything from these three weeks to bear.</div>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px dashed #C5DCE5; border-radius: 6px; padding: 12px 18px; margin: 14px 0 0 0;">
+            <div style="font-size: 15px; color: #1B6A94; line-height: 1.6;"><strong>Looking ahead &mdash;</strong> the branching tree you have built here is exactly what Module 7 will organize. Next module, <em>Classification and Diversity of Life</em>, asks how we name and sort all these branches into the household of life.</div>
+        </div>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build a Simple Cladogram of Speciation Events</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Arrange organisms on a branching tree by shared characters, place a speciation event at each branch point, and record a walkthrough explaining how each branch is one population splitting into two.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Walk the Miller&ndash;Urey Apparatus &amp; Early-Earth Scene</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Walk through a model of the Miller&ndash;Urey apparatus and an early-Earth environment, observe where amino acids collect, and capture named snapshots.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 18.04 &middot; Our Own Branch</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Correct the &ldquo;humans evolved from chimps&rdquo; statement using &ldquo;common ancestor,&rdquo; order given hominid species/traits, and write one short synthesis sentence tying the module together. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Our own story is a branch on the bush, not the top of a ladder. We did not descend from chimpanzees; we share a common ancestor with them, and both branches have evolved ever since. With that, Module 6 closes: evidence, mechanism, and speciation join into a single argument for common descent &mdash; the case Darwin had the <strong>courage</strong> to follow into twenty years of controversy. Carry that branching tree forward; in Module 7 you will learn how we name and organize every twig on it.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 18.04 &middot; Our Own Branch: Human Evolution</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

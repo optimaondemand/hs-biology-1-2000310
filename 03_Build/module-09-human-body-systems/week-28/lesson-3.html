@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 28.03</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q4 &middot; Module 9</div>
+        <div style="font-size: 12px; color: #666;">Human Body Systems</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 28.03</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Synapses &amp; Drug Mechanisms</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Self-government &mdash; homeostasis, the body's quiet discipline</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 28.03</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Synapses, Neurotransmitters &amp; How Drugs Act</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; Chemical Signaling and the Module 9 CER Anchor</div>
+    </div>
+
+    <!-- CER anchor flag -->
+    <div style="background: #FDF3E3; border-left: 5px solid #C7922C; border-radius: 6px; padding: 14px 20px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #8a6a1d; margin-bottom: 8px;">&#9999;&#65039; MODULE 9 CER ANCHOR LESSON</div>
+        <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">This lesson is the anchor for your <strong>Module 9 CER essay</strong>, which asks you to trace a drug's mechanism from the synapse to its physiological effect to the basis of addiction. Everything here &mdash; receptors, agonists and antagonists, the dopamine reward pathway &mdash; is the evidence you'll build that argument from. Keep notes.</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Neurons never touch. So how does one pass its message to the next &mdash; and how can a molecule from outside the body hijack that hand-off?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today the signal crosses the gap. You will see how the electrical wave becomes a <strong>chemical</strong> message at the <strong>synapse</strong>, learn how <strong>neurotransmitters</strong> bind <strong>receptors</strong>, and study &mdash; as biology, never as instructions &mdash; how drugs act as <strong>agonists</strong>, <strong>antagonists</strong>, or <strong>reuptake inhibitors</strong>, and why so many addictive drugs converge on the brain's <strong>dopamine reward pathway</strong>. Understanding this chemistry is part of the module's virtue: <strong>self-government</strong>.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain how a synapse works &mdash; neurotransmitter release, receptor binding, and clearance &mdash; and why the signal there is chemical, not electrical.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish how agonists, antagonists, and reuptake inhibitors change a synapse's signal.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> describe how addictive drugs converge on the dopamine reward pathway, and how repeated use leads to tolerance and dependence.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 28.03, <em>Across the Gap: Synapses, Neurotransmitters, and How Drugs Act</em> &mdash; your anchor text for this lesson and your Module 9 CER. Read it before working through the parts below.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128274; PART 1 &middot; CROSSING THE GAP</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Before today: when you hear that a substance "goes to your head" or "affects your brain," what do you imagine it's actually doing to a brain cell? (No wrong answer &mdash; just check in.)</div>
+            <div class="widget-options">
+                <button data-response="A common picture &mdash; and today makes it precise. A substance that affects the brain does so by interfering with the chemical hand-off between neurons: it fits, blocks, or lingers at receptors in the synapse. That's the whole mechanism, and it's what your CER will trace.">It changes the brain's chemistry somehow</button>
+                <button data-response="Good instinct that it's physical, not magical. Almost every psychoactive substance works at the synapse &mdash; the tiny gap between neurons &mdash; by mimicking, blocking, or prolonging a neurotransmitter's signal. You'll name each of those mechanisms today.">It sticks to brain cells and changes how they work</button>
+                <button data-response="Fair &mdash; it's genuinely invisible. The answer is molecular: substances act in the synapse, where they fit receptors like keys, block them, or keep a neurotransmitter from being cleared. Today you'll be able to explain exactly how.">I've never pictured the actual mechanism</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Release, bind, clear</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">At a <strong>synapse</strong>, the action potential reaches the <strong>presynaptic</strong> terminal and triggers the release of <strong>neurotransmitters</strong> into the <strong>synaptic cleft</strong>. They cross the gap and <strong>bind receptors</strong> on the <strong>postsynaptic</strong> cell &mdash; a key in a lock &mdash; passing the message on. Then they are <strong>cleared</strong>: taken back up (<strong>reuptake</strong>) or broken down by an <strong>enzyme</strong>, so the synapse resets. The brain's messengers include <strong>dopamine</strong> (reward and motivation), <strong>serotonin</strong> (mood), <strong>acetylcholine</strong> (muscle signals, attention), and <strong>GABA</strong> (calming).</p>
+    </div>
+
+    <!-- PART 2 -- WI + drug mechanism select -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129513; PART 2 &middot; DRUG MECHANISM &rarr; EFFECT (WEB-INTERACTIVE)</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Three ways to change a synapse's signal</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 4px 0;">Because the synapse runs on molecules binding receptors, a drug can change the signal three ways: an <strong>agonist</strong> mimics a neurotransmitter (adds signal), an <strong>antagonist</strong> blocks a receptor (removes signal), or a <strong>reuptake inhibitor</strong> stops clearance (prolongs signal). Match each accurate, textbook example to its mechanism and effect. This is biology, not instruction.</p>
+
+        <!-- ow-select -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129513; MATCH IT &middot; MECHANISM &amp; EFFECT</div>
+            <div class="widget-row" data-correct="a" data-hint="It fits and turns ON acetylcholine receptors &mdash; adding signal the body didn't send.">
+                <div class="widget-row-prompt">Nicotine fits nicotinic acetylcholine receptors and activates them. What mechanism is this?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. Nicotine is an agonist: it mimics acetylcholine, binding and turning on its receptors &mdash; adding a signal the body did not send.">Agonist &mdash; it mimics a neurotransmitter</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; an antagonist blocks a receptor without activating it. Nicotine ACTIVATES acetylcholine receptors, so it is an agonist.">Antagonist &mdash; it blocks a receptor</button>
+                    <button data-choice="c" data-fb="No &mdash; a reuptake inhibitor stops a neurotransmitter from being cleared. Nicotine instead binds and activates receptors directly, so it is an agonist.">Reuptake inhibitor &mdash; it prolongs a signal</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="b" data-hint="Adenosine normally makes you drowsy. What happens if a molecule plugs its receptor without turning it on?">
+                <div class="widget-row-prompt">Caffeine binds adenosine receptors but does not activate them, so adenosine (which promotes drowsiness) cannot act. What mechanism, and what effect?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; an agonist activates the receptor. Caffeine plugs the adenosine receptor WITHOUT activating it, which makes it an antagonist.">Agonist &mdash; it activates adenosine receptors, causing drowsiness</button>
+                    <button data-choice="b" data-fb="Correct. Caffeine is an adenosine antagonist: by blocking the receptor that normally signals drowsiness, it leaves you feeling more alert &mdash; mechanism to effect.">Antagonist &mdash; blocking the drowsiness signal leaves you more alert</button>
+                    <button data-choice="c" data-fb="No &mdash; caffeine does not prolong a neurotransmitter by stopping reuptake. It blocks the adenosine receptor, so it is an antagonist.">Reuptake inhibitor &mdash; it keeps adenosine in the cleft longer</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="c" data-hint="If dopamine can't be taken back up, it stays in the cleft and keeps signaling.">
+                <div class="widget-row-prompt">Cocaine and amphetamines block the reuptake of dopamine, so dopamine lingers in the synaptic cleft. What mechanism, and what effect on the signal?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; an agonist mimics the neurotransmitter itself. These drugs instead stop dopamine from being cleared, which makes them reuptake inhibitors.">Agonist &mdash; they mimic dopamine at its receptor</button>
+                    <button data-choice="b" data-fb="No &mdash; an antagonist blocks a receptor. These drugs leave dopamine free to bind but stop its reuptake, prolonging its signal &mdash; a reuptake inhibitor.">Antagonist &mdash; they block dopamine receptors</button>
+                    <button data-choice="c" data-fb="Correct. Blocking reuptake means dopamine is not cleared, so it keeps binding receptors and its signal is amplified far beyond normal &mdash; mechanism to effect.">Reuptake inhibitor &mdash; dopamine's signal is amplified and prolonged</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <!-- WEB-INTERACTIVE link-out card -->
+        <div style="background: #E8F6FB; border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 8px 0;">
+            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px;">&#128421;&#65039; EXPLORE &middot; INTERACTIVE</div>
+            <div style="font-size: 18px; color: #0E1C42; line-height: 1.6; margin-bottom: 10px;"><strong>See a synapse in action.</strong> Open a vetted science-simulation site and search for an interactive on the <strong>synapse</strong>, <strong>neurotransmitters</strong>, or <strong>neuron communication</strong>. Watch a neurotransmitter release, cross the cleft, and bind a receptor &mdash; then look for how the signal is cleared. Compare what you see to the release&ndash;bind&ndash;clear steps above.</div>
+            <div style="font-size: 15px; color: #1a2340; line-height: 1.6;">Try: <a href="https://www.hhmi.org/biointeractive" style="color: #1B6A94;">hhmi.org/biointeractive</a> or <a href="https://phet.colorado.edu" style="color: #1B6A94;">phet.colorado.edu</a> (each opens in a new tab). If your class uses a different vetted portal, follow your teacher's posted link instead.</div>
+        </div>
+    </div>
+
+    <!-- PART 3 -- reward pathway + gold callout -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; PART 3 &middot; THE REWARD PATHWAY &amp; THE BASIS OF ADDICTION</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Why different drugs lead to the same trap</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Very different addictive drugs &mdash; nicotine, opioids (agonists at opioid receptors), cocaine and amphetamines &mdash; converge on one result: they <strong>flood the brain's dopamine reward pathway</strong> far beyond any natural reward. With repeated flooding, the brain <strong>adapts</strong>: it reduces its own receptors (<strong>downregulation</strong>). Now the same dose does less &mdash; <strong>tolerance</strong> &mdash; and the brain leans on the drug just to feel normal &mdash; <strong>dependence</strong>. This is the mechanistic chain your CER will trace: <em>receptor binding &rarr; changed signal &rarr; flooded reward pathway &rarr; tolerance and dependence</em>.</p>
+
+        <!-- Contemporary research callout (GOLD, hedged) -->
+        <div style="background: #FDF3E3; border-left: 5px solid #C7922C; border-top: 3px solid #E0A93B; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #8a6a1d; margin-bottom: 8px;">&#10024; FROM TODAY'S RESEARCH &middot; RETHINKING ADDICTION AS A BRAIN CONDITION</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">For a long time addiction was treated mainly as a failure of willpower. Recent research suggests a different picture: many scientists now describe addiction as a <strong>chronic condition of the brain's reward circuitry</strong>, in which repeated drug exposure produces lasting changes in dopamine signaling and in the circuits that govern self-control. Researchers are currently exploring treatments that target this biology &mdash; medications that ease withdrawal or reduce craving, and behavioral therapies studied alongside them. The findings are still developing and no approach works for everyone, but the shift in view matters: understanding addiction as a brain condition, rather than a simple moral failing, is changing how it is studied and treated. It is a reminder that knowing the mechanism can make us both more careful and more compassionate.</div>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 12px 0 0 0;"><strong>The self-government thread:</strong> none of this is a set of instructions &mdash; it is the opposite. Seeing exactly how a molecule can capture the brain's reward system is what lets you make an informed, deliberate choice. Knowing the chemistry is part of governing yourself. Your <strong>Module 9 CER essay</strong> will put this understanding into an argument.</p>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build a Neuron &amp; Fire an Action Potential to a Synapse</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Build a neuron and trace a signal to the synapse where a neurotransmitter is released. Pairs with Lessons 28.02 and 28.03.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Observe a Drug Acting at a Synapse (Mechanism &rarr; Effect)</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Enter a synapse scene and observe how an agonist, antagonist, or reuptake blocker changes signaling and its downstream effect, capturing labeled snapshots. This VR pairs directly with today's lesson and gives you evidence for your Module 9 CER.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 28.03 &middot; Trace a Drug's Mechanism</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Write a short mechanism trace &mdash; drug &rarr; receptor action &rarr; effect &mdash; for one accurate example. This primes your Module 9 CER without being the essay itself. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">A thought is molecules crossing a gap, and because it is chemical, chemistry can change it &mdash; for medicine and for harm. Agonists mimic, antagonists block, reuptake inhibitors prolong; many addictive drugs end at the same flooded dopamine pathway. Hold this synaptic chemistry as we turn, in the next lesson, to the body's <strong>other</strong> chemical-messenger system &mdash; the hormones of the endocrine system.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 4 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 28.03 &middot; Synapses, Neurotransmitters &amp; How Drugs Act</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

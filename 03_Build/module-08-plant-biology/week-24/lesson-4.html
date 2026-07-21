@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 24.04</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q3 &middot; Module 8</div>
+        <div style="font-size: 12px; color: #666;">Plant Biology</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 24.04</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Soil, Nutrients &amp; the Microbiome</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Wonder &mdash; plants that sense and respond without nerves</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 24.04</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Soil, Nutrients, and the Life Underground</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; Mineral Nutrients and the Plant Microbiome</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">A plant is surrounded by nitrogen &mdash; the air is 78% of it &mdash; yet it can starve for nitrogen. How does a rooted plant get what it cannot capture on its own?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today you finish the plant&rsquo;s story underground. You will name the <strong>mineral nutrients</strong> a plant draws from the soil and why each matters, and meet the hidden helpers &mdash; the <strong>plant microbiome</strong>: nitrogen-fixing bacteria and mycorrhizal fungi that trade nutrients for sugar. This is also the module&rsquo;s <strong>AI-literacy</strong> lesson: you will weigh where AI genuinely helps agriculture and where it fails.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> describe the essential mineral nutrients plants get from soil and why they matter.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain how soil microbes (the plant microbiome) help plants obtain nutrients.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 24.04, <em>Rooted in Partnership: Soil, Nutrients, and the Life Underground</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127793; PART 1 &middot; WHAT A PLANT NEEDS FROM THE SOIL</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Plants make their own sugar by photosynthesis. So do they need anything from the soil besides water? (No wrong answer &mdash; just check in.)</div>
+            <div class="widget-options">
+                <button data-response="Actually, yes &mdash; a lot. Sugar is only carbon, hydrogen, and oxygen. To build proteins, DNA, and chlorophyll a plant also needs mineral nutrients like nitrogen, phosphorus, and potassium, absorbed from the soil.">No &mdash; sugar and water should be enough</button>
+                <button data-response="Right instinct! Beyond water, plants absorb dissolved mineral ions &mdash; nitrogen, phosphorus, potassium, magnesium, and more &mdash; that photosynthesis cannot provide. You can&rsquo;t build a whole body from sugar alone.">Yes &mdash; minerals or nutrients of some kind</button>
+                <button data-response="Good question to sit with. Photosynthesis gives carbon, hydrogen, and oxygen &mdash; but proteins, DNA, and chlorophyll need elements like nitrogen and magnesium that come only from the soil.">I&rsquo;m honestly not sure what else they&rsquo;d need</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">The key mineral nutrients</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Absorbed as dissolved ions, the macronutrients include <strong>nitrogen</strong> (proteins, chlorophyll, DNA), <strong>phosphorus</strong> (ATP, DNA, membranes), and <strong>potassium</strong> (enzyme function and guard-cell/stomata operation), plus calcium, <strong>magnesium</strong> (the center of every chlorophyll molecule), and sulfur. Micronutrients like <strong>iron</strong> are needed only in tiny amounts.</p>
+
+        <!-- ow-select: nutrient roles -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129513; CHECK IT &middot; NUTRIENT &rarr; ROLE</div>
+            <div class="widget-row" data-correct="c" data-hint="Which element sits at the center of every chlorophyll molecule?">
+                <div class="widget-row-prompt">A plant&rsquo;s leaves are pale and yellowing, and its chlorophyll is failing. Which nutrient sits at the very center of every chlorophyll molecule?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; phosphorus builds ATP, DNA, and membranes, but it is not the atom at the core of chlorophyll.">Phosphorus</button>
+                    <button data-choice="b" data-fb="No &mdash; potassium runs enzymes and works the guard cells, but magnesium is the atom at the heart of chlorophyll.">Potassium</button>
+                    <button data-choice="c" data-fb="Correct. Magnesium sits at the center of every chlorophyll molecule &mdash; without it, a plant cannot build working chlorophyll.">Magnesium</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="a" data-hint="Which nutrient goes into proteins, chlorophyll, AND DNA?">
+                <div class="widget-row-prompt">Which nutrient does a plant use to build proteins, chlorophyll, and DNA?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. Nitrogen is a building block of proteins, chlorophyll, and DNA &mdash; which is why plants need so much of it.">Nitrogen</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; iron is a micronutrient needed only in tiny amounts, not the main ingredient of proteins and DNA. That is nitrogen.">Iron</button>
+                    <button data-choice="c" data-fb="No &mdash; calcium is mostly for cell walls and membranes. Proteins, chlorophyll, and DNA all rely on nitrogen.">Calcium</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129440; PART 2 &middot; THE PLANT MICROBIOME</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">The nitrogen paradox &mdash; and the partners that solve it</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The air is ~78% nitrogen gas (N&#8322;), but plants cannot use N&#8322; directly. <strong>Nitrogen-fixing bacteria</strong> (such as <em>Rhizobium</em>, in root nodules on legumes) convert N&#8322; into ammonia the plant can use &mdash; a <strong>mutualism</strong>, since the plant feeds the bacteria sugar. In the <strong>rhizosphere</strong> around the roots, <strong>mycorrhizal fungi</strong> extend the root&rsquo;s reach for water and especially <strong>phosphorus</strong>, and receive sugars in return &mdash; another mutualism.</p>
+
+        <!-- ow-select: microbiome / nitrogen -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129513; CHECK IT &middot; PARTNERS IN THE SOIL</div>
+            <div class="widget-row" data-correct="b" data-hint="Can a plant break apart N&#8322; gas by itself? What has to happen first?">
+                <div class="widget-row-prompt">A farmer&rsquo;s field is surrounded by air that is 78% nitrogen gas, yet the crop shows nitrogen deficiency. Why can&rsquo;t the plants just use the nitrogen in the air?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; plants have no way to absorb N&#8322; gas through their leaves. The gas must first be converted (fixed) into a usable form.">They absorb N&#8322; gas straight through their leaves</button>
+                    <button data-choice="b" data-fb="Correct. Plants cannot use N&#8322; directly; nitrogen-fixing bacteria must first convert it into ammonia the plant can absorb from the soil.">They can&rsquo;t use N&#8322; directly &mdash; bacteria must fix it into a usable form first</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; nitrogen gas is not made by photosynthesis, and plants cannot build it. It must be fixed from the air by bacteria.">They make their own nitrogen by photosynthesis</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="a" data-hint="What does the fungus give the plant, and what does it get back?">
+                <div class="widget-row-prompt">Mycorrhizal fungi thread through a plant&rsquo;s roots. Which best describes the relationship?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. It is a mutualism: the fungi extend the root&rsquo;s reach for water and phosphorus, and the plant pays them in sugar &mdash; both benefit.">Mutualism &mdash; fungi supply water and phosphorus; the plant supplies sugar</button>
+                    <button data-choice="b" data-fb="No &mdash; mycorrhizae help the plant rather than harming it. This is a mutual benefit, not a parasitism.">Parasitism &mdash; the fungi harm the plant to feed themselves</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; the partnership is active and beneficial to both. The fungi deliver nutrients and receive sugar in return.">Neither one is affected by the other</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <!-- CONTEMPORARY callout (GOLD) -->
+        <div style="background: #FDF3E3; border-left: 5px solid #C7922C; border-top: 3px solid #C7922C; border-radius: 6px; padding: 14px 20px; margin: 16px 0 0 0;">
+            <div style="font-size: 11px; color: #8a6a1d; margin-bottom: 8px;">&#127793; CONTEMPORARY RESEARCH &middot; THE MICROBES BEHIND A HARDIER CROP</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Recent research suggests that a plant&rsquo;s root microbiome may play a surprisingly large part in how well it survives <strong>drought</strong> and how efficiently it takes up nutrients. Scientists are currently exploring whether the right community of soil microbes can be encouraged, added, or even engineered to help crops withstand dry spells and to reduce how much chemical fertilizer a farm must use. The work is still young and unsettled &mdash; a microbial partnership that helps in one soil may do little in another &mdash; but it is a promising frontier in the effort to grow more food with less water and less fertilizer.</div>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129302; PART 3 &middot; AI IN THE FIELD &mdash; TOOL, NOT ORACLE</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Can a model diagnose a sick crop?</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Farmers increasingly point a phone at a leaf and let software name the problem. That is a real opportunity &mdash; and a real trap. Read the callout, then interrogate a claim.</p>
+
+        <!-- AI AWARENESS callout (RED) -->
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-radius: 6px; padding: 14px 20px; margin: 0 0 16px 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#129302; AI AWARENESS &middot; CAN A MODEL DIAGNOSE A SICK CROP?</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">The <strong>opportunity</strong> is real: <strong>machine-learning models</strong> trained on many labeled plant photos can help flag crop <strong>disease</strong> or a <strong>nutrient deficiency</strong> early from an image, letting a grower act sooner and across far more acres than any expert could scout by hand; researchers are also exploring AI to help sift genetic data when breeding hardier crops. But the <strong>pitfalls</strong> deserve equal weight. Such a model is only as good as its <strong>training data</strong> &mdash; it works best on the well-photographed crops and regions it learned from, and can fail or mislabel elsewhere. It can be <strong>confidently wrong</strong> on look-alike symptoms, mistaking drought stress for a disease. And a prediction is a <strong>hypothesis to check</strong> against the real field, not an authority to obey. Treat an AI crop diagnosis the way you treat any scientific claim: a useful lead you must verify, not a verdict you must trust.</div>
+        </div>
+
+        <!-- ow-select: interrogate the AI claim -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129513; INTERROGATE IT &middot; WEIGH THE AI CLAIM</div>
+            <div class="widget-row" data-correct="c" data-hint="What does a careful scientist do with any prediction &mdash; even a confident one?">
+                <div class="widget-row-prompt">An app scans a leaf photo and reports, with 95% confidence, that the crop has a fungal disease. What is the most scientific next step?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; a high confidence score is not proof. The model can be confidently wrong, especially on look-alike symptoms.">Trust it immediately &mdash; 95% confidence is basically certain</button>
+                    <button data-choice="b" data-fb="Too far the other way &mdash; the tool is genuinely useful as a lead. The point isn&rsquo;t to ignore it, but to verify it.">Ignore it &mdash; AI is never worth listening to</button>
+                    <button data-choice="c" data-fb="Correct. Treat the prediction as a hypothesis: check the actual plant, consider look-alike causes (like drought stress), and confirm with an expert or further evidence before acting.">Treat it as a hypothesis and verify it against the real field</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="b" data-hint="Why might a model trained in one place fail in another?">
+                <div class="widget-row-prompt">The same app works well on farms in the region where it was built but misfires badly on an unfamiliar crop overseas. What best explains this?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; the plants are not &lsquo;lying.&rsquo; The gap is in the model&rsquo;s training, not the crop.">The overseas plants are deliberately hiding their symptoms</button>
+                    <button data-choice="b" data-fb="Correct. A model is only as good as its training data &mdash; if it never learned from that crop or region, it can fail or mislabel there.">Its training data didn&rsquo;t include that crop or region, so it generalizes poorly</button>
+                    <button data-choice="c" data-fb="No &mdash; models don&rsquo;t &lsquo;get tired.&rsquo; The real issue is biased or limited training data.">The software gets tired after being used too much</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Model Xylem &amp; Phloem Transport</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Build side-by-side xylem and phloem columns and record a walkthrough contrasting them &mdash; the transport story that carries the very nutrients you studied today. Pairs with Lessons 24.01 and 24.03.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Observe a Potometer Under Varied Conditions</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Observe a potometer and change one condition at a time (wind, light, heat, humidity), recording the uptake rate &mdash; the data your Module 8 CER essay analyzes.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 24.04 &middot; Nutrients, Nitrogen Fixation &amp; AI</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Match each nutrient to its role, explain the nitrogen-fixing mutualism, and write one sentence interrogating an AI crop-ID claim. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">This closes Week 24. A plant is never really alone: it partners with bacteria to capture nitrogen and with fungi to reach water and phosphorus, trading sugar for what it cannot make. Those mineral nutrients feed the molecules of earlier modules &mdash; the DNA of <strong>Module 5</strong>, the chlorophyll of <strong>Module 4</strong> &mdash; and the mutualisms foreshadow the great web of relationships in <strong>Module 10 (Ecology)</strong>. All of it done by a living thing that senses, responds, and partners its way through the world with no nerves at all &mdash; the module&rsquo;s <strong>wonder</strong>, made concrete. Next, bring your transport model and your potometer data together in your <strong>Module 8 CER</strong>.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 3 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 24.04 &middot; Soil, Nutrients, and the Life Underground</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

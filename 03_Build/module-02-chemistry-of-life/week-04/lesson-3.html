@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 4.03</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 2</div>
+        <div style="font-size: 12px; color: #666;">Chemistry of Life</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 4.03</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Proteins: Shape Is Everything</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Wonder &mdash; the same atoms as the stars</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 4.03</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Proteins: Shape Is Everything</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">If proteins do nearly all of life&rsquo;s work, what decides whether one works at all?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">The <strong>proteins</strong> are the workhorses of the cell &mdash; enzymes, structure, transport, defense, signaling. But a protein can do its job only if it is folded into exactly the right <strong>shape</strong>. Today you will trace how a chain of amino acids folds through <strong>four levels of structure</strong>, why <strong>function follows shape</strong>, and what goes wrong when that shape comes undone.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> describe how amino acids link into polypeptides and name the four levels of protein structure.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain why a protein&rsquo;s function depends on its three-dimensional shape.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain what denaturation is and predict its effect on an enzyme.</div>
+        </div>
+    </div>
+
+    <!-- Materials -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; WHAT YOU NEED FOR THIS LESSON</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 4.03, <em>Proteins: Shape Is Everything</em> (read it before this lesson)</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Your scientific notebook (a dedicated notebook or a Word document in your OneDrive)</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129521; PART 1 &middot; FROM AMINO ACIDS TO A FOLDED MACHINE</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">When you fry an egg, the clear runny white turns solid white and never goes back. What do you think happened to it? (No wrong answer &mdash; just check in with yourself.)</div>
+            <div class="widget-options">
+                <button data-response="Good instinct &mdash; heat is the cause. What it actually did was unfold the egg&rsquo;s proteins, wrecking their shape so they can never refold. That permanent unfolding is called denaturation, and you&rsquo;ll meet it in Part 3.">&#128293; The heat changed it</button>
+                <button data-response="Close &mdash; something was lost, but not water. Heat unraveled the egg&rsquo;s proteins from their precise folded shape into a tangled solid. That irreversible unfolding is denaturation.">&#128167; It dried out</button>
+                <button data-response="Not quite cooking off &mdash; the mass is still there. What changed is the SHAPE of the proteins: heat unfolded them permanently. That unfolding is called denaturation, the heart of today&rsquo;s lesson.">&#128168; Something cooked off</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Twenty letters, four levels of folding</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">A protein&rsquo;s monomer is the <strong>amino acid</strong>. There are <strong>20 kinds</strong>, each sharing a common backbone but carrying a distinct <strong>R-group</strong> (side chain) that gives it its personality. Amino acids join by <strong>peptide bonds</strong> &mdash; another dehydration synthesis &mdash; into a chain called a <strong>polypeptide</strong>. That chain then folds through <strong>four levels</strong>: <strong>primary</strong>, the exact sequence of amino acids; <strong>secondary</strong>, local coils and pleats (the &alpha;-helix and &beta;-pleated sheet) held together by hydrogen bonds; <strong>tertiary</strong>, the overall three-dimensional fold that the R-groups pull into shape; and <strong>quaternary</strong>, two or more folded chains assembled into one working unit &mdash; <em>hemoglobin</em>, your oxygen carrier, is four subunits clicked together.</p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128295; PART 2 &middot; FUNCTION FOLLOWS SHAPE &mdash; AND WHAT BREAKS IT</div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">The right fold makes the right tool</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Here is the throughline of all biology: <strong>function follows shape</strong>. An <strong>enzyme</strong> works because its folded surface forms an <strong>active site</strong> shaped to fit one particular substrate, the way a key fits one lock. Change the shape and you change &mdash; or destroy &mdash; the job. When heat or the wrong <strong>pH</strong> (remember acids and bases from Lesson 3.04) breaks the weak bonds holding the fold together, the protein unravels and stops working. This is <strong>denaturation</strong>: the fried egg that will never go back, and the reason a high fever is dangerous. And it points straight ahead to <strong>Module 5</strong>, where a single change in DNA can swap one amino acid and ruin a protein&rsquo;s shape &mdash; the story of sickle-cell disease.</p>
+
+        <!-- AI-awareness callout (RED, verbatim style from lesson-1.01) -->
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; AI REALITY CHECK &middot; ALPHAFOLD AND THE FOLDING PROBLEM</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">A protein&rsquo;s job depends on its three-dimensional fold &mdash; but predicting that fold from the amino-acid sequence alone stumped scientists for roughly fifty years. <strong>AlphaFold</strong>, an artificial-intelligence system from the lab DeepMind, made a striking leap. To say it is &ldquo;a model trained on data&rdquo; means this: researchers had already solved the structures of tens of thousands of proteins by slow experiments, and AlphaFold studied that mountain of known sequence-and-shape pairs until it could spot the patterns linking a sequence to the shape it folds into. In a 2020 prediction contest it matched experiments with near-laboratory accuracy. But hold it honestly: AlphaFold <em>predicts</em> &mdash; it does not replace experiment, and it can be wrong on unusual or floppy, &ldquo;disordered&rdquo; proteins. The 2024 Nobel Prize in Chemistry recognized this work (to Demis Hassabis and John Jumper for AlphaFold, and to David Baker for protein design). A tool to interrogate, not an oracle to obey.</div>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 4px 0;">Try it: match each clue to the right idea about protein structure and denaturation.</p>
+
+        <!-- Evaluative single-select -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; STRUCTURE LEVELS &amp; DENATURATION</div>
+            <div class="widget-question">Tap the answer that fits each clue. You&rsquo;ll get instant feedback.</div>
+
+            <div class="widget-row" data-correct="0" data-fb="Right &mdash; the bare sequence of amino acids, in order, is the primary structure. Everything else folds from it." data-hint="Which level is just the order of the amino acids, before any folding?">
+                <div class="widget-row-prompt">1. The exact order of amino acids in the chain is the &hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="0">Primary structure</button>
+                    <button data-choice="1">Tertiary structure</button>
+                    <button data-choice="2">Quaternary structure</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Right &mdash; hemoglobin is four folded chains assembled into one unit, which is quaternary structure." data-hint="Two or more finished chains joined into one working unit is which level?">
+                <div class="widget-row-prompt">2. Hemoglobin&rsquo;s four subunits clicked together form its &hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="0">Primary structure</button>
+                    <button data-choice="1">Secondary structure</button>
+                    <button data-choice="2">Quaternary structure</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Right &mdash; high heat breaks the bonds holding the fold, the protein unravels and loses its shape. That is denaturation." data-hint="When heat unravels a protein&rsquo;s fold so it stops working, what is that called?">
+                <div class="widget-row-prompt">3. An enzyme is heated far past body temperature and stops working because it has &hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="0">Gained a new active site</button>
+                    <button data-choice="1">Denatured (lost its shape)</button>
+                    <button data-choice="2">Become a polysaccharide</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Right &mdash; the active site fits one substrate because of its shape. Change the shape and the fit, and the function, is lost." data-hint="Why does an enzyme only act on its own substrate? Think about the shape of the active site.">
+                <div class="widget-row-prompt">4. An enzyme acts on one specific substrate mainly because of its &hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="0">Shape (the active-site fit)</button>
+                    <button data-choice="1">Color</button>
+                    <button data-choice="2">Total number of atoms</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128300; PART 3 &middot; READING SHAPE, WRITING NEW SHAPES</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">From predicting folds to designing them</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Once you grasp that <em>shape is everything</em>, a tantalizing question follows: if we can <em>predict</em> how a sequence will fold, could we run the logic backward and <em>design</em> a sequence to fold into a shape we want &mdash; a protein nature never made? This is one of the frontiers of biology right now, and it leans on the same insight you learned today.</p>
+
+        <!-- Contemporary-research callout (GOLD, hedged) -->
+        <div style="background: #FDF3E3; border-left: 5px solid #C7922C; border-top: 3px solid #E0A93B; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #8a6a1d; margin-bottom: 8px;">&#10024; FROM TODAY&rsquo;S RESEARCH &middot; DESIGNING PROTEINS THAT NEVER EXISTED</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Scientists are currently exploring how to <em>design</em> brand-new proteins &mdash; ones that do not occur in nature &mdash; by choosing an amino-acid sequence that should fold into a target shape, often with the help of artificial intelligence. Recent research suggests this approach may help build candidate vaccines, custom enzymes, and new tools for medicine. It is genuinely early work: a designed sequence still has to be made and tested in the laboratory to see whether it folds and behaves as hoped, and many candidates do not. Treat the headlines with the same care you would give any new claim &mdash; promising, fast-moving, and not yet settled. The principle beneath it, though, is exactly the one from this lesson: shape determines function.</div>
+        </div>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Assemble the Four Macromolecules</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Build a short polypeptide by linking amino acids with peptide bonds &mdash; the very chain whose folding decides a protein&rsquo;s job.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Walk Through a Phospholipid Bilayer</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Notice the proteins embedded in the membrane as you walk through &mdash; their shapes are what let specific molecules cross, a preview of Module 3.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 4.03 &middot; Structure Determines Function: Denaturation</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Label the four levels of protein structure on a diagram, then predict what happens to an enzyme at high temperature &mdash; and explain <em>why</em>, in terms of shape. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">One idea will follow you through the whole course: <strong>shape determines function</strong>. The enzymes you met today drive photosynthesis and respiration in <strong>Module 4</strong>; antibodies and receptors fight disease and carry signals in <strong>Module 9</strong>; and in <strong>Module 5</strong> you will see how a single misspelled amino acid can bend a protein out of shape and cause sickle-cell disease. Get the fold right, and life works. That is the wonder hiding in a folded chain.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 4.03 &middot; Proteins: Shape Is Everything</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

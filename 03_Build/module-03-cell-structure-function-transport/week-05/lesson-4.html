@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 5.04</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 3</div>
+        <div style="font-size: 12px; color: #666;">Cell Structure, Function, and Transport</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 5.04</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">The Lens That Opened the Cell</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Perseverance &mdash; seeing what others could not</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 5.04</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">The Lens That Opened the Cell</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Everything we know about cells, we know because someone built a better way to see. What does a microscope actually do &mdash; and what does a cell look like up close?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today you learn the difference between <strong>magnification</strong> and <strong>resolution</strong>, compare the <strong>light</strong> and <strong>electron</strong> microscopes, and get ready to observe three classic cells &mdash; <strong>onion</strong>, <strong>Elodea</strong>, and your own <strong>cheek</strong>. This lesson is the anchor for this week&rsquo;s microscopy lab.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish magnification from resolution and compare light and electron microscopes.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> compare onion, Elodea, and cheek cells and identify plant-versus-animal features.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> tell a cell wall from a cell membrane when examining a real specimen.</div>
+        </div>
+    </div>
+
+    <!-- Materials -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; WHAT YOU NEED FOR THIS LESSON</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 5.04, <em>The Lens That Opened the Cell</em> (read it before this lesson)</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Your scientific notebook, and a device for the virtual microscope (for the lab)</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128301; PART 1 &middot; MAGNIFICATION VS. RESOLUTION</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">If you zoom way in on a phone photo, it gets bigger but blurry. What does that tell you about the difference between making something <em>bigger</em> and making it <em>clearer</em>? (No wrong answer.)</div>
+            <div class="widget-options">
+                <button data-response="Exactly the right intuition. Zooming is magnification; the blur is the limit of resolution. A microscope must have both &mdash; size is useless without sharpness.">&#128247; Bigger isn&rsquo;t always clearer</button>
+                <button data-response="Close &mdash; the detail isn&rsquo;t really &lsquo;added,&rsquo; it just can&rsquo;t be resolved. That&rsquo;s the key idea: resolution, not magnification, sets how small a thing we can truly see.">&#10133; Zooming adds detail</button>
+                <button data-response="Worth testing. In fact a blurry image made bigger is still blurry &mdash; that&rsquo;s why resolution (sharpness), not just magnification, limits what a microscope can reveal.">&#128173; They&rsquo;re the same thing</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Two jobs, two microscopes</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>Magnification</strong> is how much larger an object appears; <strong>resolution</strong> is the ability to tell two close points apart &mdash; how sharp the image is. Magnification without resolution is useless, so resolution is what truly limits how small a thing we can study. A <strong>light microscope</strong> uses visible light and glass lenses: it is cheap, can show <em>living</em> cells, and resolves whole cells and the nucleus. An <strong>electron microscope</strong> uses a beam of electrons, which act like far finer waves, giving much higher resolution &mdash; deep inside organelles &mdash; but it is huge, costly, and usually <em>kills</em> the specimen, so you cannot watch a living cell. The tool you reach for depends on the question you are asking.</p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129440; PART 2 &middot; THREE CELLS, SIDE BY SIDE</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">What you&rsquo;ll see on the slide</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>Onion epidermis (plant):</strong> a tidy grid of brick-shaped cells &mdash; the straight edges are the rigid <strong>cell wall</strong>, and a small dot inside each is the <strong>nucleus</strong>. <strong>Elodea (water plant):</strong> a leaf one or two cells thick, packed with green <strong>chloroplasts</strong> &mdash; the photosynthesis machinery of Module 4. <strong>Human cheek (animal):</strong> soft, rounded cells with a clear nucleus but <em>no</em> wall and <em>no</em> chloroplasts. Set the cheek beside the onion and the plant-versus-animal contrast jumps out &mdash; and it reminds you that the <strong>cell membrane</strong>, not a wall, is the universal boundary.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 8px 0 4px 0;">Try it: read each slide before you ever touch a real one.</p>
+
+        <!-- Evaluative single-select -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; READING THE SLIDE</div>
+            <div class="widget-question">Tap the answer that fits each clue. You&rsquo;ll get instant feedback.</div>
+
+            <div class="widget-row" data-correct="1" data-fb="Right &mdash; rounded shape, a nucleus, but no wall and no chloroplasts is the signature of an animal cell, like a cheek cell." data-hint="No wall, no chloroplasts, but a nucleus &mdash; plant or animal?">
+                <div class="widget-row-prompt">1. A rounded cell with a nucleus but no wall and no chloroplasts is most likely a &hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="0">Plant cell (onion)</button>
+                    <button data-choice="1">Animal cell (cheek)</button>
+                    <button data-choice="2">Prokaryote</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Right &mdash; resolution, the ability to tell two close points apart, is what truly limits how small a thing we can see." data-hint="Which property &mdash; size or sharpness &mdash; really limits what we can make out?">
+                <div class="widget-row-prompt">2. What truly limits how small an object a microscope can reveal?</div>
+                <div class="widget-options">
+                    <button data-choice="0">Its resolution</button>
+                    <button data-choice="1">Its weight</button>
+                    <button data-choice="2">Its magnification alone</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Right &mdash; green chloroplasts packed inside the cells are the giveaway of Elodea, a photosynthetic water plant." data-hint="Which specimen is famous for cells stuffed with green chloroplasts?">
+                <div class="widget-row-prompt">3. A thin leaf whose cells are packed with green dots (chloroplasts) is &hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="0">A cheek cell</button>
+                    <button data-choice="1">A bacterium</button>
+                    <button data-choice="2">Elodea</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Right &mdash; only the electron microscope has the resolution to see inside organelles, but it cannot show living cells." data-hint="To see deep inside an organelle (but not a living cell), which microscope do you need?">
+                <div class="widget-row-prompt">4. To examine fine detail <em>inside</em> an organelle, you would choose a &hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="0">Light microscope, to watch it live</button>
+                    <button data-choice="1">Electron microscope, for high resolution</button>
+                    <button data-choice="2">Hand lens</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128279; PART 3 &middot; A NEW LENS &mdash; CAN AI READ A SLIDE?</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Hooke and Leeuwenhoek opened cell biology with handmade glass. Today a new kind of &ldquo;lens&rdquo; is being added to the microscope: software that learns to recognize cells. It is powerful &mdash; and, like every tool, it has limits worth understanding before you trust it.</p>
+
+        <!-- AI callout (RED AI-awareness) -->
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; AI REALITY CHECK &middot; AI IMAGE CLASSIFICATION FOR MICROSCOPY</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Examining cells by eye is slow, and a hospital may face thousands of slides a day. Scientists increasingly use <strong>AI image classification</strong> &mdash; software trained to label cell types or flag unusual cells. What does &ldquo;trained&rdquo; mean? Researchers feed the program thousands of microscope images already labeled by experts (&ldquo;healthy,&rdquo; &ldquo;not healthy&rdquo;), and it learns the visual patterns that go with each label. Recent work suggests such tools can speed up screening and cell-counting. But stay clear-eyed: a model is only as good as the images it learned from. If those came from one kind of patient or one lab&rsquo;s equipment, the tool can carry that <strong>bias</strong> and fail on cases it never saw &mdash; sometimes confidently wrong in ways a trained human would catch. Best treated as a fast first pass that a person still verifies: a tool to interrogate, not an authority to obey.</div>
+        </div>
+
+        <!-- WI: external virtual microscope (styled link button, no script) -->
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 14px 0 8px 0;">Explore a virtual microscope</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Before the lab, try a free online virtual microscope. Practice moving the slide, changing magnification, and bringing a specimen into focus &mdash; the same skills you&rsquo;ll use in Assignment 5.04.</p>
+        <div style="text-align: center; margin: 10px 0 4px 0;">
+            <a href="https://learn.concord.org/resources/108/scaling-the-microscope" target="_blank" rel="noopener" style="display: inline-block; background: #0E1C42; color: #ffffff; font-size: 17px; text-decoration: none; padding: 14px 26px; border-radius: 8px; border: 2px solid #55C8E8;">&#128301; Open the virtual microscope (Concord Consortium) &rarr;</a>
+            <div style="font-size: 13px; color: #666; margin-top: 8px;">Opens in a new tab. If the link changes, your teacher will post the current virtual-microscope link in this module.</div>
+        </div>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build a Prokaryote and a Eukaryote Side by Side</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Construct both cell types and label the nucleus, organelles, and wall &mdash; then compare them to what you see under the microscope.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Tour an Endosymbiosis Scene</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Watch a free-living prokaryote become an organelle, and snapshot the evidence.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 5.04 &middot; Microscopy Lab: Onion, Elodea, and Cheek</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Observe, draw, and label three cells (a virtual microscope is fine), compare plant and animal, and identify the cell wall versus the cell membrane. This is a lab assignment. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Every idea this week &mdash; cell theory, the two cell types, endosymbiosis &mdash; was made possible by a better way to see. When you bend over a slide this week, you join a four-hundred-year habit of careful, honest looking that runs from Leeuwenhoek to AI-assisted imaging. That patient seeing is the <strong>perseverance</strong> at the heart of this module &mdash; and next week we open the cell&rsquo;s gatekeeper, the membrane itself.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 5.04 &middot; The Lens That Opened the Cell</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

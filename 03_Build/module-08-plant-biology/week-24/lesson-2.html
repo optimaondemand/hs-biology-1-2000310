@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 24.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q3 &middot; Module 8</div>
+        <div style="font-size: 12px; color: #666;">Plant Biology</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 24.02</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Transpiration &amp; the Potometer</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Wonder &mdash; plants that sense and respond without nerves</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 24.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Transpiration, Stomata, and the Potometer</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; The Leaf&rsquo;s Trade-Off &mdash; and Your CER Data</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Every door a leaf opens to feed itself also lets its water escape. How does a plant with no nerves manage that bargain, hour by hour?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today you will meet <strong>transpiration</strong> &mdash; not merely a leak, but the engine that pulls water up the plant &mdash; and the <strong>stomata</strong> and <strong>guard cells</strong> that manage the trade-off between gaining carbon dioxide and losing water. You will predict how wind, light, heat, and humidity change the rate, and see how a <strong>potometer</strong> measures it. This lesson holds the data your <strong>Module 8 CER essay</strong> will analyze &mdash; pay close attention.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain how stomata and guard cells control transpiration and gas exchange.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> describe how a potometer measures water uptake and how environmental factors change the transpiration rate.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 24.02, <em>Transpiration: The Cost and the Engine of a Plant&rsquo;s Life</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128682; PART 1 &middot; THE TRADE-OFF AT EVERY DOOR</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Is transpiration &mdash; a plant losing water to the air &mdash; a good thing or a bad thing for the plant? (No wrong answer &mdash; just check in.)</div>
+            <div class="widget-options">
+                <button data-response="A common first answer &mdash; and it&rsquo;s half right. Losing water IS a real cost. But watch for the twist today: that same water loss is exactly what pulls water (and minerals) up the whole plant. It is a cost AND an engine.">Bad &mdash; the plant is wasting precious water</button>
+                <button data-response="You&rsquo;ve caught the key idea. Transpiration costs the plant water, but it also drives the transpiration pull that lifts water up the xylem. Both are true at once &mdash; that&rsquo;s today&rsquo;s big correction.">Both &mdash; it costs water but might do something useful too</button>
+                <button data-response="Fair &mdash; it&rsquo;s genuinely surprising. By the end you&rsquo;ll see transpiration is the unavoidable cost of opening stomata for CO&#8322; AND the very pull that raises water up the plant.">I&rsquo;m not sure how losing water could help</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Stomata, guard cells, and the balancing act</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>Stomata</strong> are pores in the leaf epidermis (mostly on the underside), each flanked by two <strong>guard cells</strong>. When guard cells fill with water and become <strong>turgid</strong>, they bow apart and the stoma <strong>opens</strong>; when they lose water and go <strong>flaccid</strong>, it <strong>closes</strong>. The plant is always balancing: open to gain CO&#8322; for photosynthesis, or close to conserve water. Transpiration is not just a problem &mdash; it is also the engine that drives the cohesion-tension pull from Lesson 24.01.</p>
+
+        <!-- ow-select: stomata / transpiration concept -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129513; CHECK IT &middot; STOMATA &amp; THE TRADE-OFF</div>
+            <div class="widget-row" data-correct="c" data-hint="What happens to the guard cells&rsquo; shape when they fill with water?">
+                <div class="widget-row-prompt">A stoma is open. What is true of its two guard cells?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; flaccid (limp) guard cells sag together and CLOSE the stoma. An open stoma has turgid guard cells.">They are flaccid and have lost water</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; guard cells do not open the pore by dying. They open it by taking up water and becoming turgid.">They have died, leaving the pore open</button>
+                    <button data-choice="c" data-fb="Correct. When guard cells fill with water and become turgid, they bow apart and the stoma opens.">They are turgid, swollen with water, and bow apart</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="a" data-hint="Why would a plant ever open its stomata if it means losing water?">
+                <div class="widget-row-prompt">Why does a plant open its stomata even though open stomata lose water?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. Open stomata let carbon dioxide in for photosynthesis. Losing water is the unavoidable cost of that gain &mdash; the leaf&rsquo;s central trade-off.">To let carbon dioxide in for photosynthesis</button>
+                    <button data-choice="b" data-fb="No &mdash; plants release oxygen as a by-product of photosynthesis, but that is not why they open stomata. The reason to open them is to take in CO&#8322;.">To release oxygen so the plant can breathe it back in</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; the point of opening is to gain CO&#8322;, not to lose water on purpose. The water loss is a cost, not a goal.">Specifically in order to get rid of extra water</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127788; PART 2 &middot; PREDICT THE RATE (WEB-INTERACTIVE)</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Which conditions speed water loss up, and which slow it down?</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 4px 0;">For each condition on the potometer, predict whether it <strong>raises</strong> or <strong>lowers</strong> the transpiration rate. Think about what makes water evaporate faster or keeps the air near the leaf dry.</p>
+
+        <!-- ow-select: predict raise/lower -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129517; PREDICT IT &middot; RAISES OR LOWERS TRANSPIRATION?</div>
+            <div class="widget-row" data-correct="a" data-hint="A fan blows away the humid air resting on the leaf surface.">
+                <div class="widget-row-prompt">You aim a fan at the shoot, adding WIND. The transpiration rate&hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. Wind sweeps away the humid layer of air on the leaf, keeping the escape gradient steep &mdash; so transpiration rises.">Rises</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; wind removes the moist air clinging to the leaf, which speeds water loss. The rate rises.">Falls</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="a" data-hint="Bright light opens stomata for photosynthesis.">
+                <div class="widget-row-prompt">You switch on a bright lamp, adding LIGHT. The transpiration rate&hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. Bright light opens the stomata for photosynthesis, so more water can escape &mdash; the rate rises.">Rises</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; light opens stomata, which increases water loss. The rate rises.">Falls</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="a" data-hint="Warmth makes water evaporate faster.">
+                <div class="widget-row-prompt">You warm the air around the shoot, raising the TEMPERATURE. The transpiration rate&hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. Higher temperature makes water evaporate faster from the leaf, so transpiration rises.">Rises</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; heat speeds evaporation, so the rate rises, not falls.">Falls</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="b" data-hint="Moist air already holds a lot of water vapor.">
+                <div class="widget-row-prompt">You seal a clear plastic bag over the shoot, raising the HUMIDITY. The transpiration rate&hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; humid air is already full of water vapor, so the gradient out of the leaf is gentle. Transpiration slows down.">Rises</button>
+                    <button data-choice="b" data-fb="Correct. High humidity means the air already holds water vapor, so the escape gradient is shallow &mdash; transpiration falls. This is the one condition that LOWERS the rate.">Falls</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <!-- WEB-INTERACTIVE link-out card -->
+        <div style="background: #E8F6FB; border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 8px 0;">
+            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px;">&#128421;&#65039; EXPLORE &middot; INTERACTIVE</div>
+            <div style="font-size: 18px; color: #0E1C42; line-height: 1.6; margin-bottom: 10px;"><strong>See transpiration and water transport in motion.</strong> Open a vetted science-simulation site and search for an interactive on <strong>transpiration</strong>, <strong>plant water transport</strong>, or a <strong>potometer</strong>. As you use it, change one factor at a time (light, wind, temperature, humidity) and watch which direction the water-uptake rate moves &mdash; then compare it to your predictions above.</div>
+            <div style="font-size: 15px; color: #1a2340; line-height: 1.6;">Try: <a href="https://phet.colorado.edu" style="color: #1B6A94;">phet.colorado.edu</a> or <a href="https://www.ck12.org" style="color: #1B6A94;">ck12.org</a> (each opens in a new tab). If your class uses a different vetted portal, follow your teacher&rsquo;s posted link instead.</div>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128300; PART 3 &middot; MEASURING IT WITH A POTOMETER</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Turning an invisible loss into a number</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">A <strong>potometer</strong> holds a cut leafy shoot sealed in a water-filled tube. As the shoot transpires, it pulls water along a thin graduated tube and an <strong>air bubble</strong> (or water meniscus) moves along the scale. By <strong>timing how fast the bubble moves</strong>, you measure water uptake &mdash; a good stand-in for transpiration. Change one condition at a time (a fan, a lamp, a bag) and record how the rate changes. That is a controlled experiment.</p>
+
+        <!-- CER anchor note -->
+        <div style="background: #FFFFFF; border: 1px solid #C7922C; border-radius: 8px; padding: 18px 22px; margin: 8px 0 0 0;">
+            <div style="font-size: 11px; color: #c7922c; margin-bottom: 10px;">&#9999;&#65039; THIS IS YOUR MODULE 8 CER DATA</div>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.65;">The potometer measurements you make &mdash; how the transpiration rate changes with wind, light, temperature, and humidity &mdash; are <strong>exactly the data your Module 8 CER essay analyzes</strong>. Your essay will build an evidence-based argument for how the environment affects a plant&rsquo;s water loss. Start recording cause and effect in your notebook now: which condition, which direction, and <em>why</em>. Your VR-B this week gives you that data set directly.</div>
+        </div>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Model Xylem &amp; Phloem Transport</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Build two transport columns &mdash; xylem (water up, pulled by transpiration) and phloem (sugar source&rarr;sink) &mdash; and record a walkthrough contrasting them. Pairs with Lessons 24.01 and 24.03.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Observe a Potometer Under Varied Conditions</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Observe a potometer, then change one condition at a time (wind, light, heat, humidity) and record the water-uptake rate for each. This pairs directly with today&rsquo;s lesson and hands you the data for your Module 8 CER.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 24.02 &middot; Predict the Potometer</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">For each condition (wind, light, heat, humidity), predict whether transpiration rises or falls and explain why in a sentence. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Transpiration is the plant&rsquo;s quiet balancing act &mdash; the cost of opening the leaf to gain CO&#8322;, and, at the same time, the pull that powers the whole water column of <strong>Lesson 24.01</strong>. A rooted plant with no nerves still senses light, heat, and dryness and responds by opening or closing thousands of tiny doors. Hold onto the potometer data: it is the evidence at the heart of your <strong>Module 8 CER</strong>. Next, in <strong>Lesson 24.03</strong>, you follow the plant&rsquo;s other river &mdash; sugar, flowing to wherever it is needed.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 3 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 24.02 &middot; Transpiration, Stomata, and the Potometer</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

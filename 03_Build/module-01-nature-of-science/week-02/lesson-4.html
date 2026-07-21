@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 2.04</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; margin-bottom: 10px; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 1</div>
+        <div style="font-size: 12px; color: #666;">Nature of Science</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 2.04</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Spontaneous Generation</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Honesty &mdash; following the evidence</div>
+    </div>
+</div>
+
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 2.04</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">The Question That Took 2,000 Years</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; Module 1 capstone</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">How did two experiments overturn a belief that careful people had held for two thousand years?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">This is where Module 1 comes together. You&rsquo;ll watch <strong>Redi</strong> and <strong>Pasteur</strong> use the exact tools you&rsquo;ve learned &mdash; controlled experiments, controls, isolating one variable &mdash; to prove that <strong>all life comes from life.</strong> That single conclusion becomes a foundation stone for the rest of the course.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain the idea of spontaneous generation and why it was so persuasive.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> identify the controls and variables in Redi&rsquo;s and Pasteur&rsquo;s experiments.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain why &ldquo;all life comes from life&rdquo; matters for the rest of biology.</div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; WHAT YOU NEED FOR THIS LESSON</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 2.04, <em>The Question That Took 2,000 Years</em> (read it before this lesson)</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; AN IDEA THAT SEEMED OBVIOUS</div>
+
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Meat left out grows maggots within days. To someone before microscopes, what&rsquo;s the &ldquo;obvious&rdquo; conclusion?</div>
+            <div class="widget-options">
+                <button data-response="Exactly the trap. The maggots seem to come <em>from</em> the meat &mdash; that&rsquo;s spontaneous generation, and it fit everyday observation perfectly. It took a controlled experiment to see past it.">The meat turns into maggots</button>
+                <button data-response="That&rsquo;s the modern answer &mdash; flies lay eggs. But notice: you only &ldquo;know&rdquo; that because of the experiment you&rsquo;re about to study. Without it, the meat-into-maggots idea looked obvious.">Flies laid eggs you couldn&rsquo;t see</button>
+                <button data-response="Good scientific humility. Before Redi, no one could say for sure &mdash; which is exactly why a controlled experiment was needed instead of an argument.">Hard to say without testing</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 14px 0 0 0;">For two thousand years, <strong>spontaneous generation</strong> &mdash; life arising from nonliving matter &mdash; seemed obvious because it matched what people saw. That&rsquo;s what made it dangerous: a comfortable idea that fit the evidence loosely. Overturning it required someone to stop arguing and start <em>testing.</em></p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129656; PART 2 &middot; TWO EXPERIMENTS THAT SETTLED IT</div>
+
+        <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 4px 0 14px 0;">
+            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; A MOMENT IN HISTORY &middot; REDI (1668) &amp; PASTEUR (1859)</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Francesco Redi put meat in jars: some <strong>open</strong>, some <strong>sealed</strong>, some covered with <strong>gauze</strong> that let air in but kept flies out. Maggots appeared only where flies could reach &mdash; the gauze jars rotted but stayed maggot-free, killing the objection that sealing simply &ldquo;cut off the air.&rdquo; Two centuries later, microbes revived the debate. Louis Pasteur boiled broth in <strong>swan-neck flasks</strong> &mdash; left open to the air, but with a long curve that trapped airborne microbes before they could reach the broth. It stayed sterile for months. Then he tipped the flask so the broth touched the trapped dust &mdash; and it teemed with life within a day. <em>Omne vivum ex vivo:</em> all life comes from life.</div>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 6px 0 8px 0;">Tap to reveal how each design isolated one variable</h3>
+        <div class="optima-widget">
+            <div class="widget-kicker">&#9889; TAP TO REVEAL &middot; THE LOGIC OF EACH DESIGN</div>
+            <div class="ow-flip" tabindex="0">
+                <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;"><strong>Redi&rsquo;s controls</strong> &mdash; tap to reveal</div>
+                <div class="ow-flip-back" style="font-size:16px;line-height:1.55;">Independent variable: fly access. Everything else &mdash; same meat, same room, same time &mdash; held constant. The open jars were the control; the gauze jars ruled out the &ldquo;sealing blocks air&rdquo; objection. Result: maggots only where flies could land.</div>
+            </div>
+            <div class="ow-flip" tabindex="0">
+                <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;"><strong>Pasteur&rsquo;s swan neck</strong> &mdash; tap to reveal</div>
+                <div class="ow-flip-back" style="font-size:16px;line-height:1.55;">The flask stayed open, so &ldquo;air was let in&rdquo; &mdash; defeating the vital-force objection. The only thing the curved neck changed was whether dust and microbes could reach the broth. Sterile while curved; swarming once tipped. One variable, cleanly isolated.</div>
+            </div>
+            <div class="ow-flip" tabindex="0">
+                <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;"><strong>The shared move</strong> &mdash; tap to reveal</div>
+                <div class="ow-flip-back" style="font-size:16px;line-height:1.55;">Both men anticipated the strongest counterargument and designed it out. That&rsquo;s the same CER lesson from Week 1: the most convincing case answers the best objection before the critic can raise it.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129514; PART 3 &middot; READ THE EXPERIMENT</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Use what you know about experimental design to analyze these classic experiments.</p>
+
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; ANALYZE THE DESIGN</div>
+            <div class="widget-question">Tap your answer for each.</div>
+
+            <div class="widget-row" data-correct="1" data-fb="Right &mdash; the gauze let air through but kept flies out, so it ruled out the objection that sealing the jar had blocked something vital in the air. That&rsquo;s its whole purpose." data-hint="What objection could someone make about a fully sealed jar? Gauze answers it by letting air in but keeping flies out.">
+                <div class="widget-row-prompt">1. Why did Redi include gauze-covered jars in addition to sealed and open ones?</div>
+                <div class="widget-options">
+                    <button data-choice="0">To grow more maggots</button>
+                    <button data-choice="1">To allow air in while keeping flies out</button>
+                    <button data-choice="2">To keep the meat cold</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Right &mdash; the curved neck let air flow freely but trapped microbes in the bend, so the only thing being tested was whether living things could reach the broth." data-hint="The flask was left open. So what did the long curve actually block &mdash; air, or the dust and microbes in it?">
+                <div class="widget-row-prompt">2. In Pasteur&rsquo;s flask, what did the long swan-shaped neck actually block?</div>
+                <div class="widget-options">
+                    <button data-choice="0">Airborne dust and microbes</button>
+                    <button data-choice="1">All air</button>
+                    <button data-choice="2">Light</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Right &mdash; tipping let the sterile broth touch the trapped microbes; growth followed. This confirmed the microbes came from the air, not the broth &mdash; the decisive control step." data-hint="When the broth finally grew microbes, what had just changed? He tipped it so the broth reached the trapped dust.">
+                <div class="widget-row-prompt">3. The broth stayed clear for months &mdash; until Pasteur did what?</div>
+                <div class="widget-options">
+                    <button data-choice="0">Added sugar</button>
+                    <button data-choice="1">Tipped it so broth reached the trapped dust</button>
+                    <button data-choice="2">Moved it into sunlight</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Right &mdash; &ldquo;all life comes from life&rdquo; is the missing piece of cell theory: every cell comes from a pre-existing cell. You&rsquo;ll meet it again in Module 3." data-hint="Which big biological idea says every cell comes from a pre-existing cell? This experiment is its foundation.">
+                <div class="widget-row-prompt">4. &ldquo;All life comes from life&rdquo; later became a cornerstone of which idea?</div>
+                <div class="widget-options">
+                    <button data-choice="0">The law of gravity</button>
+                    <button data-choice="1">Plate tectonics</button>
+                    <button data-choice="2">Cell theory</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 2.04 &middot; Analyze Pasteur&rsquo;s Experiment</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Label the variables and control in the swan-neck experiment, then predict and justify the outcome of a new variation.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Module 1 CER &middot; due at the end of this week</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Your first full CER essay: take apart a flawed study, name its reasoning error, and rewrite a defensible conclusion. Everything in this module has been preparing you for it.</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE HABIT THIS BUILDS &mdash; AND THE BRIDGE AHEAD</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">A belief held for two thousand years fell not to a better argument but to a better <em>experiment</em>, designed by people honest enough to let evidence decide. That is Module 1 in one sentence. Carry it forward: &ldquo;all life comes from life&rdquo; is the doorway into <strong>cell theory</strong> in Module 3, and every unit from here is the nature of science in action.</p>
+    </div>
+
+</div>
+
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 2.04 &middot; The Question That Took 2,000 Years</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

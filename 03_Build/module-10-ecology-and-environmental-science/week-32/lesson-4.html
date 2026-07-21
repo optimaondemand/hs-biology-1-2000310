@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 32.04</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q4 &middot; Module 10</div>
+        <div style="font-size: 12px; color: #666;">Ecology and Environmental Science</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 32.04</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Human Disruption of the Cycles</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Responsibility &mdash; stewardship and the common good</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 32.04</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">When the Cycles Are Pushed: Excess Carbon and the Dead Zone</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; Fossil-Fuel Carbon, Fertilizer Runoff, and Eutrophication</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Fertilizer feeds crops &mdash; so how can the very same nutrients turn a lake into a lifeless &ldquo;dead zone&rdquo;?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">The cycles are ancient and resilient, but they can be pushed too fast. Today you'll see how burning <strong>fossil fuels</strong> adds excess carbon to the air (the doorway to next week's climate study) and how <strong>fertilizer runoff</strong> triggers <strong>eutrophication</strong> &mdash; an algal bloom that ends in a suffocating dead zone. This is the module's theme, <strong>responsibility</strong>, made concrete.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain how burning fossil fuels and applying fertilizer disrupt the carbon, nitrogen, and phosphorus cycles.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> trace the eutrophication chain from nutrient runoff to algal bloom to oxygen depletion to a hypoxic dead zone.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 32.04, <em>When the Cycles Are Pushed: Excess Carbon and the Dead Zone</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127981; PART 1 &middot; TOO MUCH CARBON, TOO FAST</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Carbon has always moved in and out of the air. So what, in your view, is the actual <em>problem</em> with burning fossil fuels? (No wrong answer &mdash; just check in.)</div>
+            <div class="widget-options">
+                <button data-response="Close &mdash; but the deeper issue is rate. Carbon naturally cycles in and out; the trouble is that burning fossil fuels adds it to the air far faster than photosynthesis and the oceans can take it back out.">Burning creates brand-new carbon that didn&rsquo;t exist before</button>
+                <button data-response="Exactly the key idea. The carbon isn&rsquo;t new &mdash; it&rsquo;s ancient buried carbon &mdash; but we&rsquo;re releasing it much faster than the cycle can reabsorb it, so it builds up in the atmosphere.">We&rsquo;re releasing stored carbon faster than the cycle can reabsorb it</button>
+                <button data-response="Good to think it through. The problem isn&rsquo;t that carbon moves &mdash; it always has &mdash; but that fossil-fuel burning moves it into the air faster than photosynthesis and the oceans remove it.">I&rsquo;m not sure why moving carbon is a problem at all</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">A rate problem, not a new-carbon problem</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Fossil fuels are ancient photosynthetic carbon (Lesson 32.01). Burning them for energy returns carbon the slow cycle had buried over hundreds of millions of years &mdash; but in only a few centuries. The problem is <strong>rate</strong>: we move carbon into the air faster than photosynthesis and the oceans remove it, so atmospheric CO&#8322; climbs. That rise is the starting point for <strong>climate change</strong>, the whole subject of next week. (The same seas that absorb the extra carbon grow slightly more acidic as they do &mdash; the ocean-acidification link.)</p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128167; PART 2 &middot; EUTROPHICATION &mdash; THE DEAD-ZONE CHAIN</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">How extra nutrients suffocate a lake</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Fertilizer is rich in <strong>nitrogen</strong> and <strong>phosphorus</strong> &mdash; the very nutrients that limit growth. Rain washes the excess into water as <strong>nutrient runoff</strong>, and <strong>eutrophication</strong> follows as a chain in which each link causes the next:</p>
+        <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 6px; padding: 14px 20px; margin: 8px 0 12px 0;">
+            <div style="font-size: 15px; color: #1a2340; line-height: 1.85;">
+                <strong>1.</strong> Nutrient runoff (N, P) enters the water &rarr;<br />
+                <strong>2.</strong> <strong>Algal bloom</strong> &mdash; algae multiply explosively &rarr;<br />
+                <strong>3.</strong> The algae <strong>die</strong> &rarr;<br />
+                <strong>4.</strong> <strong>Decomposers</strong> consume the dead algae, using up the water's <strong>dissolved oxygen</strong> &rarr;<br />
+                <strong>5.</strong> <strong>Hypoxic &ldquo;dead zone&rdquo;</strong> &mdash; fish and other animals suffocate (fish kills).
+            </div>
+        </div>
+        <p style="font-size: 16px; color: #1a2340; line-height: 1.65; margin: 0;">Watch the trap in step 4: it is the <strong>decomposers respiring</strong> as they break down the dead algae that strip out the oxygen &mdash; not the algae themselves. Getting that link right is the heart of the concept.</p>
+
+        <!-- ow-select: eutrophication -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129513; CHECK IT &middot; TRACE THE DEAD ZONE</div>
+            <div class="widget-row" data-correct="c" data-hint="What actually removes the oxygen &mdash; the algae, or the organisms that break the dead algae down?">
+                <div class="widget-row-prompt">After an algal bloom dies off, the water loses its oxygen and fish suffocate. What directly causes the oxygen to disappear?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; the living algae actually add oxygen by photosynthesis. The oxygen loss comes after they die.">The living algae use up all the oxygen while blooming</button>
+                    <button data-choice="b" data-fb="No &mdash; the fertilizer itself doesn&rsquo;t consume oxygen. The oxygen is removed by organisms respiring as they break down the dead algae.">The fertilizer chemically destroys the oxygen</button>
+                    <button data-choice="c" data-fb="Correct. Decomposers (bacteria) respire as they consume the huge mass of dead algae, using up the dissolved oxygen and creating a hypoxic dead zone.">Decomposers respire as they break down the dead algae, using up the oxygen</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="a" data-hint="Where did the excess nitrogen and phosphorus in the water come from?">
+                <div class="widget-row-prompt">A coastal dead zone grows every summer at the mouth of a river that drains heavily farmed land. What is the most likely source of the trouble?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. Fertilizer runoff carries excess nitrogen and phosphorus into the water, freeing algae from their nutrient limit and setting off eutrophication.">Fertilizer runoff delivering excess nitrogen and phosphorus</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; a shortage of nutrients would limit algae, not cause a bloom. Eutrophication is caused by an excess of nutrients.">Too few nutrients reaching the water</button>
+                    <button data-choice="c" data-fb="No &mdash; extra sunlight alone doesn&rsquo;t create a dead zone. The driver here is nutrient runoff from farmland removing the growth limit on algae.">Simply too much sunlight on the coast</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- CONTEMPORARY callout (GOLD) -->
+    <div style="background: #FDF3E3; border-left: 5px solid #C7922C; border-top: 3px solid #C7922C; border-radius: 6px; padding: 14px 20px; margin: 0 0 20px 0;">
+        <div style="font-size: 11px; color: #8a6a1d; margin-bottom: 8px;">&#129516; CONTEMPORARY RESEARCH &middot; READING AN ECOSYSTEM FROM A JAR OF WATER</div>
+        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">How do we know which species live in a strained lake or coast &mdash; especially the rare, hidden, or invasive ones? Recent research suggests a surprising answer: sample the water itself. Every organism sheds traces &mdash; skin cells, scales, waste &mdash; leaving fragments of <strong>environmental DNA (eDNA)</strong> drifting in the water and soil. Scientists are increasingly collecting these samples, sequencing the DNA they contain, and inferring which species have been present &mdash; often <em>without ever seeing the animals</em>. It is becoming a valuable tool for monitoring <strong>biodiversity</strong> and detecting <strong>invasive or endangered species</strong>, including in waters stressed by nutrient pollution. The method is still maturing &mdash; a faint trace can be hard to read, and results depend on careful sampling &mdash; but it points toward a future where a jar of water tells a rich story about the life it holds. (It builds directly on the DNA and sequencing ideas of <strong>Module 5</strong>.)</div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127757; PART 3 &middot; RESPONSIBILITY BEGINS WITH UNDERSTANDING</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Why this closes the module</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The cycles are not fragile, but they are not limitless either. Burning fossil fuels adds carbon faster than the cycle can absorb it; fertilizer runoff adds nitrogen and phosphorus that trigger the dead-zone chain. You cannot steward what you do not understand &mdash; which is why understanding these loops is the first act of <strong>responsibility</strong>, the virtue at the heart of this module. It is a fitting place for a course that began with a single atom to arrive: at the living balance of the whole planet, and our part in keeping it.</p>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build a Cycle with Flows (Carbon or Nitrogen)</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Once your cycle is built, add a human-input arrow &mdash; fossil-fuel combustion into the atmosphere, or fertilizer into the soil/water &mdash; to picture exactly where today's disruptions enter the loop.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Observe Human-Disruption Points</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">This is today's lesson, observed in space: tour a fossil-fuel emission scene and a fertilizer-runoff/eutrophication scene, capture snapshots, and identify which cycle each disruption alters.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 32.04 &middot; Human Disruption of the Cycles</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Match each human activity to the cycle it disrupts, put the eutrophication chain in order, and explain in a sentence why the decomposers &mdash; not the algae &mdash; cause the oxygen crash. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Excess carbon in the air, excess nutrients in the water &mdash; two ways humans push ancient cycles past their pace. Excess CO&#8322; opens the door to <strong>Week 33's</strong> study of climate; eutrophication shows a whole ecosystem toppled by an abundance, not a poison. This week's through-line held from start to finish: <strong>matter cycles</strong>, and cycles can be overloaded. Carry that idea into next week, where the extra carbon becomes the story of a warming world.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 4 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 32.04 &middot; When the Cycles Are Pushed: Excess Carbon and the Dead Zone</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

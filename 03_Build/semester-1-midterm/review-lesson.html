@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Semester 1 Midterm Review</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Week</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Week 15</div>
+        <div style="font-size: 12px; color: #666;">Semester 1 Midterm</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Review Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Modules 1&ndash;5</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">The First Half of One Long Argument</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">The Spine</div>
+        <div style="font-size: 16px; color: #0e1c42;">Microscopic &rarr; macroscopic: atoms to heredity</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Midterm Review</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">The First Half of One Long Argument</div>
+        <div style="font-size: 16px; color: #666;">A grand tour from atoms to heredity &mdash; Modules 1 through 5</div>
+    </div>
+
+    <!-- What this week is -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128218; WHAT THIS WEEK IS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">No new biology this week &mdash; just the chance to see how all of it connects.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">For fourteen weeks you have been building <strong>one continuous argument</strong>, not five separate units. It started with how we <em>know</em> anything in science, moved to the atoms and molecules life is made of, then to the cell, then to how the cell handles energy, and finally to how it stores and passes on information. This review page is a <strong>grand tour</strong> of that whole chain. Read it slowly, do the two quick check-ins, then complete the <strong>Build the Spine</strong> review activity and sit the midterm. The exam rewards students who see the <em>connections</em>, not just the isolated facts.</div>
+    </div>
+
+    <!-- The spine, visualized -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129516; THE SPINE OF SEMESTER 1</div>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 14px;">
+            <span style="background: #0E1C42; color: #fff; font-size: 14px; padding: 8px 14px; border-radius: 18px;">M1 &middot; How we know</span>
+            <span style="color: #c7922c; font-size: 18px;">&rarr;</span>
+            <span style="background: #1B5E8C; color: #fff; font-size: 14px; padding: 8px 14px; border-radius: 18px;">M2 &middot; Atoms &amp; molecules</span>
+            <span style="color: #c7922c; font-size: 18px;">&rarr;</span>
+            <span style="background: #2176A8; color: #fff; font-size: 14px; padding: 8px 14px; border-radius: 18px;">M3 &middot; The cell</span>
+            <span style="color: #c7922c; font-size: 18px;">&rarr;</span>
+            <span style="background: #2196B8; color: #fff; font-size: 14px; padding: 8px 14px; border-radius: 18px;">M4 &middot; Energy</span>
+            <span style="color: #c7922c; font-size: 18px;">&rarr;</span>
+            <span style="background: #2AA39A; color: #fff; font-size: 14px; padding: 8px 14px; border-radius: 18px;">M5 &middot; Information &amp; heredity</span>
+        </div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.65;">Each link makes the next one possible. <strong>Chemistry explains how cells can exist; cells explain how energy is captured and released; molecular genetics explains how cells reproduce and pass life on.</strong> Module 1 sits above the whole chain &mdash; the <em>method</em> you used to learn every link.</div>
+    </div>
+
+    <!-- Reflective check-in -->
+    <div class="optima-widget ow-reflect">
+        <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+        <div class="widget-question">Before the tour: if a friend asked you &ldquo;what was Biology 1 about so far?&rdquo;, which answer is closest to the truth of the course? (No wrong answer &mdash; just check in.)</div>
+        <div class="widget-options">
+            <button data-response="That&rsquo;s the heart of it. The course is deliberately built as one argument that grows outward in scale &mdash; from atoms, to molecules, to cells, to energy, to inherited information. The connections between units are the real subject; the facts are how we get there.">A single story that grows from atoms outward to whole inherited traits</button>
+            <button data-response="It can feel that way during the term &mdash; but the design is the opposite. Each unit was chosen because the next one needs it: you can&rsquo;t understand the membrane without macromolecules, or photosynthesis without the chloroplast, or sickle-cell disease without protein shape. Use this review to find those threads.">Five separate topics that happen to be in the same class</button>
+            <button data-response="Memorizing did help on the weekly quizzes &mdash; but the midterm (and the EOC) reward understanding the &lsquo;why&rsquo; and the connections. This page is built to help you trade a pile of facts for one connected picture.">Mostly a list of terms to memorize for quizzes</button>
+        </div>
+        <div class="widget-feedback"></div>
+        <button class="widget-reset">Reset</button>
+    </div>
+
+    <!-- THE GRAND TOUR -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 14px 22px; margin: 4px 0 16px 0;">
+        <div style="font-size: 20px; color: #0e1c42;">The Grand Tour &mdash; Module by Module</div>
+        <div style="font-size: 15px; color: #666;">Each stop: the big idea, the must-know facts, and the bridge that carries you to the next module.</div>
+    </div>
+
+    <!-- M1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 16px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 10px;">&#128301; MODULE 1 &middot; NATURE OF SCIENCE &mdash; <em>the lens</em></div>
+        <div style="font-size: 19px; color: #0e1c42; margin-bottom: 8px;">Big idea: science earns trust through evidence, testing, and revision.</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>Must know:</strong> observation vs. inference; a fair test has one independent variable, a measured dependent variable, controlled variables, and a control group. A <strong>hypothesis</strong> is a testable proposed explanation; a <strong>theory</strong> is a broad, well-supported explanation backed by many lines of evidence (not &ldquo;a guess that grew up&rdquo;); a <strong>law</strong> describes <em>what</em> happens, while a theory explains <em>why</em>. The <strong>CER</strong> tool &mdash; Claim, Evidence, Reasoning &mdash; is how you argue from data. Redi and Pasteur retired spontaneous generation with controlled experiments.</p>
+        <div style="font-size: 16px; color: #1B6A94; line-height: 1.55; background: #E8F6FB; border-radius: 6px; padding: 10px 14px;"><strong>&rarr; The bridge:</strong> this is the lens for <em>every</em> unit that follows &mdash; and the CER framework is the tool behind every assignment and both midterm short-responses.</div>
+    </div>
+
+    <!-- M2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #1B5E8C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 16px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 10px;">&#129514; MODULE 2 &middot; CHEMISTRY OF LIFE</div>
+        <div style="font-size: 19px; color: #0e1c42; margin-bottom: 8px;">Big idea: life is built from atoms and molecules, and structure determines function.</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>Must know:</strong> water&rsquo;s <strong>bent, polar shape</strong> and <strong>hydrogen bonding</strong> give it cohesion and surface tension, a high specific heat that moderates temperature, floating ice, and its power as the universal solvent of life. The four macromolecules &mdash; carbohydrates, lipids, proteins, nucleic acids &mdash; are built by <strong>dehydration synthesis</strong> and broken by <strong>hydrolysis</strong>. The deepest rule of the module: <strong>a protein&rsquo;s function comes from its folded shape</strong>; change the shape (heat, pH &mdash; denaturation) and you change what it can do.</p>
+        <div style="font-size: 16px; color: #1B6A94; line-height: 1.55; background: #E8F6FB; border-radius: 6px; padding: 10px 14px;"><strong>&rarr; The bridge:</strong> phospholipids and proteins become the <em>cell membrane</em> and the <em>enzymes</em> of Module 3 and 4; the shape&rarr;function rule returns in Module 5 to explain sickle-cell disease.</div>
+    </div>
+
+    <!-- M3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #2176A8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 16px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 10px;">&#129508; MODULE 3 &middot; CELL STRUCTURE, FUNCTION &amp; TRANSPORT</div>
+        <div style="font-size: 19px; color: #0e1c42; margin-bottom: 8px;">Big idea: the cell is life&rsquo;s basic unit, and its membrane controls what enters and leaves.</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>Must know:</strong> the three tenets of cell theory; prokaryotic vs. eukaryotic; organelles by <em>function</em>; the <strong>fluid-mosaic membrane</strong> is a phospholipid bilayer studded with proteins. <strong>Diffusion</strong> and <strong>osmosis</strong> are passive (high&rarr;low, no energy) &mdash; osmosis is the movement of <em>water</em>. In a <strong>hypotonic</strong> solution a cell swells (and may burst); in a <strong>hypertonic</strong> one it shrivels; in an <strong>isotonic</strong> one it holds steady (why IV fluid is 0.9% saline). <strong>Active transport</strong> (the Na⁺/K⁺ pump) spends ATP to move things against the gradient.</p>
+        <div style="font-size: 16px; color: #1B6A94; line-height: 1.55; background: #E8F6FB; border-radius: 6px; padding: 10px 14px;"><strong>&rarr; The bridge:</strong> two organelles &mdash; the <em>chloroplast</em> and <em>mitochondrion</em> &mdash; are where Module 4&rsquo;s energy reactions happen; the Na⁺/K⁺ pump returns as the neuron&rsquo;s resting potential in Module 9.</div>
+    </div>
+
+    <!-- M4 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #2196B8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 16px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 10px;">&#9889; MODULE 4 &middot; CELL ENERGY</div>
+        <div style="font-size: 19px; color: #0e1c42; margin-bottom: 8px;">Big idea: cells capture, store, and release energy &mdash; energy flows, matter cycles.</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>Must know:</strong> <strong>ATP</strong> is the energy currency. <strong>Photosynthesis</strong> (in the chloroplast) uses light to build glucose: light-dependent reactions in the thylakoid make ATP/NADPH and release O&#8322; from splitting water; the <strong>Calvin cycle</strong> in the stroma builds sugar and does <em>not</em> need direct light. <strong>Cellular respiration</strong> (glycolysis &rarr; Krebs &rarr; electron transport chain) releases that energy; O&#8322; is the <strong>final electron acceptor</strong>. The two are <em>not</em> simple reverses of each other &mdash; plants do both, and respiration runs all the time.</p>
+        <div style="font-size: 16px; color: #1B6A94; line-height: 1.55; background: #E8F6FB; border-radius: 6px; padding: 10px 14px;"><strong>&rarr; The bridge:</strong> the carbon atoms moving through these reactions are the same ones that travel the global <em>carbon cycle</em> in Module 10 &mdash; the cell&rsquo;s chemistry written at planet scale.</div>
+    </div>
+
+    <!-- M5 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #2AA39A; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 16px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 10px;">&#129516; MODULE 5 &middot; DNA, CELL DIVISION &amp; GENETICS</div>
+        <div style="font-size: 19px; color: #0e1c42; margin-bottom: 8px;">Big idea: information is stored, copied, expressed &mdash; and inherited.</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>Must know:</strong> DNA is a double helix with <strong>A&ndash;T, C&ndash;G</strong> pairing; replication is <strong>semiconservative</strong>. <strong>Mitosis</strong> makes two identical cells; <strong>meiosis</strong> makes four genetically unique gametes (crossing over + independent assortment = variation). The <strong>central dogma</strong>: DNA is <em>transcribed</em> to mRNA (in the nucleus) and <em>translated</em> to protein (at the ribosome), three-letter codons at a time. A single base substitution can change one amino acid, change a protein&rsquo;s shape, and cause disease &mdash; <strong>sickle cell</strong> (GAG&rarr;GUG, glutamic acid&rarr;valine). Mendel&rsquo;s ratios, Punnett squares, and pedigrees predict inheritance. Biotech tools (gel electrophoresis &mdash; <em>by size</em>; PCR; CRISPR) read and edit this code.</p>
+        <div style="font-size: 16px; color: #1B6A94; line-height: 1.55; background: #E8F6FB; border-radius: 6px; padding: 10px 14px;"><strong>&rarr; The bridge:</strong> the heritable <em>variation</em> that meiosis and mutation create is exactly the raw material natural selection acts on &mdash; the first topic of Semester 2 (Module 6, Evolution).</div>
+    </div>
+
+    <!-- Connection check (select) -->
+    <div class="optima-widget ow-select">
+        <div class="widget-kicker">&#128279; CONNECTION CHECK &middot; FIND THE THREAD</div>
+        <div class="widget-question">The midterm rewards seeing how units depend on each other. For each connection, pick the link that makes it true.</div>
+
+        <div class="widget-row" data-correct="b">
+            <div class="widget-row-prompt">Why can a single mistyped DNA &ldquo;letter&rdquo; cause a serious disease like sickle cell?</div>
+            <div class="widget-options">
+                <button data-choice="a" data-fb="Not quite. DNA stores the code, but a base change matters because of what it does downstream &mdash; it changes the protein the gene builds.">Because DNA is the largest molecule in the cell</button>
+                <button data-choice="b" data-fb="Yes. This is the Module 2 rule reused in Module 5: a changed codon places a different amino acid, which changes the protein&rsquo;s folded shape &mdash; and a protein&rsquo;s function comes from its shape.">Because changing one amino acid can change the protein&rsquo;s shape, and shape determines function</button>
+                <button data-choice="c" data-fb="No &mdash; mutations are not always harmful (many are silent), and the reason this one is harmful is the shape change in the protein, not the act of copying itself.">Because copying DNA always damages the cell</button>
+            </div>
+        </div>
+
+        <div class="widget-row" data-correct="c">
+            <div class="widget-row-prompt">What ties the cell unit (M3) to the energy unit (M4)?</div>
+            <div class="widget-options">
+                <button data-choice="a" data-fb="The membrane controls transport, but it isn&rsquo;t where photosynthesis and respiration occur.">The cell membrane performs photosynthesis</button>
+                <button data-choice="b" data-fb="Ribosomes build proteins &mdash; important, but not the energy connection.">Ribosomes capture sunlight</button>
+                <button data-choice="c" data-fb="Right. Two organelles you met in M3 &mdash; the chloroplast and mitochondrion &mdash; are the actual sites of the M4 energy reactions.">Two organelles &mdash; the chloroplast and mitochondrion &mdash; are where energy reactions happen</button>
+            </div>
+        </div>
+
+        <div class="widget-row" data-correct="a">
+            <div class="widget-row-prompt">Why does Module 1 (Nature of Science) sit <em>above</em> the whole chain rather than as one link in it?</div>
+            <div class="widget-options">
+                <button data-choice="a" data-fb="Exactly. It&rsquo;s the method &mdash; experiment design, evidence, theory vs. law, and CER &mdash; that you used to learn and to argue every other unit, including on this exam.">It is the method &mdash; evidence and reasoning &mdash; used to learn and argue every other unit</button>
+                <button data-choice="b" data-fb="It does come first in time, but that&rsquo;s not why it&rsquo;s &lsquo;above&rsquo; the chain &mdash; it&rsquo;s the reasoning tool used throughout.">Only because it was taught in Week 1</button>
+                <button data-choice="c" data-fb="The opposite &mdash; it&rsquo;s the most reused part of the course, behind every assignment and both midterm CERs.">Because it is not tested after Week 2</button>
+            </div>
+        </div>
+        <button class="widget-reset">Reset</button>
+    </div>
+
+    <!-- On the midterm -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128221; WHAT&rsquo;S ON THE MIDTERM</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65; margin-bottom: 12px;">The Week-15 Midterm is built in the same <strong>EOC format</strong> as your weekly quizzes &mdash; in fact, every multiple-choice question is drawn straight from those quizzes, so nothing on it is new.</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 14px;">
+            <div style="flex: 1; min-width: 220px; background: #EEF1F8; border-radius: 6px; padding: 14px 18px;">
+                <div style="font-size: 16px; color: #0e1c42; margin-bottom: 6px;"><strong>50 multiple-choice</strong></div>
+                <div style="font-size: 15px; color: #1a2340; line-height: 1.55;">Spread across all five modules, weighted by how long each module was: more from the cell, energy, and genetics units. Re-do your weekly quizzes to study.</div>
+            </div>
+            <div style="flex: 1; min-width: 220px; background: #FDF3E3; border-radius: 6px; padding: 14px 18px;">
+                <div style="font-size: 16px; color: #8a6a1d; margin-bottom: 6px;"><strong>2 CER short-responses</strong></div>
+                <div style="font-size: 15px; color: #1a2340; line-height: 1.55;">One molecular/cellular (water&rsquo;s properties <em>or</em> a red blood cell in different solutions) and one genetic (trace a mutation from DNA base to phenotype). Claim &middot; Evidence &middot; Reasoning &mdash; explain the <em>mechanism</em>.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Do this next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU&rsquo;LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Review Activity &middot; Build the Spine</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Order the five module big-ideas, name the bridge between each, and write the argument in your own words. Doing this first <em>is</em> the best way to study.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Semester 1 Midterm</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">50 multiple-choice + 2 CER short-responses, covering Modules 1&ndash;5. Open it when you are ready.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">If you can walk the spine in your own words &mdash; <em>how we know</em> &rarr; <em>atoms and water</em> &rarr; <em>the cell and its membrane</em> &rarr; <em>capturing and releasing energy</em> &rarr; <em>copying and inheriting information</em> &mdash; you understand the first half of biology, because you understand how each idea makes the next one possible. Semester 2 picks the thread right back up: the heritable variation you just studied is what evolution acts on. Walk the spine, and you are ready.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Semester 1 Midterm Review &middot; The First Half of One Long Argument</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

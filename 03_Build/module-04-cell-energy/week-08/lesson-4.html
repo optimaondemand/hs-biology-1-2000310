@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 8.04</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 4</div>
+        <div style="font-size: 12px; color: #666;">Cell Energy</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 8.04</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Calvin Cycle &amp; Leaf-Disk Assay</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Service &mdash; the leaf that feeds all life</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 8.04</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">The Calvin Cycle &amp; the Leaf-Disk Assay</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; Foundation for the Module 4 CER</div>
+    </div>
+
+    <!-- CER flag banner -->
+    <div style="background: #FDF3E3; border-left: 5px solid #C7922C; border-radius: 6px; padding: 16px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #8a6a1d; margin-bottom: 8px;">&#9999;&#65039; THIS LESSON ANCHORS YOUR GRADED MODULE 4 CER</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">The graded writing assignment for this whole module &mdash; the <strong>Module 4 CER</strong> &mdash; is built directly on this lesson. You will use leaf-disk data to argue how <strong>light intensity affects the rate of photosynthesis</strong>, and justify it with the light-reaction mechanism. Work through this lesson carefully and keep your notes; the claim, evidence, and reasoning you practice here are exactly what the CER will ask you to write.</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">You cannot eat ATP. So how does the cell turn its energy carriers into actual food &mdash; and how would you ever measure it?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today the cycle closes. The <strong>Calvin cycle</strong> spends the ATP and NADPH (plus CO&#8322;) to build glucose in the stroma. You will correct a stubborn misconception about it, then learn the <strong>leaf-disk assay</strong> &mdash; a clever way to <em>measure</em> photosynthesis by watching spinach disks float &mdash; and read real data the way your CER will demand.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain how the Calvin cycle uses ATP, NADPH, and CO&#8322; to build glucose.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> correct the misconception that the Calvin cycle needs direct light.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> interpret leaf-disk assay data as a measure of the rate of photosynthesis.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; WHAT YOU NEED FOR THIS LESSON</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 8.04, <em>The Calvin Cycle &amp; the Leaf-Disk Assay</em> (read it before this lesson)</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Your scientific notebook &mdash; start your Module 4 CER notes here</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127811; PART 1 &middot; BUILDING SUGAR IN THE STROMA</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">The Calvin cycle is also called the &ldquo;light-independent reactions.&rdquo; A classmate says that means it only runs at night, in the dark. Is that right? (No wrong answer &mdash; just reason it through.)</div>
+            <div class="widget-options">
+                <button data-response="Exactly right. &ldquo;Light-independent&rdquo; only means no photon strikes the cycle directly. But it RUNS ON the ATP and NADPH the light reactions make &mdash; and those run out within minutes in the dark. So it actually runs during the day, fed by the light reactions next door.">No &mdash; it runs during the day, fed by the light reactions</button>
+                <button data-response="That&rsquo;s the common trap, and it&rsquo;s not right. &ldquo;Light-independent&rdquo; means the cycle doesn&rsquo;t use light DIRECTLY &mdash; but it depends on the ATP and NADPH the light reactions make, which run out fast in the dark. So it really runs during the day.">Yes &mdash; the name means it needs darkness</button>
+                <button data-response="Not quite. The cycle doesn&rsquo;t care about day or night by itself &mdash; but it can only run while it has ATP and NADPH, and those are made by the LIGHT reactions and run out quickly in the dark. So in practice it runs during the day.">It can run anytime, light or dark, forever</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Fixing carbon into food</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The <strong>Calvin cycle</strong> runs in the <strong>stroma</strong> and takes three things: <strong>ATP</strong> and <strong>NADPH</strong> from the light reactions, plus <strong>CO&#8322;</strong> from the air. Its job is <strong>carbon fixation</strong>: the enzyme <strong>RuBisCO</strong> (a protein catalyst &mdash; Lesson 8.01) grabs CO&#8322; and pins it onto a waiting molecule. Powered by ATP and NADPH, the cycle assembles the fixed carbons into <strong>three-carbon sugars</strong>, and two of those build one <strong>glucose</strong> (C&#8326;H&#8321;&#8322;O&#8326;). Air has become food.</p>
+    </div>
+
+    <!-- Misconception (RED) -->
+    <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 16px 22px; margin: 0 0 20px 0;">
+        <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; CLEAR UP A COMMON ERROR &middot; &ldquo;THE CALVIN CYCLE NEEDS DARKNESS&rdquo;</div>
+        <div style="font-size: 17px; color: #0E1C42; line-height: 1.65;">&ldquo;Light-independent&rdquo; does <em>not</em> mean &ldquo;happens in the dark.&rdquo; It only means no light strikes the cycle <em>directly</em>. The cycle is utterly dependent on the <strong>ATP and NADPH</strong> made by the light reactions &mdash; and those are used up within minutes once the light is gone. So in real life the Calvin cycle runs <strong>during the day</strong>, fed by the light reactions next door. Put a plant in the dark and the cycle continues only until its ATP and NADPH run out, then stops. The right idea: <strong>no direct light needed, but the products of light are absolutely required.</strong></div>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129514; PART 2 &middot; MEASURING PHOTOSYNTHESIS: THE LEAF-DISK ASSAY</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">When the disks float, the leaf is working</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">How do you measure a process you cannot see? Punch small disks from spinach leaves and draw the air out so they <strong>sink</strong>. Place them under light in a CO&#8322;-supplying solution. As each disk photosynthesizes, the light reactions release <strong>O&#8322;</strong>, the gas collects in the tissue, and the disk becomes buoyant and <strong>floats</strong>. So the number of disks floating &mdash; and how fast they rise &mdash; measures the <strong>rate of photosynthesis</strong>. A <strong>dark control</strong> stays sunk, because no light means no oxygen made &mdash; which is exactly what tells you light is the cause.</p>
+
+        <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; min-width: 600px; margin: 6px 0;">
+            <caption style="caption-side: top; text-align: left; font-size: 14px; color: #666; font-style: italic; padding-bottom: 8px;">Number of disks (out of 10) floating, recorded every 2 minutes</caption>
+            <thead>
+                <tr style="background: #0E1C42;">
+                    <th style="padding: 9px 12px; font-size: 13px; color: #fff; text-align: left; border: 1px solid #334;">Light condition</th>
+                    <th style="padding: 9px 12px; font-size: 13px; color: #fff; text-align: center; border: 1px solid #334;">0 min</th>
+                    <th style="padding: 9px 12px; font-size: 13px; color: #fff; text-align: center; border: 1px solid #334;">2 min</th>
+                    <th style="padding: 9px 12px; font-size: 13px; color: #fff; text-align: center; border: 1px solid #334;">4 min</th>
+                    <th style="padding: 9px 12px; font-size: 13px; color: #fff; text-align: center; border: 1px solid #334;">6 min</th>
+                    <th style="padding: 9px 12px; font-size: 13px; color: #fff; text-align: center; border: 1px solid #334;">8 min</th>
+                    <th style="padding: 9px 12px; font-size: 13px; color: #fff; text-align: center; border: 1px solid #334;">10 min</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background: #FFFFFF;">
+                    <td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8;"><strong>High light</strong></td>
+                    <td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8; text-align: center;">0</td>
+                    <td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8; text-align: center;">2</td>
+                    <td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8; text-align: center;">5</td>
+                    <td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8; text-align: center;">8</td>
+                    <td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8; text-align: center;">10</td>
+                    <td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8; text-align: center;">10</td>
+                </tr>
+                <tr style="background: #F4F6FA;">
+                    <td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8;"><strong>Medium light</strong></td>
+                    <td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8; text-align: center;">0</td>
+                    <td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8; text-align: center;">1</td>
+                    <td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8; text-align: center;">2</td>
+                    <td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8; text-align: center;">4</td>
+                    <td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8; text-align: center;">6</td>
+                    <td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8; text-align: center;">8</td>
+                </tr>
+                <tr style="background: #FFFFFF;">
+                    <td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8;"><strong>Low light</strong></td>
+                    <td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8; text-align: center;">0</td>
+                    <td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8; text-align: center;">0</td>
+                    <td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8; text-align: center;">1</td>
+                    <td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8; text-align: center;">1</td>
+                    <td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8; text-align: center;">2</td>
+                    <td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8; text-align: center;">3</td>
+                </tr>
+                <tr style="background: #F4F6FA;">
+                    <td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8;"><strong>Dark (control)</strong></td>
+                    <td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8; text-align: center;">0</td>
+                    <td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8; text-align: center;">0</td>
+                    <td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8; text-align: center;">0</td>
+                    <td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8; text-align: center;">0</td>
+                    <td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8; text-align: center;">0</td>
+                    <td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8; text-align: center;">0</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
+        <!-- Data-interpretation widget -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; READ THE DATA</div>
+            <div class="widget-question">Use the table above to answer each question. You&rsquo;ll get instant feedback &mdash; this is exactly the kind of thinking your CER will require.</div>
+
+            <div class="widget-row" data-correct="0" data-fb="Right &mdash; the high-light disks reach 10 floating by 8 minutes, far faster than the others. Faster floating means a faster rate of photosynthesis." data-hint="Which condition reaches the most floating disks the fastest?">
+                <div class="widget-row-prompt">1. Which light level photosynthesized FASTEST?</div>
+                <div class="widget-options">
+                    <button data-choice="0">High light</button>
+                    <button data-choice="1">Low light</button>
+                    <button data-choice="2">Dark</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Right &mdash; a disk floats because oxygen made by photosynthesis collected in its tissue. A floating disk is a sign the leaf is actively photosynthesizing." data-hint="What gas collects in a disk and makes it rise?">
+                <div class="widget-row-prompt">2. When a disk floats, what does that tell you is happening inside it?</div>
+                <div class="widget-options">
+                    <button data-choice="0">It is absorbing water</button>
+                    <button data-choice="1">It is making oxygen by photosynthesis</button>
+                    <button data-choice="2">It is using up its oxygen</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Right &mdash; with no light, the light reactions make no oxygen, so no gas collects and the disks never float. The dark control shows light is the cause of the floating." data-hint="What is missing in the dark that the light reactions need?">
+                <div class="widget-row-prompt">3. Why do the dark-control disks stay sunk the whole time?</div>
+                <div class="widget-options">
+                    <button data-choice="0">The water is too cold</button>
+                    <button data-choice="1">They have no chlorophyll</button>
+                    <button data-choice="2">With no light, no oxygen is produced</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- CER anchor callout (GOLD) -->
+    <div style="background: #FDF3E3; border-left: 5px solid #C7922C; border-top: 3px solid #E0A93B; border-radius: 6px; padding: 14px 20px; margin: 0 0 20px 0;">
+        <div style="font-size: 11px; color: #8a6a1d; margin-bottom: 8px;">&#9999;&#65039; THIS IS YOUR MODULE 4 CER</div>
+        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Your graded module essay asks you to use leaf-disk data like the table above to argue <strong>how light intensity affects the rate of photosynthesis</strong>. You will state a <em>claim</em> (more light &rarr; faster photosynthesis), back it with <em>evidence</em> (the floating numbers and the dark control), and explain the <em>reasoning</em> (light powers the reactions that release the O&#8322; that floats the disks). Save your notes from today &mdash; they are your starting outline.</div>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build a Chloroplast &amp; Trace the Light Reactions</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Build the chloroplast and mark the stroma &mdash; the very place today&rsquo;s Calvin cycle runs &mdash; against the thylakoid where the light reactions happen.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Explore a Leaf, Down to the Thylakoid</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">See the leaf tissue where, in the real assay, oxygen would collect and float a spinach disk &mdash; the structure behind your CER data.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 8.04 &middot; Leaf-Disk Assay &mdash; Reading the Data</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Determine which light condition photosynthesized fastest, cite specific numbers, and write a short mini-CER &mdash; a direct rehearsal for the module essay. Open it from the next item in this module.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">&#9733;</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Module 4 CER &middot; The graded essay builds on THIS lesson</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Your module writing assignment asks you to argue how light intensity affects the rate of photosynthesis, using leaf-disk data and the light-reaction mechanism. Save your notes from today &mdash; they are your starting outline.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">The argument of the whole module now closes: light became chemical energy (Lesson 8.03), and chemical energy became sugar built from air (the Calvin cycle). A floating spinach disk is that invisible process made into a number you can count. And the glucose the leaf makes does not stay in the leaf &mdash; through every food web it becomes the energy that feeds the living world. That is the leaf&rsquo;s <strong>service</strong>, and it is the heart of your CER.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 8.04 &middot; The Calvin Cycle &amp; the Leaf-Disk Assay</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

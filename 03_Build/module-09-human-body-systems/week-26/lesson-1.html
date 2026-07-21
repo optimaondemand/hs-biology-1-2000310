@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 26.01</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q3 &middot; Module 9</div>
+        <div style="font-size: 12px; color: #666;">Human Body Systems</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 26.01</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Organization &amp; Tissues</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Self-government &mdash; homeostasis, the body's quiet discipline</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 26.01</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Levels of Organization &amp; the Four Tissues</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; From a Single Cell to a Whole Body</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">A single cell can do a little. How do thirty trillion of them become one working body?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">This is the first lesson of Module 9, and it opens the human body the way Module 3 opened the cell &mdash; from the ground up. Today you climb the six <strong>levels of organization</strong> (chemical to organism) and meet the <strong>four primary tissue types</strong> the whole body is built from: <strong>epithelial</strong>, <strong>connective</strong>, <strong>muscle</strong>, and <strong>nervous</strong>. For each, you connect a structure to the job it does.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> put the six levels of organization in order &mdash; chemical, cell, tissue, organ, organ system, organism &mdash; and explain how each level is built from the one below it.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> name the four primary tissue types and match each one to its main function.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 26.01, <em>From Cell to Body: The Levels of Organization and the Four Tissues</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129517; PART 1 &middot; THE LADDER FROM CELL TO BODY</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Your heart is made of many cells, but a single heart-muscle cell cannot pump blood on its own. Before you read on, why do you think the body needs <em>levels</em> of organization rather than just cells?</div>
+            <div class="widget-options">
+                <button data-response="Exactly the idea. Each level can do something the level below cannot. One heart cell can twitch; many together as a tissue and organ can pump; the whole circulatory system delivers blood everywhere. Organization creates abilities that single cells lack.">Bigger jobs need many cells working together</button>
+                <button data-response="A fair thought &mdash; but the body is not just a bigger pile of identical cells. Cells specialize, gather into tissues, and combine into organs, so each level can do a job the level below cannot. That build-up is what today's lesson is about.">Because more cells just make a bigger cell</button>
+                <button data-response="Reasonable to wonder. The answer is that organization lets specialized cells cooperate: cells form tissues, tissues form organs, organs form systems, and each new level gains an ability the parts alone don't have. That's the ladder you'll climb today.">Not sure &mdash; isn't a cell already alive on its own?</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Six levels, each built from the one below</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Read the ladder as a sentence: <strong>chemical &rarr; cell &rarr; tissue &rarr; organ &rarr; organ system &rarr; organism</strong>. Atoms and molecules (chemical) build the <strong>cell</strong>, the smallest living unit from Module 3. Cells of one kind doing one job form a <strong>tissue</strong>. Two or more tissues combine into an <strong>organ</strong> (heart, stomach, skin). Organs that cooperate form an <strong>organ system</strong> (circulatory, digestive). All the systems together make the <strong>organism</strong> &mdash; the whole living person. Each level does something the level below could not do alone.</p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129513; PART 2 &middot; MATCH THE TISSUE TO ITS JOB</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Four tissues, four jobs</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 4px 0;">Every organ is a mix of the four primary tissues. Match each description to the tissue that does it.</p>
+
+        <!-- ow-select -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129513; MATCH IT &middot; TISSUE &rarr; FUNCTION</div>
+            <div class="widget-row" data-correct="b" data-hint="Think of the outer skin and the lining of the gut &mdash; tightly packed sheets that cover and line.">
+                <div class="widget-row-prompt">This tissue forms tightly packed sheets that cover the body's surfaces and line its cavities and glands &mdash; for protection, absorption, and secretion. What is it?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; connective tissue supports and connects, with cells spread out in a matrix. The tightly packed covering-and-lining tissue is epithelial tissue.">Connective tissue</button>
+                    <button data-choice="b" data-fb="Correct. That is epithelial tissue &mdash; tightly packed cells forming sheets that cover, line, protect, absorb, and secrete.">Epithelial tissue</button>
+                    <button data-choice="c" data-fb="No &mdash; nervous tissue carries signals. The tissue that forms covering and lining sheets is epithelial tissue.">Nervous tissue</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="c" data-hint="Bone, cartilage, tendon, fat, and blood all belong to this one &mdash; its job is to bind and support.">
+                <div class="widget-row-prompt">Bone, cartilage, tendon, fat, and even blood all belong to which tissue type, whose job is to support and connect?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; muscle tissue contracts to move. Bone, cartilage, tendon, fat, and blood are all connective tissue.">Muscle tissue</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; epithelial tissue covers and lines. The support-and-connect family that includes bone, blood, and fat is connective tissue.">Epithelial tissue</button>
+                    <button data-choice="c" data-fb="Correct. Bone, cartilage, tendon, fat, and blood are all connective tissue &mdash; cells spread in a matrix, built to support and connect.">Connective tissue</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="a" data-hint="Only one tissue can contract &mdash; shorten and pull &mdash; to create movement.">
+                <div class="widget-row-prompt">Which tissue is specialized to contract &mdash; to shorten and pull &mdash; and so is the only one that produces movement?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. Muscle tissue is built to contract (shorten and pull), the one tissue that creates movement &mdash; in skeletal, cardiac, and smooth forms.">Muscle tissue</button>
+                    <button data-choice="b" data-fb="No &mdash; connective tissue supports and connects; it does not contract. The contracting, movement-making tissue is muscle.">Connective tissue</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; nervous tissue sends signals but does not contract. The tissue that shortens to create movement is muscle.">Nervous tissue</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="b" data-hint="Neurons and glia, carrying fast electrical signals across long distances &mdash; the body's wiring.">
+                <div class="widget-row-prompt">Made of neurons and supporting glia, this tissue carries fast electrical signals to sense, decide, and command. What is it?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; muscle tissue contracts to move. The signal-carrying tissue made of neurons and glia is nervous tissue.">Muscle tissue</button>
+                    <button data-choice="b" data-fb="Correct. That is nervous tissue &mdash; neurons and glia carrying fast electrical signals; the body's communication network.">Nervous tissue</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; epithelial tissue covers and lines. The neuron-and-glia signaling tissue is nervous tissue.">Epithelial tissue</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; ONE ORGAN, FOUR TISSUES</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">See the tissues combine</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The payoff of naming the four tissues is that you can now take apart any organ. Reason through the stomach below.</p>
+
+        <!-- ow-select single-row -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129504; THINK IT THROUGH</div>
+            <div class="widget-row" data-correct="c" data-hint="Which tissue is built to contract and squeeze &mdash; the one that produces movement?">
+                <div class="widget-row-prompt">The stomach has an epithelial lining, connective tissue holding it together, and nervous tissue to coordinate it. Which tissue does the actual churning that mixes your food?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; the epithelial lining protects and secretes digestive juices, but it does not move the stomach. The churning is done by muscle tissue (smooth muscle in the stomach wall).">The epithelial lining</button>
+                    <button data-choice="b" data-fb="No &mdash; nervous tissue coordinates and times the churning, but it does not do the squeezing itself. The movement comes from muscle tissue in the stomach wall.">The nervous tissue</button>
+                    <button data-choice="c" data-fb="Correct. The churning is muscle tissue &mdash; smooth muscle in the stomach wall contracting to squeeze and mix the food. Four tissues, one organ, each doing its own job.">The muscle tissue</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 10px 0 0 0;">That is the whole method of this module: every organ ahead &mdash; skin, bone, heart, lung, gut &mdash; is a particular blend of these four tissues. Backward link: the cells doing the work are the eukaryotic cells of <strong>Module 3</strong>; the energy they spend is the ATP of <strong>Module 4</strong>. Forward link: next lesson these organs join into systems that keep the body's inside world steady &mdash; <strong>homeostasis</strong>.</p>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build the Body's Organization Hierarchy</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Construct and label the six levels &mdash; cell &rarr; tissue &rarr; organ &rarr; organ system &rarr; organism &mdash; and build one worked chain (muscle cell &rarr; muscle tissue &rarr; heart &rarr; circulatory system &rarr; organism), then record a walkthrough. It pairs directly with today's lesson.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Walk a Negative-Feedback Loop</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Enter a scene and trace a homeostatic loop &mdash; stimulus &rarr; receptor &rarr; control center &rarr; effector &rarr; response &mdash; capturing a snapshot at each station. This VR pairs most closely with Lesson 26.02.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 26.01 &middot; Levels of Organization &amp; the Four Tissues</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Order the six levels, match each tissue to its function, and explain how one organ combines several tissues. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">The body is a community of specialized cells, organized in six levels and built from four tissues &mdash; epithelial covers, connective supports, muscle moves, nervous communicates. Hold this vocabulary: it names every organ in the module. Next lesson we ask the module's central question &mdash; how does a body of trillions of cells keep its inside world steady? That is <strong>homeostasis</strong>.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 3 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 26.01 &middot; Levels of Organization &amp; the Four Tissues</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 23.04</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q3 &middot; Module 8</div>
+        <div style="font-size: 12px; color: #666;">Plant Biology</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 23.04</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Leaf Anatomy</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Wonder &mdash; plants that sense and respond without nerves</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 23.04</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Leaf Anatomy</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; A Solar Panel Built in Layers &mdash; and Where Photosynthesis Happens</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">A leaf looks like a simple flat blade. Slice one open &mdash; how many precisely arranged layers do you think you would find?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">This is the last lesson of Week 23, and it brings the plant body up to the light. Roots absorbed, stems lifted &mdash; now the <strong>leaf</strong> catches the sun and makes food. You will label the leaf's layers from top to bottom, and connect each one to the <strong>photosynthesis</strong> you first met back in Module 4.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> label the main layers of a leaf &mdash; from cuticle to vein &mdash; and give each one a function.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> connect leaf structure to where photosynthesis happens inside the chloroplasts.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 23.04, <em>Anatomy of a Leaf: A Solar Panel Built in Layers</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127811; PART 1 &middot; THE LAYERS, TOP TO BOTTOM</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Stomata &mdash; the tiny pores that let gases in and out of a leaf &mdash; are found mostly on the underside of most leaves. Before you read on, why might the bottom be a smart place for them?</div>
+            <div class="widget-options">
+                <button data-response="Excellent reasoning. The underside is shaded and cooler, so pores there lose less water to evaporation than they would on the hot, sunlit top. It's a water-saving design &mdash; exactly the kind of trade-off leaves are built around.">The shaded underside is cooler, so less water is lost</button>
+                <button data-response="A thoughtful guess. It isn't mainly about catching more light &mdash; light is caught by the chloroplasts up top. The real advantage of pores on the shaded underside is that they lose less water to the sun. Keep that trade-off in mind.">To let more sunlight reach the pores</button>
+                <button data-response="Fair to wonder. The key is water: the underside is shaded and cooler, so stomata there lose less water vapor than they would on the sunlit top surface. Leaf design is full of these water-saving choices.">I hadn't thought about where the pores are</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">From cuticle to vein</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Reading a leaf from the top down: the <strong>cuticle</strong> is the waxy, waterproof coat that limits water loss. Below it, the <strong>upper epidermis</strong> is a transparent protective layer that lets light through. Then the <strong>palisade mesophyll</strong> &mdash; tall column cells packed with chloroplasts, right where the light is strongest &mdash; is where <strong>most photosynthesis happens</strong>. Below that, the <strong>spongy mesophyll</strong> has loose cells and air spaces that let gases diffuse. At the bottom, the <strong>lower epidermis</strong> holds the <strong>stomata</strong> and their <strong>guard cells</strong>, where carbon dioxide enters and oxygen and water vapor exit. Threaded through it all are the <strong>veins</strong>: <strong>xylem</strong> delivering water, <strong>phloem</strong> carrying sugar away.</p>
+    </div>
+
+    <!-- HISTORY CALLOUT (blue/teal helpful info) -->
+    <div style="background: #E8F6FB; border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px;">&#128161; A MOMENT IN HISTORY &middot; THE FIRST PLANT ANATOMISTS</div>
+        <div style="font-size: 17px; color: #0E1C42; line-height: 1.65;">In the 1670s, two men working independently with the newly improved microscope founded the science of plant anatomy: <strong>Marcello Malpighi</strong> in Italy and <strong>Nehemiah Grew</strong> in England. Around 1671&ndash;1682 both published detailed studies of the inner structure of plants, describing the tissues and cells that make up roots, stems, and leaves. Grew is often credited with an early use of the idea of &ldquo;comparative anatomy&rdquo; applied to plants &mdash; comparing structures across different plants to understand them. What is striking is that they could <em>see</em> the structure long before anyone understood its <em>function</em>: they mapped the palisade layers and air spaces and veins without knowing that these were arranged around a reaction called photosynthesis. They were like early explorers charting a coastline before anyone knew what lay inland. Their patient looking &mdash; the willingness to spend hours at a lens simply to see what was there &mdash; is where every layer in today's lesson began. It is a small monument to the module's virtue of <strong>wonder</strong>: they studied plants closely for no reason other than that plants are astonishing.</div>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129513; PART 2 &middot; LABEL THE LEAF</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Match each leaf structure to its function</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 4px 0;">This is your leaf cross-section labeler. For each layer, choose the function it serves.</p>
+
+        <!-- ow-select: leaf structure -> function -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129513; LEAF LABELER &middot; STRUCTURE &rarr; FUNCTION</div>
+            <div class="widget-row" data-correct="c" data-hint="This is the outermost waxy coat &mdash; think about keeping water in.">
+                <div class="widget-row-prompt">The cuticle, on the very top surface of the leaf. What does it do?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; photosynthesis happens in the chloroplasts of the mesophyll below. The cuticle is the outer waxy coat; it does not make food.">Where most photosynthesis happens</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; gas exchange happens at the stomata on the underside. The cuticle is the waxy top coat that keeps water in.">Where CO&#8322; enters the leaf</button>
+                    <button data-choice="c" data-fb="Correct. The cuticle is a waxy, waterproof coat on the leaf's surface that limits water loss &mdash; essential for a leaf held up in sun and wind.">A waxy, waterproof coat that limits water loss</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="a" data-hint="Tall column cells near the top, stuffed with chloroplasts and bathed in light.">
+                <div class="widget-row-prompt">The palisade mesophyll &mdash; tall column cells just under the upper epidermis. What is its role?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. The palisade mesophyll is packed with chloroplasts and sits high in the leaf where light is strongest, so this is where most photosynthesis happens.">Where most photosynthesis happens (packed with chloroplasts)</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; the loose, air-spaced layer is the spongy mesophyll below. The palisade layer is the dense, chloroplast-packed column cells that do most photosynthesis.">Loose cells with air spaces for gas diffusion</button>
+                    <button data-choice="c" data-fb="No &mdash; the transparent protective window is the upper epidermis. The palisade layer beneath it is the chloroplast-rich photosynthesis layer.">A transparent window that lets light in</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="b" data-hint="Loosely packed cells with gaps between them &mdash; what moves through gaps?">
+                <div class="widget-row-prompt">The spongy mesophyll, with its loose cells and air spaces. What is it for?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; the waterproofing job belongs to the cuticle. The spongy layer's air spaces are about moving gases, not keeping water out.">Waterproofing the underside</button>
+                    <button data-choice="b" data-fb="Correct. The air spaces of the spongy mesophyll let gases &mdash; CO&#8322;, O&#8322;, and water vapor &mdash; diffuse freely through the leaf's interior.">Air spaces let gases (CO&#8322;, O&#8322;, water vapor) diffuse</button>
+                    <button data-choice="c" data-fb="No &mdash; most photosynthesis happens in the dense palisade layer above. The spongy layer's loose structure is built for gas movement, not for maximum light capture.">Where the most light is captured</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="c" data-hint="Pores on the underside, opened and closed by guard cells.">
+                <div class="widget-row-prompt">The stomata in the lower epidermis, guarded by guard cells. What is their function?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; delivering water is the job of the xylem in the veins. Stomata are pores for gas exchange, not water pipes.">Delivering water up to the leaf</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; support and food storage happen elsewhere. Stomata are the adjustable pores where gases move in and out of the leaf.">Storing starch for the leaf</button>
+                    <button data-choice="c" data-fb="Correct. Stomata are pores (mostly on the underside) where CO&#8322; enters and O&#8322; and water vapor exit; guard cells open and close them to balance gas intake against water loss.">Pores where CO&#8322; enters and O&#8322;/water vapor exit</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="a" data-hint="Two pipelines run through the leaf &mdash; one brings water, one takes sugar away.">
+                <div class="widget-row-prompt">The veins (vascular bundles) running through the leaf. What do they do?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. In the veins, xylem delivers water into the leaf and phloem carries the sugar away &mdash; the supply line and the shipping dock, wired right into the food-making layers.">Xylem delivers water in; phloem carries sugar away</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; letting light through is the job of the transparent upper epidermis. The veins are the transport pipelines: water in, sugar out.">Let light pass through to the mesophyll</button>
+                    <button data-choice="c" data-fb="No &mdash; the waxy cuticle limits water loss. The veins are the vascular bundles that transport water (xylem) and sugar (phloem).">Coat the leaf to prevent water loss</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <!-- WEB-INTERACTIVE link-out card -->
+        <div style="background: #E8F6FB; border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 8px 0;">
+            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px;">&#128421;&#65039; EXPLORE &middot; INTERACTIVE</div>
+            <div style="font-size: 18px; color: #0E1C42; line-height: 1.6; margin-bottom: 10px;"><strong>See a real leaf cross-section.</strong> Open a labeled diagram of leaf anatomy and find each layer you just matched: cuticle, upper epidermis, palisade mesophyll, spongy mesophyll, lower epidermis with stomata, and the veins. As you look, ask: where are the chloroplasts most concentrated, and how does light reach them from the top while CO&#8322; reaches them from the bottom?</div>
+            <div style="font-size: 15px; color: #1a2340; line-height: 1.6;">Link: <a href="https://www.ck12.org" style="color: #1B6A94;">CK-12 &mdash; Biology (search &ldquo;leaf structure&rdquo;)</a> (opens in a new tab). Follow your teacher's posted link if it is different.</div>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128300; PART 3 &middot; WHERE PHOTOSYNTHESIS HAPPENS (BACK TO MODULE 4)</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">The layers exist to serve the reaction</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Now the leaf's design and the chemistry of Module 4 lock together. Photosynthesis happens inside <strong>chloroplasts</strong>, concentrated in the mesophyll: the <strong>light reactions</strong> run in the <strong>thylakoid membranes</strong>, and the <strong>Calvin cycle</strong> runs in the <strong>stroma</strong>. Every layer serves that reaction. Trace one input to its route below.</p>
+
+        <!-- ow-select single-row -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129504; TRACE IT &middot; INPUTS AND OUTPUT</div>
+            <div class="widget-row" data-correct="b" data-hint="Water is a liquid delivered by pipes; CO&#8322; is a gas that enters through pores; sugar is a product carried away.">
+                <div class="widget-row-prompt">Photosynthesis in a leaf needs water and carbon dioxide, and produces sugar. Which route is correct?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; you've swapped the paths. Water is a liquid that arrives through the xylem, not through the air pores; CO&#8322; is a gas that enters through the stomata.">Water enters through the stomata; CO&#8322; arrives through the xylem</button>
+                    <button data-choice="b" data-fb="Correct. CO&#8322; (a gas) enters through the stomata, water arrives through the xylem, and the sugar produced leaves through the phloem. Each layer of the leaf serves that flow.">CO&#8322; enters through the stomata; water arrives through the xylem; sugar leaves through the phloem</button>
+                    <button data-choice="c" data-fb="No &mdash; the leaf does not absorb water from the air through the cuticle. The cuticle keeps water in; water arrives through the xylem, and CO&#8322; enters through the stomata.">Water and CO&#8322; are both absorbed through the waxy cuticle</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 10px 0 0 0;">This is the whole plant body finished: <strong>roots absorb, stems transport, leaves make food</strong> &mdash; and the leaf's layers are arranged, top to bottom, around the photosynthesis you learned in Module 4. Wonder is the right response: a flat green blade turns out to be a purpose-built factory.</p>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build &amp; Label a Leaf Cross-Section</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Build the leaf layers from the top down &mdash; cuticle, upper epidermis, palisade mesophyll (with chloroplasts), spongy mesophyll (with air spaces), lower epidermis with stomata, and a vein &mdash; then record a walkthrough naming each layer and its function. This VR pairs directly with today's lesson.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Tour a Plant from Root to Leaf</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Walk a whole plant and trace the three tissue systems &mdash; dermal, ground, and vascular &mdash; continuously from root to stem to leaf, capturing named snapshots. This VR pairs with this week's Lessons 23.01&ndash;23.03.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 23.04 &middot; Leaf Anatomy</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Label a leaf cross-section (list the layers top to bottom with functions) and explain in one or two sentences where photosynthesis happens. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">The leaf completes the plant body: cuticle to protect, epidermis to shield and admit light, palisade to make food, spongy layer to move gases, stomata to breathe, veins to supply and ship. Every layer answers the needs of photosynthesis. This closes Week 23 &mdash; next week you follow the water and sugar through the vascular tissue itself, watching xylem lift water to the treetop and phloem carry sugar back down.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 3 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 23.04 &middot; Leaf Anatomy</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

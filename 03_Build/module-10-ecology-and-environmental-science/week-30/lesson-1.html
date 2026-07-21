@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 30.01</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q4 &middot; Module 10</div>
+        <div style="font-size: 12px; color: #666;">Ecology and Environmental Science</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 30.01</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Levels, Habitat &amp; Niche</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Responsibility &mdash; stewardship and the common good</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 30.01</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Zooming Out: The Levels of Life and the Places Life Lives</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; Levels of Organization, Biotic vs. Abiotic, Habitat vs. Niche</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">A heron and a fish both live in the same marsh. Do they have the same <em>habitat</em>? The same <em>niche</em>? The answer to one is yes and the other is no &mdash; and knowing which is which is the heart of ecology.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">This module is the last leg of the course's long climb from atoms to the whole living Earth. Today you build the map everything else will hang on: the <strong>levels of organization</strong> from a single organism up to the biosphere, the difference between <strong>biotic</strong> and <strong>abiotic</strong> factors, and the pair students confuse most &mdash; <strong>habitat</strong> versus <strong>niche</strong>.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> place the six levels of ecological organization in order, from organism to biosphere.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> classify factors in an ecosystem as biotic (living) or abiotic (nonliving).</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish an organism's habitat (where it lives) from its niche (its full role and way of life).</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 30.01, <em>The Ladder of Life: From One Organism to the Whole Living Earth</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129513; PART 1 &middot; THE LADDER OF ORGANIZATION</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Think of a wild place you know &mdash; a pond, a beach, a patch of woods. When you picture &ldquo;the ecosystem&rdquo; there, what do you include?</div>
+            <div class="widget-options">
+                <button data-response="A natural first thought &mdash; but an ecosystem is more than the animals. It is a whole community of living things PLUS the nonliving factors (water, sunlight, soil, temperature) they interact with. Watch for that jump today.">Mostly the animals living there</button>
+                <button data-response="Good instinct &mdash; the plants and animals together are the community. An ecosystem adds one more layer: that living community PLUS its nonliving surroundings. That last step is today's key idea.">All the living things &mdash; plants and animals together</button>
+                <button data-response="Exactly the ecosystem idea. An ecosystem is the living community AND the nonliving factors &mdash; water, light, soil, temperature &mdash; interacting as one system. Hold onto that; it is the rung most people miss.">The living things AND the water, soil, and sunlight around them</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Six rungs, smallest to largest</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Ecologists sort the living world into a hierarchy. Learn it in order: <strong>organism</strong> (one living thing) &rarr; <strong>population</strong> (all the members of one species in an area) &rarr; <strong>community</strong> (all the different populations together) &rarr; <strong>ecosystem</strong> (the community <em>plus</em> its nonliving surroundings) &rarr; <strong>biome</strong> (a large region defined by climate) &rarr; <strong>biosphere</strong> (all life on Earth). The single most important step is <strong>community &rarr; ecosystem</strong>: that is where the nonliving world enters. A community is only the living members; an ecosystem is those members together with their water, light, and soil.</p>
+    </div>
+
+    <!-- PART 2 - biotic/abiotic -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127807; PART 2 &middot; THE LIVING AND THE NONLIVING</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Biotic and abiotic factors</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Every ecosystem is built from two kinds of factors. <strong>Biotic factors</strong> are the <em>living</em> parts (and once-living parts): plants, animals, fungi, bacteria, a fallen log. <strong>Abiotic factors</strong> are the <em>nonliving</em> physical and chemical parts: <strong>sunlight, temperature, water, soil, pH, and salinity</strong>. The simplest test is: <em>is it, or was it, alive?</em> If yes, biotic; if no, abiotic.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The two are always linked. Sunlight (abiotic) powers the <strong>photosynthesis</strong> you studied in <strong>Module 4</strong>, which feeds nearly every food web (biotic). Change one column and the other follows.</p>
+
+        <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 6px; padding: 14px 20px; margin: 8px 0 0 0;">
+            <div style="font-size: 15px; color: #1a2340; line-height: 1.6;"><strong>Notebook check:</strong> Sort these into biotic vs. abiotic &mdash; a bald eagle, the salinity of a bay, sawgrass, soil pH, a decaying leaf, midday temperature. (Three of each.)</div>
+        </div>
+    </div>
+
+    <!-- HISTORY CALLOUT (blue/teal helpful) -->
+    <div style="background: #E8F6FB; border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px;">&#128218; A MOMENT IN THE HISTORY OF SCIENCE &middot; THE MAN WHO SAW NATURE AS A WEB</div>
+        <div style="font-size: 17px; color: #0E1C42; line-height: 1.65;">In the early <strong>1800s</strong>, most naturalists collected the world one object at a time &mdash; a beetle here, a fern there, each catalogued on its own. The Prussian explorer <strong>Alexander von Humboldt</strong> saw something different. On a famous expedition in South America he climbed the great volcano <strong>Chimborazo</strong>, and as he rose he noticed the plants changing in bands with the altitude &mdash; tropical growth low down giving way to alpine plants near the frozen summit, a pattern that mirrored the change from the equator to the poles. From observations like these Humboldt argued that nature is not a warehouse of separate specimens but a single, interconnected <strong>web</strong>, in which climate, soil, plants, and animals shape one another. He is often called the &ldquo;father of ecology&rdquo; for exactly this leap: the idea that to understand any one living thing you must understand the relationships around it. That is precisely the view you are stepping into now &mdash; and it is why ecology reads the living and nonliving worlds together, never apart.</div>
+    </div>
+
+    <!-- PART 3 - habitat vs niche + flip -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127968; PART 3 &middot; ADDRESS VS. PROFESSION</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Habitat and niche &mdash; do not confuse them</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">An organism's <strong>habitat</strong> is <em>where it lives</em> &mdash; its physical address. Its <strong>niche</strong> is its full <em>role and way of life</em> &mdash; its profession: what it eats, when it is active, where it nests, what eats it, and how it affects everything around it. <strong>Habitat is the address; niche is the profession.</strong> Two species can share a habitat while occupying entirely different niches. And a niche is not random &mdash; it has been shaped over generations by <strong>natural selection</strong> (<strong>Module 6</strong>), evolution's answer to &ldquo;how will this species make a living here?&rdquo;</p>
+
+        <!-- ow-flip -->
+        <div class="optima-widget ow-flip">
+            <div class="ow-flip-front">
+                <div class="widget-kicker">&#128260; FLIP CARD &middot; TAP TO REVEAL</div>
+                <div style="font-size: 18px; color: #0E1C42; line-height: 1.6;">A great blue heron and a largemouth bass both live in the same Everglades marsh.<br />Do they share a <strong>habitat</strong>? Do they share a <strong>niche</strong>?<br /><span style="font-size: 14px; color: #1B6A94;">(Decide, then tap to flip.)</span></div>
+            </div>
+            <div class="ow-flip-back">
+                <div class="widget-kicker">&#9989; THE ANSWER</div>
+                <div style="font-size: 18px; color: #0E1C42; line-height: 1.6;"><strong>Same habitat, different niches.</strong><br /><span style="font-size: 15px; color: #1a2340;">The marsh is a shared address (habitat). But their professions differ completely: the bass hunts underwater as a fish, breathing with gills and eating smaller fish; the heron wades the shallows on long legs, breathing air and spearing prey &mdash; and in fact eats the bass. Same place, two ways of life. That is the whole habitat-vs.-niche distinction in one marsh.</span></div>
+            </div>
+        </div>
+
+        <p style="font-size: 16px; color: #1a2340; line-height: 1.65; margin: 8px 0 0 0;">This is the single most common mix-up on this topic. Say it in your own words in your notebook: <em>habitat is where you live; niche is how you live.</em></p>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build a Florida Ecosystem with Biotic &amp; Abiotic Factors</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Construct a Florida ecosystem, placing and labeling its living (biotic) components &mdash; producers, consumers, decomposers &mdash; and its nonliving (abiotic) ones &mdash; water, sunlight, soil, temperature. It brings today's biotic/abiotic distinction to life.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Explore Everglades vs. Coral-Reef vs. Mangrove Biomes</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Tour three Florida biome scenes, capturing a labeled snapshot in each and noting the key abiotic factor that defines it &mdash; a preview of Lessons 30.03 and 30.04.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 30.01 &middot; Levels, Habitat &amp; Niche</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Order the levels of organization, sort biotic from abiotic factors, and explain in a sentence how one organism's habitat differs from its niche. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You now have ecology's coordinate system: a ladder from organism to biosphere, a way to split every ecosystem into living and nonliving factors, and the address-vs.-profession distinction between habitat and niche. Humboldt's great insight &mdash; that nature is a web of relationships &mdash; is the thread we will pull for the rest of the module. Next lesson we zoom in on the relationships themselves: how species help, harm, and compete with one another.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 4 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 30.01 &middot; Zooming Out: The Levels of Life and the Places Life Lives</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

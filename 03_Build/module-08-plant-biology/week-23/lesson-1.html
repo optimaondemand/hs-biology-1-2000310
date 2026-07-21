@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 23.01</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q3 &middot; Module 8</div>
+        <div style="font-size: 12px; color: #666;">Plant Biology</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 23.01</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Plant Cell Features</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Wonder &mdash; plants that sense and respond without nerves</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 23.01</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Plant Cell Features</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; The Four Tools of a Rooted, Self-Feeding Cell</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">An animal can walk to its food; a plant cannot. What does a cell need if it must stand still and make its own meal?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">This is the first lesson of Module 8, and it opens the plant from the inside out. You already know the general cell from Module 3. Today you meet the four features that make a plant cell different &mdash; the <strong>cell wall</strong>, the <strong>central vacuole</strong>, the <strong>plastids</strong>, and the <strong>plasmodesmata</strong> &mdash; and you connect each one to the rooted, autotrophic life it serves.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> identify the structures characteristic of plant cells &mdash; cell wall, central vacuole, plastids/chloroplasts, and plasmodesmata &mdash; and state what each one does.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain how these features fit a plant's rooted, autotrophic way of life.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 23.01, <em>Inside a Plant Cell: The Tools of a Rooted, Self-Feeding Life</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127793; PART 1 &middot; THE SAME CELL, WITH FOUR ADDITIONS</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Picture a cheek cell (animal) and a leaf cell (plant) side by side. Before you read on, which do you think is stiffer &mdash; and why?</div>
+            <div class="widget-options">
+                <button data-response="Good instinct. The plant cell is stiffer, and the reason is the cell wall &mdash; a rigid layer of cellulose outside the membrane that an animal cell simply does not have. That wall is why a leaf cell holds its shape and a cheek cell is soft.">The plant cell &mdash; something must hold a plant upright</button>
+                <button data-response="Reasonable guess, but it's the plant cell that's stiffer. It builds a rigid cellulose cell wall outside its membrane; the animal cell has no wall at all, so it stays soft and flexible. That single difference is today's starting point.">The animal cell &mdash; animals seem tougher</button>
+                <button data-response="Fair &mdash; and worth testing. The answer is the plant cell: it adds a rigid cellulose cell wall (and a big water-filled vacuole) that an animal cell lacks. Those additions are exactly what this lesson is about.">Not sure &mdash; they seemed about the same to me</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Everything from Module 3, plus four things</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">A plant cell keeps all the eukaryotic equipment you already know &mdash; a <strong>nucleus</strong>, <strong>mitochondria</strong>, and a <strong>cell membrane</strong> controlling what enters and leaves. To that it adds four features: a rigid <strong>cell wall</strong>, one large <strong>central vacuole</strong>, a family of <strong>plastids</strong>, and connecting channels called <strong>plasmodesmata</strong>. Keep this straight from the start: the <strong>cell wall is not the cell membrane</strong>. The wall is an outer layer; the membrane is still inside it, doing the controlling. The wall supports; the membrane decides.</p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129513; PART 2 &middot; MATCH THE STRUCTURE TO ITS JOB</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Four features, four jobs</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 4px 0;">Match each plant-cell feature to the job it does.</p>
+
+        <!-- ow-select -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129513; MATCH IT &middot; STRUCTURE &rarr; FUNCTION</div>
+            <div class="widget-row" data-correct="b" data-hint="Think of what makes celery snap and a tree stand &mdash; a rigid outer layer.">
+                <div class="widget-row-prompt">A rigid layer of cellulose sits outside the cell membrane. What is it, and what does it do?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; the central vacuole is a water-storing sac inside the cell. The rigid cellulose layer outside the membrane is the cell wall, which supports and shapes the cell.">Central vacuole &mdash; stores water</button>
+                    <button data-choice="b" data-fb="Correct. That is the cell wall: a rigid cellulose layer outside the membrane that gives support and shape, protects the cell, and keeps it from over-expanding.">Cell wall &mdash; support, shape, protection</button>
+                    <button data-choice="c" data-fb="No &mdash; the cell membrane is the thin layer inside the wall that controls what enters and leaves. The rigid cellulose layer outside it is the cell wall.">Cell membrane &mdash; controls entry/exit</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="c" data-hint="This is the big water sac whose pressure keeps a plant firm.">
+                <div class="widget-row-prompt">One large sac fills most of the cell, storing water and pressing outward against the wall. What is it?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; chloroplasts are the green plastids where photosynthesis happens. The large water-storing sac that produces turgor pressure is the central vacuole.">A chloroplast</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; plasmodesmata are tiny channels between cells. The large water sac that pushes on the wall and keeps the plant firm is the central vacuole.">A plasmodesma</button>
+                    <button data-choice="c" data-fb="Correct. That is the central vacuole. Its stored water creates turgor pressure against the wall, keeping the plant firm; lose the water and the plant wilts.">The central vacuole</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="a" data-hint="These are the channels that let neighboring plant cells share materials through their walls.">
+                <div class="widget-row-prompt">Tiny channels pass through the cell walls, connecting the cytoplasm of neighboring cells so they can share water and signals. What are they?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. Those are plasmodesmata &mdash; channels through the walls that connect neighboring cells, the plant's counterpart to animal gap junctions.">Plasmodesmata</button>
+                    <button data-choice="b" data-fb="No &mdash; chromoplasts are plastids that store colored pigments. The channels that connect neighboring cells through their walls are plasmodesmata.">Chromoplasts</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; the cell wall is the rigid layer itself. The channels that pass THROUGH walls to connect cells are plasmodesmata.">Cell walls</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="b" data-hint="A potato stores starch; a red tomato holds pigment; a green leaf makes food. All three jobs belong to one family.">
+                <div class="widget-row-prompt">Chloroplasts (photosynthesis), chromoplasts (color), and amyloplasts (starch storage) all belong to which family of organelles?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; vacuoles are water-storage sacs. Chloroplasts, chromoplasts, and amyloplasts are all members of the plastid family.">Vacuoles</button>
+                    <button data-choice="b" data-fb="Correct. These are all plastids &mdash; one family with three jobs: making food (chloroplasts), showing color (chromoplasts), and storing starch (amyloplasts).">Plastids</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; mitochondria release energy and are found in nearly all eukaryotes. Chloroplasts, chromoplasts, and amyloplasts are plastids, a plant-cell family.">Mitochondria</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128167; PART 3 &middot; TURGOR AND THE WILTING PLANT</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Why a thirsty plant droops</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">When the central vacuole is full, its water presses outward on the wall &mdash; this is <strong>turgor pressure</strong>, and it keeps the plant firm and upright. When water runs short, the vacuole shrinks, the pressure drops, and the plant <strong>wilts</strong>. Reason through the cause and effect below.</p>
+
+        <!-- ow-select single-row prediction -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129504; PREDICT IT &middot; CAUSE &amp; EFFECT</div>
+            <div class="widget-row" data-correct="c" data-hint="If water leaves the vacuole, what happens to the pressure pushing on the wall?">
+                <div class="widget-row-prompt">A potted plant goes unwatered for days and its leaves and stem droop. What has happened inside the cells?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; the cell walls do not dissolve. Wilting is about water: the vacuoles have lost water, so turgor pressure dropped and the cells can no longer hold the plant firm.">The cellulose cell walls dissolved</button>
+                    <button data-choice="b" data-fb="No &mdash; chloroplasts making less food would not make the plant droop within days. Wilting is a water-pressure problem: the vacuoles shrank and turgor pressure fell.">The chloroplasts stopped photosynthesizing</button>
+                    <button data-choice="c" data-fb="Correct. The central vacuoles lost water, so turgor pressure fell. Without that outward pressure against the walls, the cells go limp and the plant wilts &mdash; and watering it refills the vacuoles and restores the pressure.">The central vacuoles lost water, so turgor pressure dropped</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 10px 0 0 0;">This is one of the cleanest examples in biology of structure producing function: a water-filled sac (structure) creates the pressure that holds a whole plant up (function). Backward link: the membrane that controls this water movement, and the organelles inside, are the same ones you met in <strong>Module 3</strong>; the chloroplasts among the plastids run the photosynthesis of <strong>Module 4</strong>.</p>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build &amp; Label a Leaf Cross-Section</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Build the layers of a leaf from the top down and record a walkthrough naming each layer and its function &mdash; including the chloroplast-packed mesophyll where photosynthesis happens. It pairs most closely with Lesson 23.04, but it builds on the plant cell you meet today.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Tour a Plant from Root to Leaf</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Walk a whole plant and trace the three tissue systems &mdash; dermal, ground, and vascular &mdash; continuously from root to stem to leaf, capturing named snapshots along the way. This VR pairs with this week's Lessons 23.01&ndash;23.03.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 23.01 &middot; Plant Cell Features</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Match each plant-cell structure to its function and explain, in a sentence or two, how one of them fits a plant's rooted, self-feeding life. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Four features, one way of life: a plant cell is walled to stand still, vacuole-filled to stay firm, plastid-equipped to feed itself, and channel-linked to live as a community. Hold onto them &mdash; in the next lesson these cells gather into the <strong>three tissue systems</strong> that run through the whole plant.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 3 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 23.01 &middot; Plant Cell Features</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

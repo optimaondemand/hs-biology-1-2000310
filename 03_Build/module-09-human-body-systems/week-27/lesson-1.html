@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 27.01</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q3 &middot; Module 9</div>
+        <div style="font-size: 12px; color: #666;">Human Body Systems</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 27.01</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Digestion &amp; Enzymes</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Self-government &mdash; homeostasis, the body's quiet discipline</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 27.01</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Digestion &amp; Enzymes</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; Taking Big Molecules Apart, One Shape-Specific Cut at a Time</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">A sandwich is far too big to enter a single cell. How does your body take it apart into pieces small enough to use?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">This opens Module 9, the study of the human body's systems. We begin where your food does &mdash; the <strong>digestive system</strong>. Today you follow food from mouth to large intestine, meet the organs that help from the sidelines, and learn why the true workhorse of digestion is the <strong>enzyme</strong>: a protein whose folded <strong>shape</strong> decides exactly what it can cut.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> trace food along the digestive tract &mdash; mouth, esophagus, stomach, small intestine, large intestine &mdash; and state what each organ does.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain that enzymes are proteins whose shape makes them substrate-specific, linking back to protein structure in Module 2.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> connect the small intestine's villi and microvilli to the surface-area-to-volume idea from Module 3.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 27.01, <em>Breaking Food Down: The Digestive System and Its Enzymes</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127869;&#65039; PART 1 &middot; THE DISASSEMBLY LINE</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">You chew a piece of bread for a while and it starts to taste slightly sweet. Before you read on, what do you think is happening?</div>
+            <div class="widget-options">
+                <button data-response="Exactly the right instinct. Bread is mostly starch, and your saliva contains the enzyme salivary amylase, which begins breaking starch into sugars right there in your mouth. The sweetness you taste is the sugar being freed &mdash; chemical digestion, before you even swallow.">An enzyme in my saliva is breaking the starch into sugar</button>
+                <button data-response="Understandable guess, but the bread itself isn't changing on its own. Your saliva carries the enzyme salivary amylase, which breaks the bread's starch into sugars &mdash; that freed sugar is the sweetness. Chemical digestion has already started in your mouth.">The bread is dissolving in the water of my saliva</button>
+                <button data-response="Fair to wonder &mdash; and the answer is chemical. Saliva delivers the enzyme salivary amylase, which cuts the starch in bread into smaller sugars. Those sugars are what you taste. Digestion of starch begins in the mouth.">I'm not sure &mdash; maybe my taste buds just adjust</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">One long tube, each region a job</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Food travels a single tube. In the <strong>mouth</strong>, chewing (mechanical) mixes with salivary amylase, which starts on starch. The <strong>esophagus</strong> pushes food down by <strong>peristalsis</strong> &mdash; muscle waves. The <strong>stomach</strong> churns food and adds strong <strong>acid</strong> and <strong>pepsin</strong>, which begins on protein. The <strong>small intestine</strong> is where <strong>most digestion and nearly all absorption</strong> happen. The <strong>large intestine</strong> mainly <strong>reabsorbs water</strong>, compacting what is left. Three accessory organs help: the <strong>liver</strong> makes bile (breaks fat into droplets), the <strong>gallbladder</strong> stores that bile, and the <strong>pancreas</strong> supplies a full set of digestive enzymes.</p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129513; PART 2 &middot; MATCH THE ORGAN TO ITS JOB</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Who does what along the tract</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 4px 0;">Match each part of the digestive system to the job it does.</p>
+
+        <!-- ow-select -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129513; MATCH IT &middot; ORGAN &rarr; FUNCTION</div>
+            <div class="widget-row" data-correct="b" data-hint="Think of the folded, finger-covered organ where nutrients finally cross into the blood.">
+                <div class="widget-row-prompt">Where does most chemical digestion and nearly all absorption of nutrients take place?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; the stomach mostly churns food and starts on protein with acid and pepsin. Most digestion and nearly all absorption happen in the small intestine, with its villi and microvilli.">The stomach</button>
+                    <button data-choice="b" data-fb="Correct. The small intestine is where most digestion finishes and nearly all absorption happens &mdash; its villi and microvilli give it an enormous absorbing surface.">The small intestine</button>
+                    <button data-choice="c" data-fb="No &mdash; the large intestine mainly reabsorbs water from what remains. Most digestion and absorption happen upstream, in the small intestine.">The large intestine</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="c" data-hint="This organ adds strong acid and the protein-splitting enzyme pepsin.">
+                <div class="widget-row-prompt">Which organ churns food and adds acid plus pepsin to begin breaking down proteins?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; the mouth starts on starch with salivary amylase, not on protein. The acid-and-pepsin, protein-starting organ is the stomach.">The mouth</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; the pancreas supplies enzymes to the small intestine but food does not pass through it. The churning, acidic, pepsin-adding organ is the stomach.">The pancreas</button>
+                    <button data-choice="c" data-fb="Correct. The stomach churns food and floods it with acid and pepsin, which begins breaking proteins into shorter chains; the acid also kills many swallowed microbes.">The stomach</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="a" data-hint="This accessory organ supplies enzymes for carbohydrates, proteins, and fats to the small intestine.">
+                <div class="widget-row-prompt">Which accessory organ delivers a full set of digestive enzymes (and a base to neutralize acid) into the small intestine?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. The pancreas supplies enzymes for all three macromolecule types, plus a base that neutralizes stomach acid so those enzymes can work.">The pancreas</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; the liver makes bile, which breaks fat into droplets but is not an enzyme. The organ supplying the digestive enzymes is the pancreas.">The liver</button>
+                    <button data-choice="c" data-fb="No &mdash; the gallbladder stores bile made by the liver. The organ that supplies digestive enzymes to the small intestine is the pancreas.">The gallbladder</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="b" data-hint="Millions of finger-like folds do this &mdash; think surface-area-to-volume from Module 3.">
+                <div class="widget-row-prompt">What is the purpose of the villi and microvilli lining the small intestine?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; villi do not make enzymes their main purpose; that is the pancreas and intestinal cells. Their key job is to hugely increase the absorbing surface area.">To produce stomach acid</button>
+                    <button data-choice="b" data-fb="Correct. Villi and microvilli multiply the intestine's surface area many times over &mdash; the surface-area-to-volume principle from Module 3 &mdash; so far more nutrients can be absorbed.">To greatly increase surface area for absorption</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; water reabsorption is mainly the large intestine's job. Villi and microvilli exist to increase the absorbing surface of the small intestine.">To reabsorb water from waste</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128273; PART 3 &middot; WHY ENZYMES ARE PICKY</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Shape decides the cut</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">An enzyme is a <strong>protein</strong> &mdash; a folded chain of amino acids from Module 2 &mdash; and its fold creates an <strong>active site</strong> shaped to fit just one kind of molecule, its <strong>substrate</strong>. Like a key in a lock, amylase fits starch and pepsin fits protein; neither works on the other. Reason through the consequence below.</p>
+
+        <!-- ow-select single-row prediction -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129504; REASON IT THROUGH &middot; ENZYME SPECIFICITY</div>
+            <div class="widget-row" data-correct="c" data-hint="If shape determines the fit, what happens to a starch molecule offered to a protein-cutting enzyme?">
+                <div class="widget-row-prompt">Pepsin breaks down proteins. If you put pepsin in a test tube with only starch, what would you expect?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; an enzyme is not a general cutter. Pepsin's active site is shaped for protein, so it cannot break starch; the starch would be left largely unchanged.">Pepsin would quickly break the starch into sugars</button>
+                    <button data-choice="b" data-fb="No &mdash; enzymes do not change shape to match whatever they meet. Pepsin's fixed active-site shape fits protein only, so the starch would go essentially unchanged.">Pepsin would reshape itself to fit the starch</button>
+                    <button data-choice="c" data-fb="Correct. Pepsin's active site is shaped for protein, not starch. The starch molecule does not fit, so pepsin cannot cut it &mdash; you would need amylase for that. Shape determines what an enzyme acts on: this is substrate specificity.">Little would happen &mdash; pepsin's shape fits protein, not starch</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 10px 0 0 0;">This is form-follows-function at the molecular scale: the <strong>structure</strong> of a protein (its folded shape) determines its <strong>function</strong> (what it can cut). Backward link: the protein folding of <strong>Module 2</strong> is exactly what makes an enzyme selective. Forward link: what these enzymes free from your food is absorbed and carried off by the <strong>circulatory system</strong> &mdash; the subject of tomorrow's lesson.</p>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Model Blood Flow Through a Four-Chamber Heart</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Build the heart, then trace a red blood cell through both loops &mdash; body to right atrium to right ventricle to lungs to left atrium to left ventricle to body &mdash; and record a walkthrough. It pairs most closely with Lesson 27.02.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Explore Alveolar Gas Exchange &amp; the Digestive Tract</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Enter two scenes: watch O&#8322; and CO&#8322; trade places at an alveolus, and travel the digestive tract from mouth to large intestine, capturing labeled snapshots. It pairs with this week's Lessons 27.01 and 27.04.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 27.01 &middot; Digestion &amp; Enzymes</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Order the digestive tract, match organs to their jobs, and explain in a sentence or two why an enzyme only works on its own substrate. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Digestion is a disassembly line: mechanical breakup plus shape-specific enzymes take the large molecules of a meal apart into absorbable units, which cross into the blood through a hugely folded surface. Hold onto one idea above all &mdash; an enzyme's <strong>shape</strong> is its function. Next lesson, we follow what the blood does with everything digestion delivers.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 3 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 27.01 &middot; Digestion &amp; Enzymes</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

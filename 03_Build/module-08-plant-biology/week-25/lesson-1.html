@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 25.01</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q3 &middot; Module 8</div>
+        <div style="font-size: 12px; color: #666;">Plant Biology</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 25.01</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Flowers &amp; Pollination</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Wonder &mdash; plants that sense and respond without nerves</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 25.01</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Flower Structure and Pollination</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; Reading the Flower from the Outside In</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">A plant cannot travel to find a mate. So how does a flowering plant reproduce while standing perfectly still?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today you learn to read a flower like a diagram &mdash; naming each part from the outer sepals inward to the female carpel at the center, telling the <strong>male</strong> parts from the <strong>female</strong> parts, and describing how <strong>pollination</strong> carries pollen from an anther to a stigma using wind, water, and animals.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> label the parts of a flower and state the role of each part.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> describe pollination and explain how flowers attract pollinators.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 25.01, <em>The Flower: A Rooted Plant&rsquo;s Answer to Reproduction</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127800; PART 1 &middot; READING THE FLOWER, OUTSIDE IN</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Think of the last flower you looked at closely. What did you notice first &mdash; and what do you think it was <em>for</em>? (No wrong answer &mdash; just check in.)</div>
+            <div class="widget-options">
+                <button data-response="Good &mdash; the bright petals are usually what we see first, and that's the point. Petals are the flower's advertisement: their color attracts pollinators. Today you'll see that behind that advertisement sit the working reproductive parts.">The bright petals &mdash; the color</button>
+                <button data-response="Nice observation. Scent is one of a flower's real tools for drawing in pollinators, right alongside color and nectar. The reproductive parts are tucked inside, which is exactly what we'll open up today.">The smell / scent</button>
+                <button data-response="Great instinct &mdash; the parts at the center are the actual reproductive machinery: the male stamens and the female carpel. Most people notice the petals first, but the center is where reproduction happens.">The parts in the middle</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Four rings, outside to inside</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">A flower is built in rings. On the outside are the <strong>sepals</strong>, which protect the bud before it opens. Inside them are the <strong>petals</strong>, whose color and shape attract pollinators. Then come the <strong>male</strong> parts &mdash; the <strong>stamens</strong>, each an <strong>anther</strong> (makes pollen) on a stalk called a <strong>filament</strong>. At the very center is the <strong>female</strong> part &mdash; the <strong>carpel</strong> (or <strong>pistil</strong>): a sticky <strong>stigma</strong> on top, a <strong>style</strong> stalk, and an <strong>ovary</strong> at the base holding the <strong>ovules</strong>, which contain the egg cells.</p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129513; PART 2 &middot; PART, JOB, AND SEX</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Match each flower part to its role</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 4px 0;">Work through each one. Watch the male-versus-female distinction &mdash; it is the most common mix-up.</p>
+
+        <!-- ow-select -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129513; MATCH IT &middot; PART &rarr; ROLE</div>
+            <div class="widget-row" data-correct="b" data-hint="This part produces the dust-like grains that carry the male cells.">
+                <div class="widget-row-prompt">The anther is part of the stamen. What does it do, and is it male or female?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; catching pollen is the job of the sticky stigma, which is part of the female carpel. The anther does the opposite: it makes the pollen.">Female &mdash; it catches pollen</button>
+                    <button data-choice="b" data-fb="Correct. The anther is the male part that produces pollen. It sits atop the filament, which holds it up so its pollen can be carried away.">Male &mdash; it produces pollen</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; holding up the anther is the filament's job. The anther itself produces the pollen, and it is male.">Male &mdash; it is a stalk that holds things up</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="a" data-hint="It's the sticky top of the female carpel &mdash; think about what needs to stick to it.">
+                <div class="widget-row-prompt">The stigma is the sticky top of the carpel. Why is it sticky, and is it male or female?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. The stigma is female &mdash; the top of the carpel &mdash; and it is sticky so it can catch pollen that arrives during pollination.">Female &mdash; sticky so it catches pollen</button>
+                    <button data-choice="b" data-fb="No &mdash; producing pollen is the anther's job, and the anther is male. The stigma catches pollen; it does not make it.">Male &mdash; it makes pollen</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; the ovary (also part of the female carpel) holds the ovules and eggs. The stigma is the sticky landing pad on top that catches pollen.">Female &mdash; it holds the egg cells</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="c" data-hint="Its ovules hold the egg cells &mdash; where would you expect that to be?">
+                <div class="widget-row-prompt">The ovary sits at the base of the carpel. What does it contain?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; pollen is made in the anther, the male part. The ovary is female and holds ovules with the egg cells.">Pollen grains</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; the sepals protect the bud. The ovary's job is to hold the ovules, which contain the egg cells.">Sepals that protect the bud</button>
+                    <button data-choice="c" data-fb="Correct. The ovary contains the ovules, which hold the egg cells. After fertilization the ovary will become the fruit &mdash; you'll see that in Lesson 25.02.">Ovules, which hold the egg cells</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="b" data-hint="Think about what is happening before the flower opens.">
+                <div class="widget-row-prompt">What is the main job of the sepals?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; attracting pollinators with color is the petals' job. Sepals are usually small and green.">Attract pollinators with bright color</button>
+                    <button data-choice="b" data-fb="Correct. The sepals are the outer ring that protects the bud while the flower's delicate parts develop inside.">Protect the bud before it opens</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; producing pollen is the anther's job. Sepals protect the developing bud.">Produce pollen</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128029; PART 3 &middot; POLLINATION: THE POLLEN&rsquo;S JOURNEY</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Getting pollen from anther to stigma</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>Pollination</strong> is the transfer of pollen from an <strong>anther</strong> to a <strong>stigma</strong> &mdash; just the delivery. Because a plant cannot move, an <strong>agent</strong> carries the pollen: <strong>wind</strong>, <strong>water</strong>, or <strong>animals</strong> such as bees, butterflies, and birds. Animal-pollinated flowers earn that help with <strong>color</strong>, <strong>scent</strong>, and sugary <strong>nectar</strong> &mdash; a partnership that, over long time, can drive <strong>coevolution</strong> between flower and pollinator (a direct echo of Modules 6&ndash;7).</p>
+
+        <!-- ow-select: pollination check -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129504; CHECK YOUR THINKING</div>
+            <div class="widget-row" data-correct="b" data-hint="Remember the exact definition: pollen moving from one part to another.">
+                <div class="widget-row-prompt">Which statement best defines pollination?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; that describes fertilization, the joining of sperm and egg. Pollination happens first and is only the transfer of pollen.">The fusion of a sperm cell and an egg cell</button>
+                    <button data-choice="b" data-fb="Correct. Pollination is simply the transfer of pollen from an anther to a stigma &mdash; the delivery step. Fertilization (sperm joining egg) comes later.">The transfer of pollen from an anther to a stigma</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; a seed forming is a later result. Pollination itself is just the movement of pollen to the stigma.">The growth of a seed inside a fruit</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="c" data-hint="What would make an animal visit a flower again and again?">
+                <div class="widget-row-prompt">A flower is brightly colored, scented, and full of nectar. Which agent of pollination is it built for?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; wind-pollinated flowers are usually small, dull, and scentless (think grasses). Bright color, scent, and nectar are rewards aimed at animals.">Wind</button>
+                    <button data-choice="b" data-fb="No &mdash; water carries pollen for some aquatic plants, but color, scent, and nectar are lures for living visitors, not water.">Water</button>
+                    <button data-choice="c" data-fb="Correct. Color, scent, and nectar are all rewards and signals aimed at animal pollinators &mdash; bees, butterflies, and birds &mdash; that carry pollen from flower to flower.">Animals</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build a Flower; Show Double Fertilization &amp; Seed</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Build a flower and label every part &mdash; sepal, petal, stamen (anther + filament), and carpel (stigma + style + ovary + ovules) &mdash; then animate pollination through to seed and fruit. This VR pairs directly with today&rsquo;s lesson.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Explore Phototropism &amp; Auxin</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Later this week, watch a seedling bend toward light and see auxin gather on the shaded side &mdash; evidence for the tropisms lesson (25.04).</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 25.01 &middot; Label the Flower</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Label the parts of a flower, state each part&rsquo;s role, and mark which parts are male and which are female. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">The flower is a rooted plant&rsquo;s whole answer to reproduction: protective sepals, advertising petals, male stamens, and a female carpel, served by wind, water, and animals. Hold the parts and the pollination step firmly &mdash; in <strong>Lesson 25.02</strong> you will follow a pollen grain from the stigma down to the ovule and watch a seed and a fruit begin to form.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 3 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 25.01 &middot; Flower Structure and Pollination</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

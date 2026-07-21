@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 33.04</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q4 &middot; Module 10</div>
+        <div style="font-size: 12px; color: #666;">Ecology and Environmental Science</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 33.04</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Climate Change &amp; Ecosystem Dynamics</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Responsibility &mdash; stewardship and the common good</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 33.04</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Climate Change &amp; Ecosystem Dynamics</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; Three Independent Lines of Evidence &middot; Module 10 CER Anchor</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Here is the scientist's real work: not to shout a conclusion, but to weigh the evidence. So &mdash; what is the evidence that Earth's climate is changing, and what makes it convincing?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">This is the lesson your <strong>Module 10 CER essay</strong> is built on. Today you meet <strong>three independent lines of evidence</strong> &mdash; the <strong>temperature record</strong>, the <strong>CO&#8322; record and its fossil-fuel fingerprint</strong>, and the <strong>biological shifts</strong> in where and when living things live &mdash; and you learn why their <em>convergence</em> makes the case strong. We treat this the way this course treats every claim: soberly, from evidence, without alarmism and without dismissal.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> describe three independent lines of evidence for a changing climate: the temperature record, the CO&#8322; record and its isotopic fingerprint, and biological range and timing shifts.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain why the convergence of independent evidence makes a scientific conclusion strong.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 33.04, <em>Reading the Evidence: A Changing Climate</em> &mdash; your anchor text and the evidence file for your Module 10 CER. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 1 &middot; HOW TO HOLD A BIG QUESTION</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">When someone makes a big scientific claim, what is the most useful first question a careful thinker can ask? (No wrong answer &mdash; just check in.)</div>
+            <div class="widget-options">
+                <button data-response="Exactly the habit this course has built all year. &lsquo;What is the evidence, and how good is it?&rsquo; is the scientist's first question &mdash; better than either believing or dismissing on instinct.">&ldquo;What's the evidence, and how good is it?&rdquo;</button>
+                <button data-response="Understandable, but that's a shortcut past the real work. Who is speaking matters less than what the evidence shows. Today we go to the measurements themselves.">&ldquo;Who is saying it, and do I trust them?&rdquo;</button>
+                <button data-response="A fair instinct to notice &mdash; and then to set aside. Whether a claim feels comfortable says nothing about whether it's true. The honest move is to ask what the evidence actually shows.">&ldquo;Does it match what I already believe?&rdquo;</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Confident where the evidence is strong; careful where it is open</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The world's major scientific bodies share a <strong>strong consensus</strong>: Earth's climate is warming, and human activity &mdash; chiefly burning <strong>fossil fuels</strong> &mdash; is the main cause. That consensus rests on many independent measurements, not one study. Being honest also means being precise about uncertainty: the serious scientific debate is mostly about the <strong>rate and magnitude</strong> (how fast, how much, exactly where), <em>not</em> about whether warming is happening. Good science is confident where evidence is strong and careful where it is still open.</p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128202; PART 2 &middot; THREE INDEPENDENT LINES OF EVIDENCE</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Physics, chemistry, and biology &mdash; three different witnesses</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Each line below is measured by a completely different method, yet all three point the same way.</p>
+
+        <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 6px; padding: 14px 20px; margin: 0 0 10px 0;">
+            <div style="font-size: 16px; color: #0e1c42; margin-bottom: 4px;"><strong>1. The temperature record (physics).</strong></div>
+            <div style="font-size: 15px; color: #1a2340; line-height: 1.6;">Over a century of thermometers &mdash; at weather stations, on ships, on ocean buoys &mdash; averaged together show Earth's surface has <strong>warmed</strong>, most sharply since the mid-1900s. This is direct measurement, agreeing across land, sea, and both hemispheres.</div>
+        </div>
+        <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 6px; padding: 14px 20px; margin: 0 0 10px 0;">
+            <div style="font-size: 16px; color: #0e1c42; margin-bottom: 4px;"><strong>2. The CO&#8322; record and its fingerprint (chemistry).</strong></div>
+            <div style="font-size: 15px; color: #1a2340; line-height: 1.6;">In <strong>1958</strong>, <strong>Charles David Keeling</strong> began continuously measuring atmospheric CO&#8322; at <strong>Mauna Loa</strong>. His <strong>Keeling Curve</strong> shows CO&#8322; rising steadily year after year. And the <strong>carbon-isotope fingerprint</strong> of the added gas matches ancient-plant carbon &mdash; coal, oil, and gas &mdash; tying the rise to fossil-fuel burning. This connects straight to last week's <strong>carbon cycle</strong>: carbon locked away for millions of years is returning to the air faster than the cycle removes it.</div>
+        </div>
+        <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 6px; padding: 14px 20px; margin: 0 0 0 0;">
+            <div style="font-size: 16px; color: #0e1c42; margin-bottom: 4px;"><strong>3. Biological shifts (biology).</strong></div>
+            <div style="font-size: 15px; color: #1a2340; line-height: 1.6;">Species' ranges are shifting <strong>poleward and upslope</strong> toward cooler conditions, and <strong>phenology</strong> &mdash; nature's timing &mdash; is shifting: earlier springs, earlier flowering and leaf-out, shifted migration and breeding. Living things are not reading thermometers; they are simply responding to their world, and independently tracing the same warming.</div>
+        </div>
+
+        <!-- ow-select: three lines of evidence -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129513; CHECK IT &middot; NAME THE LINE OF EVIDENCE</div>
+            <div class="widget-row" data-correct="b" data-hint="Which line is a chemical measurement of a gas &mdash; and carries a fossil-fuel fingerprint?">
+                <div class="widget-row-prompt">The Keeling Curve from Mauna Loa, begun in 1958, belongs to which line of evidence &mdash; and what does its isotope fingerprint show?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; that's the biological line (ranges and timing). The Keeling Curve is a chemical measurement of atmospheric CO&#8322;.">Biological shifts &mdash; species moving poleward</button>
+                    <button data-choice="b" data-fb="Correct. It is the CO&#8322; record (chemistry). Its carbon-isotope fingerprint matches ancient-plant carbon, tying the rise to fossil-fuel burning.">The CO&#8322; record &mdash; its fingerprint ties the rise to fossil fuels</button>
+                    <button data-choice="c" data-fb="No &mdash; the temperature record comes from thermometers on land and sea, not from measuring a gas. The Keeling Curve measures CO&#8322;.">The temperature record from thermometers</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="a" data-hint="Earlier flowering and shifted migration are about the TIMING of living things.">
+                <div class="widget-row-prompt">Birds are breeding earlier and flowers are blooming earlier than they did decades ago. Which line of evidence is this?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. Changes in the timing of natural events (phenology) and in species' ranges are the biological line &mdash; a witness completely independent of thermometers and gas analyzers.">Biological shifts (range and phenology changes)</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; the CO&#8322; record measures a gas in the atmosphere, not the behavior of living things. Earlier blooming is the biological line.">The atmospheric CO&#8322; record</button>
+                    <button data-choice="c" data-fb="No &mdash; a thermometer reading is the temperature record. When organisms shift their timing, that is the separate biological line of evidence.">The instrumental temperature record</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <!-- CONTEMPORARY callout (GOLD) -->
+        <div style="background: #FDF3E3; border-left: 5px solid #C7922C; border-top: 3px solid #C7922C; border-radius: 6px; padding: 14px 20px; margin: 16px 0 0 0;">
+            <div style="font-size: 11px; color: #8a6a1d; margin-bottom: 8px;">&#127777;&#65039; CONTEMPORARY RESEARCH &middot; HOW SCIENTISTS ASSEMBLE THE PICTURE</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Recent work suggests just how much the modern climate picture depends on <strong>weaving many kinds of data together</strong>. Scientists are currently combining readings from <strong>satellites</strong> watching the whole planet, <strong>ocean buoys</strong> tracking sea temperatures, <strong>ice cores</strong> that preserve air bubbles from the deep past, and thousands of ground <strong>weather stations</strong> &mdash; feeding them into <strong>climate models</strong> that test how well our understanding reproduces what is actually observed. No single instrument sees everything; the strength comes from independent datasets that check one another. Researchers are careful to distinguish what they measure with high confidence (that warming is happening) from what they are still refining (precisely how fast, and exactly where the effects fall) &mdash; a working example of science holding certainty and uncertainty in the same honest hand.</div>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128279; PART 3 &middot; WHY CONVERGENCE MATTERS</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Three witnesses who never spoke to each other</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Any one line, alone, could be questioned. But these three come from <strong>independent</strong> sources &mdash; physics, chemistry, and biology &mdash; gathered by different people using different methods. When independent lines all point to the same conclusion, that agreement is far harder to explain away than any single measurement. This is the very reasoning you used in <strong>Module 6</strong> to argue for common descent, where fossils, anatomy, and DNA converged. <strong>Convergence of independent evidence is one of the strongest tools science has</strong> &mdash; and it is the backbone of the CER you are about to write.</p>
+
+        <!-- AI AWARENESS callout (RED) -->
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-radius: 6px; padding: 14px 20px; margin: 8px 0 0 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#129302; AI AWARENESS &middot; CAN A MODEL PREDICT WHERE A SPECIES WILL GO?</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">The <strong>opportunity</strong> is real: <strong>machine-learning models</strong> help ecologists project how <strong>species ranges may shift</strong> as climate changes, <strong>downscale</strong> broad climate projections to a local valley or coastline, and <strong>fill gaps</strong> where field data are sparse &mdash; letting researchers plan conservation across regions no team could survey by hand. But the <strong>pitfalls</strong> deserve equal weight. A model <strong>inherits the biases and gaps of its training data</strong>: if it learned mostly from well-studied places, it can mislead about the rest. Its output is a <strong>projection, not a measurement</strong> &mdash; a hypothesis about the future to test against what actually happens, not a fact. And a confident-looking map can hide deep uncertainty. Treat an AI ecological projection the way you treat any scientific claim: a useful lead you must verify against real observations, not an authority to obey. The three lines of evidence in this lesson are strong precisely because they are <em>measured</em>; a model's guess about tomorrow must still earn its trust.</div>
+        </div>
+    </div>
+
+    <!-- PART 4 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9997;&#65039; PART 4 &middot; YOUR MODULE 10 CER</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Build the argument yourself</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Your <strong>Module 10 CER essay</strong> asks you to evaluate the evidence for anthropogenic (human-caused) climate change from three independent sources and argue a claim. Use today's three lines as your evidence, and make <em>convergence</em> the heart of your reasoning &mdash; explain not just <em>what</em> each line shows, but <em>why</em> three independent witnesses agreeing is so much stronger than any one alone. Write soberly and from evidence, exactly as a scientist would.</p>
+        <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 6px; padding: 14px 20px; margin: 8px 0 0 0;">
+            <div style="font-size: 15px; color: #1a2340; line-height: 1.6;"><strong>The CER shape to aim for:</strong> a clear <strong>Claim</strong> &rarr; three lines of <strong>Evidence</strong> (temperature, CO&#8322; + fingerprint, biological shifts) &rarr; <strong>Reasoning</strong> that ties them together through convergence &rarr; and integration that connects the whole to the carbon cycle and to responsible stewardship. Your teacher scores it with the module CER rubric.</div>
+        </div>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Model Exponential vs. Logistic Growth Curves</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Build a J-curve and an S-curve and mark carrying capacity &mdash; the population thinking that lets you reason clearly about our own species and its limits.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Explore Primary vs. Secondary Succession Over Time</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Walk the time-lapse of a community rebuilding &mdash; a reminder that ecosystems recover on their own timescales, which climate change can outpace.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 33.04 &middot; The Evidence for a Changing Climate</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Match each line of evidence to its field, explain why convergence strengthens the case, and interrogate an AI climate-projection claim &mdash; a warm-up for your Module 10 CER. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Three independent witnesses &mdash; physics, chemistry, and biology &mdash; converge on a changing climate, and their convergence is what makes the case strong. This is where the year's long argument, from atoms to ecosystems, finally arrives at us. Understanding the evidence clearly is the first act of a good steward, the module's virtue of <strong>responsibility</strong> made concrete: you cannot care wisely for a world you refuse to see. Carry this evidence into your <strong>Module 10 CER</strong>, and reason &mdash; not fear, not denial &mdash; all the way to your conclusion.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 4 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 33.04 &middot; Climate Change &amp; Ecosystem Dynamics</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

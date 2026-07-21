@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 11.04</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 5</div>
+        <div style="font-size: 12px; color: #666;">DNA, Cell Division, and Genetics</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 11.04</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Shuffling the Deck</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Responsibility &mdash; faithful copying; what we inherit and pass on</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 11.04</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Shuffling the Deck</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; Meiosis and Genetic Variation</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Brothers and sisters share the same parents &mdash; so why is no two of them alike? What kind of cell division <em>makes</em> difference instead of copying?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Mitosis copies faithfully. <strong>Meiosis</strong> does the opposite: through two divisions, it produces <strong>four genetically unique haploid</strong> cells &mdash; the gametes. Today you will learn how <strong>crossing over</strong> and <strong>independent assortment</strong> reshuffle the deck, and you will sharpen the single most important contrast in this module: mitosis versus meiosis.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> describe meiosis as two divisions producing four genetically unique haploid cells.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain how crossing over and independent assortment create genetic variation.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> compare mitosis and meiosis (number of divisions, cells, chromosome number, and whether daughters are identical or unique).</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 11.04, <em>Shuffling the Deck</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129516; PART 1 &middot; A DIVISION THAT HALVES AND SHUFFLES</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">If gametes (sperm and egg) were made by ordinary mitosis &mdash; keeping the full diploid set &mdash; what problem would show up in the very next generation? (No wrong answer &mdash; just check in.)</div>
+            <div class="widget-options">
+                <button data-response="Exactly. Two diploid gametes joining would give the offspring a double set &mdash; and the chromosome number would keep doubling every generation. Meiosis prevents this by halving the number first, making haploid gametes.">The chromosome number would double every generation</button>
+                <button data-response="It can seem like nothing would go wrong, but it would: two full (diploid) sets joining would double the number, and it would double again next time. Meiosis halves the set first, so fertilization restores &mdash; not doubles &mdash; the normal number.">Probably nothing &mdash; it would be fine</button>
+                <button data-response="Good honesty. Here&rsquo;s the key: if gametes kept the full set, joining two of them would double the chromosome number every generation. Meiosis solves this by halving the set to make haploid gametes.">I&rsquo;m not sure &mdash; I want to find out</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Two divisions, four unique cells</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Most body cells are <strong>diploid</strong> (two sets of chromosomes). <strong>Meiosis</strong> copies the DNA once, then divides <em>twice</em> (meiosis I and II), ending with <strong>four haploid</strong> cells &mdash; one set each. These are the <strong>gametes</strong>. When a sperm and egg join, the two halves combine to restore the normal diploid number. And crucially, the four cells are not identical &mdash; they are each genetically <strong>unique</strong>.</p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127183; PART 2 &middot; TWO WAYS THE DECK GETS SHUFFLED</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Crossing over and independent assortment</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>Crossing over</strong>: early in meiosis I, matching (homologous) chromosomes line up and <em>swap segments</em>, so a chromosome ends up carrying a fresh mix of the mother&rsquo;s and father&rsquo;s gene versions. <strong>Independent assortment</strong>: when the homologous pairs are separated, each pair orients <em>randomly</em> and independently &mdash; a coin flip repeated for every pair. Together these produce an enormous number of possible gametes, which is exactly why siblings differ. Each child is a different shuffle of the same deck.</p>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9878;&#65039; PART 3 &middot; MITOSIS VS. MEIOSIS (DON'T CONFUSE THEM)</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">The contrast that matters most</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Confusing these two is one of the most common mistakes in biology. Study the table, then test yourself below.</p>
+
+        <div style="overflow-x: auto; margin: 0 0 12px 0;">
+        <table style="width: 100%; border-collapse: collapse; min-width: 560px;">
+            <thead>
+                <tr style="background: #0E1C42;">
+                    <th style="padding: 10px 12px; font-size: 13px; color: #fff; text-align: left; border: 1px solid #334;">&nbsp;</th>
+                    <th style="padding: 10px 12px; font-size: 13px; color: #fff; text-align: left; border: 1px solid #334;">Mitosis</th>
+                    <th style="padding: 10px 12px; font-size: 13px; color: #fff; text-align: left; border: 1px solid #334;">Meiosis</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background: #FFFFFF;"><td style="padding: 8px 12px; font-size: 15px; color: #0e1c42; border: 1px solid #D0D9E8;"><strong>Divisions</strong></td><td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8;">One</td><td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8;">Two</td></tr>
+                <tr style="background: #F4F6FA;"><td style="padding: 8px 12px; font-size: 15px; color: #0e1c42; border: 1px solid #D0D9E8;"><strong>Daughter cells</strong></td><td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8;">2</td><td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8;">4</td></tr>
+                <tr style="background: #FFFFFF;"><td style="padding: 8px 12px; font-size: 15px; color: #0e1c42; border: 1px solid #D0D9E8;"><strong>Chromosome number</strong></td><td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8;">Diploid (kept)</td><td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8;">Haploid (halved)</td></tr>
+                <tr style="background: #F4F6FA;"><td style="padding: 8px 12px; font-size: 15px; color: #0e1c42; border: 1px solid #D0D9E8;"><strong>Daughters are&hellip;</strong></td><td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8;">Genetically <strong>identical</strong></td><td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8;">Genetically <strong>unique</strong></td></tr>
+                <tr style="background: #FFFFFF;"><td style="padding: 8px 12px; font-size: 15px; color: #0e1c42; border: 1px solid #D0D9E8;"><strong>Purpose</strong></td><td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8;">Growth, repair, replacement</td><td style="padding: 8px 12px; font-size: 15px; color: #1a2340; border: 1px solid #D0D9E8;">Making gametes</td></tr>
+            </tbody>
+        </table>
+        </div>
+
+        <!-- ow-scale self-check -->
+        <div class="optima-widget ow-scale">
+            <div class="widget-kicker">&#9889; SELF-CHECK &middot; MITOSIS OR MEIOSIS?</div>
+            <div class="widget-question">For each statement, tap whether it describes mitosis or meiosis.</div>
+
+            <div class="widget-row" data-correct="1" data-hint="Which process is built to create variety &mdash; the one that makes gametes?">
+                <div class="widget-row-prompt">1. Produces four genetically UNIQUE cells.</div>
+                <div class="widget-options">
+                    <button data-choice="0" data-fb="Not quite &mdash; mitosis makes TWO IDENTICAL cells. The one making four unique cells is meiosis.">Mitosis</button>
+                    <button data-choice="1" data-fb="Right &mdash; meiosis makes four genetically unique haploid cells, thanks to crossing over and independent assortment.">Meiosis</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-hint="Which process heals a cut by making more cells just like the ones already there?">
+                <div class="widget-row-prompt">2. Makes two identical diploid cells for growth and repair.</div>
+                <div class="widget-options">
+                    <button data-choice="0" data-fb="Right &mdash; mitosis makes two genetically identical diploid cells, used for growth, repair, and replacement.">Mitosis</button>
+                    <button data-choice="1" data-fb="Not quite &mdash; meiosis makes four unique haploid gametes. Growth and repair (two identical cells) is mitosis.">Meiosis</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-hint="Which process halves the chromosome number to make sperm and egg?">
+                <div class="widget-row-prompt">3. Halves the chromosome number to make gametes (sperm and egg).</div>
+                <div class="widget-options">
+                    <button data-choice="0" data-fb="Not quite &mdash; mitosis keeps the full diploid set. Halving the number to make gametes is meiosis.">Mitosis</button>
+                    <button data-choice="1" data-fb="Right &mdash; meiosis halves the chromosome number (diploid &rarr; haploid) to make gametes, so fertilization restores the normal number.">Meiosis</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- Forward bridge -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128279; A BRIDGE FORWARD &middot; TO EVOLUTION</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">The variation meiosis creates is not idle decoration. In Module 6 you will study <strong>natural selection</strong> &mdash; and selection can only act if individuals differ. Meiosis, through crossing over and independent assortment, is one of the great engines that generates that difference. The shuffling of the deck in every generation is precisely the raw material evolution works on. This is one of the threads that ties the whole course together.</p>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build a DNA Double Helix &mdash; Base Pairing &amp; the Replication Fork</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Assemble the helix from nucleotide parts, pair the bases correctly (A&ndash;T, C&ndash;G), then open a replication fork and show helicase unzipping and polymerase building the new strands.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Walk Through a Cell in Mitosis (PMAT Stations)</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Walk four stations &mdash; Prophase, Metaphase, Anaphase, Telophase &mdash; observe the chromosomes at each, and capture four named snapshots.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 11.04 &middot; Shuffling the Deck</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Complete a mitosis-vs-meiosis comparison chart and explain, in your own words, how crossing over and independent assortment make four unique cells. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Mitosis copies (two identical cells); meiosis reshuffles (four unique haploid cells). Both serve the module&rsquo;s theme of <strong>responsibility</strong> &mdash; one passing on an exact copy, the other passing on a fresh combination so life can vary, adapt, and continue. You have now traced this week&rsquo;s whole arc: the shape of the code, copying it, dividing for growth, and dividing to make difference. Next week the story turns to how that code is read &mdash; from gene to protein to trait.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 11.04 &middot; Shuffling the Deck</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

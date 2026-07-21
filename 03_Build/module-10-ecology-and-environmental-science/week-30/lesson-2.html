@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 30.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q4 &middot; Module 10</div>
+        <div style="font-size: 12px; color: #666;">Ecology and Environmental Science</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 30.02</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Species Interactions</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Responsibility &mdash; stewardship and the common good</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 30.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Help, Harm, and Compete: How Species Live Together</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; Predation, Competition, Mutualism, Commensalism, Parasitism</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">A tick on a deer, a bee on a flower, a barnacle on a whale &mdash; all three are &ldquo;living together.&rdquo; So why is one harmful, one helpful, and one neither?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today you learn to name every relationship between two species with one simple habit: score each partner <strong>+</strong> (helped), <strong>&minus;</strong> (harmed), or <strong>0</strong> (unaffected). That bookkeeping turns <strong>predation</strong>, <strong>competition</strong>, and the three symbioses &mdash; <strong>mutualism</strong>, <strong>commensalism</strong>, and <strong>parasitism</strong> &mdash; into an easy sort.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> describe predation and competition and identify who is helped and who is harmed in each.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish mutualism, commensalism, and parasitism using the +/&minus;/0 effect on each partner.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> classify a real-world example (bee &amp; flower, barnacle &amp; whale, tick &amp; deer) into the correct interaction.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 30.02, <em>Living Together: How Species Help, Harm, and Compete</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129482; PART 1 &middot; EATING AND COMPETING</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">A remora fish rides attached to a shark, eating scraps the shark leaves behind &mdash; without helping or harming the shark. Before reading on, what would you call that relationship?</div>
+            <div class="widget-options">
+                <button data-response="Reasonable guess &mdash; but predation means one kills and eats the other. Here nobody is being eaten. Since the remora benefits and the shark is unaffected, this is commensalism (+/0). Keep that scorecard in mind.">Predation &mdash; the remora is feeding off the shark</button>
+                <button data-response="Exactly right. One species benefits (the remora gets food) and the other is unaffected (the shark neither gains nor loses). That +/0 pattern is commensalism &mdash; one of today's three symbioses.">Commensalism &mdash; one benefits, the other is unaffected</button>
+                <button data-response="Not quite &mdash; parasitism would mean the shark is harmed. Here the shark is unaffected while the remora benefits, which is commensalism (+/0). The +/&minus;/0 scorecard sorts these instantly.">Parasitism &mdash; the remora is harming the shark</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Predation (+ / &minus;) and competition (&minus; / &minus;)</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>Predation</strong> is one organism killing and eating another: the predator is helped (+), the prey harmed (&minus;). A panther and a deer, a heron and a fish. Over generations it drives an arms race &mdash; faster prey, sharper predators &mdash; which is <strong>natural selection</strong> (<strong>Module 6</strong>) at work. <strong>Competition</strong> is two organisms needing the same limited resource; both are harmed (&minus; / &minus;), because each would do better without the other. Two oak seedlings reaching for the same sunlight are competing &mdash; and competition is exactly why two species cannot share the same <strong>niche</strong> (Lesson 30.01) in one place for long.</p>
+    </div>
+
+    <!-- PART 2 - symbiosis + ow-select -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129412; PART 2 &middot; THE THREE SYMBIOSES</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Same word, three outcomes</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>Symbiosis</strong> means a close, long-term relationship between two species. The +/&minus;/0 scorecard splits it three ways: <strong>mutualism</strong> (+ / +, both benefit &mdash; bee &amp; flower, or coral &amp; its zooxanthellae algae), <strong>commensalism</strong> (+ / 0, one benefits and the other is unaffected &mdash; barnacle on a whale), and <strong>parasitism</strong> (+ / &minus;, the parasite benefits and the host is harmed &mdash; tick on a deer). A parasite differs from a predator in that it usually lives on or in its host and harms it slowly rather than killing it outright.</p>
+
+        <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 6px; padding: 12px 18px; margin: 4px 0 6px 0;">
+            <div style="font-size: 15px; color: #1a2340; line-height: 1.6;"><strong>Try it &mdash; match each example to its interaction.</strong> Score each partner in your head first, then choose.</div>
+        </div>
+
+        <!-- ow-select graded rows -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9989; MATCH THE INTERACTION</div>
+
+            <div class="widget-row" data-correct="mut">
+                <div class="widget-row-prompt">A bee sips nectar from a flower and carries its pollen to the next bloom. (Bee: +, Flower: +)</div>
+                <div class="widget-options">
+                    <button data-choice="mut" data-fb="Correct. Both partners benefit (+/+): the bee is fed, the flower is pollinated. That is mutualism.">Mutualism</button>
+                    <button data-choice="com" data-fb="Not quite. Commensalism is +/0. Here the flower clearly benefits too (it gets pollinated), so both gain — that is mutualism.">Commensalism</button>
+                    <button data-choice="par" data-fb="No — parasitism harms one partner. Neither the bee nor the flower is harmed; both benefit, so it is mutualism.">Parasitism</button>
+                    <button data-choice="pred" data-fb="No — predation means one kills and eats the other. Both benefit here, so it is mutualism.">Predation</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="par">
+                <div class="widget-row-prompt">A tick attaches to a deer and feeds on its blood, weakening it. (Tick: +, Deer: &minus;)</div>
+                <div class="widget-options">
+                    <button data-choice="mut" data-fb="No — mutualism is +/+. The deer is harmed here, so this cannot be mutualism.">Mutualism</button>
+                    <button data-choice="com" data-fb="Not quite. Commensalism leaves one partner unaffected (0). The deer is harmed (&minus;), so this is parasitism.">Commensalism</button>
+                    <button data-choice="par" data-fb="Correct. The tick benefits (+) and the host deer is harmed (&minus;), and the tick lives on the host without killing it outright — that is parasitism.">Parasitism</button>
+                    <button data-choice="pred" data-fb="Close, but a predator kills and eats its prey outright. A tick lives on its host and harms it slowly, which is parasitism.">Predation</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="com">
+                <div class="widget-row-prompt">A barnacle rides on a whale's skin, reaching richer feeding waters; the whale is unaffected. (Barnacle: +, Whale: 0)</div>
+                <div class="widget-options">
+                    <button data-choice="mut" data-fb="Not quite — mutualism needs BOTH to benefit. The whale gains nothing here, so this is commensalism.">Mutualism</button>
+                    <button data-choice="com" data-fb="Correct. One partner benefits (+, the barnacle) and the other is unaffected (0, the whale). That +/0 pattern is commensalism.">Commensalism</button>
+                    <button data-choice="par" data-fb="No — parasitism harms the host. The whale is essentially unaffected, so this is commensalism (+/0).">Parasitism</button>
+                    <button data-choice="pred" data-fb="No — nobody is being eaten. The barnacle benefits while the whale is unaffected: commensalism.">Predation</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build a Florida Ecosystem with Biotic &amp; Abiotic Factors</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">As you place producers, consumers, and decomposers, look for the interactions from today &mdash; who eats whom, who partners with whom &mdash; running between them.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Explore Everglades vs. Coral-Reef vs. Mangrove Biomes</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">The coral reef you will tour is built on a mutualism &mdash; coral and its algae &mdash; exactly the kind of +/+ partnership you named today.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 30.02 &middot; Species Interactions</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Score each partner +/&minus;/0, name five interactions from real examples, and explain in a sentence how a parasite differs from a predator. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Five relationships, one method: score each partner + , &minus; , or 0, and the name follows. These interactions are the threads that bind a community together &mdash; and the reason a change to one species ripples out to many. Keep them in view: when we walk Florida's ecosystems next lesson, you will see whole places whose health turns on a single partnership, like the coral and its algae.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 4 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 30.02 &middot; Help, Harm, and Compete: How Species Live Together</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

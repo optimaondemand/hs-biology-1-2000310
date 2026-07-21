@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 35.01</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q4 &middot; Module 10</div>
+        <div style="font-size: 12px; color: #666;">Ecology and Environmental Science</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 35.01</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Silent Spring &amp; Bioaccumulation</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Responsibility &mdash; stewardship and the common good</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 35.01</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Silent Spring: When a Poison Climbs a Food Web</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; DDT, Biomagnification, Eggshell Thinning &amp; a CER Practice</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">A pesticide sprayed on fields and marshes was, at that spot, far too dilute to harm a bird. So why did the eagles and falcons nearly disappear?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">We open the final unit with a true story that gathers up almost everything you have learned about ecology. A chemical named <strong>DDT</strong> climbed the food web, growing more concentrated at every step, until it thinned the eggshells of the birds at the top. One scientist &mdash; <strong>Rachel Carson</strong> &mdash; read the evidence, built the argument, and changed the law of a nation. Today you will learn the mechanism (<strong>bioaccumulation</strong> and <strong>biomagnification</strong>), meet Carson, and then <strong>practice the CER argument</strong> yourself.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain bioaccumulation and biomagnification, and why a persistent, fat-soluble toxin hits top predators hardest.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> describe how DDT thinned raptor eggshells and how Rachel Carson's evidence led to its ban and the birds' recovery.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> build a short claim&ndash;evidence&ndash;reasoning argument evaluating Carson's claim using food webs and biomagnification.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 35.01, <em>Silent Spring: How a Poison Climbed a Food Web</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open for the CER practice.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9763;&#65039; PART 1 &middot; A POISON THAT WOULD NOT LEAVE</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">A pesticide is present in lake water at a very low, seemingly harmless concentration. Before reading on, which animal in the lake do you expect to carry the <em>highest</em> concentration in its body?</div>
+            <div class="widget-options">
+                <button data-response="A reasonable first guess &mdash; but no. Algae absorb the toxin, yet each alga carries only a little. The danger builds as that little bit is eaten and re-eaten up the web.">The algae, since they sit directly in the polluted water</button>
+                <button data-response="Exactly the key idea of this lesson. A persistent, fat-soluble toxin concentrates as it moves up trophic levels (biomagnification), so the top predator &mdash; here a fish-eating bird &mdash; carries by far the most.">The top predator, such as a fish-eating bird</button>
+                <button data-response="Fair &mdash; and today makes it clear. The toxin does not spread out evenly; it concentrates upward. The animal at the top of the food web ends up with the highest load of all.">I'm not sure &mdash; wouldn't it be about equal for everyone?</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Two properties that made DDT dangerous</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>DDT</strong> is a synthetic pesticide that was sprayed widely from the 1940s on. Two properties turned a useful chemical into an ecological problem. It is <strong>persistent</strong> &mdash; it does not break down quickly, so it lingers for years. And it is <strong>fat-soluble</strong> &mdash; it dissolves into an organism's fatty tissue and stays there rather than washing out. When one organism keeps building up a stored toxin faster than it can shed it, we call that <strong>bioaccumulation</strong>.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">The greater danger comes when that stored poison rides up a <strong>food web</strong>. Recall from earlier this module that only about <strong>10%</strong> of energy passes from one trophic level to the next &mdash; energy is <em>lost</em> at each step. A persistent, fat-soluble toxin does the opposite: it is <em>not</em> lost. It is passed along with the meal and concentrated. This step-by-step rise in concentration up the trophic levels is <strong>biomagnification</strong>, and it is exactly why the animals at the <strong>top</strong> of the web are hit hardest &mdash; they inherit the accumulated poison of every level below.</p>
+    </div>
+
+    <!-- HISTORY CALLOUT (blue/teal helpful) -->
+    <div style="background: #E8F6FB; border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px;">&#128218; A MOMENT IN THE HISTORY OF SCIENCE &middot; RACHEL CARSON AND SILENT SPRING (1962)</div>
+        <div style="font-size: 17px; color: #0E1C42; line-height: 1.65;"><strong>Rachel Carson</strong> was a marine biologist and a rare kind of scientist &mdash; one who could also write beautifully. Reading scattered reports of dying songbirds and failing eagle and falcon nests, she assembled the evidence into a single careful argument and published it in <strong>1962</strong> as <em>Silent Spring</em>, imagining a spring morning with no birdsong left. She did not claim DDT was useless; she argued that releasing a persistent poison into a food web had consequences no one had measured, and that we were responsible for finding out. The chemical industry attacked her as hysterical and unqualified. She was, at the time, quietly dying of cancer, yet she testified before the United States Congress and held to her evidence. It held up. The United States <strong>banned DDT in 1972</strong>, and over the following decades bald eagle, osprey, and peregrine falcon populations <strong>recovered</strong> &mdash; a living measurement that her reasoning had been sound. <em>Silent Spring</em> is widely regarded as the birth of the modern environmental movement: a case of science communicated so clearly that it changed policy and saved species. Careful observation and evidence came first; the power to persuade followed &mdash; a pattern this whole course has kept meeting.</div>
+    </div>
+
+    <!-- PART 2 - FLIP -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128260; PART 2 &middot; WHY THE EGGS FAILED</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Test yourself before you flip</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 4px 0;">Read the question on the card, decide your answer, then tap to reveal.</p>
+
+        <!-- ow-flip -->
+        <div class="optima-widget ow-flip">
+            <div class="ow-flip-front">
+                <div class="widget-kicker">&#128260; FLIP CARD &middot; TAP TO REVEAL</div>
+                <div style="font-size: 18px; color: #0E1C42; line-height: 1.6;">DDT did not poison adult eagles outright. Yet their populations still crashed, because almost no chicks were hatching.<br /><strong>What</strong> did the built-up DDT actually do to prevent the next generation?<br /><span style="font-size: 14px; color: #1B6A94;">(Tap to flip.)</span></div>
+            </div>
+            <div class="ow-flip-back">
+                <div class="widget-kicker">&#9989; THE ANSWER</div>
+                <div style="font-size: 18px; color: #0E1C42; line-height: 1.6;"><strong>It thinned their eggshells.</strong><br /><span style="font-size: 15px; color: #1a2340;">The accumulated DDT interfered with how female raptors laid down calcium in their shells. The shells came out so thin that a parent cracked its own eggs simply by sitting on them to keep them warm. Few chicks hatched, and populations of bald eagles, ospreys, and peregrine falcons crashed &mdash; a reproductive failure, not a mass poisoning. The species at the top of the web paid the highest price because they carried the highest biomagnified dose.</span></div>
+            </div>
+        </div>
+
+        <p style="font-size: 16px; color: #1a2340; line-height: 1.65; margin: 8px 0 0 0;">Say it in your own words in your notebook: <em>a fat-soluble, persistent toxin biomagnifies up the web, so top predators carry the most and, in raptors, that dose thinned eggshells until chicks stopped hatching.</em></p>
+    </div>
+
+    <!-- PART 3 - IN-LESSON CER PRACTICE -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9997;&#65039; PART 3 &middot; IN-LESSON CER PRACTICE</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Was Carson's &ldquo;silent spring&rdquo; claim scientifically sound?</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 8px 0;">Now put your reasoning to work. Below is a scaffold for building a short <strong>Claim&ndash;Evidence&ndash;Reasoning</strong> argument &mdash; the same skill you use in every module essay. Draft your answer to the question in your notebook, following the three steps.</p>
+
+        <!-- CER scaffold box (lavender, three numbered steps) -->
+        <div style="background: #EEF1F8; border: 1px solid #C9D3E8; border-left: 5px solid #0E1C42; border-radius: 8px; padding: 20px 22px; margin: 12px 0;">
+            <div style="font-size: 13px; color: #0e1c42; letter-spacing: 0.4px; margin-bottom: 6px;">&#129504; CER SCAFFOLD &middot; DRIVING QUESTION</div>
+            <div style="font-size: 18px; color: #0e1c42; font-style: italic; line-height: 1.55; margin-bottom: 16px;">&ldquo;Using food webs and bioaccumulation, evaluate whether Carson's claim that DDT was causing a &lsquo;silent spring&rsquo; was scientifically sound.&rdquo;</div>
+
+            <!-- Step 1 Claim -->
+            <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px;">
+                <div style="min-width: 28px; height: 28px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+                <div style="background: #ffffff; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 16px; flex: 1;">
+                    <div style="font-size: 14px; color: #1B6A94; margin-bottom: 4px;">CLAIM &mdash; a one-sentence answer</div>
+                    <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">State your position clearly. <em>Starter:</em> &ldquo;Carson's claim <strong>was</strong> scientifically sound &mdash; the mechanism of biomagnification explains the crash of top-predator birds.&rdquo;</div>
+                </div>
+            </div>
+
+            <!-- Step 2 Evidence -->
+            <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px;">
+                <div style="min-width: 28px; height: 28px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+                <div style="background: #ffffff; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 16px; flex: 1;">
+                    <div style="font-size: 14px; color: #1B6A94; margin-bottom: 4px;">EVIDENCE &mdash; give at least two specific facts</div>
+                    <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Pull from this lesson. For example: DDT is <strong>persistent</strong> and <strong>fat-soluble</strong>, so it is stored, not shed; concentration <strong>rises at each trophic level</strong> (biomagnification), leaving top predators with the highest load; raptor <strong>eggshells thinned</strong> and populations crashed; and after the <strong>1972 ban</strong>, those populations <strong>recovered</strong>.</div>
+                </div>
+            </div>
+
+            <!-- Step 3 Reasoning -->
+            <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 4px;">
+                <div style="min-width: 28px; height: 28px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+                <div style="background: #ffffff; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 16px; flex: 1;">
+                    <div style="font-size: 14px; color: #1B6A94; margin-bottom: 4px;">REASONING &mdash; connect the evidence back to the claim</div>
+                    <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Explain <em>why</em> the evidence supports the claim. Because energy is lost up a web but a stored toxin is not, the poison concentrates upward; the birds at the top therefore received the heaviest dose, which explains why <em>they</em> were the ones failing to reproduce. The recovery after the ban is a natural experiment confirming DDT was the cause &mdash; strong scientific reasoning, not a guess.</div>
+                </div>
+            </div>
+
+            <div style="background: #FDF3E3; border-left: 4px solid #C7922C; border-radius: 5px; padding: 10px 14px; margin-top: 14px;">
+                <div style="font-size: 14px; color: #6b4f1d; line-height: 1.55;"><strong>Note:</strong> This is <strong>practice</strong> for the CER skill &mdash; a short paragraph or three sentences in your notebook. It is <em>not</em> the graded Module 10 CER essay. Assignment 35.01 will ask you to write this practice up briefly.</div>
+            </div>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 12px 0 0 0;"><strong>Looking back:</strong> notice that this argument reuses the <strong>10% energy rule</strong> and <strong>food web</strong> ideas from earlier this module, plus the <strong>fat-soluble molecule</strong> idea from Module 2 &mdash; the one long argument in action.</p>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build a Year-Spine &ldquo;Atoms &rarr; Ecosystems&rdquo; Walk</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Assemble a walkable gallery with a station for each stage of the course &mdash; atom/water, macromolecule, cell, energy, DNA, evolution, diversity, plant, body, ecosystem &mdash; and record a walkthrough narrating how each stage depends on the one before. A capstone synthesis build.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Tour the Bioaccumulation of DDT up a Food Web</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Walk a food web where a persistent toxin concentrates at each higher level, capturing snapshots of the rising concentration &mdash; ending at the top-predator raptor whose eggshells thin. This VR pairs directly with today's lesson.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 35.01 &middot; CER Practice: Silent Spring</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Write up the short claim&ndash;evidence&ndash;reasoning argument you drafted here, evaluating Carson's DDT claim. This is CER <em>practice</em>, not the graded module essay. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">One chemical, one food web, one careful scientist &mdash; and a whole nation changed course. The DDT story shows the mechanism of <strong>biomagnification</strong> and the power of <strong>evidence clearly argued</strong>. It also opens the year's last question: if our actions can move a poison through every living thing in a lake, what do we owe the living world? Tomorrow we turn from harm to help &mdash; the <strong>services</strong> ecosystems give us, and what it means to live <strong>sustainably</strong> within them.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 4 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 35.01 &middot; Silent Spring: When a Poison Climbs a Food Web</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

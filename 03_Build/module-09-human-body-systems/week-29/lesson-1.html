@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 29.01</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q4 &middot; Module 9</div>
+        <div style="font-size: 12px; color: #666;">Human Body Systems</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 29.01</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Innate Immunity</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Self-government &mdash; homeostasis, the body's quiet discipline</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 29.01</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Innate Immunity: The Body's First Defenders</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; Barriers, Inflammation, Phagocytes, and the Second Line</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Microbes are on your skin, in the air you breathe, on everything you touch. So why are you not sick right now?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">This is the first lesson of the module's final week &mdash; the week your body learns to <strong>defend</strong> itself. Today you meet <strong>innate immunity</strong>: the defenses you were born with. You will trace the <strong>first line</strong> (barriers that keep invaders out) and the <strong>second line</strong> (the inner response that attacks anything that gets in) &mdash; and you will nail down the three words that define the innate style: <strong>fast, general, no memory</strong>.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> describe the first line of defense (barriers) and the second line (inflammation, fever, phagocytes, NK cells, complement).</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain why innate immunity is called fast, general, and memoryless.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 29.01, <em>The Body's First Defenders: Barriers and the Innate Response</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128737;&#65039; PART 1 &middot; DEFENSE IN LAYERS</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">You get a small cut and the skin around it turns red, warm, and a little swollen. Before reading on, what do you think that redness means?</div>
+            <div class="widget-options">
+                <button data-response="A common reading &mdash; but the redness is a good sign, not a bad one. It is inflammation: blood vessels widen to bring more blood and defensive cells to the wound. Your innate immune system is already at work, fast and without being asked.">Something is going wrong &mdash; it looks infected</button>
+                <button data-response="Exactly the right instinct. That redness and warmth is inflammation &mdash; part of the innate second line of defense. Widened, leaky blood vessels bring blood, fluid, and phagocytes to the injured tissue within minutes.">My body is already responding to defend the cut</button>
+                <button data-response="Fair &mdash; and today settles it. The redness is inflammation, an innate defense: blood vessels widen and defensive cells flood in. It is uncomfortable, but it is the body organizing a fast, general response to the breach.">I'm not sure what the redness is for</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Two lines, one style</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>Innate immunity</strong> is the defense you are <em>born</em> with. Its style is captured in three words: <strong>fast</strong> (minutes to hours), <strong>general</strong> (it treats most invaders alike), and <strong>no memory</strong> (it responds the same way every time). It works in two lines. The <strong>first line</strong> is <strong>barriers</strong> &mdash; your <strong>skin</strong> (the integumentary system from Lesson 26.03), <strong>mucus</strong> and <strong>cilia</strong> in your airways, and <strong>stomach acid</strong> &mdash; that try to keep invaders out entirely. The <strong>second line</strong> is the inner response &mdash; <strong>inflammation</strong>, <strong>fever</strong>, <strong>phagocytes</strong>, <strong>natural killer cells</strong>, and the <strong>complement system</strong> &mdash; that attacks whatever gets through.</p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129513; PART 2 &middot; SORT THE DEFENDERS</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">First line, second line, or defining trait?</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 4px 0;">Match each description to the right idea from today's reading.</p>
+
+        <!-- ow-select -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129513; MATCH IT &middot; DEFENSE &rarr; ROLE</div>
+            <div class="widget-row" data-correct="b" data-hint="Which defenses try to keep invaders OUT before they ever enter the body?">
+                <div class="widget-row-prompt">Skin, mucus, cilia, and stomach acid all belong to which part of innate immunity?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; the second line is the inner response (inflammation, phagocytes) that acts AFTER a barrier is breached. Skin, mucus, cilia, and stomach acid are the first line: barriers that keep invaders out.">The second line of defense</button>
+                    <button data-choice="b" data-fb="Correct. Skin, mucus, cilia, and stomach acid are the first line of defense &mdash; barriers that try to keep invaders out of the body entirely.">The first line of defense (barriers)</button>
+                    <button data-choice="c" data-fb="No &mdash; these are innate, not adaptive. The adaptive system (B and T cells) is specific and has memory; barriers like skin and acid are general, innate defenses.">The adaptive immune system</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="c" data-hint="This white blood cell's name means 'eating cell.'">
+                <div class="widget-row-prompt">A white blood cell engulfs a microbe whole, wraps it in a bubble, and digests it. What is it?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; a B cell makes antibodies and belongs to the adaptive system (Reading 29.02). The cell that engulfs and digests microbes is a phagocyte.">A B cell</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; a memory cell stores the record of a past adaptive response. The cell that eats microbes whole is a phagocyte.">A memory cell</button>
+                    <button data-choice="c" data-fb="Correct. A phagocyte (&lsquo;eating cell&rsquo;) engulfs and digests microbes without needing to know their name &mdash; general defense in action.">A phagocyte</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="a" data-hint="These three words are the signature of the INNATE system, in contrast to the adaptive one.">
+                <div class="widget-row-prompt">Which three words best describe innate immunity?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. Innate immunity is fast, general, and memoryless &mdash; it acts within minutes to hours, treats most invaders alike, and responds the same way every time.">Fast, general, no memory</button>
+                    <button data-choice="b" data-fb="No &mdash; that describes the ADAPTIVE system, which is specific and remembers. Innate immunity is fast, general, and has no memory.">Slow, specific, has memory</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; innate immunity is general, not specific, and it does not remember past infections. It is fast, general, and memoryless.">Fast, specific, has memory</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="b" data-hint="A raised body temperature that slows microbes and speeds the response is a deliberate defense, not just a symptom.">
+                <div class="widget-row-prompt">Raising the body's temperature to slow microbes and speed the immune response is:</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; clonal selection is an adaptive process (multiplying the matching lymphocyte). A raised body temperature is a fever.">Clonal selection</button>
+                    <button data-choice="b" data-fb="Correct. Fever is a deliberate innate defense: a higher temperature slows many microbes and speeds the immune response. It is a defensive move, not merely a symptom.">A fever</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; an antibody is a protein made by B cells in the adaptive system. Raising body temperature to fight microbes is a fever.">An antibody</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129440; PART 3 &middot; WHEN A BARRIER IS BREACHED</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Reason through a scraped knee</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">A scrape breaks the skin &mdash; the first line is down, and bacteria enter. Trace what happens next.</p>
+
+        <!-- ow-select single-row prediction -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129504; PREDICT IT &middot; CAUSE &amp; EFFECT</div>
+            <div class="widget-row" data-correct="c" data-hint="The second line is innate: it responds within minutes and does not need to identify the exact bacterium first.">
+                <div class="widget-row-prompt">Bacteria enter through a scrape. Which response happens first, and why?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; making specific antibodies takes DAYS, because the body must first find and multiply the matching B cell. The immediate answer is the innate response: inflammation and phagocytes within minutes.">B cells immediately make antibodies against the exact bacterium</button>
+                    <button data-choice="b" data-fb="No &mdash; memory cells only exist if you have met this exact microbe before, and even then they are part of the slower adaptive system. The FIRST responder is always the innate second line.">Memory cells destroy the bacteria before any inflammation</button>
+                    <button data-choice="c" data-fb="Correct. The innate second line acts within minutes: inflammation brings blood and phagocytes to the wound, and the phagocytes engulf the bacteria &mdash; no need to identify the exact microbe first. The adaptive response, if needed, comes days later.">Inflammation begins within minutes and phagocytes engulf the bacteria, without identifying the exact microbe</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 10px 0 0 0;">This is the innate style in one scene: fast, general, and memoryless. It handles most invaders on its own. But for an enemy that keeps coming, the body needs a defender that can <strong>learn</strong> this specific microbe and <strong>remember</strong> it &mdash; the adaptive system of Lesson 29.02.</p>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Model a Vaccine Triggering B/T-Cell Memory</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Build the sequence by which a vaccine trains immunity: antigen introduced &rarr; matching lymphocyte selected &rarr; clonal expansion &rarr; antibodies and memory cells formed &rarr; a faster second response. It pairs most closely with Lessons 29.02&ndash;29.03.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Walk an Immune-Response Scene (Innate &rarr; Adaptive)</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Enter a scene where a pathogen breaches the barriers, watch the innate response (phagocytes, inflammation), then the adaptive response (B/T cells, antibodies, memory), capturing labeled snapshots at each stage. This VR pairs directly with this lesson and Lesson 29.02.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 29.01 &middot; Innate Immunity</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Sort the innate defenders into first and second line, and explain in a sentence or two why innate immunity is called fast, general, and memoryless. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Your first defenders are always on duty: barriers to keep invaders out, and a fast, general inner response to attack whatever gets in &mdash; no training, no memory, no delay. It is the body's quiet <strong>self-government</strong> at its most automatic. In the next lesson you meet the defenders that make up for the one thing this system lacks: the ability to learn a specific enemy and <strong>remember</strong> it.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 4 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 29.01 &middot; Innate Immunity: The Body's First Defenders</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

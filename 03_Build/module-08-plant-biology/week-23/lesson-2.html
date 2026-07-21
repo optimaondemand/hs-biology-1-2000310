@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 23.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q3 &middot; Module 8</div>
+        <div style="font-size: 12px; color: #666;">Plant Biology</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 23.02</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Tissue Systems</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Wonder &mdash; plants that sense and respond without nerves</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 23.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Tissue Systems</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; Skin, Bulk, and Plumbing &mdash; Three Systems, One Body</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">A single cell cannot run a whole plant. How do a plant's cells organize themselves into a working body?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Yesterday you met the plant cell. Today those cells gather into <strong>tissues</strong>, and the tissues into just <strong>three systems</strong> &mdash; <strong>dermal</strong>, <strong>ground</strong>, and <strong>vascular</strong> &mdash; each one running continuously through the entire plant. By the end you will be able to name all three, describe what each does, and match a plant structure to the system doing its job.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> name the three plant tissue systems &mdash; dermal, ground, and vascular &mdash; and describe what each one does.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> match a plant structure to the tissue system that is doing its job.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 23.02, <em>Three Tissue Systems: How Cells Become a Working Plant</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127795; PART 1 &middot; SKIN, BULK, AND PLUMBING</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">A plant has no skeleton and no blood vessels, yet it protects itself, holds itself up, and moves water and food from root to leaf. Which of these three jobs would you guess is hardest for a tall plant?</div>
+            <div class="widget-options">
+                <button data-response="A good guess &mdash; and transport really is the dramatic one for a tall plant, which must lift water many meters. That's the job of the vascular system (xylem and phloem). Today you'll see it alongside the other two systems that make it possible.">Moving water all the way up to the top</button>
+                <button data-response="Fair thought. Protection matters &mdash; that's the dermal system, the plant's skin, with its waxy cuticle. But notice it works together with the vascular system (transport) and ground system (support). All three run through the whole plant at once.">Protecting itself from the outside world</button>
+                <button data-response="Reasonable &mdash; holding up a tall body is real work, done by support cells in the ground tissue and by woody vascular tissue. Keep in mind it happens alongside protection (dermal) and transport (vascular). Three systems, one body.">Holding a tall body upright</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Three systems, running through the whole plant</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">A plant is organized into three tissue systems, and each runs <strong>continuously</strong> through the whole plant &mdash; root, stem, and leaf together. Think of them as the plant's <strong>skin</strong> (dermal), its <strong>bulk</strong> (ground), and its <strong>plumbing</strong> (vascular). The <strong>dermal</strong> tissue is the outer epidermis that protects and, with its waxy cuticle, limits water loss; it grows guard cells and stomata for gas exchange, and root hairs for absorption. The <strong>ground</strong> tissue is the working bulk that does photosynthesis, storage, and support. The <strong>vascular</strong> tissue is the transport plumbing &mdash; <strong>xylem</strong> (water up) and <strong>phloem</strong> (sugars).</p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129513; PART 2 &middot; NAME THE SYSTEM</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Match each job to its tissue system</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 4px 0;">Each description below is the work of one tissue system. Name it.</p>
+
+        <!-- ow-select -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129513; MATCH IT &middot; JOB &rarr; TISSUE SYSTEM</div>
+            <div class="widget-row" data-correct="a" data-hint="This is the plant's outer covering &mdash; its skin, with a waxy waterproof layer.">
+                <div class="widget-row-prompt">The waxy cuticle on a leaf's surface, which keeps the plant from drying out, is made by which tissue system?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. The cuticle is secreted by the dermal tissue &mdash; the plant's outer covering (epidermis), which protects and limits water loss.">Dermal</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; ground tissue is the inner bulk that does photosynthesis, storage, and support. The waxy protective coat on the surface is made by the dermal tissue.">Ground</button>
+                    <button data-choice="c" data-fb="No &mdash; vascular tissue is the transport plumbing (xylem and phloem). The protective, water-saving outer layer is dermal tissue.">Vascular</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="c" data-hint="Water going up and sugar being carried &mdash; that's transport.">
+                <div class="widget-row-prompt">Xylem carries water and minerals upward, and phloem carries sugars. These belong to which tissue system?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; dermal tissue is the outer protective covering. Xylem and phloem are the transport pipelines, which make up the vascular tissue.">Dermal</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; ground tissue does photosynthesis, storage, and support. Xylem and phloem are the transport plumbing: the vascular tissue.">Ground</button>
+                    <button data-choice="c" data-fb="Correct. Xylem (water up) and phloem (sugars) are the two pipelines of the vascular tissue &mdash; the plant's plumbing.">Vascular</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="b" data-hint="The green interior of a leaf, where most photosynthesis happens, is the working bulk.">
+                <div class="widget-row-prompt">The leaf's mesophyll (parenchyma cells full of chloroplasts) does most of the plant's photosynthesis. This is part of which tissue system?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; dermal tissue is the outer covering. The photosynthetic mesophyll cells inside the leaf are ground tissue.">Dermal</button>
+                    <button data-choice="b" data-fb="Correct. Mesophyll is parenchyma &mdash; the ground tissue that does photosynthesis, along with storage and support.">Ground</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; vascular tissue is the transport plumbing. The chloroplast-packed photosynthetic cells are ground tissue.">Vascular</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="a" data-hint="Root hairs grow out of the plant's outer covering to soak up water.">
+                <div class="widget-row-prompt">Root hairs that absorb water and minerals from the soil are outgrowths of which tissue system?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. Root hairs are extensions of the root epidermis &mdash; the dermal tissue &mdash; which on roots is specialized for absorption.">Dermal</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; ground tissue is the inner bulk. Root hairs grow from the outer covering, the dermal tissue.">Ground</button>
+                    <button data-choice="c" data-fb="No &mdash; the vascular tissue runs up the center of the root. The absorbing root hairs are part of the dermal (epidermal) covering.">Vascular</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; THE ONE-BODY IDEA</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">One system, running from root to leaf</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The most important idea in this lesson is that each tissue system is <strong>continuous</strong> &mdash; it does not stop at the root and start again at the leaf. Test that idea below.</p>
+
+        <!-- ow-select single-row -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129504; THINK IT THROUGH</div>
+            <div class="widget-row" data-correct="b" data-hint="Does the vascular tissue stop somewhere, or run the whole way like the pipes in a house?">
+                <div class="widget-row-prompt">Water is absorbed by a root hair deep in the soil and ends up in a leaf at the top of the plant. What does this tell you about the vascular tissue?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; if the vascular tissue only existed in the leaf, water absorbed in the root could never reach it. The pipeline has to be continuous.">The vascular tissue is only in the leaves</button>
+                    <button data-choice="b" data-fb="Correct. For water to travel from a root hair all the way to a leaf, the vascular tissue must run continuously through root, stem, and leaf &mdash; one unbroken system, like the plumbing running through a whole house.">The vascular tissue runs continuously from root through stem to leaf</button>
+                    <button data-choice="c" data-fb="No &mdash; the plant does not carry water bucket by bucket between separate parts. It has a continuous vascular pipeline (xylem) running the whole way from root to leaf.">The plant passes water hand-to-hand between separate parts</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 10px 0 0 0;">This is the frame for the rest of the week: a <strong>root</strong> is where dermal tissue grows absorbing hairs and vascular tissue runs up the center; a <strong>stem</strong> is where vascular bundles carry the load; a <strong>leaf</strong> is where ground tissue stacks up chloroplasts. Same three systems, shaped to each part &mdash; form follows function at the scale of the whole plant.</p>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build &amp; Label a Leaf Cross-Section</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Build the layers of a leaf from the top down and record a walkthrough naming each layer and its function. It pairs most closely with Lesson 23.04.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Tour a Plant from Root to Leaf</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Walk a whole plant and trace the three tissue systems &mdash; dermal, ground, and vascular &mdash; continuously from root to stem to leaf. This VR pairs directly with today's lesson.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 23.02 &middot; Tissue Systems</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Match each plant structure or job to its tissue system (dermal, ground, or vascular). Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Three systems &mdash; dermal, ground, vascular &mdash; run through the whole plant, each doing its work everywhere at once. With this frame in hand, the next lessons make sense: roots and stems (23.03) and the leaf (23.04) are just places where these three systems take on particular shapes to do particular jobs.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 3 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 23.02 &middot; Tissue Systems</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

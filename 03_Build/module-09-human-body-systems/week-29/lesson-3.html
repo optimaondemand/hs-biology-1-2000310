@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 29.03</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q4 &middot; Module 9</div>
+        <div style="font-size: 12px; color: #666;">Human Body Systems</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 29.03</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Vaccines</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Self-government &mdash; homeostasis, the body's quiet discipline</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 29.03</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Vaccines: Immunity Without the Illness</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; How Vaccines Work, Why They Are Safe &amp; a CER Practice</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">A vaccine protects you against a disease &mdash; so how can it possibly be true that a vaccine can't <em>give</em> you that disease?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today the two lessons before this one pay off. You know the adaptive system builds <strong>memory cells</strong> after meeting an <strong>antigen</strong>. A vaccine's whole trick is to deliver that antigen <strong>safely</strong> &mdash; so the body builds memory without a real infection. You will see how vaccines work from Jenner to mRNA, build a short <strong>CER practice</strong> argument for why a vaccine can't cause the disease, and examine how AI is entering &mdash; and complicating &mdash; drug and vaccine research.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain how a vaccine presents an antigen to build memory cells without a real infection.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> construct a claim&ndash;evidence&ndash;reasoning argument for why a vaccine does not cause the disease it prevents.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 29.03, <em>Vaccines: Teaching Immunity Without the Disease</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128137; PART 1 &middot; A SAFE REHEARSAL</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Some people worry that a flu shot gave them the flu. Before reading on, what do you think is really going on there?</div>
+            <div class="widget-options">
+                <button data-response="A common belief &mdash; but the flu shot contains no live, replicating virus that could cause the flu. What people feel is usually the innate response (a sore arm, mild fever) as the immune system engages the antigen, or a coincidental infection caught around the same time.">The shot really does give people a mild case of the flu</button>
+                <button data-response="Right on target. A vaccine has no live, replicating pathogen to cause the disease. The brief ache or low fever some feel is the innate immune response reacting to the antigen &mdash; a sign of a rehearsal, not an infection.">The shot can't cause the flu &mdash; the achy feeling is the immune response reacting</button>
+                <button data-response="Fair &mdash; today makes it clear. A vaccine contains no live, replicating pathogen, so it cannot cause the disease. Any brief soreness or low fever is the innate response engaging the antigen, exactly as it should.">I've heard both and I'm not sure which is true</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">The antigen without the danger</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">A <strong>vaccine</strong> presents an <strong>antigen</strong> to your adaptive system under safe conditions, so it builds <strong>memory B and T cells</strong> without a real infection. The antigen can come as a <strong>weakened</strong> pathogen, an <strong>inactivated (killed)</strong> pathogen, a single <strong>subunit</strong> protein, or <strong>mRNA</strong> instructions that briefly tell your own cells to make one harmless antigen. In every form, the goal is the same: the immune lesson without the disease. When large numbers are immune, a pathogen runs out of hosts and stops spreading &mdash; <strong>herd immunity</strong>, which shields those who cannot be vaccinated.</p>
+    </div>
+
+    <!-- PART 2 - ow-select -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129513; PART 2 &middot; REASON IT THROUGH</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">What is (and isn't) in a vaccine</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 4px 0;">Answer each item using what you know about antigens, memory cells, and replication.</p>
+
+        <!-- ow-select -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129513; MATCH IT &middot; VACCINE LOGIC</div>
+            <div class="widget-row" data-correct="c" data-hint="What does a vaccine actually leave behind that protects you later?">
+                <div class="widget-row-prompt">After a vaccine, what protects you if the real pathogen shows up months later?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; the vaccine does not leave a live pathogen inside you standing guard; that would be an infection. It leaves memory B and T cells.">A living copy of the pathogen kept in reserve</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; antibodies fade over time; they are not what provides years of protection. The lasting protection comes from memory B and T cells.">Antibodies that never break down</button>
+                    <button data-choice="c" data-fb="Correct. The vaccine builds memory B and T cells. If the real pathogen appears later, these memory cells recognize its antigen and respond fast and strong.">Memory B and T cells built in response to the antigen</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="a" data-hint="A disease needs a live, replicating pathogen. Does a vaccine contain one?">
+                <div class="widget-row-prompt">Why can an mRNA vaccine not give you the disease?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. The mRNA only instructs your cells to make ONE harmless antigen protein for a short time. There is no whole, live, replicating pathogen &mdash; so there is no infection to cause the disease.">It carries only instructions to make one antigen protein &mdash; no live, replicating pathogen</button>
+                    <button data-choice="b" data-fb="No &mdash; an mRNA vaccine does not contain a weakened live virus at all. It contains only mRNA instructions for a single antigen protein.">It contains a weakened live virus that is too slow to spread</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; mRNA vaccines do not change your DNA. The mRNA is used briefly to make one antigen, then broken down; it does not enter or alter the genome.">It permanently rewrites your DNA so the disease can't take hold</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="b" data-hint="Think about a pathogen that can't find enough new hosts to infect.">
+                <div class="widget-row-prompt">When most of a community is immune, a pathogen struggles to spread and can die out. This is:</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; clonal selection is how one lymphocyte multiplies inside a single body. Community-wide protection that starves a pathogen of hosts is herd immunity.">Clonal selection</button>
+                    <button data-choice="b" data-fb="Correct. Herd immunity: when enough people are immune, a pathogen finds too few hosts to spread, protecting even those who cannot be vaccinated.">Herd immunity</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; inflammation is a local innate response within one body. The community-level effect that starves a pathogen of hosts is herd immunity.">Inflammation</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- CONTEMPORARY RESEARCH - GOLD -->
+    <div style="background: #FDF3E3; border-left: 5px solid #C7922C; border-top: 3px solid #E0A93B; border-radius: 6px; padding: 14px 20px; margin: 0 0 20px 0;">
+        <div style="font-size: 11px; color: #8a6a1d; margin-bottom: 8px;">&#10024; FROM TODAY'S RESEARCH &middot; THE mRNA PLATFORM</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">The mRNA vaccine is a genuinely new way to teach immunity. Instead of injecting a whole pathogen, it delivers a short set of <strong>mRNA instructions</strong> that let your own cells build a single antigen protein for a brief time &mdash; enough for the adaptive system to learn it. Because the design step is largely a matter of choosing which antigen's instructions to send, scientists are currently exploring whether the same platform could be aimed at other diseases. Recent research suggests possibilities being investigated for certain other infections and even some cancers, though much of this work is still early and unproven. It is a field to watch with curiosity and caution alike: promising, fast-moving, and still being tested.</div>
+    </div>
+
+    <!-- PART 3 -- IN-LESSON CER PRACTICE -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9997;&#65039; PART 3 &middot; IN-LESSON CER PRACTICE</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Why a vaccine does not cause the disease it prevents</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 8px 0;">Now put your reasoning to work. Below is a scaffold for building a short <strong>Claim&ndash;Evidence&ndash;Reasoning</strong> argument &mdash; the same skill you use in every module essay. Draft your answer to the driving question in your notebook, following the three steps.</p>
+
+        <!-- CER scaffold box (lavender, three numbered steps) -->
+        <div style="background: #EEF1F8; border: 1px solid #C9D3E8; border-left: 5px solid #0E1C42; border-radius: 8px; padding: 20px 22px; margin: 12px 0;">
+            <div style="font-size: 13px; color: #0e1c42; letter-spacing: 0.4px; margin-bottom: 6px;">&#129504; CER SCAFFOLD &middot; DRIVING QUESTION</div>
+            <div style="font-size: 18px; color: #0e1c42; font-style: italic; line-height: 1.55; margin-bottom: 16px;">&ldquo;Using evidence from immunology, explain why a vaccine does not cause the disease it prevents.&rdquo;</div>
+
+            <!-- Step 1 Claim -->
+            <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px;">
+                <div style="min-width: 28px; height: 28px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+                <div style="background: #ffffff; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 16px; flex: 1;">
+                    <div style="font-size: 14px; color: #1B6A94; margin-bottom: 4px;">CLAIM &mdash; a one-sentence answer</div>
+                    <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">State your position clearly. <em>Starter:</em> &ldquo;A vaccine <strong>cannot</strong> cause the disease it prevents, because it contains <strong>no live, replicating pathogen</strong>.&rdquo;</div>
+                </div>
+            </div>
+
+            <!-- Step 2 Evidence -->
+            <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px;">
+                <div style="min-width: 28px; height: 28px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+                <div style="background: #ffffff; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 16px; flex: 1;">
+                    <div style="font-size: 14px; color: #1B6A94; margin-bottom: 4px;">EVIDENCE &mdash; give at least two specific facts</div>
+                    <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Pull from immunology. For example: a disease requires a <strong>live, replicating pathogen</strong>; a vaccine contains only a <strong>weakened</strong>, <strong>inactivated</strong>, <strong>subunit</strong>, or <strong>mRNA</strong> form &mdash; none of which can multiply and spread; the vaccine's job is to present an <strong>antigen</strong> so the body builds <strong>memory cells</strong>.</div>
+                </div>
+            </div>
+
+            <!-- Step 3 Reasoning -->
+            <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 4px;">
+                <div style="min-width: 28px; height: 28px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+                <div style="background: #ffffff; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 16px; flex: 1;">
+                    <div style="font-size: 14px; color: #1B6A94; margin-bottom: 4px;">REASONING &mdash; connect the evidence back to the claim</div>
+                    <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Explain <em>why</em> the evidence proves the claim. Since disease requires a pathogen that <strong>replicates</strong>, and a vaccine delivers only an antigen with <strong>nothing that can replicate</strong>, the body gets the immune lesson (memory cells) <strong>without the infection</strong>. Any brief soreness or low fever is the <strong>innate response</strong> engaging the antigen &mdash; not the disease itself.</div>
+                </div>
+            </div>
+
+            <div style="background: #FDF3E3; border-left: 4px solid #C7922C; border-radius: 5px; padding: 10px 14px; margin-top: 14px;">
+                <div style="font-size: 14px; color: #6b4f1d; line-height: 1.55;"><strong>Note:</strong> This is <strong>practice</strong> for the CER skill &mdash; a short paragraph or three sentences in your notebook. It is <em>not</em> the graded Module 9 CER essay. Your graded Module 9 CER is the separate <strong>drug-mechanism &rarr; addiction</strong> essay (synapse &rarr; physiological effect &rarr; basis of addiction), assigned for the module as a whole. This vaccine argument is here only to rehearse the immunology reasoning.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI-awareness callout (RED / RISKY) -->
+    <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-radius: 6px; padding: 14px 20px; margin: 0 0 20px 0;">
+        <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px; letter-spacing: 0.4px;">&#129302; AI AWARENESS &middot; AI IN DRUG DISCOVERY &amp; DISEASE MODELING</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.6;">Designing a new drug or vaccine means searching an enormous space of possible molecules. Scientists increasingly use <strong>machine-learning models</strong> to screen millions of candidate molecules quickly and to model how a protein or drug might behave &mdash; work related to the AlphaFold-style <strong>protein-structure prediction</strong> you met in Modules 2 and 5. <strong>The opportunity</strong> is real: these tools can narrow a huge field to a promising few far faster than testing each by hand. <strong>But here is the pitfall</strong>: a model can be <em>confidently wrong</em>. It is only as good as its training data, it can carry that data's gaps and biases, and a prediction that looks certain may simply be mistaken. Every AI-proposed candidate still has to be <strong>tested in real biology</strong> &mdash; in cells, in animals, in carefully controlled trials &mdash; before anyone can trust it. Treat an AI's output the way this whole course teaches you to treat any claim: as a hypothesis to interrogate, not an authority to obey. Ask what the evidence is, and check it.</div>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Model a Vaccine Triggering B/T-Cell Memory</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Build the sequence: antigen introduced &rarr; matching lymphocyte selected &rarr; clonal expansion &rarr; antibodies and memory cells formed &rarr; a faster second response. It brings this lesson's vaccine logic to life.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Walk an Immune-Response Scene (Innate &rarr; Adaptive)</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Trace a pathogen from the breached barrier through the innate and adaptive responses, capturing labeled snapshots &mdash; the same defense a vaccine trains in advance. This VR supports this week's lessons.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 29.03 &middot; CER Practice: Why a Vaccine Is Safe</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Write the short claim&ndash;evidence&ndash;reasoning argument you drafted here &mdash; why a vaccine cannot cause the disease it prevents. This is CER <em>practice</em>, not the graded module essay. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">A vaccine is a rehearsal: it shows the adaptive system an <strong>antigen</strong> with <strong>no live, replicating pathogen</strong>, so the body builds <strong>memory cells</strong> and gains protection without the illness. From Jenner's milkmaids to mRNA, that logic has held. In the final lesson of the module you meet the one system that looks past the single body to the next generation &mdash; and then you step back to see the whole body as one integrated community.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 4 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 29.03 &middot; Vaccines: Immunity Without the Illness</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 31.04</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q4 &middot; Module 10</div>
+        <div style="font-size: 12px; color: #666;">Ecology and Environmental Science</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 31.04</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Yellowstone Wolves Case Study</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Responsibility &mdash; stewardship and the common good</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 31.04</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">The Wolves of Yellowstone: A Cascade in the Wild</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; A Documented Keystone Predator and Its Trophic Cascade</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Take one predator out of a national park &mdash; then, seventy years later, put it back. What happens to everything else?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today the week's ideas become a real place. Gray wolves were wiped out of <strong>Yellowstone</strong> by the 1920s and reintroduced in <strong>1995</strong>. Their return set off a <strong>trophic cascade</strong> &mdash; the concrete payoff of yesterday's keystone-species and cascade ideas. You will also practice something a scientist must do: tell a true, dramatic story <em>without</em> overstating what the evidence shows.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> trace the Yellowstone cascade in order: wolves &rarr; elk behavior/numbers &rarr; willow, aspen, and cottonwood &rarr; beavers, songbirds, and streambanks.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain why the wolf is a keystone species while stating honestly what scientists still debate about the cascade's magnitude.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 31.04, <em>The Wolves of Yellowstone: A Trophic Cascade in the Wild</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128058; PART 1 &middot; REMOVED, THEN RETURNED</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Imagine every wolf disappears from a valley of elk, willows, and streams. Before reading on, what do you predict happens to the willows along the streambank &mdash; and why?</div>
+            <div class="widget-options">
+                <button data-response="Strong prediction. With no wolves to fear, elk linger and browse the young willows heavily, so the willows struggle to grow tall. That's exactly what happened in Yellowstone &mdash; and it reversed when wolves returned.">The willows suffer &mdash; unafraid elk browse them heavily</button>
+                <button data-response="It might seem so, but the opposite tends to happen. Without wolves, elk grow bold and browse the streambank willows hard, so the willows decline. Fear of the predator had kept elk moving.">The willows thrive &mdash; fewer predators means a calmer valley</button>
+                <button data-response="That's what today traces. Removing the top predator lets elk browse the young willows freely, so the willows decline &mdash; a cascade running downward from the missing wolf.">I'm not sure how removing a predator reaches the plants</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Seventy years without wolves</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Gray wolves were hunted and poisoned out of Yellowstone by the <strong>1920s</strong>. With the top predator gone, <strong>elk</strong> grew abundant and bold, lingering in the open valleys and streambanks and browsing young <strong>willow, aspen, and cottonwood</strong> so heavily that in many places the trees could not grow tall. In <strong>1995</strong>, wolves were <strong>reintroduced</strong>. Elk numbers fell in places, but the subtler change mattered more: elk began <strong>avoiding the exposed streambanks</strong> where wolves could catch them. Relieved of constant browsing, the willows and aspens recovered in some areas &mdash; and that recovery rippled outward to <strong>beavers</strong> (which need willow), <strong>songbirds</strong> (nesting in taller trees), and more <strong>stabilized streambanks</strong>.</p>
+    </div>
+
+    <!-- PART 2 - SELECT (order the cascade) -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128279; PART 2 &middot; TRACE THE CASCADE</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Put the ripple in order</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 4px 0;">The wolves return in 1995. Choose what comes next at each step of the cascade.</p>
+
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#128279; ORDER THE CASCADE &middot; SELECT WHAT HAPPENS AT EACH STEP</div>
+
+            <div class="widget-row" data-correct="b">
+                <div class="widget-row-prompt">Step 1 &mdash; Wolves return. What is the direct effect on the elk?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="The opposite &mdash; with a predator back, elk don't linger. They grow warier and avoid exposed streambanks, and their numbers fall in places.">Elk grow bolder and gather at the streambanks</button>
+                    <button data-choice="b" data-fb="Correct. Elk numbers drop in places and, just as important, elk change their behavior &mdash; avoiding the exposed valleys and streambanks where wolves can catch them.">Elk numbers fall and they avoid exposed areas</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; wolves prey on elk, so elk are directly affected first. The plants respond later, further down the cascade.">Nothing happens to the elk; only plants respond</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="c">
+                <div class="widget-row-prompt">Step 2 &mdash; With elk browsing the streambanks less, what happens to the young willow, aspen, and cottonwood?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; less browsing means the trees are eaten less, so they can grow. The pressure on them has eased.">They are eaten more and decline</button>
+                    <button data-choice="b" data-fb="They don't vanish &mdash; relieved of heavy browsing, they do the opposite and recover in some areas.">They disappear entirely</button>
+                    <button data-choice="c" data-fb="Correct. Freed from constant browsing, the young willow, aspen, and cottonwood recover in some of those areas &mdash; growing taller than they could before.">They recover and grow taller in places</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="a">
+                <div class="widget-row-prompt">Step 3 &mdash; As the streambank trees recover, which downstream effects were observed?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. Taller willows brought more beavers (which need willow), more songbirds nesting in the trees, and more stabilized streambanks &mdash; the cascade reaching all the way down to the landscape.">More beavers, more songbirds, more stable streambanks</button>
+                    <button data-choice="b" data-fb="The opposite &mdash; recovering willows support beavers and songbirds, so those populations rose, not fell.">Beavers and songbirds declined</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; the recovery did ripple further. Beavers, songbirds, and streambank stability all responded to the returning vegetation.">No further effects reached beyond the trees</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <p style="font-size: 16px; color: #1a2340; line-height: 1.65; margin: 8px 0 0 0;">That is a trophic cascade: one predator at the top, rippling all the way down to plants, beavers, birds, and the shape of the streams.</p>
+    </div>
+
+    <!-- PART 3 - honest caveat -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9878;&#65039; PART 3 &middot; TELL IT TRUE, NOT TOO BIG</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Where careful science draws the line</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The Yellowstone cascade is one of the best-documented keystone stories in the world, and the broad pattern &mdash; wolves back, elk behavior shifting, some vegetation recovering &mdash; is well supported. But good ecology stays honest about its limits. Scientists <strong>continue to debate the magnitude</strong> of the downstream effects: how much of the recovery is due to wolves versus climate, drought, bears and cougars, and changing elk numbers. The recovery has also been <strong>uneven</strong> &mdash; strong in some valleys, weak in others.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">You may have heard that &ldquo;wolves changed the course of the rivers.&rdquo; It is a wonderful line &mdash; and it overstates what the evidence firmly shows. The responsible summary: the wolves' return triggered a <strong>real, measurable cascade</strong> whose full reach scientists are still working out.</p>
+
+        <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 6px; padding: 14px 20px; margin: 8px 0 0 0;">
+            <div style="font-size: 15px; color: #1a2340; line-height: 1.6;"><strong>A nature-of-science habit (from Module 1):</strong> resisting the too-tidy story is not a weakness &mdash; it is exactly the honesty this course prizes. State the strong evidence <em>and</em> the open questions. That is what careful ecology sounds like.</div>
+        </div>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Construct a Food Web &amp; Energy Pyramid (10% Rule)</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Build a food web and stack the energy pyramid &mdash; the structure whose top predator, removed or restored, drives the cascade you traced today.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Walk a Trophic Cascade (Yellowstone Wolves)</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Tour Yellowstone before and after the wolves' return, capture the cascade (elk &rarr; willow/aspen &rarr; beaver/songbird), and note the wolf's keystone role. This VR pairs directly with today's lesson.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 31.04 &middot; The Yellowstone Cascade</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Put the cascade in order, explain why the wolf is a keystone species, and write one sentence stating an open question scientists still debate. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Yellowstone gathers the whole week into one landscape: a food web, an energy flow, a keystone predator, and a cascade that reached from wolf to willow to riverbank. It is also this module's theme &mdash; <strong>responsibility</strong> &mdash; in a single case: what we remove from an ecosystem, and what we choose to restore, changes far more than the one species we had in mind. Next week the energy story turns to <strong>matter</strong> &mdash; the carbon, water, and nitrogen cycles that keep circling while the energy keeps flowing through.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 4 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 31.04 &middot; The Wolves of Yellowstone: A Cascade in the Wild</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

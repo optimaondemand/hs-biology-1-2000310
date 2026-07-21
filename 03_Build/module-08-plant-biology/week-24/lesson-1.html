@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 24.01</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q3 &middot; Module 8</div>
+        <div style="font-size: 12px; color: #666;">Plant Biology</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 24.01</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Xylem &amp; Water Transport</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Wonder &mdash; plants that sense and respond without nerves</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 24.01</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Xylem and the Rising of Water</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; How a Tall Tree Drinks Without a Pump</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">A redwood lifts water higher than a twenty-story building &mdash; with no heart, no muscle, and no energy spent on the lift. How?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today you will trace the plant&rsquo;s water pipeline &mdash; the tissue called <strong>xylem</strong>, built from dead, hollow cells &mdash; and unpack the elegant physics that raises water to the treetop: the <strong>cohesion-tension mechanism</strong>. You will see that the pull comes from evaporation at the leaves, and that the water holds together as one thread because of a property you already know from Module 2: hydrogen bonding.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> describe how xylem transports water and dissolved minerals from the roots up to the leaves.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain the cohesion-tension mechanism that pulls water upward, even to the top of a tall tree.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 24.01, <em>Xylem and the Rising of Water: How a Tree Drinks</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128167; PART 1 &middot; THE PIPES MADE OF DEAD CELLS</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Before reading, what was your best guess for how water reaches the top of a tall tree? (No wrong answer &mdash; just check in.)</div>
+            <div class="widget-options">
+                <button data-response="A reasonable guess &mdash; but plants have no heart and no muscle, and they spend no cellular energy lifting water. The real answer is stranger and more elegant: the water is pulled from the top, not pushed from the bottom.">The roots pump it up with pressure, like a heart</button>
+                <button data-response="Close to the truth! The pull really does start at the leaves, where evaporation (transpiration) tugs the water column upward. That's the heart of cohesion-tension &mdash; today's big idea.">Something at the leaves pulls it up from above</button>
+                <button data-response="Honest &mdash; and it IS a genuine puzzle. By the end of this lesson you'll be able to explain it: dead hollow pipes, a self-sticking water thread, and a pull created by evaporation at the leaves.">I genuinely have no idea &mdash; it seems impossible</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">What xylem is, and what it carries</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Xylem is a vascular tissue built from <strong>dead, hollow cells</strong> &mdash; tracheids and vessel elements &mdash; stacked end to end into continuous tubes and strengthened by <strong>lignin</strong>. It carries <strong>water and dissolved minerals</strong> in one direction only: <strong>upward</strong>, from roots to leaves. Test the two facts that matter most.</p>
+
+        <!-- ow-select: xylem basics -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129513; CHECK IT &middot; WHAT XYLEM IS AND DOES</div>
+            <div class="widget-row" data-correct="b" data-hint="Think about whether the conducting cells are alive or dead once the tube is working.">
+                <div class="widget-row-prompt">Which best describes the cells that make up a working xylem tube?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; that describes phloem. Xylem&rsquo;s conducting cells are dead and hollow; only their reinforced walls remain.">Living cells with companion cells alongside them</button>
+                    <button data-choice="b" data-fb="Correct. Mature xylem cells (tracheids and vessel elements) are dead and hollow, stacked into open pipes and reinforced with lignin.">Dead, hollow cells stacked into continuous tubes</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; xylem does not have chloroplasts. It is dead, hollow, lignin-reinforced pipe, not a photosynthetic tissue.">Green cells full of chloroplasts</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="c" data-hint="What does xylem carry, and which way does it go?">
+                <div class="widget-row-prompt">Xylem transports&hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; that is phloem&rsquo;s job. Xylem does not carry sugar.">sugar, downward from leaves to roots</button>
+                    <button data-choice="b" data-fb="The cargo is right, but the direction is not. Xylem is a one-way road going UP, from roots to leaves.">water and minerals, downward from leaves to roots</button>
+                    <button data-choice="c" data-fb="Correct. Xylem carries water and dissolved minerals one way &mdash; upward, from roots to leaves.">water and minerals, upward from roots to leaves</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129517; PART 2 &middot; PULLED FROM THE TOP: COHESION-TENSION</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">The mechanism, in order</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Water evaporating from the leaves (transpiration) creates a pull &mdash; a <strong>tension</strong> &mdash; at the top of the xylem. Because water molecules stick together by <strong>hydrogen bonding</strong> (this is <strong>cohesion</strong>, straight from Module 2), the water forms one continuous thread, and the pull draws the whole thread upward, like sipping through a straw. <strong>Adhesion</strong> &mdash; water clinging to the pipe walls &mdash; helps too. No pump, and no cellular energy: the sun&rsquo;s evaporation does the work.</p>
+
+        <!-- ow-select: mechanism concept -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129513; CHECK IT &middot; WHY THE COLUMN RISES</div>
+            <div class="widget-row" data-correct="b" data-hint="Which property of water lets it act as one unbroken thread? Think Module 2.">
+                <div class="widget-row-prompt">Cohesion holds the water column together as one continuous thread. What actually causes cohesion?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; the lignin strengthens the pipe walls; it does not make the water stick to itself.">Lignin gluing the water molecules together</button>
+                    <button data-choice="b" data-fb="Correct. Cohesion is water molecules sticking to one another by hydrogen bonding &mdash; the same water property you met in Module 2.">Hydrogen bonding between water molecules</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; the plant spends no ATP on the lift. The energy comes from the sun driving evaporation, not from the cell.">ATP energy pumping the water upward</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="a" data-hint="Where does the pull come from, and what powers it?">
+                <div class="widget-row-prompt">A student says, &ldquo;The tree must burn a lot of energy to pump water so high.&rdquo; What is the correct response?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. There is no pump. Evaporation at the leaves (powered by the sun) creates the tension that pulls the cohesive water column up &mdash; the plant spends no cellular energy on the lift.">There is no pump &mdash; evaporation at the leaves pulls the water up, powered by the sun</button>
+                    <button data-choice="b" data-fb="No &mdash; roots do not push water to the treetop with strong pressure. The lift is a pull from the top, not a push from the bottom.">Right &mdash; the roots push it up with great force</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; the plant does not spend ATP lifting the water. The sun&rsquo;s evaporation, not the cell&rsquo;s energy, does the work.">Right &mdash; the plant burns ATP to raise every drop</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <!-- HISTORY callout (blue/teal helpful) -->
+        <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 16px 0 0 0;">
+            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; A MOMENT IN HISTORY &middot; STEPHEN HALES AND THE FIRST MEASURED PLANT</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Long before anyone understood <em>why</em> water climbs a plant, one man set out simply to measure that it does. <strong>Stephen Hales</strong>, an English clergyman with a scientist&rsquo;s patience, published <em>Vegetable Staticks</em> in <strong>1727</strong> &mdash; the first careful, quantitative study of how water moves through plants. He measured the rate at which plants took up water and gave it off, estimated the pressure in their roots, and did something quietly revolutionary: he treated a living plant as an object that could be <strong>measured with instruments</strong>, not merely described in words. For this he is remembered as a founder of plant physiology. Hales showed that a plant moves astonishing volumes of water &mdash; a fact fully explained only two centuries later by the cohesion-tension idea you learned today. There is a lesson here worth holding, and it belongs to this module&rsquo;s spirit of <strong>wonder</strong>: careful, patient measurement can reveal a marvel long before anyone can explain it. Hales saw the marvel first, and left the explaining to those who came after.</div>
+        </div>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Model Xylem &amp; Phloem Transport</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Build two side-by-side transport columns in a model plant. For the <strong>xylem</strong> column, show water rising from roots to leaves as one continuous cohesive thread, pulled by transpiration at the top, and label it &ldquo;dead cells, one-way, water + minerals UP.&rdquo; This VR pairs directly with today&rsquo;s lesson (and with Lesson 24.03).</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Observe a Potometer Under Varied Conditions</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Watch a potometer measure water uptake by a leafy shoot, then change one condition at a time (wind, light, heat, humidity) and record how the rate changes &mdash; the very data your Module 8 CER essay analyzes.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 24.01 &middot; Cohesion-Tension, In Order</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Put the steps of the cohesion-tension mechanism in the right order and label where the pull comes from. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Water climbs a tree because a property of a single molecule &mdash; water&rsquo;s stickiness to itself, from <strong>Module 2</strong> &mdash; scales all the way up to move tons of water against gravity, using only the sun&rsquo;s evaporation as its engine. That is the plant sensing and responding to its world without a single nerve. Next, in <strong>Lesson 24.02</strong>, you will meet transpiration head-on: both the cost of opening the leaf to the air and, at the same time, the very pull that powers everything you learned today.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 3 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 24.01 &middot; Xylem and the Rising of Water</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

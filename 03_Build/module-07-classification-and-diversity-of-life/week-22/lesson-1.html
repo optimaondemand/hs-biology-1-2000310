@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 22.01</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q3 &middot; Module 7</div>
+        <div style="font-size: 12px; color: #666;">Classification and Diversity of Life</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 22.01</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">The Plant Kingdom</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Courtesy &mdash; the ordered naming of the household of life</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 22.01</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">The Plant Kingdom: Conquering the Land</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; Mosses, Ferns, Conifers, and Flowering Plants</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Life began in the water. How did plants ever manage to live on dry land &mdash; and why are some plants stuck near water while others cover a desert?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">This week we tour three great branches of the household of life: plants, animals, and the strange case of viruses. Today we begin with the <strong>plant kingdom</strong>. You will meet its four major groups &mdash; <strong>mosses</strong>, <strong>ferns</strong>, <strong>conifers</strong>, and <strong>flowering plants</strong> &mdash; and discover that they line up as one long story of adaptation to land, powered by three inventions: <strong>vascular tissue</strong>, <strong>seeds</strong>, and <strong>flowers</strong>.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> name the four major plant groups &mdash; mosses (bryophytes), ferns, gymnosperms, and angiosperms &mdash; and describe what sets each apart.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> identify the adaptations &mdash; vascular tissue, seeds, and flowers &mdash; that let plants succeed farther from water, and put the groups in order of that adaptation.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 22.01, <em>The Plant Kingdom: Life That Makes Its Own Food on Land</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127793; PART 1 &middot; THE FOOD-MAKERS</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">A moss and an oak tree are both plants. Why do you think a moss stays low to the ground while an oak can stand a hundred feet tall? (No wrong answer &mdash; just check in.)</div>
+            <div class="widget-options">
+                <button data-response="Good thinking. The key really is plumbing. An oak has vascular tissue &mdash; internal tubes that lift water from the roots all the way up &mdash; so it can stand tall. A moss has no such tubes, so every cell must soak up water directly, which keeps it low and near moisture. Today you'll see how this one invention reshaped the plant kingdom.">A tree must have some way to move water up that a moss lacks</button>
+                <button data-response="It's a reasonable guess, but age isn't the reason. Even a young oak seedling has the equipment to grow tall: vascular tissue, tube-like cells that carry water upward. A moss will never grow tall no matter how old, because it has no such tubes. That difference is what today's lesson is about.">The tree is just older, so it had more time to grow</button>
+                <button data-response="Worth exploring. Sunlight matters, but it isn't the whole answer &mdash; mosses often grow in shade AND stay small. The deeper reason is internal: an oak has vascular tissue to lift water up a tall trunk, and a moss does not. Let's follow that thread.">Trees get more sunlight, so they grow bigger</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">What every plant shares</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Every plant is a <strong>multicellular autotroph</strong>: it is made of many cells and it makes its own food by <strong>photosynthesis</strong> in green <strong>chloroplasts</strong> (Module 4). Each cell is boxed in a stiff <strong>cellulose cell wall</strong> (Module 3) that holds the plant up. Rooted in place, a plant does not hunt &mdash; it manufactures sugar from sunlight and, in the bargain, releases the oxygen the rest of the household breathes.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">The great challenge of land is <strong>drying out</strong>. The four plant groups are best understood as four steps in solving that one problem.</p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127795; PART 2 &middot; FOUR GROUPS, ONE LONG CLIMB ONTO LAND</div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">From the water&rsquo;s edge to the open field</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>Mosses (bryophytes)</strong> are <strong>nonvascular</strong> &mdash; no internal plumbing &mdash; so they stay low and need moisture. <strong>Ferns</strong> are <strong>seedless vascular plants</strong>: they gained <strong>vascular tissue</strong> and can grow tall, but still reproduce by <strong>spores</strong> that need water. <strong>Gymnosperms</strong> (conifers like pines) added the <strong>seed</strong> &mdash; a protected, food-packed embryo &mdash; carried &ldquo;naked&rdquo; on <strong>cones</strong>. <strong>Angiosperms</strong> (flowering plants) added <strong>flowers</strong> and <strong>fruit</strong>, becoming the most diverse group of all.</p>
+
+        <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 6px; padding: 14px 20px; margin: 10px 0;">
+            <div style="font-size: 16px; color: #0e1c42; line-height: 1.7; text-align: center;"><strong>Mosses &rarr; Ferns &rarr; Conifers &rarr; Flowering plants</strong></div>
+            <div style="font-size: 15px; color: #0e1c42; line-height: 1.7; text-align: center; margin-top: 6px;">gain <strong>vascular tissue</strong> &rarr; gain <strong>seeds</strong> &rarr; gain <strong>flowers &amp; fruit</strong></div>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 14px 0 4px 0;">Match each plant group to the invention that defines it.</p>
+
+        <!-- ow-select: match group to trait -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129513; MATCH IT &middot; GROUP &rarr; DEFINING TRAIT</div>
+            <div class="widget-row" data-correct="a" data-hint="Think about which invention each group was the FIRST to have.">
+                <div class="widget-row-prompt">A fern stands tall in a shady forest but releases spores, not seeds, to reproduce. Which trait explains how it can grow tall?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. Ferns are seedless VASCULAR plants: vascular tissue (internal water-carrying tubes) is what lets them stand tall, even though they still reproduce by spores.">It has vascular tissue to carry water upward</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; ferns are seedless. They reproduce by spores, not seeds. The trait that lets a fern grow tall is its vascular tissue.">It produces seeds in cones</button>
+                    <button data-choice="c" data-fb="No &mdash; ferns do not flower. Only angiosperms flower. A fern grows tall because it has vascular tissue.">It grows flowers to attract pollinators</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="c" data-hint="'Naked seed' is the clue in the name gymnosperm.">
+                <div class="widget-row-prompt">A pine tree carries its seeds exposed on the scales of a cone, with no fruit around them. Which group is it?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; mosses (bryophytes) are nonvascular and make no seeds at all. A seed-bearing cone points to a different group.">A moss (bryophyte)</button>
+                    <button data-choice="b" data-fb="Close, but angiosperms enclose their seeds in fruit and grow flowers. A naked seed on a cone is the mark of a different group.">An angiosperm (flowering plant)</button>
+                    <button data-choice="c" data-fb="Correct. Gymnosperm means 'naked seed.' Conifers such as pines bear seeds openly on cones, without enclosing fruit.">A gymnosperm (conifer)</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="b" data-hint="Which group is the most diverse, and encloses its seeds in fruit?">
+                <div class="widget-row-prompt">An orange tree grows blossoms that become fruit, with the seeds tucked safely inside. Which group is it, and which two inventions does it show?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; a moss is nonvascular and makes neither flowers nor fruit. Blossoms and enclosed seeds point elsewhere.">A moss, showing spores and vascular tissue</button>
+                    <button data-choice="b" data-fb="Correct. Flowers and fruit are the two angiosperm inventions. Enclosing seeds in fruit and attracting pollinators with flowers helped angiosperms become the most diverse plant group.">An angiosperm, showing flowers and fruit</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; gymnosperms bear naked seeds on cones and do not grow flowers or fruit. Blossoms and enclosed seeds are angiosperm traits.">A gymnosperm, showing cones and flowers</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128220; PART 3 &middot; NAMING THE ORDER</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Why the order is the point</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">This is the courtesy of classification at work: naming the four groups <em>in order</em> turns a jumble of plants into a readable story. Each step &mdash; vascular tissue, then seeds, then flowers &mdash; frees a plant a little more from standing water and opens more of the land. That is why mosses cling to damp stone while grasses and oaks cover whole continents.</p>
+
+        <!-- History-of-science callout (blue/teal) -->
+        <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 10px 0 0 0;">
+            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#127963;&#65039; A HUMAN STORY &middot; LINNAEUS AND THE ORDERING OF PLANTS</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">In the 1700s, the Swedish naturalist <strong>Carl Linnaeus</strong> set out to name and order the living world &mdash; and plants were his first great love. He grouped them by shared features and gave each a tidy two-part Latin name, the system you met earlier in this module. Linnaeus grouped many plants by the structures of their flowers, which turned out to be a genuinely useful clue to how plants are related. His deeper conviction was that the natural world had an order waiting to be read, and that carefully naming things was a way of honoring that order. When you sort mosses from ferns from flowering plants today, you are practicing the same courteous, patient work he began.</div>
+        </div>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build a Florida-Biodiversity Collection</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Place and label at least one representative organism from bacteria/archaea, protists, fungi, plants, and animals in a Florida scene, then record a walkthrough naming each and its kingdom or domain.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Observe a Virus Hijack a Host Cell</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Watch a virus attach to a host cell and take over its machinery to make copies, then use what you see to weigh the question &ldquo;Is it alive?&rdquo; and capture named snapshots.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 22.01 &middot; The Plant Kingdom</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Order the four plant groups by adaptation to land, match each group to its defining trait, and explain in a sentence or two how vascular tissue, seeds, and flowers each freed plants from water. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Four groups, one climb onto land: vascular tissue lifted plants up, seeds freed them from water, flowers and fruit spread them everywhere. Hold this trend &mdash; in <strong>Module 8</strong> you will go inside these plants to study roots, stems, leaves, and the vascular tissue that made it all possible. Next lesson we cross to the other great kingdom of visible life: the animals.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 3 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 22.01 &middot; The Plant Kingdom: Conquering the Land</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 22.04</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q3 &middot; Module 7</div>
+        <div style="font-size: 12px; color: #666;">Classification and Diversity of Life</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 22.04</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Florida Biodiversity</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Courtesy &mdash; the ordered naming of the household of life</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 22.04</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Florida Biodiversity Across Kingdoms</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; The Whole Household of Life in One State</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">You have named the great branches of the tree of life. How many of them do you think live within a single day&rsquo;s drive of your home in Florida?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">This is the last lesson of Module 7, and it brings the whole module home. Nearly every branch of the tree &mdash; <strong>bacteria and archaea</strong>, <strong>protists</strong>, <strong>fungi</strong>, <strong>plants</strong>, and <strong>animals</strong> &mdash; is represented in Florida&rsquo;s springs, estuaries, forests, and wetlands. You will name real Florida organisms across kingdoms and domains, and examine how AI species-ID tools help scientists catalog biodiversity &mdash; and where those tools fail.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> give examples of Florida biodiversity spanning multiple kingdoms and domains, and place each organism in its group.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain how AI species-identification tools help catalog biodiversity and describe at least one way they can fail.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 22.04, <em>Florida Biodiversity Across Kingdoms</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127796; PART 1 &middot; THE WHOLE TREE IN ONE STATE</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Think of the last time you were outside in Florida &mdash; a park, a beach, a backyard. How many different kingdoms of life do you think were around you? (No wrong answer &mdash; just check in.)</div>
+            <div class="widget-options">
+                <button data-response="Almost certainly more than you counted! Even a single backyard usually has bacteria in the soil, protists and algae in any standing water, fungi breaking down leaves, plants (grass, trees), and animals (insects, birds). That's most of the tree of life in one small space &mdash; which is exactly today's point.">Probably just a couple &mdash; plants and animals</button>
+                <button data-response="Great instinct. A typical Florida spot holds bacteria and archaea (unseen), protists and algae, fungi, plants, and animals &mdash; nearly the whole household of life at once. Today you'll name specific Florida examples for each.">Lots &mdash; even the ones I couldn't see, like microbes and fungi</button>
+                <button data-response="Fair &mdash; it's easy to notice only the big, obvious life. But the unseen domains (bacteria, archaea) and the quiet kingdoms (protists, fungi) are always there too. By the end of this lesson you'll be able to name a Florida example from each branch.">I honestly never thought to count</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Florida, branch by branch</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Unseen in springs and wetlands live the domains <strong>Bacteria</strong> and <strong>Archaea</strong>. Estuaries float with <strong>protists</strong> &mdash; phytoplankton and seagrass algae. Forests hide <strong>fungi</strong> that decompose fallen wood. The <strong>plant</strong> kingdom stands in <strong>mangroves</strong>, <strong>longleaf pine</strong>, <strong>saw palmetto</strong>, and underwater <strong>seagrasses</strong>. And the <strong>animals</strong> range from swarming arthropod invertebrates to famous vertebrates: the <strong>Florida manatee</strong>, <strong>gopher tortoise</strong>, <strong>roseate spoonbill</strong>, and <strong>American alligator</strong>. The whole tree, in one state.</p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129513; PART 2 &middot; NAME THE BRANCH</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Place each Florida organism</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 4px 0;">Match each Florida organism to its kingdom or domain.</p>
+
+        <!-- ow-select: match Florida organism to kingdom/domain -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129513; MATCH IT &middot; ORGANISM &rarr; GROUP</div>
+            <div class="widget-row" data-correct="c" data-hint="A manatee is a mammal that nurses its young &mdash; which kingdom?">
+                <div class="widget-row-prompt">A Florida manatee grazes on seagrass in a warm coastal river. Which kingdom does it belong to?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; plants are autotrophs that make their own food. A manatee eats seagrass; it is a heterotroph.">Plants</button>
+                    <button data-choice="b" data-fb="No &mdash; fungi feed by absorbing nutrients from dead matter. A manatee is a mammal that grazes on living seagrass.">Fungi</button>
+                    <button data-choice="c" data-fb="Correct. The manatee is a mammal &mdash; a vertebrate animal. It is a multicellular heterotroph in the animal kingdom.">Animals</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="b" data-hint="Longleaf pine is a cone-bearing tree that photosynthesizes.">
+                <div class="widget-row-prompt">A longleaf pine towers over a sandy Florida ridge, bearing its seeds on cones. Which kingdom, and which plant group?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; a pine is not a flowering plant. It bears naked seeds on cones, which makes it a gymnosperm, not an angiosperm.">Plants &mdash; angiosperm</button>
+                    <button data-choice="b" data-fb="Correct. A longleaf pine is a plant, and specifically a gymnosperm (conifer): it bears naked seeds on cones rather than enclosing them in fruit.">Plants &mdash; gymnosperm</button>
+                    <button data-choice="c" data-fb="No &mdash; a pine is a photosynthesizing plant, not a fungus. And it is a gymnosperm, not a moss.">Fungi</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="a" data-hint="These are single-celled organisms you'd need a microscope to see, living in springs and wetlands.">
+                <div class="widget-row-prompt">A biologist samples a Florida spring and finds single-celled organisms with no nucleus, driving the decay and nutrient cycling of the water. Which group?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. Single-celled organisms with no nucleus are prokaryotes &mdash; the domains Bacteria (and Archaea). They power much of the decay and nutrient cycling in Florida's waters.">Bacteria / Archaea (domains)</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; animals are multicellular and have nuclei. Single cells with no nucleus are prokaryotes: Bacteria or Archaea.">Animals</button>
+                    <button data-choice="c" data-fb="Close, but protists ARE eukaryotes &mdash; they have a nucleus. Cells with NO nucleus belong to the domains Bacteria or Archaea.">Protists</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="c" data-hint="A mushroom on a rotting log feeds by absorbing nutrients &mdash; which kingdom does that?">
+                <div class="widget-row-prompt">Mushrooms sprout on a rotting log in a Florida hammock forest, breaking the wood down as they grow. Which kingdom?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; plants make their own food by photosynthesis. A mushroom has no chloroplasts; it absorbs nutrients from dead wood.">Plants</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; the domains Bacteria/Archaea are single cells with no nucleus. A mushroom is a multicellular eukaryote in its own kingdom.">Bacteria / Archaea</button>
+                    <button data-choice="c" data-fb="Correct. Mushrooms are fungi &mdash; heterotrophs that feed by absorbing nutrients, decomposing dead wood and returning its nutrients to the forest.">Fungi</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128241; PART 3 &middot; CATALOGING LIFE WITH (AND AGAINST) AI</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Who names all this life?</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Florida&rsquo;s biodiversity is far too vast for a handful of experts to catalog alone. Increasingly, ordinary people help &mdash; snapping photos on their phones and letting software suggest what they found. That is a real opportunity and a real trap at the same time.</p>
+
+        <!-- AI callout (RED / risky) -->
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-radius: 6px; padding: 14px 20px; margin: 0 0 16px 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#129302; AI AWARENESS &middot; CAN AN APP NAME A SPECIES FOR YOU?</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Apps like <strong>iNaturalist</strong> use <strong>computer-vision models</strong> &mdash; trained on millions of labeled photos &mdash; to suggest a species ID from a picture you take. The <strong>opportunity</strong> is huge: everyday observers become citizen scientists, and biodiversity surveys scale up far beyond what experts could do alone. But here are the <strong>pitfalls</strong>. The model can <strong>misidentify look-alikes</strong> &mdash; two similar wading birds, two similar snakes &mdash; with confident-sounding wrong answers. It is only as good as its <strong>training data</strong>, which is biased toward well-photographed species and popular regions, so rare or poorly documented organisms get missed or mislabeled. And a confident suggestion is still just a <strong>suggestion</strong>: it needs expert confirmation before it counts. Treat an AI species ID the way you treat any scientific claim &mdash; a hypothesis to check, not an authority to trust.</div>
+        </div>
+
+        <!-- WEB-INTERACTIVE link-out card -->
+        <div style="background: #E8F6FB; border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 8px 0;">
+            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px;">&#128421;&#65039; EXPLORE &middot; INTERACTIVE</div>
+            <div style="font-size: 18px; color: #0E1C42; line-height: 1.6; margin-bottom: 10px;"><strong>See real Florida observations.</strong> Open <strong>iNaturalist</strong> and browse recent observations from Florida. Pick one organism and notice: which kingdom or domain is it in? How confident is the suggested ID, and how many people confirmed it? This is citizen science and AI working side by side &mdash; with humans checking the machine.</div>
+            <div style="font-size: 15px; color: #1a2340; line-height: 1.6;">Link: <a href="https://www.inaturalist.org/observations?place_id=21" style="color: #1B6A94;">iNaturalist &mdash; Florida observations</a> (opens in a new tab). If your class uses a different vetted portal, follow your teacher&rsquo;s posted link instead.</div>
+        </div>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build a Florida-Biodiversity Collection</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Place and label at least one representative organism from bacteria/archaea, protists, fungi, plants, and animals in a Florida scene, then record a walkthrough naming each and its kingdom or domain. This VR pairs directly with today&rsquo;s lesson.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Observe a Virus Hijack a Host Cell</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Watch a virus attach to a host cell and take over its machinery to make copies, then use what you see to weigh the question &ldquo;Is it alive?&rdquo; and capture named snapshots.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 22.04 &middot; Florida Biodiversity Across Kingdoms</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Match Florida organisms to their kingdoms and domains, and explain in a sentence or two one limitation of AI species-ID tools. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Classification is a lens: once you can name the domains and kingdoms, a single Florida ecosystem reveals itself as the whole tree of life gathered in one place. That is the courtesy this module practiced &mdash; the ordered naming that lets us see how the household fits together. It sets up <strong>Module 10 (Ecology)</strong>, where these named organisms become the players in Florida&rsquo;s food webs and energy flow. This closes Module 7 &mdash; next you will bring your Florida-biodiversity build and your CER together.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 3 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 22.04 &middot; Florida Biodiversity Across Kingdoms</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

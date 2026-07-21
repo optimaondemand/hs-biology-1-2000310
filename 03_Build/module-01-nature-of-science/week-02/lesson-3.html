@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 2.03</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; margin-bottom: 10px; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 1</div>
+        <div style="font-size: 12px; color: #666;">Nature of Science</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 2.03</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Models &amp; Pseudoscience</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Honesty &mdash; following the evidence</div>
+    </div>
+</div>
+
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 2.03</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Models, and How to Spot Pseudoscience</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">How can a claim sound completely scientific and still be worthless &mdash; and how would you tell?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">First you&rsquo;ll see why scientists study <strong>models</strong> rather than the world directly, and why every good model is honest about what it leaves out. Then you&rsquo;ll turn that idea into a practical filter for telling <strong>science</strong> from <strong>pseudoscience</strong> &mdash; and try it on a real headline.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain what a scientific model is and why every model has limits.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> use falsifiability and other tests to distinguish science from pseudoscience.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> evaluate a real-world health claim using a checklist.</div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; WHAT YOU NEED FOR THIS LESSON</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 2.03, <em>Models, and How to Spot Pseudoscience</em> (read it before this lesson)</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; EVERY MODEL LEAVES SOMETHING OUT</div>
+
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">A subway map shows stations as evenly spaced dots on straight colored lines. Is the map &ldquo;wrong&rdquo;?</div>
+            <div class="widget-options">
+                <button data-response="Right &mdash; it distorts real distances and directions on purpose. It&rsquo;s &ldquo;wrong&rdquo; about geography but perfect for riding the train. That&rsquo;s every model: simplified to be useful.">Yes &mdash; the real distances are different</button>
+                <button data-response="In a sense, yes &mdash; it&rsquo;s exactly right for its job (finding your train) precisely because it throws away true distances. A good model is judged by usefulness, not photographic accuracy.">No &mdash; it does its job perfectly</button>
+                <button data-response="Good &mdash; that tension is the whole point. The map is &ldquo;wrong&rdquo; about geography yet ideal for navigation. Models trade completeness for usefulness.">Both, somehow</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 14px 0 12px 0;">A <strong>model</strong> is a simplified stand-in for something too big, small, slow, or complex to study directly &mdash; a cell diagram, a DNA kit, a food web, a climate simulation. Because it simplifies, every model leaves something out. The honest question is never &ldquo;Is it true?&rdquo; but &ldquo;Is it <em>useful</em> for my question, and where does it break down?&rdquo; You&rsquo;ll build many models this year, including in VR &mdash; each time, name what it captures and what it omits.</p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129656; PART 2 &middot; THE FOUR QUESTIONS</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Philosopher Karl Popper said a genuinely scientific claim sticks its neck out: it tells you what evidence <em>would prove it wrong</em>. Tap each test to see how science and pseudoscience answer it differently.</p>
+
+        <div class="optima-widget">
+            <div class="widget-kicker">&#9889; TAP TO REVEAL &middot; SCIENCE vs. PSEUDOSCIENCE</div>
+            <div class="ow-flip" tabindex="0">
+                <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;"><strong>Could it be proven wrong?</strong> &mdash; tap to reveal</div>
+                <div class="ow-flip-back" style="font-size:16px;line-height:1.55;"><strong>Science:</strong> makes testable, falsifiable predictions. <strong>Pseudoscience:</strong> stays vague enough to explain any outcome, so nothing could ever disprove it.</div>
+            </div>
+            <div class="ow-flip" tabindex="0">
+                <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;"><strong>What&rsquo;s the evidence?</strong> &mdash; tap to reveal</div>
+                <div class="ow-flip-back" style="font-size:16px;line-height:1.55;"><strong>Science:</strong> controlled studies reproduced by others. <strong>Pseudoscience:</strong> personal testimonials and cherry-picked cases that ignore the misses.</div>
+            </div>
+            <div class="ow-flip" tabindex="0">
+                <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;"><strong>Does it change with evidence?</strong> &mdash; tap to reveal</div>
+                <div class="ow-flip-back" style="font-size:16px;line-height:1.55;"><strong>Science:</strong> revises claims when data demand it. <strong>Pseudoscience:</strong> never abandons the claim &mdash; it blames the doubters instead.</div>
+            </div>
+            <div class="ow-flip" tabindex="0">
+                <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;"><strong>Why should I believe it?</strong> &mdash; tap to reveal</div>
+                <div class="ow-flip-back" style="font-size:16px;line-height:1.55;"><strong>Science:</strong> open methods anyone can check. <strong>Pseudoscience:</strong> &ldquo;trust me&rdquo; &mdash; an ancient secret or a lone genius nobody is allowed to question.</div>
+            </div>
+        </div>
+
+        <p style="font-size: 16px; color: #555; line-height: 1.6; margin: 6px 0 0 0;"><strong>Careful:</strong> being <em>new</em> or <em>unpopular</em> doesn&rsquo;t make a claim pseudoscience &mdash; remember Wegener and Marshall. The test is whether it can be tested and would yield to better evidence, never whether it&rsquo;s popular.</p>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129514; PART 3 &middot; RUN THE FILTER</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Apply the four questions. Which claims behave like science, and which like pseudoscience?</p>
+
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; SCIENCE OR PSEUDOSCIENCE?</div>
+            <div class="widget-question">Tap your answer for each.</div>
+
+            <div class="widget-row" data-correct="1" data-fb="Pseudoscience &mdash; &ldquo;works through energy science can&rsquo;t detect&rdquo; is unfalsifiable by design. If no instrument could ever check it, no test could prove it wrong." data-hint="Could any evidence prove this wrong? If it&rsquo;s built so nothing could, that&rsquo;s the pseudoscience giveaway.">
+                <div class="widget-row-prompt">1. &ldquo;This bracelet heals through an energy field that science cannot detect or measure.&rdquo;</div>
+                <div class="widget-options">
+                    <button data-choice="0">Science</button>
+                    <button data-choice="1">Pseudoscience</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Science &mdash; it&rsquo;s a specific, testable prediction that a controlled trial could confirm or refute. Even if it turned out false, it&rsquo;s scientific in form." data-hint="Is this a specific claim a controlled experiment could test and possibly disprove? Yes &mdash; that&rsquo;s science in form.">
+                <div class="widget-row-prompt">2. &ldquo;Patients given this antibiotic clear the infection faster than those given a placebo in a controlled trial.&rdquo;</div>
+                <div class="widget-options">
+                    <button data-choice="0">Science</button>
+                    <button data-choice="1">Pseudoscience</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Pseudoscience &mdash; &ldquo;it failed because you didn&rsquo;t believe hard enough&rdquo; makes the claim impossible to ever disprove. Every failure gets blamed on the doubter." data-hint="When the product fails, who gets blamed? If the claim can never lose, it isn&rsquo;t science.">
+                <div class="widget-row-prompt">3. &ldquo;If the remedy didn&rsquo;t work for you, it&rsquo;s because you didn&rsquo;t believe in it strongly enough.&rdquo;</div>
+                <div class="widget-options">
+                    <button data-choice="0">Science</button>
+                    <button data-choice="1">Pseudoscience</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Science &mdash; a published, reproducible result that the authors say they would revise if new data conflicted. Testable and open to revision." data-hint="Peer-reviewed, reproducible, and open to revision? That&rsquo;s the scientific profile.">
+                <div class="widget-row-prompt">4. &ldquo;Our peer-reviewed, reproducible study supports this conclusion, which we&rsquo;d revise if stronger evidence emerged.&rdquo;</div>
+                <div class="widget-options">
+                    <button data-choice="0">Science</button>
+                    <button data-choice="1">Pseudoscience</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 14px 0 4px 0;">
+            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128279; WEB INTERACTIVE &middot; TEST A REAL HEADLINE</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Open the U.S. National Library of Medicine&rsquo;s free guide, <strong>MedlinePlus: Evaluating Health Information</strong> &mdash; <a href="https://medlineplus.gov/evaluatinghealthinformation.html" style="color:#1B6A94;">medlineplus.gov/evaluatinghealthinformation.html</a>. Find one &ldquo;miracle cure&rdquo; health headline online and run it through the four questions above plus MedlinePlus&rsquo;s checklist (Who runs the site? What&rsquo;s the evidence? Is it selling something? When was it updated?). Bring your verdict to Assignment 2.03.</div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 2.03 &middot; Put a Health Claim on Trial</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Find a real health or &ldquo;wellness&rdquo; headline, run it through the four-question filter, and write a short verdict with your reasoning.</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE HABIT THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">People will sell you things your whole life in the <em>language</em> of science. The protection isn&rsquo;t memorizing which claims are false &mdash; it&rsquo;s asking the four questions every time. Next lesson, you&rsquo;ll watch these very tools settle a question that stumped humanity for two thousand years.</p>
+    </div>
+
+</div>
+
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 2.03 &middot; Models, and How to Spot Pseudoscience</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

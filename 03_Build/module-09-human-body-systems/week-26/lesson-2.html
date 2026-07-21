@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 26.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q3 &middot; Module 9</div>
+        <div style="font-size: 12px; color: #666;">Human Body Systems</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 26.02</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Homeostasis &amp; Feedback</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Self-government &mdash; homeostasis, the body's quiet discipline</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 26.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Homeostasis &amp; Feedback Loops</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; The Body's Quiet Discipline of Self-Correction</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">The air outside swings from freezing to scorching, yet your insides hold near 37&deg;C. How does a body hold its own line against a changing world?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">This is the central lesson of the module. Today you learn what <strong>homeostasis</strong> is, how a <strong>negative feedback loop</strong> works in four steps, and how the same loop keeps both your <strong>temperature</strong> and your <strong>blood sugar</strong> steady. Then you meet its rare opposite, <strong>positive feedback</strong>. This is the module's virtue &mdash; <strong>self-government</strong> &mdash; written into biology.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> define homeostasis and explain the four parts of a negative feedback loop &mdash; stimulus, receptor, control center, effector &mdash; and how the response opposes the change.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> trace temperature and blood-glucose regulation as negative feedback loops.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> tell negative feedback (stabilizes) from positive feedback (amplifies).</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 26.02, <em>Homeostasis: How the Body Governs Itself</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9878;&#65039; PART 1 &middot; THE LOOP THAT OPPOSES CHANGE</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">A thermostat turns the heat on when a room gets cold and off when it gets warm. Before you read on, does &ldquo;homeostasis&rdquo; mean your body keeps a value perfectly constant &mdash; or something a little different?</div>
+            <div class="widget-options">
+                <button data-response="Careful &mdash; this is the most common misconception. Homeostasis does NOT mean perfectly constant. Values drift up and down constantly; what stays steady is that the body always corrects them back toward a set point. It's a tightrope walker's balance, not a frozen statue.">It keeps the value perfectly, exactly constant</button>
+                <button data-response="Exactly right. Homeostasis is not perfect stillness &mdash; it's constant correction. A value wanders around a set point, and feedback keeps pulling it back. Like a thermostat, the body is always sensing and adjusting, never frozen in place.">It keeps correcting the value back toward a set point</button>
+                <button data-response="Good instinct to pause. The key idea is that homeostasis is active balancing, not perfect stillness: values drift, and the body keeps nudging them back toward a set point &mdash; exactly like a thermostat cycling on and off.">Not sure &mdash; isn't steady the same as unchanging?</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Four parts, one self-correcting loop</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>Homeostasis</strong> is keeping a stable internal environment despite a changing outside one. Its main mechanism is <strong>negative feedback</strong>, where the response <em>opposes</em> the change. The loop has four parts: a <strong>stimulus</strong> (something changes) is picked up by a <strong>receptor</strong> (a sensor), reported to a <strong>control center</strong> (usually the brain), which directs an <strong>effector</strong> (a muscle or gland) to produce a <strong>response that opposes the change</strong> &mdash; pulling the body back toward its set point. &ldquo;Negative&rdquo; does not mean bad; it means <em>opposing</em>.</p>
+    </div>
+
+    <!-- HISTORY CALLOUT (blue/teal helpful) -->
+    <div style="background: #E8F6FB; border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px;">&#128218; A MOMENT IN THE HISTORY OF SCIENCE &middot; THE DISCOVERY OF THE STEADY INSIDE</div>
+        <div style="font-size: 17px; color: #0E1C42; line-height: 1.65;">The idea that the body actively holds its own inner conditions steady was slow to arrive. In the 1850s and 1860s, the French physiologist <strong>Claude Bernard</strong> noticed that the cells of complex animals do not really live in the outside world &mdash; they are bathed in the body's own fluids. He argued that these fluids form an internal environment, the <em>milieu int&eacute;rieur</em>, and that free, independent life depends on keeping that inner sea constant even as the outside world changes. It was a profound reframing: the body is not merely exposed to its surroundings; it builds and defends a world of its own within. More than half a century later, in <strong>1926</strong>, the American physiologist <strong>Walter Cannon</strong> gave the phenomenon its name. He coined <strong>&ldquo;homeostasis&rdquo;</strong> from Greek roots meaning &ldquo;similar&rdquo; and &ldquo;standing&rdquo; &mdash; chosen carefully to mean a <em>steady state</em>, not a frozen one, because the body holds its balance through constant small adjustments. Two scientists, seventy years apart, slowly uncovered the body's quiet discipline of governing itself &mdash; this module's virtue, written in physiology.</div>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129513; PART 2 &middot; NAME THE PART OF THE LOOP</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Two worked loops: temperature and blood sugar</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 4px 0;">Each item below is one piece of a real negative feedback loop. Identify what it is.</p>
+
+        <!-- ow-select -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129513; MATCH IT &middot; DESCRIPTION &rarr; ROLE</div>
+            <div class="widget-row" data-correct="b" data-hint="You get hot, then sweat cools you; you get cold, then shivering warms you. Which direction is the response going?">
+                <div class="widget-row-prompt">On a hot day you sweat and your skin vessels widen, cooling you down. What does this tell you about the response in a negative feedback loop?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; the response does not add to the change. Sweating when hot cools you, which OPPOSES the rise. In negative feedback the response always reverses the change.">It adds to the change, making you hotter</button>
+                    <button data-choice="b" data-fb="Correct. The response opposes the change: overheating triggers cooling (sweat, vessel dilation), which pushes you back toward the set point. That is the defining feature of negative feedback.">It opposes the change, cooling you back toward 37&deg;C</button>
+                    <button data-choice="c" data-fb="No &mdash; the loop is not random. Overheating reliably triggers a cooling response that opposes the rise. Negative feedback always pushes back against the change.">It has no effect on temperature</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="c" data-hint="This is the brain region that reads the temperature and decides how to respond &mdash; the decision-maker.">
+                <div class="widget-row-prompt">Temperature receptors report to a brain region that compares the reading to the set point and orders sweating or shivering. Which part of the loop is this?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; the effector carries out the response (the sweat gland, the muscle). The part that reads the signal and decides is the control center.">The effector</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; the receptor detects the change. The part that receives the report and decides the response is the control center (the brain).">The receptor</button>
+                    <button data-choice="c" data-fb="Correct. The brain region (the hypothalamus) that compares the reading to the set point and orders the response is the control center of the loop.">The control center</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="a" data-hint="After a meal, blood sugar rises; this hormone tells cells to take glucose OUT of the blood, lowering it.">
+                <div class="widget-row-prompt">After you eat, blood glucose rises, and the pancreas releases a hormone that tells cells to store glucose, lowering blood sugar. Which hormone is it?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. Insulin is released when blood glucose is high; it drives cells to take up and store glucose, lowering blood sugar &mdash; a response that opposes the rise.">Insulin</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; glucagon does the opposite: it RAISES blood sugar when it is low. The hormone that lowers high blood sugar after a meal is insulin.">Glucagon</button>
+                    <button data-choice="c" data-fb="No &mdash; oxytocin drives childbirth (a positive feedback loop). The hormone that lowers high blood glucose is insulin.">Oxytocin</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="b" data-hint="Between meals, blood sugar drops; this hormone tells the liver to release stored glucose, raising it back up.">
+                <div class="widget-row-prompt">Hours after eating, blood glucose drops too low. The pancreas releases a hormone that tells the liver to release stored glucose. Which hormone is it?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="No &mdash; insulin LOWERS blood sugar; releasing it when sugar is already low would make things worse. The hormone that raises low blood sugar is glucagon.">Insulin</button>
+                    <button data-choice="b" data-fb="Correct. Glucagon is released when blood glucose is low; it signals the liver to release stored glucose, raising blood sugar back toward the set point. Insulin lowers, glucagon raises.">Glucagon</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; melanin is the skin pigment, not a blood-sugar hormone. The hormone that raises low blood glucose is glucagon.">Melanin</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 3 &middot; NEGATIVE VS. POSITIVE FEEDBACK</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Stabilize, or amplify?</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Most of the body runs on negative feedback (opposes change, stabilizes). A few processes use <strong>positive feedback</strong>, where the response <em>amplifies</em> the change and drives it to a finish &mdash; like childbirth (oxytocin) and blood clotting. Sort the case below.</p>
+
+        <!-- ow-select single-row -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129504; THINK IT THROUGH</div>
+            <div class="widget-row" data-correct="c" data-hint="Does each contraction make the next one weaker (opposing) or stronger (amplifying)?">
+                <div class="widget-row-prompt">During childbirth, each contraction triggers the release of more oxytocin, which causes stronger contractions, until delivery. Which kind of feedback is this, and why?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; negative feedback would weaken the contractions to stop the process. Here each contraction makes the next one stronger, which drives the change forward. That is positive feedback.">Negative feedback, because it opposes the change</button>
+                    <button data-choice="b" data-fb="Check the direction: the contractions get STRONGER, not steadier. Amplifying a change to a finish is positive feedback, not negative.">Negative feedback, because it keeps contractions steady</button>
+                    <button data-choice="c" data-fb="Correct. This is positive feedback: each contraction amplifies the next, driving the process to completion (delivery). Positive feedback amplifies; negative feedback opposes and stabilizes.">Positive feedback, because each step amplifies the next</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 10px 0 0 0;">Keep the contrast sharp: <strong>negative feedback opposes and stabilizes</strong> (the everyday rule of homeostasis); <strong>positive feedback amplifies and finishes</strong> (a rare exception for events like birth and clotting). Forward link: next lesson you'll watch thermoregulation happen in the skin &mdash; sweat glands and dilating vessels, real effectors in the temperature loop you just traced.</p>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build the Body's Organization Hierarchy</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Construct and label the six levels of organization and build one worked chain from cell to organism. It pairs most closely with Lesson 26.01.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Walk a Negative-Feedback Loop</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Enter a scene and trace a homeostatic loop &mdash; stimulus &rarr; receptor &rarr; control center &rarr; effector &rarr; response &mdash; for blood glucose or body temperature, capturing a snapshot at each station. This VR pairs directly with today's lesson.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 26.02 &middot; Homeostasis &amp; Feedback Loops</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Label the four parts of a feedback loop, sort examples as negative or positive feedback, and explain in a sentence or two why negative feedback does not mean &ldquo;perfectly constant.&rdquo; Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">One loop &mdash; stimulus, receptor, control center, effector &mdash; run over and over is how a body of trillions of cells holds its inside world steady. Negative feedback opposes change and stabilizes; positive feedback amplifies and finishes. This is the master key to the module: learn it once here and you will recognize it in every system ahead. The body does not merely react to the world &mdash; it governs itself against it.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 3 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 26.02 &middot; Homeostasis &amp; Feedback Loops</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

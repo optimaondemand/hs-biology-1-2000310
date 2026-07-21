@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 32.03</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q4 &middot; Module 10</div>
+        <div style="font-size: 12px; color: #666;">Ecology and Environmental Science</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 32.03</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Water &amp; Phosphorus Cycles</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Responsibility &mdash; stewardship and the common good</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 32.03</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Water and Phosphorus: One Cycle with a Sky, One Without</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; The Water Cycle, the Phosphorus Cycle, and the Limiting Nutrient</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Carbon and nitrogen both travel through the sky. Phosphorus almost never does. What difference does a missing gas phase make?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today you add two cycles. The <strong>water cycle</strong> &mdash; evaporation, transpiration, condensation, precipitation, runoff, groundwater &mdash; will feel familiar after the transpiration of <strong>Module 8</strong>. The <strong>phosphorus cycle</strong> is the exception that proves the rule: it has <strong>no significant gas phase</strong>, moves slowly through rock, soil, and water, and is often the ecosystem's <strong>limiting nutrient</strong>.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> describe the water cycle, including evaporation, transpiration, condensation, precipitation, runoff, and groundwater.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain why the phosphorus cycle has no gas phase and why phosphorus is often the limiting nutrient.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 32.03, <em>Water and Phosphorus: One Cycle with a Sky, One Without</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128167; PART 1 &middot; THE WATER CYCLE</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Back in Module 8 you watched plants lose water through their leaves. Do you think that plant water loss is big enough to matter to the whole planet's water cycle? (No wrong answer &mdash; just check in.)</div>
+            <div class="widget-options">
+                <button data-response="Understandable &mdash; but transpiration is bigger than it looks. Across the world's forests, plants move a genuinely large share of water from the soil into the sky, feeding the clouds and rain.">No &mdash; one plant is tiny; it can&rsquo;t matter much</button>
+                <button data-response="Right instinct. Transpiration &mdash; water vapor released by leaves &mdash; is a major pathway that lifts water from soil to air across whole forests, connecting the plant biology of Module 8 to the planet&rsquo;s water cycle.">Yes &mdash; billions of plants together must move a lot of water</button>
+                <button data-response="Good to wonder about. In fact, transpiration from the world&rsquo;s plants moves a large amount of water from soil to sky &mdash; the Module 8 process, scaled up to a planet.">I&rsquo;m not sure how much plants really add</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">The loop you already live in</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The Sun drives water in a loop: <strong>evaporation</strong> (liquid water, mostly ocean, becomes vapor), <strong>transpiration</strong> (plants release vapor from their leaves &mdash; the Module 8 process), <strong>condensation</strong> (vapor cools into clouds), <strong>precipitation</strong> (rain, snow, sleet, hail), and <strong>runoff and groundwater</strong> (water flows back to the sea or soaks into the ground for storage). Living things are woven right into this cycle, and the water dissolves and carries every other nutrient along with it.</p>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129704; PART 2 &middot; THE PHOSPHORUS CYCLE &mdash; THE ODD ONE OUT</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">A loop with no sky</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Phosphorus builds <strong>DNA</strong>, <strong>ATP</strong>, and membranes &mdash; but its cycle has <strong>no significant gaseous phase</strong>. It does not travel as a gas through the air. Instead: <strong>weathering</strong> of rock releases phosphate into soil and water &rarr; plants take it up and animals eat plants &rarr; decomposers return it to the soil &rarr; some washes into water and settles into <strong>sediment</strong>, slowly becoming rock again. With no gas phase to speed things along, the whole cycle is <strong>slow</strong> and tied to the ground.</p>
+
+        <!-- ow-scale: rank cycle by gas-phase reliance -->
+        <div class="optima-widget ow-scale">
+            <div class="widget-kicker">&#128207; PLACE IT &middot; HOW MUCH DOES THIS CYCLE USE A GAS PHASE?</div>
+            <div class="widget-row" data-correct="none" data-hint="Does phosphorus travel through the air as a gas the way CO&#8322; and N&#8322; do?">
+                <div class="widget-row-prompt">On the scale below, where does the <strong>phosphorus</strong> cycle belong &mdash; how much does it rely on an atmospheric (gas) phase to move phosphorus around?</div>
+                <div class="widget-options">
+                    <button data-choice="none" data-fb="Correct. Phosphorus has essentially no gas phase &mdash; it moves through rock, soil, and water, never the air &mdash; which is exactly why its cycle is slow and why it&rsquo;s so often the limiting nutrient.">None &mdash; no gas phase</button>
+                    <button data-choice="some" data-fb="Not quite. Unlike carbon (CO&#8322;) and nitrogen (N&#8322;), phosphorus does not travel as a gas at all. Its cycle is earthbound &mdash; rock, soil, water, sediment.">Some &mdash; a little travels as gas</button>
+                    <button data-choice="lots" data-fb="No &mdash; that describes carbon and nitrogen, whose atmospheres are major reservoirs. Phosphorus has no meaningful gas phase, which sets it apart.">Lots &mdash; mostly moves as gas</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="lots" data-hint="Carbon travels as CO&#8322; gas. How central is the atmosphere to its cycle?">
+                <div class="widget-row-prompt">And where does the <strong>carbon</strong> cycle belong on the same scale?</div>
+                <div class="widget-options">
+                    <button data-choice="none" data-fb="Not quite &mdash; that&rsquo;s phosphorus. Carbon spends a major part of its cycle as CO&#8322; gas in the atmosphere.">None &mdash; no gas phase</button>
+                    <button data-choice="some" data-fb="Closer, but carbon relies heavily on its gas phase &mdash; CO&#8322; in the air is one of its main reservoirs and moves quickly worldwide.">Some &mdash; a little travels as gas</button>
+                    <button data-choice="lots" data-fb="Correct. Carbon travels largely as CO&#8322; gas, so the atmosphere is a central reservoir &mdash; the very feature phosphorus lacks.">Lots &mdash; mostly moves as gas</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9878;&#65039; PART 3 &middot; THE LIMITING NUTRIENT</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">When one scarce ingredient sets the ceiling</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Because phosphorus moves slowly and is never refilled from the air, it is often scarce &mdash; and a scarce nutrient becomes the <strong>limiting nutrient</strong>: the one whose shortage caps how much an ecosystem can grow. Sunlight, CO&#8322;, and water may be plentiful, but if phosphorus runs out, growth stops. Hold onto this, because it explains next lesson's disaster: if phosphorus normally holds growth back, then suddenly <em>flooding</em> a lake with it &mdash; from fertilizer runoff &mdash; releases the brake and lets algae explode.</p>
+
+        <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 6px; padding: 14px 20px; margin: 8px 0 0 0;">
+            <div style="font-size: 15px; color: #1a2340; line-height: 1.6;"><strong>The contrast to remember:</strong> carbon and nitrogen have gas phases (CO&#8322;, N&#8322;), so the atmosphere is a big reservoir and they move fast; phosphorus has <strong>no gas phase</strong>, lives in rock and sediment, moves slowly, and is often the limiting nutrient. Sky versus no sky &mdash; that is the whole distinction.</div>
+        </div>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build a Cycle with Flows (Carbon or Nitrogen)</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">As you build your chosen cycle's reservoirs and flows, notice which reservoirs include the atmosphere &mdash; the very feature that makes the phosphorus cycle you studied today so different.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Observe Human-Disruption Points</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Watch fertilizer &mdash; carrying the phosphorus and nitrogen from today's lesson &mdash; run off into water and trigger a bloom. Capture snapshots and name the cycle each disruption alters.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 32.03 &middot; Water &amp; Phosphorus Cycles</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Order the water-cycle steps, contrast the phosphorus cycle with carbon/nitrogen, and explain in a sentence why phosphorus is often the limiting nutrient. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Water loops through sky and land, carrying every nutrient with it; phosphorus creeps through rock and sediment with no sky at all, which is why it so often limits growth. You now hold all four cycles &mdash; carbon, nitrogen, water, phosphorus &mdash; and one master idea binds them: matter cycles. In the final lesson we ask the responsibility question head-on: what happens when humans push these loops out of balance?</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 4 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 32.03 &middot; Water and Phosphorus: One Cycle with a Sky, One Without</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

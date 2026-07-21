@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 9.01</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 4</div>
+        <div style="font-size: 12px; color: #666;">Cell Energy</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 9.01</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Life Is a Slow Fire</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Service &mdash; the leaf that feeds all life</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 9.01</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Life Is a Slow Fire</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; Cellular Respiration Overview</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">A candle flame and a living animal both burn fuel with oxygen. So what makes the cell&rsquo;s fire safe?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today we open <strong>cellular respiration</strong> &mdash; the controlled release of glucose&rsquo;s energy to recharge ATP. You will write its equation, tour the <strong>mitochondrion</strong> where most of it happens, locate its three stages, and clear up one of biology&rsquo;s most common confusions: respiration is <em>not</em> the same thing as breathing.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> write the equation for cellular respiration, naming reactants and products.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> label the parts of a mitochondrion and locate the three stages of respiration.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish cellular respiration from breathing.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; YOUR ANCHOR READING</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Read <strong>Reading 9.01, <em>Life Is a Slow Fire</em></strong> before working through this lesson. It carries the equation, the mitochondrion, and the breathing-versus-respiration distinction you will use below.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128293; PART 1 &middot; THE CONTROLLED BURNING</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">A log on a fire and a jogger on a trail both &ldquo;burn&rdquo; fuel with oxygen and give off carbon dioxide. What is the main difference between the two? (No wrong answer &mdash; just check in.)</div>
+            <div class="widget-options">
+                <button data-response="Exactly the right instinct. The chemistry is the same kind &mdash; fuel plus oxygen, releasing CO&#8322;, water, and energy &mdash; but the cell does it in many small, controlled steps so the energy is captured into ATP rather than lost all at once as a burst of heat. That control is the whole point of cellular respiration.">The cell releases the energy slowly and in small steps</button>
+                <button data-response="Close &mdash; a flame is hotter, but the deeper difference is control. A fire dumps all its energy at once as heat and light. A cell disassembles glucose in many small steps, capturing energy into ATP a little at a time, so it never cooks itself. Same chemistry, controlled.">The fire is hotter</button>
+                <button data-response="Both actually use oxygen &mdash; that is part of why they are alike. The real difference is control: a fire releases energy all at once, while a cell releases it in many small, controlled steps and captures it into ATP. That is cellular respiration.">Only the fire uses oxygen</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Respiration as slow combustion</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Last week a leaf <em>built</em> glucose, locking sunlight into chemical bonds. <strong>Cellular respiration</strong> does the reverse: it releases that stored energy in a controlled way to recharge <strong>ATP</strong>, the cell&rsquo;s spendable energy currency. The reaction is <strong>aerobic</strong> &mdash; it uses oxygen:</p>
+        <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 6px; padding: 16px 20px; margin: 0 0 4px 0; text-align: center;">
+            <div style="font-size: 20px; color: #0e1c42; line-height: 1.6;">C&#8326;H&#8321;&#8322;O&#8326; + 6O&#8322; &rarr; 6CO&#8322; + 6H&#8322;O + ATP (energy)</div>
+            <div style="font-size: 14px; color: #666; margin-top: 8px; font-style: italic;">glucose + oxygen &rarr; carbon dioxide + water + usable energy</div>
+        </div>
+        <p style="font-size: 15px; color: #666; font-style: italic; margin: 10px 0 0 0;">This is nearly photosynthesis run backward &mdash; and the glucose you burn was built by a leaf. The two reactions are two halves of one cycle.</p>
+    </div>
+
+    <!-- Lavoisier history callout TEAL -->
+    <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 0 0 20px 0;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#127963;&#65039; A HUMAN STORY &middot; LAVOISIER, WHO CALLED LIFE A SLOW FIRE</div>
+        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">In the 1780s, the French chemist <strong>Antoine Lavoisier</strong> sealed a small animal in an apparatus and measured what it consumed and gave off. Like a burning candle, the living animal took in <strong>oxygen</strong> and released <strong>carbon dioxide</strong> and heat. From this he made a daring claim for his time: that the warmth of a living body is a kind of slow, controlled <strong>combustion</strong> &mdash; respiration, he said, is a burning, only gentle and contained. It was a profound reframing of what it means to be alive: not a mysterious vital force, but ordinary chemistry that can be measured and weighed. Two centuries later, the equation just above is essentially his insight, written in modern symbols.</div>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128295; PART 2 &middot; THE MITOCHONDRION AND ITS THREE STAGES</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">A structure built for the job</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The <strong>mitochondrion</strong> has two membranes. The smooth <strong>outer membrane</strong> wraps it; the <strong>inner membrane</strong> folds into deep ridges called <strong>cristae</strong> (Latin &ldquo;crests&rdquo;) that pack in surface area for the electron transport chain. The inner membrane encloses the <strong>matrix</strong>, the fluid center where the Krebs cycle runs; between the two membranes is the narrow <strong>intermembrane space</strong>. Recall from Module 3 that the mitochondrion is an <strong>endosymbiotic</strong> organelle &mdash; the descendant of a free-living bacterium &mdash; and its double membrane is a relic of that ancient partnership.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 14px 0 4px 0;">Respiration runs in three stages, each with its own address. Match each stage to where it happens.</p>
+
+        <!-- Evaluative single-select: locate the stages -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; WHERE DOES EACH STAGE HAPPEN?</div>
+            <div class="widget-question">For each stage of respiration, tap the place inside the cell where it occurs. You&rsquo;ll get instant feedback.</div>
+
+            <div class="widget-row" data-correct="0" data-fb="Right &mdash; glycolysis happens in the cytoplasm, OUTSIDE the mitochondrion. It does not even need a mitochondrion, and it needs no oxygen." data-hint="The first, oxygen-free step happens before the fuel ever enters the mitochondrion.">
+                <div class="widget-row-prompt">1. Glycolysis (splitting glucose) happens in the &hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="0">Cytoplasm</button>
+                    <button data-choice="1">Matrix</button>
+                    <button data-choice="2">Inner membrane</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Right &mdash; the Krebs (citric-acid) cycle runs in the matrix, the fluid center of the mitochondrion." data-hint="This cycle runs in the fluid-filled center of the mitochondrion.">
+                <div class="widget-row-prompt">2. The Krebs cycle happens in the &hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="0">Cytoplasm</button>
+                    <button data-choice="1">Mitochondrial matrix</button>
+                    <button data-choice="2">Intermembrane space</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Right &mdash; the electron transport chain is studded across the inner mitochondrial membrane, whose folded cristae give it surface area." data-hint="This stage needs the surface area of the folded cristae.">
+                <div class="widget-row-prompt">3. The electron transport chain happens on the &hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="0">Cytoplasm</button>
+                    <button data-choice="1">Outer membrane</button>
+                    <button data-choice="2">Inner mitochondrial membrane</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129516; PART 3 &middot; RESPIRATION IS NOT BREATHING</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Two different things that share a name</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>Breathing</strong> is gas exchange in your lungs &mdash; air moving in and out. <strong>Cellular respiration</strong> is the chemistry inside <em>every</em> cell that releases energy from glucose. Breathing serves respiration: it delivers the oxygen respiration needs and carries away the carbon dioxide it makes. But a single cell with no lungs still respires. Keep them separate.</p>
+
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; CHECK YOURSELF &middot; WHICH IS WHICH?</div>
+            <div class="widget-question">Decide whether each statement describes <em>breathing</em> or <em>cellular respiration</em>.</div>
+            <div class="widget-row" data-correct="1" data-fb="Right &mdash; releasing energy from glucose inside a cell is cellular respiration, the chemistry we study this week." data-hint="Which one is the energy-releasing chemistry inside a cell?">
+                <div class="widget-row-prompt">1. &ldquo;Glucose is broken down inside a cell to recharge ATP.&rdquo;</div>
+                <div class="widget-options">
+                    <button data-choice="0">Breathing</button>
+                    <button data-choice="1">Cellular respiration</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="0" data-fb="Right &mdash; moving air in and out of the lungs is breathing (gas exchange), not the chemistry inside the cell." data-hint="Which one is the movement of air in the lungs?">
+                <div class="widget-row-prompt">2. &ldquo;The chest rises and air is drawn into the lungs.&rdquo;</div>
+                <div class="widget-options">
+                    <button data-choice="0">Breathing</button>
+                    <button data-choice="1">Cellular respiration</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build a Mitochondrion &amp; Map the Three Stages</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Construct the outer and inner membranes, cristae, matrix, and intermembrane space, then place each stage where it belongs &mdash; including glycolysis OUTSIDE, in the cytoplasm.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Walk the Electron Transport Chain</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Walk the inner membrane and watch electrons fall, H&#8314; pump, ATP synthase spin, and oxygen form water &mdash; a preview of Friday&rsquo;s lesson.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 9.01 &middot; The Mitochondrion &amp; the Respiration Equation</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Label the mitochondrion, write the respiration equation, and correct the &ldquo;respiration = breathing&rdquo; misconception. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Respiration is the slow fire Lavoisier glimpsed &mdash; the same chemistry as burning, made safe and useful by the cell. The energy a leaf captured from the sun, you now release to live; that gift, passed from the green world to you, is the quiet <strong>service</strong> at the heart of this module. (Remember: your graded Module 4 CER, on the leaf-disk assay, is due at the end of the module &mdash; keep building toward it.)</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 9.01 &middot; Life Is a Slow Fire</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

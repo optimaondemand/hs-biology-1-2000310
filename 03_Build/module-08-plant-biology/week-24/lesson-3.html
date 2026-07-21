@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 24.03</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q3 &middot; Module 8</div>
+        <div style="font-size: 12px; color: #666;">Plant Biology</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 24.03</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Phloem &amp; Sugar Transport</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Wonder &mdash; plants that sense and respond without nerves</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 24.03</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Phloem and the Flow of Sugar</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; Source, Sink, and Pressure-Flow</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">A leaf makes the food &mdash; but a root in the dark, a swelling fruit, and a growing tip all need it. How does the sugar reach them?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today you will follow the plant&rsquo;s second river: <strong>phloem</strong>, the <em>living</em> tissue that carries <strong>sugar</strong> from a <strong>source</strong> to a <strong>sink</strong> by the <strong>pressure-flow</strong> mechanism. Most of all, you will lock in the difference between phloem and the xylem of Lesson 24.01 &mdash; because reversing the two is the single most common mistake on this topic, and today it disappears.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> describe how phloem transports sugars throughout the plant.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain the pressure-flow mechanism that moves sugar from source to sink.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 24.03, <em>Phloem and the Flow of Sugar: The Plant&rsquo;s Second River</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127855; PART 1 &middot; LIVING PIPES, SUGARY CARGO</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">A plant makes sugar in its leaves. Where do you think that sugar needs to travel? (No wrong answer &mdash; just check in.)</div>
+            <div class="widget-options">
+                <button data-response="Exactly &mdash; and often downward. Roots buried in the dark can&rsquo;t photosynthesize, so leaves (sources) send sugar down to them (sinks). That downward flow is the opposite of water in the xylem.">Down to the roots, which can&rsquo;t make their own food</button>
+                <button data-response="Yes &mdash; fruits, seeds, and growing tips are all &lsquo;sinks&rsquo; that draw sugar from the leaves. Phloem carries food to wherever it is needed, up or down.">To fruits and growing tips that are using energy</button>
+                <button data-response="Good instinct &mdash; the answer is &lsquo;wherever it&rsquo;s needed.&rsquo; Roots, fruits, seeds, and growing tips are all sinks. Phloem is bidirectional: it delivers sugar up OR down.">Honestly, anywhere in the plant that needs energy</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">What phloem is, and where sugar flows</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>Phloem</strong> is made of <strong>living</strong> cells &mdash; <strong>sieve-tube elements</strong> kept running by attached <strong>companion cells</strong>. It carries <strong>sugars</strong> (mainly sucrose) made in photosynthesis, and it flows <strong>bidirectionally</strong> &mdash; up or down &mdash; from a <strong>source</strong> (where sugar is made or released, like a leaf) to a <strong>sink</strong> (where sugar is used or stored, like a root, fruit, or growing tip).</p>
+
+        <!-- ow-select: source/sink -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129513; CHECK IT &middot; SOURCE OR SINK?</div>
+            <div class="widget-row" data-correct="a" data-hint="Where is sugar being MADE?">
+                <div class="widget-row-prompt">In midsummer, a mature sunlit leaf is busy with photosynthesis. In the phloem, this leaf acts as a&hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. A photosynthesizing leaf makes sugar, so it is a source &mdash; it loads sugar into the phloem for delivery elsewhere.">Source</button>
+                    <button data-choice="b" data-fb="Not quite &mdash; a sink is where sugar is used or stored. A sunlit leaf is MAKING sugar, so it is a source.">Sink</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="b" data-hint="Is a growing potato tuber making sugar or storing it?">
+                <div class="widget-row-prompt">A potato plant is fattening its underground tuber, packing away starch. In the phloem, the tuber acts as a&hellip;</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; the tuber isn&rsquo;t photosynthesizing; it&rsquo;s storing sugar delivered from the leaves. That makes it a sink.">Source</button>
+                    <button data-choice="b" data-fb="Correct. The tuber receives and stores sugar, so it is a sink. (Note: next spring, when it feeds new sprouts, it becomes a source &mdash; roles can switch.)">Sink</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128167; PART 2 &middot; PRESSURE-FLOW, STEP BY STEP</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">How a pressure difference moves the sap</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">At the <strong>source</strong>, sugar is actively loaded into the phloem; water then follows by <strong>osmosis</strong> (Module 3), <strong>raising the pressure</strong> there. At the <strong>sink</strong>, sugar is unloaded, water leaves, and the pressure <strong>drops</strong>. Sap flows in bulk from the high-pressure source to the low-pressure sink, carrying its sugar along. That is the <strong>pressure-flow hypothesis</strong>.</p>
+
+        <!-- ow-select: pressure-flow mechanism -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129513; CHECK IT &middot; WHAT DRIVES THE FLOW</div>
+            <div class="widget-row" data-correct="c" data-hint="What happens to water when sugar is loaded and the sap gets concentrated?">
+                <div class="widget-row-prompt">Sugar is loaded into the phloem at a source. What happens next, and why does pressure rise there?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; the plant does not pump water in with muscle. Water enters passively, by osmosis, following the concentrated sugar.">The plant pumps water in with tiny muscles</button>
+                    <button data-choice="b" data-fb="No &mdash; sugar loading pulls water IN, it doesn&rsquo;t push water out. Water entering is what raises the pressure.">Water is pushed out, raising the pressure</button>
+                    <button data-choice="c" data-fb="Correct. Concentrated sugar draws water in by osmosis, and that inflow of water raises the pressure at the source end.">Water follows the sugar in by osmosis, raising the pressure</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="b" data-hint="Fluid in a tube flows from high pressure toward low pressure.">
+                <div class="widget-row-prompt">Given high pressure at the source and low pressure at the sink, which way does the sap flow?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; flow runs from high pressure to low pressure, so it goes from source to sink, not the reverse.">From sink to source, against the pressure</button>
+                    <button data-choice="b" data-fb="Correct. Bulk flow runs from the high-pressure source to the low-pressure sink, sweeping the dissolved sugar along with it.">From source to sink, high pressure to low</button>
+                    <button data-choice="c" data-fb="No &mdash; the pressure difference is exactly what makes the sap move. Without it there would be no flow.">It doesn&rsquo;t flow &mdash; pressure has no effect</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9878;&#65039; PART 3 &middot; DO NOT REVERSE THEM</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Xylem vs. phloem &mdash; the misconception, killed</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Keep the contrast crisp: <strong>xylem</strong> = dead cells, one-way, water &amp; minerals UP, driven by transpiration pull (tension). <strong>Phloem</strong> = living cells, bidirectional, sugars from source to sink, driven by pressure (active loading). Test yourself.</p>
+
+        <!-- ow-select: xylem vs phloem -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129513; CHECK IT &middot; WHICH TISSUE?</div>
+            <div class="widget-row" data-correct="b" data-hint="Which tissue carries sugar from a source to a sink?">
+                <div class="widget-row-prompt">Sugar made in a leaf travels down to the roots. Which tissue carries it, and is it alive or dead?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Reversed! Xylem carries water and minerals UP and is made of dead cells. Sugar transport is phloem&rsquo;s job.">Xylem &mdash; dead cells</button>
+                    <button data-choice="b" data-fb="Correct. Phloem, made of living cells, carries sugar from source (leaf) to sink (root), in whichever direction is needed.">Phloem &mdash; living cells</button>
+                    <button data-choice="c" data-fb="No &mdash; sugar moves in the phloem, not the xylem. And phloem is living, not dead.">Xylem &mdash; living cells</button>
+                </div>
+            </div>
+            <div class="widget-row" data-correct="a" data-hint="Which tissue is dead, one-way, and driven by transpiration?">
+                <div class="widget-row-prompt">Water and dissolved minerals move one way, upward from roots to leaves, with no cellular energy spent. Which tissue, and what drives it?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Correct. Xylem (dead, hollow cells) carries water and minerals one way &mdash; up &mdash; driven by the transpiration pull (tension), no plant energy needed.">Xylem &mdash; driven by transpiration pull (tension)</button>
+                    <button data-choice="b" data-fb="Reversed! That describes phloem&rsquo;s driving force. Water moving up in dead pipes is xylem, driven by transpiration pull.">Phloem &mdash; driven by pressure from sugar loading</button>
+                    <button data-choice="c" data-fb="Not quite &mdash; the upward water lift is xylem, and it needs no ATP; the sun&rsquo;s evaporation provides the pull.">Xylem &mdash; driven by the plant burning ATP</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Model Xylem &amp; Phloem Transport</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Build the <strong>phloem</strong> column showing sugar moving from a source (leaf) to a sink (root or fruit), labeled &ldquo;living cells, bidirectional, sugar source&rarr;sink, driven by pressure,&rdquo; beside the xylem column. Record a walkthrough contrasting the two. This VR pairs directly with today&rsquo;s lesson (and Lesson 24.01).</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Observe a Potometer Under Varied Conditions</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Observe a potometer and change one condition at a time (wind, light, heat, humidity), recording the water-uptake rate &mdash; the data for your Module 8 CER essay.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 24.03 &middot; Xylem vs. Phloem Comparison</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Fill in a comparison table contrasting xylem and phloem by cells, cargo, direction, and driving force &mdash; the misconception, put to rest. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Two rivers run in one trunk: water climbing up the dead pipes of the xylem, sugar flowing to wherever it is needed through the living pipes of the phloem. The sugar was built by photosynthesis (<strong>Module 4</strong>); the osmosis that drives its flow you met in <strong>Module 3</strong>. Next, in <strong>Lesson 24.04</strong>, you go underground for the last piece &mdash; the mineral nutrients a plant must gather from the soil, and the hidden partners that help it.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 3 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 24.03 &middot; Phloem and the Flow of Sugar</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

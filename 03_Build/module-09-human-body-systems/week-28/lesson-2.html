@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biology 1 &mdash; Lesson 28.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .preview-banner { background: #fff3cd; border-bottom: 2px solid #c7922c; padding: 10px 24px; font-size: 13px; color: #6b4f1d; }
+    .preview-banner strong { color: #0e1c42; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+</style>
+</head>
+<body>
+<div class="preview-banner"><strong>Local preview only.</strong> Delete this banner before deploying. Widgets use inline JavaScript (runs on the GitHub-hosted page; would not run if pasted into the Canvas RCE).</div>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">BIOLOGY 1</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q4 &middot; Module 9</div>
+        <div style="font-size: 12px; color: #666;">Human Body Systems</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 28.02</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">The Neuron &amp; Action Potential</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Self-government &mdash; homeostasis, the body's quiet discipline</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Lavender title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 28.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">The Neuron &amp; Action Potential</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; A Cell Built to Fire an Electrical Signal</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Touch something hot and your hand jerks back before you can think. How does a single cell carry a message that fast &mdash; and where have you met the pump that makes it possible?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Today you meet the body's fastest messenger, the <strong>neuron</strong>. You will name its parts and match each to its job, see how the <strong>sodium&ndash;potassium pump</strong> from Module 3 keeps the cell charged and ready, and trace the <strong>action potential</strong> &mdash; the all-or-none electrical wave that races down the axon.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> label the parts of a neuron &mdash; dendrites, cell body, axon, myelin, axon terminals &mdash; and state what each one does.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain how the sodium&ndash;potassium pump maintains the resting potential, connecting it to active transport from Module 3.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> describe the action potential as an all-or-none wave &mdash; depolarization (Na&#8314; in) then repolarization (K&#8314; out) &mdash; traveling down the axon.</div>
+        </div>
+    </div>
+
+    <!-- Anchor reading pointer -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; READ THIS FIRST</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 0; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Reading 28.02, <em>The Neuron: How a Cell Sends a Signal Down Its Length</em> &mdash; your anchor text for this lesson. Read it before working through the parts below, and keep your scientific notebook open.</div>
+        </div>
+    </div>
+
+    <!-- PART 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#129504; PART 1 &middot; A CELL SHAPED TO SEND A MESSAGE</div>
+
+        <!-- Reflective check-in -->
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">A nerve signal is often called "electrical." Before today, what did you picture that meant &mdash; is it electricity like in a wire? (No wrong answer &mdash; just check in.)</div>
+            <div class="widget-options">
+                <button data-response="Good instinct, and close. It IS electrical, but not like current flowing through copper. A neuron's signal is a moving change in charge across its membrane, created by ions (charged atoms) crossing in and out &mdash; the very ions the Module 3 pump manages.">Yes &mdash; like current running down a wire</button>
+                <button data-response="A thoughtful hesitation. The signal is electrical, but it isn't electrons in a wire &mdash; it's a wave of charge change made by ions (Na&#8314; and K&#8314;) crossing the membrane. Today you'll see exactly how that wave forms and moves.">Sort of, but I'm not sure it's the same as a wire</button>
+                <button data-response="Fair &mdash; it's genuinely different from a wire. The neuron's signal is a moving change in the charge across its membrane, driven by ions flowing in and out. By the end of the lesson you'll be able to trace it step by step.">I've never really pictured it</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">Receive, carry, hand off</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">A <strong>neuron</strong> is built for one job. The <strong>dendrites</strong> <strong>receive</strong> signals; the <strong>cell body</strong> holds the nucleus and keeps the cell alive; the <strong>axon</strong> <strong>transmits</strong> the signal away; the <strong>myelin</strong> sheath insulates the axon so the signal travels <strong>faster</strong>; and the <strong>axon terminals</strong> hand the signal off to the next cell. Branched to gather many inputs, long and insulated to send one output far &mdash; form follows function.</p>
+    </div>
+
+    <!-- PART 2 -- Na/K PUMP CALLBACK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128268; PART 2 &middot; THE RESTING POTENTIAL &amp; A PUMP YOU ALREADY KNOW</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Charged and waiting: the Module 3 pump returns</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">At rest, the inside of a neuron is slightly <strong>negative</strong> compared with the outside &mdash; the <strong>resting potential</strong>, the loaded spring behind every signal. What holds that charge is a protein you met back in <strong>Module 3</strong> as an example of <strong>active transport</strong>: the <strong>sodium&ndash;potassium pump</strong>. Using <strong>ATP</strong>, it moves <strong>3 Na&#8314; out</strong> of the cell for every <strong>2 K&#8314; in</strong>. Because it pushes more positive charge out than it brings in, the inside stays negative. Same pump, same mechanism you already studied &mdash; here it is the foundation of thought itself.</p>
+
+        <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 6px; padding: 14px 20px; margin: 12px 0;">
+            <div style="font-size: 11px; color: #0e1c42; margin-bottom: 8px; letter-spacing: 0.4px;">&#128279; CROSS-UNIT LINK &middot; MODULE 3</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">You first met the <strong>sodium&ndash;potassium pump</strong> as the textbook example of <strong>active transport</strong> &mdash; a membrane protein spending ATP to move ions <em>against</em> their gradients (3 Na&#8314; out, 2 K&#8314; in). Nothing about the pump has changed. What is new is its consequence: that steady imbalance of charge is exactly what lets a neuron fire.</div>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 12px 0 4px 0;">For each statement below, decide which phase of the signal it describes. Slide toward <strong>Na&#8314; IN (depolarization)</strong> or <strong>K&#8314; OUT (repolarization)</strong>.</p>
+
+        <!-- ow-scale -->
+        <div class="optima-widget ow-scale">
+            <div class="widget-kicker">&#9889; SELF-CHECK &middot; DEPOLARIZATION OR REPOLARIZATION?</div>
+            <div class="widget-question">Tap the phase each statement describes.</div>
+
+            <div class="widget-row" data-correct="0" data-hint="Which ion rushing IN makes the inside suddenly positive?">
+                <div class="widget-row-prompt">1. Gates open and sodium (Na&#8314;) rushes in; the inside flips from negative to positive.</div>
+                <div class="widget-options">
+                    <button data-choice="0" data-fb="Correct. Na&#8314; rushing in is depolarization &mdash; the inside swings positive at that spot, the peak of the action potential.">Na&#8314; in (depolarization)</button>
+                    <button data-choice="1" data-fb="Not quite &mdash; potassium leaving (K&#8314; out) is repolarization. Sodium rushing IN and flipping the inside positive is depolarization.">K&#8314; out (repolarization)</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-hint="Which ion leaving RESETS the inside back to negative?">
+                <div class="widget-row-prompt">2. Potassium (K&#8314;) flows out and the inside returns to negative, resetting that patch of membrane.</div>
+                <div class="widget-options">
+                    <button data-choice="0" data-fb="Not quite &mdash; sodium entering (Na&#8314; in) is depolarization. Potassium leaving to restore the negative inside is repolarization.">Na&#8314; in (depolarization)</button>
+                    <button data-choice="1" data-fb="Correct. K&#8314; flowing out is repolarization &mdash; it brings the inside back to negative so the membrane can reset.">K&#8314; out (repolarization)</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-hint="Which phase is the 'firing' moment, when the membrane's charge reverses?">
+                <div class="widget-row-prompt">3. This is the moment the neuron actually "fires" &mdash; the charge across the membrane reverses.</div>
+                <div class="widget-options">
+                    <button data-choice="0" data-fb="Correct. Depolarization is the firing moment: Na&#8314; floods in and the membrane's charge reverses, launching the action potential.">Na&#8314; in (depolarization)</button>
+                    <button data-choice="1" data-fb="Not quite &mdash; repolarization is the recovery afterward. The firing moment, when charge reverses, is depolarization.">K&#8314; out (repolarization)</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-hint="Which phase comes AFTER the peak, returning the cell toward rest?">
+                <div class="widget-row-prompt">4. This phase comes right after the peak and returns the neuron toward its resting state.</div>
+                <div class="widget-options">
+                    <button data-choice="0" data-fb="Not quite &mdash; depolarization is the peak itself. The phase that follows and returns the cell toward rest is repolarization.">Na&#8314; in (depolarization)</button>
+                    <button data-choice="1" data-fb="Correct. Repolarization follows the peak, moving K&#8314; out to return the inside to negative &mdash; the recovery that readies the cell to fire again.">K&#8314; out (repolarization)</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128161; PART 3 &middot; ALL-OR-NONE, AND DOWN THE AXON</div>
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Why a neuron is like a light switch</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">If a stimulus crosses <strong>threshold</strong>, the neuron fires a full-strength action potential; if it doesn't, nothing happens. There is no half-signal &mdash; that is what <strong>all-or-none</strong> means. A stronger stimulus doesn't make a bigger spike; it makes the neuron fire <em>more often</em>. Once fired, the signal triggers the next patch, then the next, traveling down the axon to the terminals. Reason through the misconception below.</p>
+
+        <!-- ow-select single-row -->
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#129504; CHECK IT &middot; THE ALL-OR-NONE RULE</div>
+            <div class="widget-row" data-correct="b" data-hint="Does a bigger stimulus make a bigger action potential, or just more of them?">
+                <div class="widget-row-prompt">You touch a warm cup, then a very hot one. How does the second, stronger stimulus change the action potentials your neurons fire?</div>
+                <div class="widget-options">
+                    <button data-choice="a" data-fb="Not quite &mdash; action potentials are all-or-none, so each one is full-strength regardless of the stimulus. A stronger stimulus does NOT make a bigger spike.">Each action potential becomes larger and stronger</button>
+                    <button data-choice="b" data-fb="Correct. Because action potentials are all-or-none, a stronger stimulus doesn't enlarge each spike &mdash; it makes the neuron fire them more frequently, which the brain reads as 'more intense.'">The neuron fires the same-size spikes, but more frequently</button>
+                    <button data-choice="c" data-fb="No &mdash; a strong stimulus above threshold makes a neuron fire more, not less. And each spike stays the same full size (all-or-none).">The neuron fires fewer, weaker spikes to protect itself</button>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 10px 0 0 0;">Zoom out and the neurons organize into two divisions: the <strong>central nervous system</strong> (brain and spinal cord) that processes and decides, and the <strong>peripheral nervous system</strong> (all the other nerves) that carries signals in and commands out. But a signal reaching the axon's end still has to cross to the next cell &mdash; and that gap is where Lesson 28.03 begins.</p>
+    </div>
+
+    <!-- YOUR VR THIS WEEK -->
+    <div style="background: #FFFFFF; border-top: 3px solid #55C8E8; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 16px;">&#129488; YOUR VR THIS WEEK</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">A</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-A &middot; Build a Neuron &amp; Fire an Action Potential to a Synapse</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Construct a neuron &mdash; dendrites, cell body, axon, myelin, terminals &mdash; then trace a signal from dendrite down the axon to a synapse. This VR pairs directly with today's lesson.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #2196D0; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">B</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>VR-B &middot; Observe a Drug Acting at a Synapse</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Enter a synapse scene and watch how a drug changes signaling and its effect. Pairs with Lesson 28.03 and feeds your Module 9 CER.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHAT YOU'LL DO NEXT -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 0;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Assignment 28.02 &middot; Label the Neuron, Trace the Signal</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Match each neuron part to its function, explain how the Na&#8314;/K&#8314; pump sets the resting potential, and put the action-potential steps in order. Open it from the next item in this module.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; THE IDEA THIS BUILDS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">A neuron is a charged cell &mdash; loaded by the Module 3 sodium&ndash;potassium pump &mdash; that fires an all-or-none wave down its length. But the wave stops at the axon's end. In the next lesson we cross the gap, where the electrical signal becomes <strong>chemical</strong>, and where understanding the chemistry becomes a matter of governing yourself.</p>
+    </div>
+
+</div>
+<!-- ===== /BODY WRAPPER ===== -->
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; BIOLOGY 1 &middot; Quarter 4 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 28.02 &middot; The Neuron &amp; Action Potential</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite — try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>
