@@ -361,7 +361,7 @@ EQ: *How do energy and matter move through ecosystems? What is the state of Eart
 
 ## 3. VR map
 
-ENGAGE platform; governed by `optima-vr-curriculum`. **VR-A = Build/Model** (construct/manipulate a 3D model), **VR-B = Explore/Observe** (enter a Location/scene, capture evidence). Low-friction Canvas submission: snapshot (IFX) or short spatial recording. No weekly VR in exam weeks 15 & 36.
+VR platform; governed by `optima-vr-curriculum`. **VR-A = Build/Model** (construct/manipulate a 3D model), **VR-B = Explore/Observe** (enter a Location/scene, capture evidence). Low-friction Canvas submission: snapshot (IFX) or short spatial recording. No weekly VR in exam weeks 15 & 36.
 
 | Wk | VR-A (Build/Model) | VR-B (Explore/Observe) |
 |---|---|---|
@@ -472,7 +472,7 @@ Counts toward the 20% Laboratory/Notebook category (VR build activities) per the
 | 7 | **Courtesy** | The ordered naming of the household of life |
 | 8 | **Wonder** | Darwin's patient watching; sensing without nerves |
 | 9 | **Self-government** | Homeostasis, the body's quiet discipline |
-| 10 | **Responsibility** | Stewardship; Carson's land ethic; the common good |
+| 10 | **Responsibility** | Stewardship; Leopold's land ethic and Carson's *Silent Spring*; the common good |
 
 ---
 
@@ -510,7 +510,7 @@ Every reading-quiz item is EOC-format, stands alone as a bank item, targets the 
 
 **2 CER:** (1) molecular/cellular — water properties *or* RBC osmosis; (2) genetic — the mutation→phenotype trace.
 
-### Final (Week 36) — 70 MC + 3 CER, cumulative full-year bank, proportional to module size and aligned to EOC domain weights (Mol/Cell 35–40%, Class/Evo 20–25%, Eco 20–25%, Anatomy 15–20%)
+### Final (Week 36) — 70 MC + 3 CER, cumulative full-year bank, nudged from proportional to module size, aiming at EOC domain weights (Mol/Cell 35–40%, Class/Evo 20–25%, Eco 20–25%, Anatomy 15–20%)
 
 | Module | Wks | MC | EOC domain |
 |---|---|---|---|
@@ -526,7 +526,7 @@ Every reading-quiz item is EOC-format, stands alone as a bank item, targets the 
 | 10 | 6 | 12 | Ecosystems/Ecology |
 | **Total** | 34 | **70** | — |
 
-Resulting domain shares: Molecular/Cellular (M2–M5) ≈ 36% · Class/Evo (M6–M7) ≈ 21% · Ecology (M10) ≈ 17% · Anatomy (M9) ≈ 14% · plants/NOS make up the balance. **These are targets, adjustable on approval** (e.g., bump ecology toward 20% by trimming M9/M5 if you want a tighter EOC match).
+Resulting domain shares: Molecular/Cellular (M2–M5) ≈ 36% · Class/Evo (M6–M7) ≈ 21% · Ecology (M10) ≈ 17% · Anatomy (M9) ≈ 14% · plants/NOS make up the balance. Mol/Cell and Class/Evo sit inside their EOC bands; Ecology and Anatomy sit slightly below theirs. The table is nudged from a pure size-proportional split (70/34 weeks = M1 4.1, M2 4.1, M3 6.2, M4 6.2, M5 8.2, M6 6.2, M7 8.2, M8 6.2, M9 8.2, M10 12.4). Deviations: M1 3 (-1.1), M2 5 (+0.9), M6 8 (+1.8), M7 7 (-1.2), M8 5 (-1.2), M9 10 (+1.8), M10 12 (-0.4); M3, M4, M5 are within 0.2 of proportional. An optional M9→M10 +2 shift (M9 8, M10 14) lifts ecology to 20% but drops anatomy to 11%. **These are targets, adjustable on approval** (e.g., bump ecology toward 20% by trimming M9/M5 if you want a tighter EOC match).
 
 **3 Final CER:** (1) molecular — trace a carbon atom photosynthesis → respiration; (2) genetic/evolutionary — mutation → variation → common descent; (3) ecological — climate-change evidence *or* energy flow & the 10% rule.
 
@@ -559,7 +559,7 @@ atoms & water (M2) → macromolecules (M2) → cell structure & membrane (M3) �
 
 1. **Module 9 CER (⚠️ §4):** drug-mechanism/addiction (Course Map, used here) vs. vaccine/immunology (cer_guide seed)? Confirm or swap.
 2. **VR quarter boundaries (§1b):** confirm the 9/9/9/9 split (which splits M4 at wk 9/10 and M9 at wk 27/28), or prefer module-aligned uneven quarters.
-3. **Final MC distribution (§7):** accept the size-proportional split, or rebalance ecology up to ~20% to match EOC domain weight more tightly.
+3. **Final MC distribution (§7):** accept the table as drafted (nudged from proportional), or rebalance ecology up to ~20% to match EOC domain weight more tightly.
 4. **Reading-quiz weekly counts (§7):** confirm 8/9/10 by module depth, or set a flat count.
 
 On approval I will proceed to build, module by module, following the file conventions in CLAUDE.md and the Optima skill set (`optima-biology`, `optima-classical-pedagogy`, `optima-stem`, `optima-lesson-format`, `optima-canvas-assignments`, `optima-vr-curriculum`, `optima-m365-skills`, `canvas-interactive-widgets`, under `optima-mission-vision`).

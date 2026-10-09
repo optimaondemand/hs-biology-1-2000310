@@ -31,9 +31,9 @@ The final pulls **70** of these 314 for the MC section.
 
 ---
 
-## 2. MC draw — counts by module (proportional to module size, balanced to EOC domain weights)
+## 2. MC draw — counts by module (nudged from proportional to module size toward EOC domain weights)
 
-70 MC allocated across all ten modules per `plan.md` §7. The split is size-proportional and then nudged to match the EOC domain weights (Molecular/Cellular 35–40%, Classification/Evolution 20–25%, Ecosystems/Ecology 20–25%, Human Anatomy/Physiology 15–20%).
+70 MC allocated across all ten modules per `plan.md` §7. The split is nudged from a pure size-proportional split (70/34 weeks = M1 4.1, M2 4.1, M3 6.2, M4 6.2, M5 8.2, M6 6.2, M7 8.2, M8 6.2, M9 8.2, M10 12.4). Deviations: M1 3 (-1.1), M2 5 (+0.9), M6 8 (+1.8), M7 7 (-1.2), M8 5 (-1.2), M9 10 (+1.8), M10 12 (-0.4); M3, M4, M5 are within 0.2 of proportional. The aim is to approach the EOC domain weights (Molecular/Cellular 35–40%, Classification/Evolution 20–25%, Ecosystems/Ecology 20–25%, Human Anatomy/Physiology 15–20%).
 
 | Module | Weeks | **MC drawn** | EOC domain |
 |---|---|---|---|
@@ -49,9 +49,9 @@ The final pulls **70** of these 314 for the MC section.
 | 10 — Ecology | 6 | **12** | Ecosystems/Ecology |
 | **Total** | **34** | **70** | — |
 
-**Resulting domain shares:** Molecular/Cellular (M2–M5) = 25/70 ≈ **36%** · Classification/Evolution (M6–M7) = 15/70 ≈ **21%** · Ecology (M10) = 12/70 ≈ **17%** · Human Anatomy (M9) = 10/70 ≈ **14%** · plants (M8) ≈ 7% and Nature of Science (M1) ≈ 4% make up the balance (NOS is also woven through every domain item). These match the `plan.md` §7 targets and sit inside the EOC bands, with molecular/cellular carrying the largest share as the EOC does.
+**Resulting domain shares:** Molecular/Cellular (M2–M5) = 25/70 ≈ **36%** · Classification/Evolution (M6–M7) = 15/70 ≈ **21%** · Ecology (M10) = 12/70 ≈ **17%** · Human Anatomy (M9) = 10/70 ≈ **14%** · plants (M8) ≈ 7% and Nature of Science (M1) ≈ 4% make up the balance (NOS is also woven through every domain item). These match the `plan.md` §7 targets. Molecular/Cellular (36%) and Classification/Evolution (21%) sit inside their EOC bands; Ecology (17% vs. 20–25%) and Human Anatomy (14% vs. 15–20%) sit slightly below theirs, because module size and the plants/NOS balance share the remaining weight. Molecular/cellular carries the largest share, as on the EOC.
 
-> **Optional rebalance (per `plan.md` §7 open decision):** to push ecology toward the top of its EOC band (~20%), move 2 items from M9→M10 (M9: 8, M10: 14). Keep the total at 70. The build below uses the size-proportional split; apply the rebalance only if instructed.
+> **Optional rebalance (per `plan.md` §7 open decision):** to push ecology toward the top of its EOC band (~20%), move 2 items from M9→M10 (M9: 8, M10: 14). Keep the total at 70. Note this lifts ecology to 20% but drops anatomy to 11%, further below its band; it is an optional alternative, not a fix. The build below uses the table above; apply the rebalance only if instructed.
 
 ### 2a. Sub-allocation by week (keeps coverage even within a module)
 
